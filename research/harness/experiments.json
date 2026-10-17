@@ -64,16 +64,20 @@
         "Twist conductor 49*234446 and global sign -1",
         "Correct all a_n of original E and quadratic character",
         "Mellin functional-equation derivative identity and normalization",
-        "Provably enclosing E1 and complete tail bound; ability to audit every source"
+        "Provably enclosing E1 and complete tail bound; ability to audit every source",
+        "Standard coprime quadratic-twist root-sign and conductor formulas with local multiplicative reduction data"
       ],
       "commands": [
         "python -I -B research/anticyclotomic_11/independent_rational_derivative.py",
-        "gp -q -f research/anticyclotomic_11/twist_analytic.gp"
+        "gp -q -f research/anticyclotomic_11/twist_analytic.gp",
+        "python -I -B research/anticyclotomic_11/verify_root_sign.py"
       ],
       "artifacts": [
         "research/anticyclotomic_11/independent_rational_derivative.py",
         "research/anticyclotomic_11/DERIVATIVE_CERTIFICATE_AUDIT.md",
-        "research/anticyclotomic_11/twist_analytic.gp"
+        "research/anticyclotomic_11/twist_analytic.gp",
+        "research/anticyclotomic_11/MELLIN_IDENTITY.md",
+        "research/anticyclotomic_11/verify_root_sign.py"
       ],
       "negative_control": "Deliberately corrupt an exponential-tail exponent or a Fourier coefficient; the checked equality/positivity preconditions must reject it.",
       "stop_condition": "Do not publish a theorem of analytic nonvanishing before Mellin identity, local Euler factors, coefficient oracle, and tail bounds are independently audited.",
@@ -97,6 +101,14 @@
           "kind": "validation_method",
           "mechanism": "Orthogonal assay: modular-form coefficients from PARI versus independently derived coefficient recursion.",
           "proof_boundary": "Shared mathematical identities remain independent proof obligations.",
+          "validating_test": "research/harness/compare_fourier_coefficients.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html"
+        },
+        {
+          "discipline": "software verification",
+          "kind": "validation_method",
+          "mechanism": "Check complete coefficient-vector equality against PARI ellan, and ensure mutated terms are rejected.",
+          "proof_boundary": "Oracle agreement does not independently prove modularity, root sign, or the completed L-series formula.",
           "validating_test": "research/harness/compare_fourier_coefficients.py",
           "reference": "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html"
         }
