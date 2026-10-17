@@ -38,6 +38,12 @@ Each claim also has a **review state**: draft; internally reproduced; independen
 - Large numerical searches need reproducible parameters, raw result provenance, completeness argument, and clear separation from a proof.
 - Respect source licenses and copyright. No automatic open-source license is implied by publishing a GitHub repository.
 
+## Mandatory whole-problem reorientation
+
+At the start of each research sprint, **at least weekly**, after three substantive mathematical PR merges, and after a major falsification, perform the [WPR-1 full-BSD review](research/strategy/FULL_PROBLEM_REVIEW.md). Distinguish (i) general BSD rank equality, (ii) the example-specific **complex** L''(E,1)=0 and nonzero fourth derivative, and (iii) full leading-coefficient/Sha claims. Review all H1–H6 bets, actively kill or park work not reaching the original bottleneck, classify evidence, and report any newly **proved** mathematical implication since the previous checkpoint—or explicitly **none**. Do not conflate repeated computations or infrastructure with progress on rank equality.
+
+Each checkpoint has a dated historical journal and [structured current record](research/reviews/current.json). Require `python3 -I -B research/harness/validate_full_review.py` plus `python3 -I -B research/harness/test_full_review.py` in CI. These checks validate documentation, **never** a mathematical theorem. The dated schedule is a human/agent operating requirement; the validator does not prove that future reviews will occur on time.
+
 ## Mandatory cross-disciplinary translation gate
 
 For each research direction, assess potentially relevant methods from **other disciplines** (including mathematical physics, homological algebra, coding theory, validated numerics, control theory, experimental biology, formal verification, and causal inference). Do this even when there is no useful transfer; a documented rejection is preferable to a gratuitous analogy. The gate requires:
