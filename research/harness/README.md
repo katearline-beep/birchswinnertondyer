@@ -22,6 +22,18 @@ Before new research:
 4. Put executable programs, exact sources, frozen data and references under version control. Test every stated prediction including a deliberately bad input.
 5. Promote a claim only after verifying theorem assumptions and independently reviewing the mathematics; CI alone is never sufficient.
 
+## Leapfrog conjecture overlay
+
+Every **EX-004 and later** high-risk experiment must have an entry in [leapfrogs.json](leapfrogs.json), with an auditable missing theorem, IF/THEN candidate, gain, countermodel, decision and kill criterion. Our [LCP-1 protocol](../strategy/LEAPFROG_PROTOCOL.md) requires alternating a conservative lemma, a credible leapfrog and a wild but falsifiable hypothesis; review the known result's mathematical **output type** before inferring an L-value.
+
+```bash
+python3 -I -B research/harness/validate_leapfrogs.py
+python3 -I -B research/harness/test_leapfrogs.py
+python3 -I -B research/strategy/logic_gate_tests.py
+```
+
+This is an organizational quality gate, **not** formal verification of any conjecture. The initial six records are all speculative; nothing here has external expert review.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
