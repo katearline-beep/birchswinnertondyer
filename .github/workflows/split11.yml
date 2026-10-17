@@ -68,3 +68,5 @@ jobs:
         run: python -I -B research/strategy/kato_field_local_image_audit.py
       - name: Integral cyclotomic group-ring anti-vacuity and tower negative controls
         run: python -I -B research/strategy/cyclotomic_integrality_gate.py
+      - name: Mazur-Tate 2025 theorem hypothesis and circularity negative control
+        run: python -I -B research/strategy/mazur_tate_scope_test.py

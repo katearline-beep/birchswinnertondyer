@@ -108,15 +108,15 @@
       "id": "LF-004",
       "experiment_id": "EX-007",
       "title": "H4 modular-symbol congruences -> complex L''",
-      "known_baseline": "Exact finite congruences of Mazur–Tate elements and modular symbol data.",
+      "known_baseline": "Exact finite congruences of Mazur–Tate elements and modular symbol data. The BKS Mazur–Tate 2025 arXiv-v1 Theorem 1.1 assumes BSD and generalized Perrin–Riou; its unconditional Corollary 1.2 applies to analytic rank one, unlike our rank-four curve.",
       "missing_arrow": "Any finite p-adic congruence alone is compatible with a nonzero complex analytic invariant.",
       "hypothetical_bridge": "A proven comparison must connect an algebraic projective family of modular-symbol classes with a complex Taylor coefficient.",
       "if_then_statement": "IF a compatible infinite system with an independently proved comparison forces the complex L'' to zero, THEN order is at least four.",
       "would_unlock": "Exact symbolic cancellation in a different arithmetic realization could bypass floating point zeros.",
       "unverified_dependencies": "No map from these finite congruences to complex L'' is established; shared period normalizations are delicate.",
-      "negative_control": "The integer 11^m is nonzero despite vanishing modulo 11^m; a finite congruence cannot prove an exact zero.",
+      "negative_control": "The integer 11^m is nonzero despite vanishing modulo 11^m; a finite congruence cannot prove an exact zero. The theorem-eligibility script must reject E at rank four for the rank-one supersingular corollary and reject unknown BSD/PR hypotheses for the main theorem.",
       "next_decisive_test": "Identify a single algebraic derived element and one theorem specifying its interpolation to the complex L-series.",
-      "kill_criterion": "Kill if the result concerns only a p-adic invariant unrelated to the target complex derivative.",
+      "kill_criterion": "Kill if the result concerns only a p-adic invariant unrelated to the target complex derivative. Reject any application of BKS 2025 Theorem 1.1 as a proof of BSD: BSD appears as explicit condition (d). For degree-11 cyclotomic Q1 its field conductor 121 also violates squarefree condition (a).",
       "source": "https://doi.org/10.1093/imrn/rnaf012",
       "test_path": "research/strategy/kill_tests.py",
       "gate": "G0",
@@ -130,6 +130,11 @@
           "date": "2026-10-17",
           "outcome": "parked",
           "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        },
+        {
+          "date": "2026-10-17",
+          "outcome": "parked",
+          "evidence": "BKS 2025 Theorem 1.1 explicitly assumes BSD and generalized Perrin–Riou; unconditional Corollary 1.2 concerns analytic rank one and supersingular p, not our rank-four ordinary-11 case."
         }
       ]
     },
