@@ -43,6 +43,8 @@ For K_D = Q(sqrt D), where D<0 is a fundamental discriminant and gcd(D, N)=1 wit
 
 Thus **one proven vanishing** F_D'''(1)=0 implies the target L''(E,1)=0. Varying K_D gives different geometric incarnations of exactly the same unknown number, which is the key leverage (not just accumulating examples). Try to identify a theorem computing F_D''' in terms of a higher Heegner cycle whose vanishing follows from four global rational points. A higher-rank "Gross–Zagier" bridge is a research problem, not an available theorem assumed here.
 
+**First exact field screen:** [field_tomography_candidates.py](field_tomography_candidates.py) enumerates negative fundamental discriminants for which 2, 117223 and 11 all split. The four smallest are **−7, −87, −95 and −127**. For all of these, the quadratic twist has predicted root sign −1 and conductor \(N D^2\) under the standard coprime conductor formula. We have **not** yet checked that any twist except −7 has nonzero central derivative, much less obtained a higher Heegner-cycle vanishing formula.
+
 **Stop:** if variation merely reproduces the analytic factorization without a new arithmetic/geometric identity, it has NOT advanced the proof.
 
 ### H4 — Modular-symbol congruence microscope
