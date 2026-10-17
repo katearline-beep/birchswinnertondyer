@@ -6,6 +6,9 @@ We investigate specific elliptic curves and the boundary between numerical evide
 
 ## Start here
 
+- [AGENTS.md](AGENTS.md): standing research instructions for human and AI collaborators, including an explicit cross-disciplinary transfer gate and falsifiable experiment design.
+- [Machine-checked research harness](research/harness/README.md): executable experiment registry, review-status enforcement, negative controls, and independent Fourier coefficient checks.
+
 - [Research integrity standards](RESEARCH_STANDARDS.md): statuses, proof obligations, provenance, correction policy, and review workflow.
 - [Claim ledger](CLAIMS.md): precise claims, evidence, limitations, and outstanding review.
 - [Contribution guidelines](CONTRIBUTING.md): how to provide an independent check or report an error.
