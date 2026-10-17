@@ -8,6 +8,10 @@ A **leapfrog conjecture** is a clearly specified *missing theorem or counterexam
 
 Every active exploratory track (EX-004 onward) needs a corresponding LF entry in [leapfrogs.json](../harness/leapfrogs.json), even when the decisive idea has not been found; in that case the entry must say **NO VALID BRIDGE IDENTIFIED**. A candidate is automatically classified as **speculative** until independently reviewed. An imaginative idea is not a theorem, and apparent novelty requires a prior-art audit.
 
+## Reorient to the entire BSD problem before choosing a leapfrog
+
+The first task in each sprint is the [WPR-1 whole-problem audit](FULL_PROBLEM_REVIEW.md). A conjecture isn't a leapfrog merely because it skips a difficult *local computation*: it must be evaluated against the ultimate BSD rank-equality and leading-coefficient problems. For our test curve, each track must identify whether it constrains the **original complex** L''(E,1), proves exact order four, establishes relevant Sha finiteness, or only sharpens a different invariant. If none, make the negative finding explicit and downrank the track as appropriate. File a dated [review checkpoint](../reviews/current.json) periodically.
+
 ## Before each new experiment, do this
 
 1. **Target:** Which exact current obstruction? Here: \(L''(E,1)=0\) for E=234446.a1, not the vanishing order of an unrelated p-adic L-function. Specify original/completed versus uncompleted L-functions.
