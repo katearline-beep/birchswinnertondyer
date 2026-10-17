@@ -64,3 +64,5 @@ jobs:
         run: python -I -B research/strategy/logic_gate_tests.py
       - name: Exact C11 augmentation and local torsion field-selection gate
         run: python -I -B research/strategy/kato_field_gate.py
+      - name: Kato C11 field local torsion and Galois image input audit
+        run: python -I -B research/strategy/kato_field_local_image_audit.py
