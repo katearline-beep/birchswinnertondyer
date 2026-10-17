@@ -42,3 +42,5 @@ jobs:
         run: python -I -B research/split11/kernel_mod11_4.py
       - name: Agboola-Castella local hypothesis certificate
         run: python -I -B research/anticyclotomic_11/verify_local_hypotheses.py
+      - name: Exact quadratic-twist and mod-11 symmetry data check
+        run: python -I -B research/anticyclotomic_11/verify_twist_descent.py
