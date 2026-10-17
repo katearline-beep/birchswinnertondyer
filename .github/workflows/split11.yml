@@ -54,3 +54,5 @@ jobs:
         run: python -I -B research/harness/validate.py
       - name: Reject fabricated review and malformed experiments
         run: python -I -B research/harness/test_validate.py
+      - name: Exact bad-reduction and quadratic-twist root-sign audit
+        run: python -I -B research/anticyclotomic_11/verify_root_sign.py
