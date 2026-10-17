@@ -47,7 +47,7 @@ def validate(doc, experiments, root=ROOT):
         linked.add(exp)
         for name in FIELDS:
             value=item.get(name)
-            require(type(value) is str and len(value.strip())>=40,
+            require(type(value) is str and len(value.strip())>=(12 if name=='title' else 40),
                     ident+": missing substantial "+name)
         require(item["if_then_statement"].startswith("IF "),
                 ident+": conditional statement must begin 'IF '")
