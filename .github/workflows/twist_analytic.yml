@@ -1,0 +1,33 @@
+name: Independent twist L-derivative check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  twist-pari:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install PARI-GP
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pari-gp
+      - name: Independently cross-check twist root number and derivative
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/anticyclotomic_11/twist_analytic.gp 2>&1 | tee twist-output.log
+          if grep -qF '***' twist-output.log; then
+            echo "PARI interpreter error" >&2
+            exit 1
+          fi
+          grep -q '^PARI_NUMERIC rank=1 ' twist-output.log
+          grep -q '^PASS PARI twist sign/conductor/analytic derivative' twist-output.log
