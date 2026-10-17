@@ -283,16 +283,20 @@
       "decisive_observation": "Find a true algebraic object with provable congruence and test it on rank-two control 389a1.",
       "dependencies": [
         "Integral modular-symbol normalization and an interpolation-to-complex-derivative theorem.",
-        "Finite p-adic congruence information alone does not prove any real analytic derivative vanishes."
+        "Finite p-adic congruence information alone does not prove any real analytic derivative vanishes.",
+        "The BKS 2025 arXiv-v1 Mazur–Tate Theorem 1.1 presupposes BSD and generalized Perrin–Riou, and its unconditional rank-one supersingular corollary is inapplicable at our rank-four ordinary 11 curve."
       ],
       "commands": [
-        "python -I -B research/strategy/kill_tests.py"
+        "python -I -B research/strategy/kill_tests.py",
+        "python -I -B research/strategy/mazur_tate_scope_test.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
-        "research/strategy/kill_tests.py"
+        "research/strategy/kill_tests.py",
+        "research/strategy/MAZUR_TATE_2025_SCOPE.md",
+        "research/strategy/mazur_tate_scope_test.py"
       ],
-      "negative_control": "Nonzero integer 11^m passes a congruence to zero mod 11^m.",
+      "negative_control": "Nonzero integer 11^m passes a congruence to zero mod 11^m. Exact applicability checker rejects unknown BSD hypothesis, rank-one corollary for rank four, and squarefree-conductor condition for cyclotomic Q1 of conductor 121.",
       "stop_condition": "Stop when only finite p-adic congruences remain and no bridge to the complex invariant exists.",
       "nonclaims": [
         "No proof of complex analytic rank four",
