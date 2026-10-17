@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "experiments": [
+    {
+      "id": "EX-001",
+      "claim_ids": [
+        "C-0002"
+      ],
+      "status": "computationally_reproduced",
+      "human_reviewed": false,
+      "question": "Do exact local elliptic logarithms at both primes of K above 11 yield the documented rank-three coefficient kernel modulo 11^4?",
+      "decisive_observation": "PARI/GP and rational/projective arithmetic independently yield all twelve residues and the unit determinant modulo 11.",
+      "dependencies": [
+        "Good ordinary reduction at 11",
+        "Correct formal-group normalization by 18*11",
+        "This is a coefficient-module kernel, not a Selmer or global height kernel"
+      ],
+      "commands": [
+        "python -I -B research/split11/kernel_mod11_4.py",
+        "gp -q -f research/split11/pari_split11.gp"
+      ],
+      "artifacts": [
+        "research/split11/KERNEL.md",
+        "research/split11/pari_split11.gp",
+        "research/methodology/local_kernel_negative_controls.py"
+      ],
+      "negative_control": "Mutate a local-log residue by one; an old kernel vector must cease to satisfy the row condition.",
+      "stop_condition": "Do not infer a global derived-height radical unless an independently constructed global height pairing is actually calculated.",
+      "nonclaims": [
+        "No anticyclotomic height value",
+        "No 11-Selmer upper bound",
+        "No BSD result"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "coding theory",
+          "kind": "validation_method",
+          "mechanism": "Finite congruence matrix acts like a parity-check map on a coefficient module.",
+          "proof_boundary": "This finite map is not the Galois cohomology localization defining Selmer.",
+          "validating_test": "research/methodology/local_kernel_negative_controls.py",
+          "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/split11/KERNEL.md"
+        },
+        {
+          "discipline": "control theory",
+          "kind": "analogy",
+          "mechanism": "Identifiability requires distinguishing a measured logarithm map from an unobserved height pairing.",
+          "proof_boundary": "A toy height with the same dimension is not the actual derived height.",
+          "validating_test": "research/methodology/local_kernel_negative_controls.py",
+          "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/INTERDISCIPLINARY_TRANSFER_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "id": "EX-002",
+      "claim_ids": [
+        "C-0005",
+        "C-0006"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does a fully bounded exponential-integral sum, under the modular L-function identity and correct coefficients, enclose L'(E^-7,1) strictly above zero?",
+      "decisive_observation": "Independent rational interval produces a positive lower bound; independent PARI coefficient oracle and numerical derivative provide separate cross-checks.",
+      "dependencies": [
+        "Twist conductor 49*234446 and global sign -1",
+        "Correct all a_n of original E and quadratic character",
+        "Mellin functional-equation derivative identity and normalization",
+        "Provably enclosing E1 and complete tail bound; ability to audit every source"
+      ],
+      "commands": [
+        "python -I -B research/anticyclotomic_11/independent_rational_derivative.py",
+        "gp -q -f research/anticyclotomic_11/twist_analytic.gp"
+      ],
+      "artifacts": [
+        "research/anticyclotomic_11/independent_rational_derivative.py",
+        "research/anticyclotomic_11/DERIVATIVE_CERTIFICATE_AUDIT.md",
+        "research/anticyclotomic_11/twist_analytic.gp"
+      ],
+      "negative_control": "Deliberately corrupt an exponential-tail exponent or a Fourier coefficient; the checked equality/positivity preconditions must reject it.",
+      "stop_condition": "Do not publish a theorem of analytic nonvanishing before Mellin identity, local Euler factors, coefficient oracle, and tail bounds are independently audited.",
+      "nonclaims": [
+        "No mathematical peer review",
+        "Numerical PARI is not an interval proof",
+        "No conclusion that the 11-primary Sha vanishes",
+        "No BSD rank-four proof"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "validated numerics",
+          "kind": "validation_method",
+          "mechanism": "Outward rational enclosures of every finite term and the infinite tail.",
+          "proof_boundary": "Valid enclosures do not verify the assumed analytic identity.",
+          "validating_test": "research/anticyclotomic_11/independent_rational_derivative.py",
+          "reference": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/lseries_ell.html"
+        },
+        {
+          "discipline": "experimental biology",
+          "kind": "validation_method",
+          "mechanism": "Orthogonal assay: modular-form coefficients from PARI versus independently derived coefficient recursion.",
+          "proof_boundary": "Shared mathematical identities remain independent proof obligations.",
+          "validating_test": "research/harness/compare_fourier_coefficients.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html"
+        }
+      ]
+    },
+    {
+      "id": "EX-003",
+      "claim_ids": [
+        "C-0004"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Can the rank-four E/Q and its -7 twist each be given certified 11-Selmer upper bounds 4 and 1?",
+      "decisive_observation": "A mathematically complete global H1/local Kummer presentation gives F11-ranks bounded separately by 4 and 1.",
+      "dependencies": [
+        "Odd-prime quadratic Galois descent and local Kummer compatibility",
+        "Global cohomology presentation must be complete",
+        "All places including 2,7,11,117223 and infinity must be handled"
+      ],
+      "commands": [
+        "python -I -B research/anticyclotomic_11/verify_twist_descent.py"
+      ],
+      "artifacts": [
+        "research/anticyclotomic_11/QUADRATIC_SELMER_SPLITTING.md",
+        "research/anticyclotomic_11/verify_twist_descent.py"
+      ],
+      "negative_control": "Remove a required local Kummer condition; test must detect that any alleged 11-Selmer upper bound is then unjustified.",
+      "stop_condition": "If finite global H1 generators or local conditions cannot be certified, report an open obstruction; do not substitute local logarithm rank.",
+      "nonclaims": [
+        "No Selmer dimensions currently certified",
+        "No Sha finiteness established",
+        "No BSD result"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "representation theory",
+          "kind": "exact_math",
+          "mechanism": "Odd-prime idempotents (1±sigma)/2 split Galois cohomology and classical Selmer conditions over a quadratic field.",
+          "proof_boundary": "Requires a proof of compatibility with local Kummer subspaces, not just modular matrix projectors.",
+          "validating_test": "research/anticyclotomic_11/verify_twist_descent.py",
+          "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/anticyclotomic_11/QUADRATIC_SELMER_SPLITTING.md"
+        }
+      ]
+    }
+  ]
+}
