@@ -34,6 +34,17 @@ python3 -I -B research/strategy/logic_gate_tests.py
 
 This is an organizational quality gate, **not** formal verification of any conjecture. The initial six records are all speculative; nothing here has external expert review.
 
+## Periodic whole-problem checkpoint
+
+[WPR-1](../strategy/FULL_PROBLEM_REVIEW.md) is mandatory at the beginning of each research sprint, at least weekly, after three substantive merges, and before major mathematical announcements. A dated [whole-problem review](../reviews/2026-10-17-whole-problem.md) and its [machine-readable current snapshot](../reviews/current.json) capture general BSD, the original complex analytic-rank obstacle, all six competing leapfrog tracks, falsifiers and reprioritizations. Crucially the review must answer whether anything previously unproved **about the actual BSD conjecture** became proved. No is an allowed and common answer.
+
+```bash
+python3 -I -B research/harness/validate_full_review.py
+python3 -I -B research/harness/test_full_review.py
+```
+
+The validator enforces completeness, review chronology and explicit nonclaims, but neither proves mathematical progress nor guarantees that future scheduled reviews will run. The operating cadence is a **separate human/agent obligation**.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
