@@ -164,17 +164,23 @@
       "decisive_observation": "Map every implication in Burns–Kurihara–Sano 2024 and exhibit the exact missing complex-derivative arrow.",
       "dependencies": [
         "Generalized Perrin–Riou conjecture and precise scope of higher Kato derivative theorems.",
-        "Rank four Mordell–Weil points do not by themselves establish vanishing of the derived Euler-system class."
+        "Rank four Mordell–Weil points do not by themselves establish vanishing of the derived Euler-system class.",
+        "For BKS 2024 cyclotomic Q_n Proposition 4.4, Section 4 assumes Sha(E/Q)[11∞] finite; a mod11 group-ring congruence does not imply integral augmentation containment."
       ],
       "commands": [
-        "python -I -B research/strategy/kill_tests.py"
+        "python -I -B research/strategy/kill_tests.py",
+        "python -I -B research/strategy/cyclotomic_integrality_gate.py",
+        "gp -q -f research/strategy/cyclotomic_field_oracle.gp"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
-        "research/strategy/kill_tests.py"
+        "research/strategy/kill_tests.py",
+        "research/strategy/CYCLOTOMIC_KATO_FILTRATION_GATE.md",
+        "research/strategy/cyclotomic_integrality_gate.py",
+        "research/strategy/cyclotomic_field_oracle.gp"
       ],
-      "negative_control": "A rank-two toy model with identical parity/log data must not be incorrectly certified rank-four.",
-      "stop_condition": "Stop if the result concerns a p-adic order but lacks a proven map to complex L''.",
+      "negative_control": "A rank-two toy model with identical parity/log data must not be incorrectly certified rank-four. In C11, ordinary trace reduces mod11 to T^10 even though its integral augmentation equals 11. A nonzero Iwasawa coefficient 11*T^3 becomes zero at Q1 but nonzero at Q2.",
+      "stop_condition": "Stop if only first-layer mod11 computations, a plain scalar trace, or a theorem requiring unproved Sha(E/Q)[11∞] are available, with no derived cohomology class and no valid comparison to complex L''.",
       "nonclaims": [
         "No proof of complex analytic rank four",
         "No new published theorem or validated reciprocity law"
