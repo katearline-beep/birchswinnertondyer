@@ -40,3 +40,5 @@ jobs:
         run: python -I -B research/split11/independent_check.py
       - name: Higher-precision split-11 kernel (rational + projective cross-check)
         run: python -I -B research/split11/kernel_mod11_4.py
+      - name: Exact Agboola-Castella hypotheses audit at 11
+        run: python -I -B research/anticyclotomic_11/verify_local_hypotheses.py
