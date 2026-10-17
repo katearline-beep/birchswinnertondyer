@@ -50,6 +50,10 @@ For each research direction, assess potentially relevant methods from **other di
 
 This gate is implemented in [AGENTS.md](AGENTS.md) and [research/harness](research/harness/README.md). It is a *research-quality gate*, not a mechanism that automatically produces new theorems.
 
+## Integrality / finite-layer anti-vacuity gate
+
+For claims about \(I\)-adic divisibility, higher Bockstein regulators, or classes defined by inverse limits, check that the computation lives in the **correct integral group ring**, not merely its reduction modulo 11. A single finite-layer zero is insufficient to prove vanishing in the cyclotomic Iwasawa limit. Use two compatible layers or a mathematical lifting theorem. The ordinary trace of \(C_{11}\) is the mandatory false-positive control: its mod-11 reduction is \(T^{10}\), though its integral augmentation is \(11\neq0\). See [C-0008](research/strategy/CYCLOTOMIC_KATO_FILTRATION_GATE.md). This rule is for research validity, **not** a suggestion that Kato's cohomology-valued derived norm equals the scalar trace.
+
 ## Mandatory leapfrog-conjecture gate
 
 Every high-risk research track must have a [leapfrog record](research/harness/leapfrogs.json) meeting [LCP-1](research/strategy/LEAPFROG_PROTOCOL.md): baseline theorem, precise unproved bridge, conjectural IF/THEN implication, mathematical gain, unknown hypotheses, adversarial countermodel, first decisive test, kill criterion, and decision history. Prefer hypotheses that *would actually remove the blocking mathematical implication* over more digits of a different invariant. Try one conservative lemma, one credible moonshot, and one wild falsifiable alternative; pursuing all three is optional.

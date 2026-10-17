@@ -6,14 +6,14 @@
       "id": "LF-001",
       "experiment_id": "EX-004",
       "title": "H1 derived Kato -> complex L''",
-      "known_baseline": "Known algebraic rank-four points; BKS derived norm in augmentation I^3 if Theorem 1.3 conditions hold.",
+      "known_baseline": "Known algebraic rank-four points; BKS derived norm in augmentation I^3 if Theorem 1.3 conditions hold. Published BKS Proposition 4.4 concerns first layers Q_n of cyclotomic Z11-extension, with standing Sha(E/Q)[11∞] finiteness; it does not prove complex L'' vanishing.",
       "missing_arrow": "Augmentation filtration I^3 of derived Kato class in H1 ⊗ Z11[G] is not a statement about the complex Taylor coefficient.",
       "hypothetical_bridge": "Find a well-defined comparison map from independently computed derived classes to the complex L'' coefficient, with explicit noncircular hypotheses and injectivity on the tested quotient.",
       "if_then_statement": "IF such a comparison exists and maps a rigorously verified annihilated class to L'' without circular assumptions, THEN L''(E,1)=0.",
       "would_unlock": "A proof of the missing comparison and verified hypotheses would rule out analytic rank two for E.",
-      "unverified_dependencies": "Burns–Kurihara–Sano Theorem 1.3 assumes 11-primary Sha(E/F) finite among other requirements; the leading-term formula is conjectural and involves analytic input. Candidate F=Q(zeta_23)^+ has not established Sha(E/F)[11^infinity] finiteness. Exact input checks and standard Tate/unipotent arguments now address the local torsion and SL2(Z11)-image conditions for F=Q(zeta23)^+, pending expert review, but Sha(E/F)[11^infinity] remains unproved.",
-      "negative_control": "The I^3 inclusion also holds in a toy with complex germ t^2, so it does not force a complex zero without a bridge.",
-      "next_decisive_test": "Determine whether the derived norm modulo I^4 over F=Q(zeta23)^+ can be computed independently of finiteness of Sha(E/F)[11∞]; check the mathematical definitions, integral group ring torsion, and any genuine map to complex L'' before spending on large computations.",
+      "unverified_dependencies": "Burns–Kurihara–Sano Theorem 1.3 assumes 11-primary Sha(E/F) finite among other requirements; the leading-term formula is conjectural and involves analytic input. Candidate F=Q(zeta_23)^+ has not established Sha(E/F)[11^infinity] finiteness. Exact input checks and standard Tate/unipotent arguments now address the local torsion and SL2(Z11)-image conditions for F=Q(zeta23)^+, pending expert review, but Sha(E/F)[11^infinity] remains unproved. Cyclotomic BKS Proposition 4.4 is conditional on standing Sha(E/Q)[11∞] finiteness; its Iwasawa graded coefficient is not known and no reciprocity to complex L'' is constructed.",
+      "negative_control": "The I^3 inclusion also holds in a toy with complex germ t^2, so it does not force a complex zero without a bridge. The ordinary trace of C11 reduces mod11 to T^10 despite nonzero integral augmentation 11, and an infinite class 11*T^3 vanishes in first I1³/I1⁴ but not second I2³/I2⁴.",
+      "next_decisive_test": "Use canonical degree-11 cyclotomic Q1 subset Q(zeta_121), not only Q(zeta23)^+, and test integral I1³/I1⁴ data with Q2 compatibility. First identify actual cohomological derived zeta element and determine whether its leading graded class is computationally accessible without Sha(E/Q)[11∞] finiteness.",
       "kill_criterion": "Stop if the only accessible relation is an augmentation divisibility statement or depends on rank equality as a hypothesis.",
       "source": "https://doi.org/10.2969/jmsj/90699069",
       "test_path": "research/strategy/logic_gate_tests.py",
@@ -38,6 +38,11 @@
           "date": "2026-10-17",
           "outcome": "active",
           "evidence": "New exact local torsion and finite root subgroup tests; Tate group argument drafted; only Sha finiteness and missing complex comparison remain decisive conceptual barriers."
+        },
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Exact field/augmentation audits suggest canonical Q1/Q2 cyclotomic test; first-layer mod11 trace and 11*T^3 are explicit false-positive controls; source section 4 retains Sha(E/Q) hypothesis."
         }
       ]
     },

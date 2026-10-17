@@ -1,0 +1,39 @@
+name: Canonical cyclotomic field oracle
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cyclotomic-field-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pari:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install independent PARI-GP arithmetic library
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pari-gp
+          gp --version
+      - name: Exact conductor and discriminant checks for two cyclic degree-11 fields
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/strategy/cyclotomic_field_oracle.gp 2>&1 | tee field-oracle-output.log
+          if grep -qF '***' field-oracle-output.log; then
+            echo "GP interpreter error" >&2
+            exit 1
+          fi
+          grep -q '^PASS PARI C11: first cyclotomic Z11 layer' field-oracle-output.log
+          grep -q '^PASS PARI C11: previous Q(zeta23)' field-oracle-output.log
+          grep -q '^PASS PARI C11: field discriminants differ' field-oracle-output.log
