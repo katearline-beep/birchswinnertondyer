@@ -77,7 +77,7 @@ assert minor==1537 and minor%p==8
 # Distinct algorithm: Jacobian projective operations over Z/(11**5).
 # On this coordinate implementation P4 becomes nonprimitive, so the
 # second computation explicitly covers only P1,P2,P3,R,H.
-modular.mod=N
+modular.modulus=N
 modular.roots=roots
 checked={}
 for key in ('P1','P2','P3','R','H'):
