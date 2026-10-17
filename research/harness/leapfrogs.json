@@ -11,9 +11,9 @@
       "hypothetical_bridge": "Find a well-defined comparison map from independently computed derived classes to the complex L'' coefficient, with explicit noncircular hypotheses and injectivity on the tested quotient.",
       "if_then_statement": "IF such a comparison exists and maps a rigorously verified annihilated class to L'' without circular assumptions, THEN L''(E,1)=0.",
       "would_unlock": "A proof of the missing comparison and verified hypotheses would rule out analytic rank two for E.",
-      "unverified_dependencies": "Burns–Kurihara–Sano Theorem 1.3 assumes 11-primary Sha(E/F) finite among other requirements; the leading-term formula is conjectural and involves analytic input.",
+      "unverified_dependencies": "Burns–Kurihara–Sano Theorem 1.3 assumes 11-primary Sha(E/F) finite among other requirements; the leading-term formula is conjectural and involves analytic input. Candidate F=Q(zeta_23)^+ has not established Sha(E/F)[11^infinity] finiteness.",
       "negative_control": "The I^3 inclusion also holds in a toy with complex germ t^2, so it does not force a complex zero without a bridge.",
-      "next_decisive_test": "Explicitly specify the domain and target of the comparison; audit literature for such a map, beginning with the published theorem's hypotheses.",
+      "next_decisive_test": "For real cyclotomic F=Q(zeta_23)^+ of degree 11, first verify nonzero I^3/I^4 (rather than vacuous C2 augmentation), check E(Q_23)[11]=0, then enumerate ALL BKS Theorem 1.3 hypotheses and decide whether a derived norm/leading-term object can be computed without assuming the needed Sha finiteness.",
       "kill_criterion": "Stop if the only accessible relation is an augmentation divisibility statement or depends on rank equality as a hypothesis.",
       "source": "https://doi.org/10.2969/jmsj/90699069",
       "test_path": "research/strategy/logic_gate_tests.py",
@@ -28,6 +28,11 @@
           "date": "2026-10-17",
           "outcome": "active",
           "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        },
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Proved C2 I^3/I^4=0, C11 mod11 I^3/I^4 nonzero; independently test point count at 23 and document Sha obstruction."
         }
       ]
     },
