@@ -29,7 +29,7 @@ CERTIFIED: L_prime(E_twist_minus7,1) lies in
 CERTIFIED: L_prime(E_twist_minus7,1) > 0
 ```
 
-**Interpret 'CERTIFIED' here as the historical program's output, not our acceptance of a proof.** The finite Fourier-sum computation and the analytic identity both still require independent audit. The 6,000-term historical script previously reported an interval approximately (34.1691,34.1749), but this current audit did not independently rerun it.
+**Interpret 'CERTIFIED' here as the historical program's output, not our acceptance of a proof.** A *new, separately written* exact-rational finite-sum implementation is now available below; the original historical implementation and the analytic identity still require mathematical review. The 6,000-term historical script previously reported an interval approximately (34.1691,34.1749), but this current audit did not independently rerun it.
 
 ## Rechecked exact mathematical bounds
 
@@ -46,15 +46,33 @@ It also has a deliberately corrupt-tail-exponent negative control: the erroneous
 
 - **Central identity**: derive the exact factor 2 and kernel `E₁(cn)/n` from the Mellin transform, the normalization of the completed L-function, and the twist's functional equation sign. Check all constants and conductor/root sign against independent sources.
 - **Fourier coefficients**: re-evaluate all `a_n` on the minimal original model, including bad primes 2 and 117223, and verify the multiplicative/Hecke prime-power recursion.
-- **Finite-series enclosures**: import the exact source, isolate logarithm and Euler–Mascheroni error estimates, verify every sign/rounding branch, then run a separate FLINT/Arb enclosure calculation.
+- **Finite-series enclosures**: the new independent exact-rational program below recomputes them. Still import the original source and audit every original rounding branch; obtain a third implementation using FLINT/Arb, and compare all 2,000 Fourier coefficients and normalization choices.
 - **Tail assumption**: independently justify `|a_n|≤d(n)√n` including bad prime factors, and the relevant `E₁` bound. The exact arithmetical tail algebra alone is insufficient without its theorem hypotheses.
 - **System integrity**: independent machine/library implementation, version-pinned dependencies, full raw logs, and negative tests for altered conductor, root sign, coefficient input and exceptional points.
 
 ## Current logical boundary
 
-PARI/GP 2.15.4 reports `L'(E^-7,1) ≈34.17203446096447` and sign −1, agreeing with the historical finite-series enclosure. This is independent **numerical corroboration**. The component auditor now provides a separate exact check of some error terms. **Neither alone nor together currently constitutes a completely audited proof of analytic rank one.**
+PARI/GP 2.15.4 reports `L'(E^-7,1) ≈34.17203446096447` and sign −1, agreeing with the historical finite-series enclosure. This is independent **numerical corroboration**. The component auditor separately checks exact error terms, and the new per-term rational script independently encloses the entire 2,000-term finite sum. **The conditional computational implication is stronger, but the analytic identity and theorem hypotheses still require expert review before a claim of a fully vetted proof of analytic rank one.**
 
 If a fully rigorous derivative nonvanishing certificate is accepted, the appropriate Gross–Zagier/Kolyvagin theorems would imply rank one and finiteness of Sha for the twist. This would **not** prove triviality of its 11-primary Sha or settle the rank-four factor.
+
+## Additional exact-rational finite-sum verification — independent algorithm
+
+The new [independent rational certificate](independent_rational_derivative.py), run using only Python's standard library, computes the 2,000-term finite sum by **rational evaluation of every full term**, with outward fixed-point rounding only when the term enters the accumulator. The earlier historical program instead rounded *inside* its intermediate transcendental series. They share the elliptic curve and standard analytic definitions, but their interval algorithms differ.
+
+This new calculation reports:
+
+```
+FINITE EXACT INTERVAL 34.17447712 34.17449367
+RATIONAL TAIL UPPER 14.321932128848701
+CONDITIONAL LPRIME INTERVAL 19.852544991151298 48.4964257988487
+```
+
+The displayed decimal bounds are summaries rounded from the internal *exact rational* interval. The program asserts the key strict inequalities before printing. It uses fresh rational power series for logarithms/Euler's constant and the exponential integral; independent prime point counts and Hecke recurrences compute the 2,000 Fourier coefficients.
+
+**Proof obligation remains:** the identity `L'(1)=2Σ a_nχ(n)E₁(cn)/n`, conductor/sign, the global Fourier coefficients, and the coefficient bound are mathematical premises not established *by* the program. An expert should examine the code and analytic derivation. The word 'certificate' denotes a candidate conditional arithmetic certificate, **not** an externally reviewed BSD theorem.
+
+The original historical code's SHA-256 digests remain recorded above; it still needs to be committed unchanged as a provenance artifact. This new separate implementation is already in the repository and running under CI.
 
 ## Related
 
