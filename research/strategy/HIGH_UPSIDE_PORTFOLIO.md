@@ -55,6 +55,19 @@ Finite calculations mod 11^m can never prove a real number zero without a valid 
 
 Implement a PARI/GP program using documented `ellL1(E,r)` for r=2,4, with different numeric precisions, plus the 389a1 control. No threshold-based rank claiming. The test should succeed only if it actually executed and output data, and should explicitly print that apparent zeros are inconclusive. An independent Sage/FLINT route and a rigorous interval estimate are separate later tasks. **A nonzero rigorous L'' for E=234446.a1 would be a purported counterexample to BSD; rule out software, model, and interval errors *before* any public announcement.**
 
+## First diagnostic observation (2026-10-17)
+
+The new **independent PARI/GP** direct-derivative workflow ran on the original model and the rank-two control 389a1. Using documented `ellL1(E,r)` (numerical method, *not* zero certification):
+
+```
+389a1:          L''(1) ~ 1.51863300057685354046
+234446.a1:      L''(1) ~ -2.33089041160e-56   (40-digit calculation)
+234446.a1:      L''(1) ~ -2.55240108738e-96   (90-digit calculation)
+234446.a1:    L''''(1) ~ 214.65233750162133711402 (stable 40/90-digit)
+```
+
+This strongly supports a numerical *analytic rank-four* classification for 234446.a1: the apparent second derivative shrinks with precision while fourth derivative is stable and nonzero; the rank-two control's second derivative remains visibly nonzero. **This is not a newly proved mathematical fact.** The small values are consistent with numerical error/truncation and there is no exact-zero certificate. In particular, the apparent 90-digit residual at approximately 10^-96 is not meaningful evidence of a literally negative nonzero derivative. It is exploratory guidance for H1/H3/H6 only.
+
 ### H6 — Period identity search
 
 Explore whether an explicit modular parametrization, a Hecke projector, or a geometric cycle yields a *second-order* annihilation not explained by ordinary even functional-equation parity. Try exact candidate identities in period/cohomology spaces and falsify on rank-two controls. If every candidate is only an Atkin–Lehner sign +1 relation, it cannot force a second-order zero: stop.
