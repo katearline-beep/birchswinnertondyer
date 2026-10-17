@@ -46,6 +46,24 @@ For this particular curve the original minimal-model discriminant is 4·117223. 
 
 **Choosing F=Q is not a shortcut**: the trivial group-ring augmentation ideal contains no derived directional information; a finite extension is essential for any nontrivial augmentation-filtration experiment.
 
+## A sharper field-choice experiment: avoid vacuous augmentation layers
+
+The extension F must be finite **real** abelian. Choosing a real *quadratic* field is a trap for our planned third augmentation layer at p=11: write G=C₂ with generator σ and I=(σ−1) in Z₁₁[G]. Since (σ−1)²=−2(σ−1) and −2 is an 11-adic unit, **I²=I**, hence I³=I⁴=I. There is no nontrivial I³/I⁴ layer to interrogate. More generally this holds when 11 does not divide |G| because the augmentation ideal splits off by the averaging idempotent.
+
+A better **structural test** is F=Q(ζ₂₃)⁺, the maximal real subfield of the 23rd cyclotomic field. It is Galois over Q of degree (23−1)/2=**11**, so its group ring mod 11 is
+
+```
+F₁₁[C₁₁] ≅ F₁₁[T]/((1+T)¹¹−1) = F₁₁[T]/(T¹¹).
+```
+
+Thus I³/I⁴ is **nonzero modulo 11**, and a third augmentation layer genuinely encodes new information. This is not yet a computation of the derived norm or regulator, but it prevents an algebraically empty experiment.
+
+The only **newly ramified rational prime** for this F is 23. E has good reduction there and exact enumeration on its minimal model gives \(\#E(\mathbb F_{23})=30\), not divisible by 11. For good reduction at 23, reduction injects prime-to-23 torsion; therefore E(Q₂₃)[11]=0, satisfying the *newly introduced* local torsion requirement. The control conductor ℓ=199 yields E(F₁₉₉)=220 divisible by 11 and therefore fails the local no-11-torsion condition (the étale prime-to-199 torsion lifts). This is an **adversarial field-screening comparison** rather than arbitrary candidate selection.
+
+Reproduce: [kato_field_gate.py](kato_field_gate.py) performs exact point counts and finite group-ring identities. Existing checks suggest the original bad primes 2,117223 and the place 11 have favorable local 11-torsion behavior; these remain subject to a **full** place-by-place proof, alongside the p-adic Galois image. Above all, **Sha(E/F)[11∞] finiteness is NOT KNOWN**, so Theorem 1.3 cannot presently be applied unconditionally in this new field.
+
+**Decision:** prefer F=Q(ζ₂₃)⁺ over real quadratic extensions for a first genuine I³/I⁴ experiment. Next define a computable derived norm or Bockstein map **without assuming Sha finiteness**, or show that no such certificate is presently feasible. This is field selection and obstruction identification, not progress on complex L'' by itself.
+
 ## Three research hypotheses of increasing risk
 
 **K1 (low risk, precise):** There is a suitable finite real abelian field F and a choice of p=11 satisfying (a)–(d). *Falsifier:* 11-primary Sha finiteness has no unconditional certificate or one local torsion/imaging condition fails. This merely accesses an **already proven** derived containment; it does not address complex L''.
