@@ -31,3 +31,7 @@ The script result is a reproducible computational check, not a formal proof of i
 6. Check the determinant and clarify the exact domain/codomain of the induced map.
 
 **Review status:** independently implemented with two AI-authored algorithms; independent human mathematical review outstanding. See [C-0001](../../CLAIMS.md).
+
+## Third-party PARI/GP cross-check (C-0002)
+
+A separate PARI/GP 2.15.4 program now checks **all six** local logarithm columns at **both** split embeddings modulo 11^4, including P4. See [PARI validation and recorded CI correction](PARI_VALIDATION.md). The local finite congruence is corroborated using the mature `ellpadiclog` implementation. Mathematical peer review of the formal-group assumptions and any global heights remains outstanding.
