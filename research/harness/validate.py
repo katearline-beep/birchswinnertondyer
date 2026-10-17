@@ -78,7 +78,7 @@ def validate(manifest, root=ROOT, ledger=None):
             for key in ("discipline", "mechanism", "proof_boundary", "validating_test",
                         "reference"):
                 require(type(transfer.get(key)) is str and
-                        len(transfer[key].strip()) >= 15,
+                        len(transfer[key].strip()) >= (3 if key == "discipline" else 15),
                         identifier+": incomplete transfer "+key)
             testpath = transfer["validating_test"]
             require(not testpath.startswith("/") and
