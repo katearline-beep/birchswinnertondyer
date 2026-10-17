@@ -15,6 +15,15 @@
 - Independent implementation, property tests, or cross-checks:
 - Expected CI checks:
 
+## Interdisciplinary transfer and experiment harness
+- Technique(s) considered from other disciplines, including discarded directions:
+- Exact theorem/algorithm/validation method or analogy only?
+- Translation to the precise arithmetic object and proof hypotheses:
+- What failure/negative control could refute the proposed use?
+- Stop condition and next most informative experiment:
+- `research/harness/experiments.json` updated (or infrastructure-only justification):
+- Confirmed `python3 -I -B research/harness/validate.py` and negative tests:
+
 ## Integrity
 - Prior-art search:
 - AI assistance and role:
