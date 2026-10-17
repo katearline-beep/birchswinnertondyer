@@ -33,6 +33,13 @@
 - LCP-1 record updated, or why PR is infrastructure-only:
 - Does not substitute augmentation-ideal vanishing for a complex L-derivative:
 
+## Periodic whole-BSD review (WPR-1)
+- Latest [whole-problem snapshot](../../research/harness/reviews.json) and date:
+- Have three research PRs merged, a week elapsed during active research, or a major finding/priority change occurred? If yes, append a new review.
+- Does this contribution affect the exact complex L'' gap, full Sha/leading formula, or general BSD? State the *proved* implication (or **no direct bridge**).
+- Source prior art / numeric corroboration / conditional lemma / independently reviewed theorem classification:
+- Which route is now more or less promising, and why?
+
 ## Integrity
 - Prior-art search:
 - AI assistance and role:
