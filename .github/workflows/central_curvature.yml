@@ -33,3 +33,5 @@ jobs:
           grep -q '^PASS central derivative exploratory diagnostics' central-diagnostic.log
       - name: Formal countermodel and factorization kill tests
         run: python3 -I -B research/strategy/kill_tests.py
+      - name: Enumerate eligible quadratic fields for H3
+        run: python3 -I -B research/strategy/field_tomography_candidates.py
