@@ -130,7 +130,9 @@
     "research/strategy/kill_tests.py",
     "https://arxiv.org/abs/2408.04375",
     "https://arxiv.org/abs/2603.15795",
-    "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1"
+    "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1",
+    "research/strategy/H3_DERIVATIVE_ORDER_AUDIT.md",
+    "research/strategy/h3_first_height_no_go.py"
   ],
   "journal_path": "research/reviews/2026-10-17-whole-problem.md",
   "not_established": [
