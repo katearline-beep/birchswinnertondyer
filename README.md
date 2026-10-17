@@ -27,6 +27,10 @@ python3 -I -B research/split11/independent_check.py
 
 GitHub Actions runs both on Python 3.11, 3.12, and 3.13, with immutable pinned actions.
 
+## High-risk leapfrog portfolio
+
+[Leapfrog conjecture protocol](research/strategy/LEAPFROG_PROTOCOL.md) and [H1 derived-Kato gap audit](research/strategy/KATO_BRIDGE_AUDIT.md) are now part of the standing [AI-agent contract](AGENTS.md). The accompanying [leapfrog research registry](research/harness/leapfrogs.json) keeps six moonshot directions falsifiable, explicit about missing mathematical bridges and willing to be killed. These are **speculative ideas**, not newly established theorems.
+
 ## Working method
 
 One narrowly scoped claim per issue/PR; define mathematical objects and dependencies; attempt to falsify; use exact arithmetic or certified error bounds; compare an independent algorithm; document the limits. Do not move a result to “proved” just because CI is green. We welcome corrections more than publicity.
