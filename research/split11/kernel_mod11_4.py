@@ -56,7 +56,7 @@ expected={
  'R':(8215,6426), 'H':(1495,7921),
 }
 assert logs==expected,(logs,expected)
-assert all(tuple(v%121 for v in logs[k])==exact.expect[k]
+assert all(tuple(v%121 for v in logs[k])==exact.logs[k]
            for k in logs)
 assert all((2*logs['H'][j]-logs['P3'][j]-logs['P4'][j]
             -logs['R'][j])%M==0 for j in (0,1))
