@@ -8,7 +8,7 @@ module = run_path(str(Path(__file__).resolve().with_name("validate.py")))
 MANIFEST, validate = module["MANIFEST"], module["validate"]
 
 base=json.loads(MANIFEST.read_text(encoding="utf8"))
-assert validate(base)==3
+assert validate(base)==len(base["experiments"])
 
 def rejects(mutator, label):
     candidate=deepcopy(base)

@@ -152,6 +152,232 @@
           "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/anticyclotomic_11/QUADRATIC_SELMER_SPLITTING.md"
         }
       ]
+    },
+    {
+      "id": "EX-004",
+      "claim_ids": [
+        "C-0003"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Can a derived Kato explicit reciprocity implication from four Kummer classes force the complex L''(E,1) to vanish, and which hypotheses are absent in known theorems?",
+      "decisive_observation": "Map every implication in Burns–Kurihara–Sano 2024 and exhibit the exact missing complex-derivative arrow.",
+      "dependencies": [
+        "Generalized Perrin–Riou conjecture and precise scope of higher Kato derivative theorems.",
+        "Rank four Mordell–Weil points do not by themselves establish vanishing of the derived Euler-system class."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py"
+      ],
+      "negative_control": "A rank-two toy model with identical parity/log data must not be incorrectly certified rank-four.",
+      "stop_condition": "Stop if the result concerns a p-adic order but lacks a proven map to complex L''.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "Euler systems",
+          "kind": "exact_math",
+          "mechanism": "Published Kato derived-class relations are mathematical constructions that may organize the desired bridge.",
+          "proof_boundary": "Current theorems must not be presumed to establish rank equality in degree four.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://doi.org/10.2969/jmsj/90699069"
+        }
+      ]
+    },
+    {
+      "id": "EX-005",
+      "claim_ids": [
+        "C-0003"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Does a mixed cyclotomic–anticyclotomic height/Bockstein reciprocity constrain the original complex second derivative, with a fully specified map?",
+      "decisive_observation": "Write the missing comparison law and calculate a genuine one-place modified Selmer cross-height before inferring any radical.",
+      "dependencies": [
+        "Choice of p=11 local splitting, anticyclotomic character and full Selmer complex.",
+        "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py"
+      ],
+      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical.",
+      "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "homological algebra",
+          "kind": "exact_math",
+          "mechanism": "Bockstein maps and Selmer complexes supply real mathematical constructions of derived pairings.",
+          "proof_boundary": "No current computation relates their p-adic derivative directly to the complex L'' value.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://arxiv.org/abs/2308.10474"
+        }
+      ]
+    },
+    {
+      "id": "EX-006",
+      "claim_ids": [
+        "C-0004"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Can a higher Heegner-cycle formula force (L(E/K_D))'''(1)=0 for a twist with L'(E^D,1) nonzero, hence L''(E,1)=0?",
+      "decisive_observation": "The exact local splitting screen yields fundamental discriminants -7,-87,-95,-127; no higher Gross-Zagier theorem or twist L' nonvanishing outside -7 is yet known.",
+      "dependencies": [
+        "Conductor splitting, odd root number of twist and certified nonzero twist first derivative.",
+        "A nonzero twist derivative is essential for recovering L'' from the cubic base-change derivative."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py",
+        "python -I -B research/strategy/field_tomography_candidates.py"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py",
+        "research/strategy/field_tomography_candidates.py"
+      ],
+      "negative_control": "Using a twist with zero first derivative destroys the converse inference.",
+      "stop_condition": "Stop if varying fields yields only a tautological analytic factorization with no geometric identity.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "representation theory",
+          "kind": "exact_math",
+          "mechanism": "The base-change L-function factors as a product with its quadratic twist and derivatives obey Leibniz.",
+          "proof_boundary": "The missing ingredient is a nontrivial geometric vanishing theorem for the third derivative.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://doi.org/10.5802/jtnb.1174"
+        }
+      ]
+    },
+    {
+      "id": "EX-007",
+      "claim_ids": [
+        "C-0004"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Can compatible Mazur–Tate/modular-symbol congruences be linked by a rigorous period comparison to complex L''(E,1)?",
+      "decisive_observation": "Find a true algebraic object with provable congruence and test it on rank-two control 389a1.",
+      "dependencies": [
+        "Integral modular-symbol normalization and an interpolation-to-complex-derivative theorem.",
+        "Finite p-adic congruence information alone does not prove any real analytic derivative vanishes."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py"
+      ],
+      "negative_control": "Nonzero integer 11^m passes a congruence to zero mod 11^m.",
+      "stop_condition": "Stop when only finite p-adic congruences remain and no bridge to the complex invariant exists.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "coding theory",
+          "kind": "validation_method",
+          "mechanism": "Finite-field congruence checks and adversarial controls help expose false interpolation claims.",
+          "proof_boundary": "A finite congruence has no automatic implication for a transcendental complex derivative.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://doi.org/10.2969/jmsj/90699069"
+        }
+      ]
+    },
+    {
+      "id": "EX-008",
+      "claim_ids": [
+        "C-0003"
+      ],
+      "status": "computationally_reproduced",
+      "human_reviewed": false,
+      "question": "Do independent numerical central derivatives suggest an error or an unusual structural relation for the rank-four curve relative to a rank-two control?",
+      "decisive_observation": "PARI ellL1 finds rank-two control 389a1 L'' about 1.518633; rank-four E L'' about -2.33e-56 at 40-digit calculation and -2.55e-96 at 90-digit; fourth derivative stable near 214.6523375. This is purely numerical evidence and cannot certify zero.",
+      "dependencies": [
+        "PARI ellL1 computes approximate complex derivatives; elliptic model and precision must be fixed.",
+        "Even sign and a numerically tiny second derivative do not prove analytic order at least four."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py",
+        "gp -q -f research/strategy/central_derivative_diagnostic.gp"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py",
+        "research/strategy/central_derivative_diagnostic.gp"
+      ],
+      "negative_control": "Rank-two control has nonzero second derivative despite the same even functional-equation sign.",
+      "stop_condition": "Stop if no theorem or exact identity emerges; never treat high-precision near-zero as proof.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "metrology",
+          "kind": "validation_method",
+          "mechanism": "Precision sweeps and positive/negative controls detect software/normalization errors.",
+          "proof_boundary": "Only a rigorous nonzero enclosure or a mathematical zero identity is a theorem-level certificate.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html"
+        }
+      ]
+    },
+    {
+      "id": "EX-009",
+      "claim_ids": [
+        "C-0003"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "Is there an additional Hecke/geometric period annihilation identity forcing second-order vanishing beyond ordinary functional-equation parity?",
+      "decisive_observation": "Construct a precise period-space projector and test whether it kills rank-two controls before claiming it kills rank-four E.",
+      "dependencies": [
+        "Exact Hecke and Atkin–Lehner operators and the actual realization of second derivatives.",
+        "The generic positive root sign only forces odd derivatives to vanish, not the second."
+      ],
+      "commands": [
+        "python -I -B research/strategy/kill_tests.py"
+      ],
+      "artifacts": [
+        "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+        "research/strategy/kill_tests.py"
+      ],
+      "negative_control": "Even Taylor germs x^2 and x^4 obey the same parity yet have different second derivative.",
+      "stop_condition": "Stop if the candidate reduces to root-sign parity or an unsupported period identification.",
+      "nonclaims": [
+        "No proof of complex analytic rank four",
+        "No new published theorem or validated reciprocity law"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "geometry",
+          "kind": "analogy",
+          "mechanism": "Search for a geometric period cancellation but only claim it after an exact projector is proved.",
+          "proof_boundary": "At present no established geometric projector producing this second-order vanishing is identified.",
+          "validating_test": "research/strategy/kill_tests.py",
+          "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/strategy/HIGH_UPSIDE_PORTFOLIO.md"
+        }
+      ]
     }
   ]
 }
