@@ -1,7 +1,33 @@
-# Birch–Swinnerton-Dyer research notebook
+# Birch–Swinnerton-Dyer — open arithmetic research notebook
 
-An open research notebook for reproducible computations, references, failed approaches, and carefully scoped questions about the Birch–Swinnerton-Dyer conjecture.
+**Status:** exploratory mathematics and independently checkable computations. **No proof of the BSD conjecture, no claim of novel mathematical results, and no independent expert review yet.**
 
-**This repository does not claim a proof of the BSD conjecture.** Contributions and independent mathematical review are welcome.
+We investigate specific elliptic curves and the boundary between numerical evidence, exact computation, conditional mathematical implications, and proof. All reasoning and code remain open to correction. This project includes AI-assisted contributions, explicitly attributed as such.
 
-Research notes and verifiers will be proposed via pull requests so that calculations, assumptions, and limitations can be examined before merging.
+## Start here
+
+- [Research integrity standards](RESEARCH_STANDARDS.md): statuses, proof obligations, provenance, correction policy, and review workflow.
+- [Claim ledger](CLAIMS.md): precise claims, evidence, limitations, and outstanding review.
+- [Contribution guidelines](CONTRIBUTING.md): how to provide an independent check or report an error.
+- [Split-11 example](research/split11/NOTE.md) and [reproduction protocol](research/split11/REPRODUCIBILITY.md).
+
+### Current scoped computational result
+
+For the curve `y²=x³−1267x+17230` over `Q(√−7)`, two AI-authored but algorithmically distinct exact-arithmetic Python programs produce a normalized local 11-adic logarithm minor equal to **85 modulo 121** (a unit modulo 11). See claim C-0001. This is **not** an independently peer-reviewed proof, a computation of anticyclotomic heights, or a BSD advance.
+
+Reproduce without third-party packages:
+
+```bash
+python3 -I -B research/split11/verify.py
+python3 -I -B research/split11/independent_check.py
+```
+
+GitHub Actions runs both on Python 3.11, 3.12, and 3.13, with immutable pinned actions.
+
+## Working method
+
+One narrowly scoped claim per issue/PR; define mathematical objects and dependencies; attempt to falsify; use exact arithmetic or certified error bounds; compare an independent algorithm; document the limits. Do not move a result to “proved” just because CI is green. We welcome corrections more than publicity.
+
+## Attribution, permissions, and reuse
+
+Research emerged from human–AI exploration in October 2026. The code and documents in this repository are not yet accompanied by an explicit reuse license: public visibility alone is **not** permission to reuse or redistribute. Selecting a license is an open maintainer decision. Please provide attribution for both human and AI contributions when describing this work.
