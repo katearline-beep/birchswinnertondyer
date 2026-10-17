@@ -62,3 +62,5 @@ jobs:
         run: python -I -B research/harness/test_leapfrogs.py
       - name: Derived Kato vs complex-L nonimplication tests
         run: python -I -B research/strategy/logic_gate_tests.py
+      - name: Exact C11 augmentation and local torsion field-selection gate
+        run: python -I -B research/strategy/kato_field_gate.py
