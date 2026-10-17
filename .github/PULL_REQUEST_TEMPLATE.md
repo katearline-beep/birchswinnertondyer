@@ -24,6 +24,14 @@
 - `research/harness/experiments.json` updated (or infrastructure-only justification):
 - Confirmed `python3 -I -B research/harness/validate.py` and negative tests:
 
+## Periodic full BSD review (WPR-1)
+- Date of current whole-problem checkpoint and next due:
+- Is this a major proof claim, third research merge, or a change of research priority requiring a new checkpoint?
+- Did any **new proved implication** toward original complex L''(E,1)=0 or full BSD actually emerge? If none, explicitly state none:
+- General BSD rank equality vs this curve's exact analytic rank vs Sha/leading coefficient kept separate:
+- Effect on all six high-risk tracks and next highest-value falsifier:
+- `research/reviews/current.json` updated if checkpoint due; validators and negative controls passed:
+
 ## Leapfrog conjecture (mandatory on research PRs)
 - Baseline theorem and its exact output type:
 - What mathematical obstruction would the leapfrog bypass?
