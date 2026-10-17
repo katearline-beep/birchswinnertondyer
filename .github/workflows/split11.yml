@@ -56,3 +56,9 @@ jobs:
         run: python -I -B research/harness/test_validate.py
       - name: Exact bad-reduction and quadratic-twist root-sign audit
         run: python -I -B research/anticyclotomic_11/verify_root_sign.py
+      - name: Leapfrog research protocol and bridge documentation
+        run: python -I -B research/harness/validate_leapfrogs.py
+      - name: Negative controls for speculative leapfrog claims
+        run: python -I -B research/harness/test_leapfrogs.py
+      - name: Derived Kato vs complex-L nonimplication tests
+        run: python -I -B research/strategy/logic_gate_tests.py
