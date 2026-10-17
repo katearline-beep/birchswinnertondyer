@@ -3,7 +3,9 @@
 from copy import deepcopy
 import json
 from pathlib import Path
-from validate import MANIFEST, validate
+from runpy import run_path
+module = run_path(str(Path(__file__).resolve().with_name("validate.py")))
+MANIFEST, validate = module["MANIFEST"], module["validate"]
 
 base=json.loads(MANIFEST.read_text(encoding="utf8"))
 assert validate(base)==3
