@@ -235,17 +235,19 @@
       "status": "planned",
       "human_reviewed": false,
       "question": "Can a higher Heegner-cycle formula force (L(E/K_D))'''(1)=0 for a twist with L'(E^D,1) nonzero, hence L''(E,1)=0?",
-      "decisive_observation": "The derivative-of-a-product identity holds; find a proved geometric third-derivative identity for one applicable quadratic field.",
+      "decisive_observation": "The exact local splitting screen yields fundamental discriminants -7,-87,-95,-127; no higher Gross-Zagier theorem or twist L' nonvanishing outside -7 is yet known.",
       "dependencies": [
         "Conductor splitting, odd root number of twist and certified nonzero twist first derivative.",
         "A nonzero twist derivative is essential for recovering L'' from the cubic base-change derivative."
       ],
       "commands": [
-        "python -I -B research/strategy/kill_tests.py"
+        "python -I -B research/strategy/kill_tests.py",
+        "python -I -B research/strategy/field_tomography_candidates.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
-        "research/strategy/kill_tests.py"
+        "research/strategy/kill_tests.py",
+        "research/strategy/field_tomography_candidates.py"
       ],
       "negative_control": "Using a twist with zero first derivative destroys the converse inference.",
       "stop_condition": "Stop if varying fields yields only a tautological analytic factorization with no geometric identity.",
@@ -306,10 +308,10 @@
       "claim_ids": [
         "C-0003"
       ],
-      "status": "planned",
+      "status": "computationally_reproduced",
       "human_reviewed": false,
       "question": "Do independent numerical central derivatives suggest an error or an unusual structural relation for the rank-four curve relative to a rank-two control?",
-      "decisive_observation": "PARI computes second/fourth derivatives on original curve and the second derivative of 389a1 at two precisions; output is marked exploratory.",
+      "decisive_observation": "PARI ellL1 finds rank-two control 389a1 L'' about 1.518633; rank-four E L'' about -2.33e-56 at 40-digit calculation and -2.55e-96 at 90-digit; fourth derivative stable near 214.6523375. This is purely numerical evidence and cannot certify zero.",
       "dependencies": [
         "PARI ellL1 computes approximate complex derivatives; elliptic model and precision must be fixed.",
         "Even sign and a numerically tiny second derivative do not prove analytic order at least four."
