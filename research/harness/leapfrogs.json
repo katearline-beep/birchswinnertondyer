@@ -85,8 +85,8 @@
       "if_then_statement": "IF L'''(E/K_D,1)=0 is proved geometrically and L'(E^D,1)≠0 is certified, THEN L''(E,1)=0.",
       "would_unlock": "A single quadratic field could suffice, potentially bypassing a direct complex zero certificate.",
       "unverified_dependencies": "The geometric third-derivative formula is missing; the twist nonvanishing for D=-7 is a provisional computational certificate.",
-      "negative_control": "When the twist derivative vanishes, product-third-derivative zero does not imply L''=0; implemented polynomial negative control.",
-      "next_decisive_test": "Find the closest existing higher Gross–Zagier theorem and state the missing degree-three height/cycle class.",
+      "negative_control": "When the twist derivative vanishes, product-third-derivative zero does not imply L''=0; implemented polynomial negative control. First base-change derivative is already zero for both order-two and order-four original germs with an odd twist, hence classical first-derivative Heegner height vanishing is not a cubic-order certificate.",
+      "next_decisive_test": "Verify the precise derivative ORDER in proposed higher Gross–Zagier and generalized Heegner-cycle literature. The 2024 Lilienfeldt–Shnidman and 2026 Du–Peng work treats central FIRST derivatives in higher WEIGHTS, not a cubic derivative for our weight-two quadratic base change. Seek a genuine third-derivative formula or park implementation.",
       "kill_criterion": "Stop if varying D only restates the analytic factorization with no new theorem or cycle.",
       "source": "https://doi.org/10.5802/jtnb.1174",
       "test_path": "research/strategy/kill_tests.py",
@@ -101,6 +101,11 @@
           "date": "2026-10-17",
           "outcome": "active",
           "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        },
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Whole-problem review found two promising higher-weight works only address first central derivative; exact product negative control disproves first-height-zero to cubic-zero inference. Continue bounded source audit before computation."
         }
       ]
     },

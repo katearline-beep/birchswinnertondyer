@@ -248,14 +248,17 @@
       ],
       "commands": [
         "python -I -B research/strategy/kill_tests.py",
-        "python -I -B research/strategy/field_tomography_candidates.py"
+        "python -I -B research/strategy/field_tomography_candidates.py",
+        "python -I -B research/strategy/h3_first_height_no_go.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
         "research/strategy/kill_tests.py",
-        "research/strategy/field_tomography_candidates.py"
+        "research/strategy/field_tomography_candidates.py",
+        "research/strategy/H3_DERIVATIVE_ORDER_AUDIT.md",
+        "research/strategy/h3_first_height_no_go.py"
       ],
-      "negative_control": "Using a twist with zero first derivative destroys the converse inference.",
+      "negative_control": "Using a twist with zero first derivative destroys the converse inference. First derivative of E/K_D vanishes both for model analytic rank two E and analytic rank four E; classical Gross–Zagier first-height zero therefore does not force cubic derivative zero.",
       "stop_condition": "Stop if varying fields yields only a tautological analytic factorization with no geometric identity.",
       "nonclaims": [
         "No proof of complex analytic rank four",

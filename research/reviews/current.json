@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "review_id": "WPR-2026-10-17-01",
+  "reviewed_on": "2026-10-17",
+  "next_due_on": "2026-10-24",
+  "reviewer_type": "ai_assisted_unreviewed",
+  "review_kind": "initial_full_project_baseline",
+  "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
+  "target_curve": "234446.a1",
+  "goal_general": "For every elliptic curve over Q prove equality of Mordell–Weil rank and complex L-function order of vanishing, and the full normalized leading coefficient formula with Sha finiteness.",
+  "goal_specific": "For E=234446.a1, known algebraic rank four, establish exact complex L''(E,1)=0 and nonzero fourth derivative to prove exact analytic rank four; subsequently address Sha finiteness and BSD leading coefficient.",
+  "status_flags": {
+    "general_BSD_proved": false,
+    "exact_complex_Lpp_zero_proved": false,
+    "analytic_rank_four_proved": false,
+    "Sha_finiteness_for_E_proved": false,
+    "full_BSD_leading_coefficient_proved": false,
+    "new_bridge_to_complex_Lpp_proved": false,
+    "independently_human_reviewed": false
+  },
+  "claim_ids_audited": [
+    "C-0001",
+    "C-0002",
+    "C-0003",
+    "C-0004",
+    "C-0005",
+    "C-0006",
+    "C-0007",
+    "C-0008"
+  ],
+  "reviewed_prs": [
+    "#24",
+    "#26",
+    "#27",
+    "#28"
+  ],
+  "previous_review_id": null,
+  "mathematical_breakthrough_since_previous": "None. Baseline review: no newly proved rank-four complex L'' vanishing or theorem bridging our Kato, Selmer, local-log or twist computations to the original complex derivative.",
+  "new_proven_bridge_evidence": [],
+  "evidence_classes": [
+    {
+      "category": "finite_computation",
+      "statement": "C-0001/2 exact local 11-adic logarithms and PARI corroboration; not global derived heights."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0003 Agboola–Castella bound requires currently unproved 11-primary Sha finiteness."
+    },
+    {
+      "category": "existing_algebraic_theory",
+      "statement": "C-0004 classical 11-Selmer quadratic decomposition, no computed upper bound."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0006 positive enclosure for the -7 twist derivative with explicit analytic assumptions, no external mathematical peer review."
+    },
+    {
+      "category": "hypothesis_and_method_audit",
+      "statement": "C-0007/8 local Tate and cyclotomic ring checks, rejection of false integral vanishing and circular Mazur–Tate implication."
+    },
+    {
+      "category": "numerical_evidence",
+      "statement": "PARI second derivative of original E shrinks with precision; this is not an exact zero."
+    }
+  ],
+  "deepest_open_implication": "There is no established, noncircular implication from four independently certified rational points or our 11-adic/Kato information to exact vanishing of the original complex L''(E,1).",
+  "tracks": [
+    {
+      "track": "H1",
+      "decision": "active_limited",
+      "last_evidence": "Exact cyclotomic field, integral augmentation and BKS scope audits; C-0007/8 and no-go controls on false vanishing.",
+      "missing_bridge": "No independently computed Kato class and no proven comparison from I-adic derived classes to complex L''(E,1); unknown Sha finiteness.",
+      "falsifier": "If available results only show finite-layer augmentation containment or assume BSD/Sha that we seek, do not increase effort.",
+      "next_test": "Produce a typed feasibility memo for a genuine cohomology-valued derived class; limit to literature audit before new computation."
+    },
+    {
+      "track": "H2",
+      "decision": "active_limited",
+      "last_evidence": "Exact local log kernel and the correction that one-prime modified Selmer differs from the two-prime log kernel.",
+      "missing_bridge": "No constructed global derived height, mixed reciprocity or comparison with complex L''.",
+      "falsifier": "A dimension match between local kernels and hypothetical height radicals is explicitly insufficient.",
+      "next_test": "Specify one actual mixed Bockstein pairing including local splittings and global corrections; stop if no mathematical definition."
+    },
+    {
+      "track": "H3",
+      "decision": "active_prioritized",
+      "last_evidence": "Exact identity L'''(E/K_D,1)=3 L''(E,1)L'(E^D,1) and admissible quadratic fields; targeted 2024/2026 papers supply first derivatives, not a third derivative formula for weight-two E/K_D.",
+      "missing_bridge": "An independently established geometric identity forcing the third derivative of weight-two L(E/K_D,s) to vanish.",
+      "falsifier": "Higher-weight cycle/first-derivative formula is not a third-derivative theorem for the target L-function; reject as irrelevant unless specialized.",
+      "next_test": "Search theorem statements with exact derivative order and specialization; produce a go/no-go lemma inventory, without calculating more fields."
+    },
+    {
+      "track": "H4",
+      "decision": "parked",
+      "last_evidence": "Source audit of Burns–Kurihara–Sano 2025: tempting Mazur–Tate implication assumes BSD and Perrin–Riou; available unconditional corollary targets analytic rank one/supersingular.",
+      "missing_bridge": "Non-circular interpolation/period comparison to the original complex L''.",
+      "falsifier": "Circular premise BSD or finite congruence wrongly promoted to complex equality.",
+      "next_test": "Do not compute further modular elements without a specific new comparison theorem."
+    },
+    {
+      "track": "H5",
+      "decision": "diagnostic",
+      "last_evidence": "PARI precision sweep gives small L'' residual and stable nonzero fourth derivative; rank-two control behaves as expected.",
+      "missing_bridge": "A proof of exact vanishing of L''; arbitrary additional floating precision cannot provide it.",
+      "falsifier": "Rank-two control or changed arithmetic model breaks apparent stability; numerical near-zero is never exact zero.",
+      "next_test": "Only independent validated interval/nonzero fourth derivative if needed for conditional rank-four result; stop precision-only runs."
+    },
+    {
+      "track": "H6",
+      "decision": "parked",
+      "last_evidence": "Toy completed-L parity model rules out root sign/ordinary Hecke symmetry as sufficient for L''=0.",
+      "missing_bridge": "A second-order geometric period projector and proven comparison to the complex second derivative.",
+      "falsifier": "If the projector restates ordinary even functional equation, rank-two control disproves its sufficiency.",
+      "next_test": "Require a precisely defined operator with nontrivial action before new coding."
+    }
+  ],
+  "selected_next_experiment": "H3 exact theorem audit: inspect higher Gross–Zagier and generalized Heegner cycle statements for central derivative ORDER THREE of weight-two L(E/K_D,s), distinguish derivative order from modular weight, and document precisely whether any theorem provides a noncircular geometric vanishing identity.",
+  "selected_experiment_kill_criterion": "Stop the H3 theorem application immediately if a candidate proves only FIRST-derivative formulas for higher-weight forms, or a statement assuming analytic rank at least four.",
+  "conservative_next_lemma": "Bring C-0006 twist derivative arithmetic/Mellin proof to external expert review, as a subsidiary result; do not substitute it for L''(E,1)=0.",
+  "credible_leapfrog": "H3: a rigorously stated geometric cubic-derivative identity for the quadratic base change that could force original complex L''(E,1)=0.",
+  "speculative_wild_option": "H6: a new exact period projector with an independently established comparison to the second complex derivative, falsified against rank-two controls.",
+  "deprioritized_work": "No new cyclotomic field or high-precision local-log computations until a defined derived cohomology class and an explicit complex comparison map exist; H4 and H6 remain parked.",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0.",
+  "sources": [
+    "CLAIMS.md",
+    "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+    "research/strategy/KATO_BRIDGE_AUDIT.md",
+    "research/strategy/CYCLOTOMIC_KATO_FILTRATION_GATE.md",
+    "research/strategy/MAZUR_TATE_2025_SCOPE.md",
+    "research/strategy/kill_tests.py",
+    "https://arxiv.org/abs/2408.04375",
+    "https://arxiv.org/abs/2603.15795",
+    "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1",
+    "research/strategy/H3_DERIVATIVE_ORDER_AUDIT.md",
+    "research/strategy/h3_first_height_no_go.py"
+  ],
+  "journal_path": "research/reviews/2026-10-17-whole-problem.md",
+  "not_established": [
+    "No original complex L''(E,1)=0 theorem",
+    "No complex analytic rank-four proof for curve 234446.a1",
+    "No 11-Selmer upper bounds",
+    "No finiteness or triviality of relevant Sha[11∞]",
+    "No global derived 11-adic height or Kato class with complex comparison",
+    "No leading-coefficient BSD formula or general BSD proof"
+  ]
+}

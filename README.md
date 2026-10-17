@@ -31,6 +31,12 @@ GitHub Actions runs both on Python 3.11, 3.12, and 3.13, with immutable pinned a
 
 [Leapfrog conjecture protocol](research/strategy/LEAPFROG_PROTOCOL.md) and [H1 derived-Kato gap audit](research/strategy/KATO_BRIDGE_AUDIT.md) are now part of the standing [AI-agent contract](AGENTS.md). The accompanying [leapfrog research registry](research/harness/leapfrogs.json) keeps six moonshot directions falsifiable, explicit about missing mathematical bridges and willing to be killed. These are **speculative ideas**, not newly established theorems.
 
+## Periodic whole-problem reorientation
+
+We deliberately [reassess the **entire** Birch–Swinnerton-Dyer conjecture](research/strategy/FULL_PROBLEM_REVIEW.md) at every research-sprint start, at least weekly, and after major results or three mathematical merges. The [current six-track checkpoint](research/reviews/2026-10-17-whole-problem.md) distinguishes the general conjecture, this curve's unresolved **complex** L''(E,1), exact analytic-rank-four requirements, and the still-open Sha/leading-coefficient formula.
+
+The review must answer what *new mathematical implication* toward BSD was actually **proved**; “none” is a valid and often essential result. The [machine-readable research snapshot](research/reviews/current.json) is checked in CI with negative controls. **This is research accountability, not an automatic theorem verifier.**
+
 ## Working method
 
 One narrowly scoped claim per issue/PR; define mathematical objects and dependencies; attempt to falsify; use exact arithmetic or certified error bounds; compare an independent algorithm; document the limits. Do not move a result to “proved” just because CI is green. We welcome corrections more than publicity.
