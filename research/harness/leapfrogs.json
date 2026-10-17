@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "description": "Leapfrog candidate strategies only; not new theorem claims",
+  "leapfrogs": [
+    {
+      "id": "LF-001",
+      "experiment_id": "EX-004",
+      "title": "H1 derived Kato -> complex L''",
+      "known_baseline": "Known algebraic rank-four points; BKS derived norm in augmentation I^3 if Theorem 1.3 conditions hold.",
+      "missing_arrow": "Augmentation filtration I^3 of derived Kato class in H1 ⊗ Z11[G] is not a statement about the complex Taylor coefficient.",
+      "hypothetical_bridge": "Find a well-defined comparison map from independently computed derived classes to the complex L'' coefficient, with explicit noncircular hypotheses and injectivity on the tested quotient.",
+      "if_then_statement": "IF such a comparison exists and maps a rigorously verified annihilated class to L'' without circular assumptions, THEN L''(E,1)=0.",
+      "would_unlock": "A proof of the missing comparison and verified hypotheses would rule out analytic rank two for E.",
+      "unverified_dependencies": "Burns–Kurihara–Sano Theorem 1.3 assumes 11-primary Sha(E/F) finite among other requirements; the leading-term formula is conjectural and involves analytic input. Candidate F=Q(zeta_23)^+ has not established Sha(E/F)[11^infinity] finiteness.",
+      "negative_control": "The I^3 inclusion also holds in a toy with complex germ t^2, so it does not force a complex zero without a bridge.",
+      "next_decisive_test": "For real cyclotomic F=Q(zeta_23)^+ of degree 11, first verify nonzero I^3/I^4 (rather than vacuous C2 augmentation), check E(Q_23)[11]=0, then enumerate ALL BKS Theorem 1.3 hypotheses and decide whether a derived norm/leading-term object can be computed without assuming the needed Sha finiteness.",
+      "kill_criterion": "Stop if the only accessible relation is an augmentation divisibility statement or depends on rank equality as a hypothesis.",
+      "source": "https://doi.org/10.2969/jmsj/90699069",
+      "test_path": "research/strategy/logic_gate_tests.py",
+      "gate": "G0",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        },
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Proved C2 I^3/I^4=0, C11 mod11 I^3/I^4 nonzero; independently test point count at 23 and document Sha obstruction."
+        }
+      ]
+    },
+    {
+      "id": "LF-002",
+      "experiment_id": "EX-005",
+      "title": "H2 Bockstein mixed regulator -> complex L''",
+      "known_baseline": "Known anticyclotomic p-adic height theory and one-prime modified Selmer constructions.",
+      "missing_arrow": "No proven comparison in this project transports a p-adic height radical to the original complex L'' coefficient.",
+      "hypothetical_bridge": "Construct a comparison law between the actual one-prime modified Selmer complex and an analytically relevant complex regulator, fully stating characters and local splittings.",
+      "if_then_statement": "IF a valid comparison identifies a rigorously zero derived regulator with L'' and is nondegenerate, THEN L''=0.",
+      "would_unlock": "A different route via globally-defined Selmer-complex data could bypass raw analytic zero testing.",
+      "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness.",
+      "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure.",
+      "next_decisive_test": "Write the actual definition of a single mixed height and list all local/global corrections.",
+      "kill_criterion": "Park if no map with specified domain, codomain and analytic normalization can be stated.",
+      "source": "https://doi.org/10.5802/jtnb.1174",
+      "test_path": "research/methodology/local_kernel_negative_controls.py",
+      "gate": "G0",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        }
+      ]
+    },
+    {
+      "id": "LF-003",
+      "experiment_id": "EX-006",
+      "title": "H3 higher Heegner geometry -> complex L''",
+      "known_baseline": "Complex factorization L(E/K_D,s)=L(E,s)L(E^D,s) and nonzero L'(E^D,1) for an eligible odd twist.",
+      "missing_arrow": "The base-change third derivative is known to equal 3L''(E,1)L'(E^D,1), but its geometric vanishing is unknown.",
+      "hypothetical_bridge": "Identify a valid higher Gross–Zagier or cycle relation that forces L'''(E/K_D,1)=0 independently of assuming BSD rank equality.",
+      "if_then_statement": "IF L'''(E/K_D,1)=0 is proved geometrically and L'(E^D,1)≠0 is certified, THEN L''(E,1)=0.",
+      "would_unlock": "A single quadratic field could suffice, potentially bypassing a direct complex zero certificate.",
+      "unverified_dependencies": "The geometric third-derivative formula is missing; the twist nonvanishing for D=-7 is a provisional computational certificate.",
+      "negative_control": "When the twist derivative vanishes, product-third-derivative zero does not imply L''=0; implemented polynomial negative control.",
+      "next_decisive_test": "Find the closest existing higher Gross–Zagier theorem and state the missing degree-three height/cycle class.",
+      "kill_criterion": "Stop if varying D only restates the analytic factorization with no new theorem or cycle.",
+      "source": "https://doi.org/10.5802/jtnb.1174",
+      "test_path": "research/strategy/kill_tests.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "active",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        }
+      ]
+    },
+    {
+      "id": "LF-004",
+      "experiment_id": "EX-007",
+      "title": "H4 modular-symbol congruences -> complex L''",
+      "known_baseline": "Exact finite congruences of Mazur–Tate elements and modular symbol data.",
+      "missing_arrow": "Any finite p-adic congruence alone is compatible with a nonzero complex analytic invariant.",
+      "hypothetical_bridge": "A proven comparison must connect an algebraic projective family of modular-symbol classes with a complex Taylor coefficient.",
+      "if_then_statement": "IF a compatible infinite system with an independently proved comparison forces the complex L'' to zero, THEN order is at least four.",
+      "would_unlock": "Exact symbolic cancellation in a different arithmetic realization could bypass floating point zeros.",
+      "unverified_dependencies": "No map from these finite congruences to complex L'' is established; shared period normalizations are delicate.",
+      "negative_control": "The integer 11^m is nonzero despite vanishing modulo 11^m; a finite congruence cannot prove an exact zero.",
+      "next_decisive_test": "Identify a single algebraic derived element and one theorem specifying its interpolation to the complex L-series.",
+      "kill_criterion": "Kill if the result concerns only a p-adic invariant unrelated to the target complex derivative.",
+      "source": "https://doi.org/10.1093/imrn/rnaf012",
+      "test_path": "research/strategy/kill_tests.py",
+      "gate": "G0",
+      "decision": "parked",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "parked",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        }
+      ]
+    },
+    {
+      "id": "LF-005",
+      "experiment_id": "EX-008",
+      "title": "H5 precision-lab diagnostic -> exact vanishing mechanism",
+      "known_baseline": "PARI reports L'' numerically close to zero for the rank-four curve and nonzero on rank-two control 389a1.",
+      "missing_arrow": "Numerical near-zero values at any finite precision do not certify exact L''=0.",
+      "hypothetical_bridge": "Find an independently justified symbolic identity or rigidity principle, not just a smaller residual.",
+      "if_then_statement": "IF a concrete exact cancellation identity is proved, THEN it may certify the desired vanishing; no such identity identified.",
+      "would_unlock": "A cheap diagnostic can falsify wrong normalizations and route attention toward promising geometric mechanisms.",
+      "unverified_dependencies": "This is presently an instrumentation track, not a leapfrog conjecture with a constructed map.",
+      "negative_control": "Rank-two controls can have even functional equation yet nonzero L'', defeating root-sign-only explanations.",
+      "next_decisive_test": "Independently corroborate the derivative computations using different libraries and monitor benchmark controls.",
+      "kill_criterion": "Stop increasing precision if no exact symbolic or geometric mechanism emerges.",
+      "source": "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html",
+      "test_path": "research/strategy/kill_tests.py",
+      "gate": "G0",
+      "decision": "diagnostic",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "diagnostic",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        }
+      ]
+    },
+    {
+      "id": "LF-006",
+      "experiment_id": "EX-009",
+      "title": "H6 higher Hecke projector -> complex L''",
+      "known_baseline": "Hecke and Atkin–Lehner operations act on modular/cohomological realizations of E.",
+      "missing_arrow": "The generic even root-number symmetry forces neither complex L''=0 nor rank four.",
+      "hypothetical_bridge": "Find a second-order cohomological period projector that vanishes on the rank-four object but not rank-two controls, with a theorem identifying its image with L''.",
+      "if_then_statement": "IF such a projector and period-derivative comparison are proved and annihilation checked, THEN L''=0.",
+      "would_unlock": "A new exact geometric cancellation identity could generalize across rank-four cases.",
+      "unverified_dependencies": "No candidate second-order projector or period comparison has been constructed; probable overlap with known parity only.",
+      "negative_control": "Completed even Taylor germs t^2 and t^4 both obey sign + but differ in the second derivative.",
+      "next_decisive_test": "Analyze one explicit Hecke-isotypic period space, rejecting all candidates equal to root-sign parity.",
+      "kill_criterion": "Kill if candidate is merely an Atkin–Lehner sign or has no precise period-space action.",
+      "source": "https://doi.org/10.2969/jmsj/90699069",
+      "test_path": "research/strategy/kill_tests.py",
+      "gate": "G0",
+      "decision": "parked",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No demonstrated theorem establishing L''(E,1)=0, analytic rank four, Sha finiteness, or the full BSD leading coefficient.",
+      "decision_log": [
+        {
+          "date": "2026-10-17",
+          "outcome": "parked",
+          "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        }
+      ]
+    }
+  ]
+}

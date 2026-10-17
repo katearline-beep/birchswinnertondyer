@@ -50,6 +50,12 @@ For each research direction, assess potentially relevant methods from **other di
 
 This gate is implemented in [AGENTS.md](AGENTS.md) and [research/harness](research/harness/README.md). It is a *research-quality gate*, not a mechanism that automatically produces new theorems.
 
+## Mandatory leapfrog-conjecture gate
+
+Every high-risk research track must have a [leapfrog record](research/harness/leapfrogs.json) meeting [LCP-1](research/strategy/LEAPFROG_PROTOCOL.md): baseline theorem, precise unproved bridge, conjectural IF/THEN implication, mathematical gain, unknown hypotheses, adversarial countermodel, first decisive test, kill criterion, and decision history. Prefer hypotheses that *would actually remove the blocking mathematical implication* over more digits of a different invariant. Try one conservative lemma, one credible moonshot, and one wild falsifiable alternative; pursuing all three is optional.
+
+Cross-disciplinary analogies must be translated into actual maps/theorems or labelled analogies. Require `python3 -I -B research/harness/validate_leapfrogs.py` and `python3 -I -B research/harness/test_leapfrogs.py` in CI, but these checks validate **documentation**, never the truth or novelty of a conjecture. Explicitly distinguish derived Kato classes in an I-adic augmentation filtration from vanishing of the **complex** L-function derivative; see [H1 applicability audit](research/strategy/KATO_BRIDGE_AUDIT.md).
+
 ## Workflow
 
 Open issue → investigate on a branch → add/update claim record → deterministic certificate + independent check → critical PR review → merge only after CI → update ledger and downstream dependencies. Research logs preserve failures and rejected approaches.

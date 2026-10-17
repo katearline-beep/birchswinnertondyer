@@ -24,6 +24,15 @@
 - `research/harness/experiments.json` updated (or infrastructure-only justification):
 - Confirmed `python3 -I -B research/harness/validate.py` and negative tests:
 
+## Leapfrog conjecture (mandatory on research PRs)
+- Baseline theorem and its exact output type:
+- What mathematical obstruction would the leapfrog bypass?
+- Candidate IF/THEN statement and **missing** comparison/reciprocity map:
+- Counterexample / negative control and early kill criterion:
+- Would unlock vs. what remains unproved:
+- LCP-1 record updated, or why PR is infrastructure-only:
+- Does not substitute augmentation-ideal vanishing for a complex L-derivative:
+
 ## Integrity
 - Prior-art search:
 - AI assistance and role:
