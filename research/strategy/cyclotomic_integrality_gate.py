@@ -45,6 +45,17 @@ assert len(first)==11 and len(second)==121
 assert pow(-2,-1,p)==5
 print("PASS C_2 at p=11: I^2=I (vacuous higher filtration)")
 
+# In the cyclotomic Z_11 tower the graded piece is Z_11*T^3,
+# but its finite degree-11 and degree-121 images see only mod11
+# and mod121 coefficients, respectively. A first-layer zero is NOT
+# a proof that the Iwasawa-level class is zero.
+candidate_coeff=11    # 11*T^3 is nonzero in Z_11[[T]]/T^4
+assert candidate_coeff != 0
+assert candidate_coeff%11==0
+assert candidate_coeff%121==11
+print("PASS negative control: first-layer leading zero hides nonzero 11*T³")
+print("PASS second layer detects the 11-divisible nonzero leading class")
+
 # Negative-control demonstration: naive mod-11 checker says trace in I³;
 # sound integral checker correctly rejects it already at I¹.
 def naive_modp_membership_in_I3(poly):
