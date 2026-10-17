@@ -17,7 +17,7 @@ analytic-rank routine: [1, 34.172034460964473032879936363633231813]
 ellL1(Et,1) = 34.172034460964473032879936363633231813
 ```
 
-Reproduce with `gp -q -f research/anticyclotomic_11/twist_analytic.gp`. The [workflow](../../.github/workflows/twist_analytic.yml) runs this in Ubuntu with an independently installed PARI library, checks expected conductor/sign and two numerical methods, and rejects GP interpreter errors.
+Reproduce with `gp -q -f research/anticyclotomic_11/twist_analytic.gp`. The [workflow](../../.github/workflows/twist_analytic.yml) runs this in Ubuntu with an independently installed PARI library, checks expected conductor/sign and two PARI interfaces (which may share internal numerical routines), and rejects GP interpreter errors.
 
 ## Why this matters, and what it does not show
 
