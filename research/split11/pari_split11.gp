@@ -1,6 +1,7 @@
 \\ Independent C-0002 check with PARI/GP built-in ellpadiclog
 \\ Exact source coordinates; use a high-precision 11-adic square root of -7.
 \\ No formulas or field-arithmetic code imported from our Python scripts.
+{
 default(parisize, 128000000);
 p=11; m=p^4; E=ellinit([0,0,0,-1267,17230]);
 w=sqrt(-7 + O(11^10));
@@ -18,4 +19,5 @@ for(j=1,2,
 );
 print("PASS PARI/GP C-0002: all twelve normalized split-11 logarithms mod 14641");
 print("PASS PARI/GP C-0002: determinant 1537 mod 14641, 8 mod 11");
+}
 quit;
