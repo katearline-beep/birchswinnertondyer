@@ -5,8 +5,18 @@ Exact rational elliptic arithmetic and a distinct modular-projective check.
 Formal-group interpretation depends on the documented good-reduction and
 truncation argument; NOT an anticyclotomic height or a BSD theorem.
 """
-import verify as exact
-import independent_check as modular
+from pathlib import Path
+from importlib.util import spec_from_file_location, module_from_spec
+
+def load_sibling(module_name):
+    path = Path(__file__).resolve().with_name(module_name + ".py")
+    spec = spec_from_file_location(module_name, path)
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+exact = load_sibling("verify")
+modular = load_sibling("independent_check")
 
 p=11
 precision=4
