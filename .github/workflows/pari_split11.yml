@@ -1,0 +1,31 @@
+name: Independent PARI-GP split-11 check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pari:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install PARI/GP from Ubuntu package repository
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pari-gp
+          gp --version
+      - name: Verify split-11 logs independently using ellpadiclog
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/split11/pari_split11.gp 2>&1 | tee pari-output.log
+          if grep -qF '***' pari-output.log; then echo 'PARI/GP interpreter error detected' >&2; exit 1; fi
+          grep -q '^PASS PARI/GP C-0002: all twelve' pari-output.log
+          grep -q '^PASS PARI/GP C-0002: determinant' pari-output.log
