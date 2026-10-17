@@ -38,6 +38,18 @@ Each claim also has a **review state**: draft; internally reproduced; independen
 - Large numerical searches need reproducible parameters, raw result provenance, completeness argument, and clear separation from a proof.
 - Respect source licenses and copyright. No automatic open-source license is implied by publishing a GitHub repository.
 
+## Mandatory cross-disciplinary translation gate
+
+For each research direction, assess potentially relevant methods from **other disciplines** (including mathematical physics, homological algebra, coding theory, validated numerics, control theory, experimental biology, formal verification, and causal inference). Do this even when there is no useful transfer; a documented rejection is preferable to a gratuitous analogy. The gate requires:
+
+1. Name the *source technique* and a primary source, the exact target mathematical object, and a testable translation. Label `exact_math`, `validation_method`, or `analogy`.
+2. For exact mathematics, state hypotheses and a theorem or derivation. For a validation method, state what errors it can and cannot detect. Analogies cannot supply proof.
+3. Design a falsifier/negative control or admit when one cannot be implemented, and define a stopping rule.
+4. Choose the experiment with the most decisive potential outcome per unit effort, not maximal digits or code volume.
+5. Update `research/harness/experiments.json` and run its validator/tests in CI; never promote review status based on a green check.
+
+This gate is implemented in [AGENTS.md](AGENTS.md) and [research/harness](research/harness/README.md). It is a *research-quality gate*, not a mechanism that automatically produces new theorems.
+
 ## Workflow
 
 Open issue → investigate on a branch → add/update claim record → deterministic certificate + independent check → critical PR review → merge only after CI → update ledger and downstream dependencies. Research logs preserve failures and rejected approaches.

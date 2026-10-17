@@ -50,3 +50,9 @@ jobs:
         run: python -I -B research/anticyclotomic_11/audit_derivative_error_budget.py
       - name: Independent exact-rational twist derivative interval (provisional analytic hypotheses)
         run: python -I -B research/anticyclotomic_11/independent_rational_derivative.py
+      - name: Verify cross-disciplinary experiment manifest and provenance
+        run: python -I -B research/harness/validate.py
+      - name: Reject fabricated review and malformed experiments
+        run: python -I -B research/harness/test_validate.py
+      - name: Exact bad-reduction and quadratic-twist root-sign audit
+        run: python -I -B research/anticyclotomic_11/verify_root_sign.py
