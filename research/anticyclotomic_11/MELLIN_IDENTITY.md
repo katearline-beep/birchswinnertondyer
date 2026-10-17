@@ -54,7 +54,20 @@ The derivation relies on modularity, the weight-two functional equation and just
 
 An independent established implementation documents this very formula, including the factor two, under its `deriv_at1()` routine: [SageMath's elliptic L-series manual](https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/lseries_ell.html). See also Henri Cohen, *A Course in Computational Algebraic Number Theory*, §7.5.3.
 
-## 3. What was computationally corroborated
+## 3. A uniform Fourier-coefficient and tail bound
+
+For a good prime \(\ell\), the local Euler factor is \(1-a_\ell T+\ell T^2\). The Hasse bound ensures that its reciprocal roots \(\alpha,\beta\) satisfy \(|\alpha|=|\beta|=\sqrt{\ell}\), so its power-series coefficient obeys \(|a_{\ell^k}|\le (k+1)\ell^{k/2}\). At a multiplicative bad prime (here 2 and 117223), the local factor is \((1-a_\ell T)^{-1}\), with \(a_\ell=\pm1\), so the same estimate holds trivially. By multiplicativity, for **every** integer \(n\ge1\) we obtain \(|a_n|\le d(n)\sqrt n\le 2n\), where \(d(n)\le2\sqrt n\) follows by pairing each divisor with its complementary divisor. Twisting by \(\chi_{-7}\) can only remove terms or change their signs.
+
+For positive \(x\), \(E_1(x)=\int_x^\infty e^{-u}\,du/u\le e^{-x}/x\). Writing \(c\ge c_0>0\) and \(q=(1+c_0)^{-1}\) yields \(e^{-cn}\le q^n\), since \(e^{c_0}\ge1+c_0\). Therefore the complete tail after M terms satisfies
+
+\[
+\left|2\sum_{n>M}\frac{a_n\chi_{-7}(n)}{n}E_1(cn)\right|
+\le\frac{4q^{M+1}}{c_0(M+1)(1-q)}.
+\]
+
+This is the algebraic tail inequality in our scripts. It follows from **standard elliptic local Euler factors, the Hasse bound, multiplicativity and elementary analysis**. The root-sign and Fourier coefficient series must refer to the *same* newform and conductor. The independent PARI oracle has checked all coefficients \(a_n\) **for n≤2000 only**; 117223 exceeds that range, and its bad Euler factor is justified by the separate multiplicative-reduction argument.
+
+## 4. What was computationally corroborated
 
 The exact rational program [independent_rational_derivative.py](independent_rational_derivative.py) computes 2,000 terms and an explicit entire tail, conditional on the formula above. GitHub Actions additionally compares **every original curve Fourier coefficient** `a_1,…,a_2000` against PARI's independent `ellan(E,2000)` implementation, not just the first few terms. [GP oracle](../harness/pari_fourier.gp) and [comparator](../harness/compare_fourier_coefficients.py). It tests a deliberately corrupted coefficient.
 
