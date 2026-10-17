@@ -38,11 +38,11 @@ assert roots==(156785,4266)
 assert all((w*w+7)%N==0 for w in roots)
 
 logs={}
-for name,P in exact.points:
+for name,P in exact.points.items():
     Q=exact.mul(18,P)
     assert Q is not None
     t=-Q[0]/Q[1]
-    a,b=exact.mod_fraction(t.a),exact.mod_fraction(t.b)
+    a,b=exact.red(t.a),exact.red(t.b)
     vals=[]
     for w in roots:
         v=(a+w*b)%N
