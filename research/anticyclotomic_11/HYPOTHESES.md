@@ -48,6 +48,10 @@ Here `r_+` and `r_-` are the dimensions of the plus/minus eigenspaces under Gal(
 
 The inequality **does not certify equality** `ord_J L_p(f)=6`. Equality, nonvanishing of the derived regulator, and the predicted filtration `5 → 3 → 1` are **conjectural** under the corresponding additional nondegeneracy hypotheses. The complex analytic rank of E over Q or K is not determined by this p-adic conditional consequence.
 
+## Different kernels: a necessary distinction
+
+Agboola–Castella's modified Selmer localization uses **one** prime above 11, whereas C-0002 used **both**. The one-prime coefficient-module kernel has rank four and the two-prime intersection has rank three; neither is automatically the global derived-height radical. See [explicit one-place and two-place kernels](ONE_PLACE_VS_TWO.md).
+
 ## Unresolved barriers and our next falsifiable questions
 
 - **Most important missing hypothesis:** `Sha(E/K)[11^∞]` finite. Rank-1 twist finiteness alone would not settle the rank-4 part or the K-primary statement. We have no proof of this missing hypothesis.
