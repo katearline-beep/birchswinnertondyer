@@ -44,3 +44,7 @@ jobs:
         run: python -I -B research/anticyclotomic_11/verify_local_hypotheses.py
       - name: Exact quadratic-twist and mod-11 symmetry data check
         run: python -I -B research/anticyclotomic_11/verify_twist_descent.py
+      - name: Exact syndrome and identifiability negative controls
+        run: python -I -B research/methodology/local_kernel_negative_controls.py
+      - name: Independent analytic error-budget component checks
+        run: python -I -B research/anticyclotomic_11/audit_derivative_error_budget.py
