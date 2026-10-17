@@ -48,3 +48,5 @@ jobs:
         run: python -I -B research/methodology/local_kernel_negative_controls.py
       - name: Independent analytic error-budget component checks
         run: python -I -B research/anticyclotomic_11/audit_derivative_error_budget.py
+      - name: Independent exact-rational twist derivative interval (provisional analytic hypotheses)
+        run: python -I -B research/anticyclotomic_11/independent_rational_derivative.py
