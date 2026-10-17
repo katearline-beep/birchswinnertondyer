@@ -70,3 +70,9 @@ jobs:
         run: python -I -B research/strategy/cyclotomic_integrality_gate.py
       - name: Mazur-Tate 2025 theorem hypothesis and circularity negative control
         run: python -I -B research/strategy/mazur_tate_scope_test.py
+      - name: Full BSD problem checkpoint and research-drift policy
+        run: python -I -B research/harness/validate_full_review.py
+      - name: Adversarial full-problem review negative controls
+        run: python -I -B research/harness/test_full_review.py
+      - name: Higher Gross-Zagier first vs third derivative falsification
+        run: python -I -B research/strategy/h3_first_height_no_go.py
