@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "protocol": "WPR-1",
+  "reviews": [
+    {
+      "id": "WPR-001",
+      "date": "2026-10-17",
+      "base_main_commit": "2cb264975b4bd380e50fe1b44983a9bf0844afb2",
+      "trigger": "User-requested whole-problem review after extensive leapfrog exploration and two methodology corrections",
+      "reviewer_role": "internal_research_agent",
+      "external_math_review": false,
+      "levels": [
+        {
+          "key": "rank_equality_single_curve",
+          "status": "open",
+          "target": "For 234446.a1, prove ord_{s=1} L(E,s)=rank E(Q)=4: certify exact L''(E,1)=0, then nonzero fourth derivative.",
+          "proved": "Algebraic rank four and known functional-equation/root sign are documented by LMFDB. Rank-zero theorems rule out nonzero L(E,1), giving L(E,1)=L'(E,1)=0.",
+          "missing": "An exact proof of L''(E,1)=0. Independent certified nonzero fourth derivative is also not yet established; PARI numerical value is evidence only.",
+          "evidence_category": "prior_art_plus_numerical",
+          "source": "https://www.lmfdb.org/L/2/94192/1.1/c1/0/20/Reliability"
+        },
+        {
+          "key": "strong_bsd_single_curve",
+          "status": "open",
+          "target": "After exact rank four, prove Sha(E/Q) finite and normalized L^{(4)}(E,1)/4! equals Omega*Reg*|Sha|*Tamagawa/torsion^2.",
+          "proved": "LMFDB reports numerical Omega, Reg, Tamagawa product 2, torsion order 1, and analytic Sha ratio approximately 1; these are data, not proof of the full formula.",
+          "missing": "No proof that Sha is finite or trivial, or that the displayed numerical coefficient equality is exact.",
+          "evidence_category": "numerical_consistency",
+          "source": "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1"
+        },
+        {
+          "key": "general_bsd",
+          "status": "open",
+          "target": "Prove rank equality, Sha finiteness and leading coefficient formula for all elliptic curves over Q (and articulate any extension to other fields separately).",
+          "proved": "Our project has no new general theorem; published rank-zero/one and Iwasawa results are prior art.",
+          "missing": "A general unconditional argument beyond special known cases; no proposed leapfrog currently supplies it.",
+          "evidence_category": "open_problem",
+          "source": "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/"
+        }
+      ],
+      "math_theorems_new_to_literature": [],
+      "exact_rank4_complex_bridge_established": false,
+      "sha_finiteness_established": false,
+      "general_bsd_proven": false,
+      "confirmed_project_outputs": "Exact local split-11 logarithm residue data with independent PARI; conditional exact-rational twist-derivative interval; negative controls for confusing p-adic augmentations, one-prime Selmer and complex L'', and a reproducible research harness. These do not establish new BSD implications.",
+      "decisive_missing_arrow": "No proved implication from four rational point directions / derived Kato augmentation / anticyclotomic p-adic heights / higher Heegner cycles to exact complex L''(234446.a1,1)=0.",
+      "failed_routes": "Naive C2 third augmentation layer is vacuous; reduction modulo 11 of scalar norm produces false deep vanishing; cyclic first-layer zero misses 11*T^3; Mazur–Tate 2025 theorem assumes BSD and cannot be applied backwards; two-prime local-log kernel is not the one-prime modified Selmer group or height radical.",
+      "prior_art_vs_new": "Analytic-rank numerical classification and approximate BSD ratio are already in LMFDB; rank4 Mordell–Weil points and reductions are known. Our independently reproduced exact code, test harness, method corrections and bibliography audits are project outputs, not newly discovered theorems.",
+      "routes": [
+        {
+          "id": "LF-001",
+          "decision": "downrank_until_non_circular_bridge",
+          "assessment": "BKS derived Kato I³ is an algebraic augmentation condition, not complex L'' vanishing; both the finiteness assumption and a comparison map are missing.",
+          "next_test": "Check whether a provable noncircular complex-derivative map is known before computing cohomology classes in Q1/Q2."
+        },
+        {
+          "id": "LF-002",
+          "decision": "park_high_cost_work",
+          "assessment": "True global anticyclotomic height is not yet constructed; missing comparison from p-adic to complex L''.",
+          "next_test": "Produce an exact typed map or local/global Selmer-complex data sheet; no large computations until then."
+        },
+        {
+          "id": "LF-003",
+          "decision": "priority_literature_gate",
+          "assessment": "The base-change cubic derivative factorization is exact; no geometric theorem forces cubic vanishing.",
+          "next_test": "Locate a published higher-derivative geometric theorem with relevant hypotheses or write a precise unsolved lemma; a third twist derivative computation alone is insufficient."
+        },
+        {
+          "id": "LF-004",
+          "decision": "park",
+          "assessment": "Finite congruences do not prove complex equality and Mazur–Tate 2025 route assumed BSD.",
+          "next_test": "Only resume upon discovering a noncircular period comparison."
+        },
+        {
+          "id": "LF-005",
+          "decision": "low_cost_diagnostic",
+          "assessment": "PARI numerics support order four but exact zero is not established.",
+          "next_test": "Consider a certified nonzero fourth derivative only if it forms part of a reviewed rank-four proof route; avoid further isolated precision sweeps."
+        },
+        {
+          "id": "LF-006",
+          "decision": "park",
+          "assessment": "No geometric operator beyond ordinary completed L parity has been defined.",
+          "next_test": "Resume only with an explicit period/cohomology operator and rank-two negative control."
+        }
+      ],
+      "next_decisive_question": "Is there a *published and hypothesis-applicable* geometric/derived-Euler-system theorem furnishing a non-circular complex L'' vanishing implication from arithmetic rank at least four, or a minimal additional lemma whose proof is feasible?",
+      "next_action": "Prepare a theorem-direction literature chart comparing derived Kato, higher Gross–Zagier/Heegner, and direct L-derivative criteria, marking output objects and every circular assumption; prioritize a counter-control on rank-two curves.",
+      "decision": "Reduce unproductive p-adic layer calculations unless they test an explicit link to the original complex derivative. Maintain small parallel Sha/strong-BSD lane and an explicit generalization test.",
+      "nonclaims": "No proof of BSD, of complex analytic rank four for 234446.a1, of Tate–Shafarevich finiteness, or of a previously unknown general theorem.",
+      "sources": [
+        "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1",
+        "https://www.lmfdb.org/L/2/94192/1.1/c1/0/20/Reliability",
+        "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/",
+        "https://doi.org/10.2969/jmsj/90699069"
+      ]
+    }
+  ]
+}
