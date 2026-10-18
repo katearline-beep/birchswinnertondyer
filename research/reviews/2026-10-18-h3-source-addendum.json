@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-18",
+  "previous_review": "WPR-2026-10-17-01",
+  "review_type": "AI-assisted internal research review",
+  "linked_experiment": "EX-006",
+  "linked_leapfrog": "LF-003",
+  "source": {
+    "authors": "Zhiwei Yun; Wei Zhang",
+    "title": "Shtukas and the Taylor expansion of L-functions (II)",
+    "year": 2019,
+    "journal": "Annals of Mathematics",
+    "volume": 189,
+    "pages": "393–526",
+    "theorems": "1.2 and 1.3",
+    "doi": "10.4007/annals.2019.189.2.2",
+    "field": "global function fields only",
+    "derivative_order": "r=3,r1=2 gives second derivative times first derivative"
+  },
+  "math_output": "Exact formal mixed (2,1) derivative equals f''g' when f(0)=f'(0)=g(0)=0.",
+  "missing_arrows": [
+    "Number-field three-leg arithmetic cycle and proven complex comparison",
+    "Independent arithmetic vanishing of projected pairing from rank-four points",
+    "Expert review of -7 twist derivative positivity"
+  ],
+  "negative_controls": [
+    "Rank-two f=t^2,g=t gives mixed derivative 2, not zero",
+    "Rank-four vector space has nonzero exterior cube of dimension 4",
+    "Both bad finite primes split in Q(sqrt(-7)); function-field inert-level parity cannot be identified with the number-field archimedean sign"
+  ],
+  "new_implication_to_BSD_proved": false,
+  "expert_reviewed": false,
+  "decision": "H3 G1 active; restrict computation; prioritize number-field feasibility",
+  "next_due": "2026-10-24"
+}
