@@ -1,0 +1,3 @@
+# Whole BSD review, 2026-10-18
+
+No proof of general BSD, complex L''(E,1)=0, exact analytic rank four, Sha finiteness, or leading coefficient. H1 and H2 remain blocked on complex comparisons; H4 and H6 parked; H5 diagnostic only. H3 gains a precise function-field source: Yun–Zhang 2019 Theorem 1.3 directly pairs the (2,1) derivative with a projected cycle, but it cannot be applied to E/Q, and rank four does not force the pairing to vanish. Next: identify a number-field three-leg cycle and an independent rank-to-vanishing lemma; stop if neither can be specified. H1/H2 computations remain limited; no new precision sweeps. See H3_YUN_ZHANG_FUNCTION_FIELD_BRIDGE.md and H3_MIXED_DERIVATIVE_NOTE.md.
