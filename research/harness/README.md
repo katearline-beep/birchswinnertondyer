@@ -108,6 +108,17 @@ python3 -I -B research/anticyclotomic_11/conditional_heights_mod121.py
 
 Passing AI-authored code is not independently maintained Sage/Magma sigma, expert theorem review, a derived height or a result on original complex BSD. Continue H3 in parallel with H2.
 
+## Session 17 — canonical p-adic sigma and third height digit
+
+[Exact MST sigma second-digit checker](../anticyclotomic_11/canonical_sigma_integrality_121.py) uses sigma integrality at t^23 to select c11=26 mod121, and independently reconstructs the published E37/p5 c5=6 mod25. [Conditional height verifier](../anticyclotomic_11/conditional_heights_mod1331.py) computes global self-height vector (1068,1300,854,8) mod1331, projective [1:739:766:668], and six mixed inputs satisfying bilinearity; all ten denominator ideals pass exact primitivity checks. Stale c=4 preserves first two digits but changes the third, a precision-sensitive negative control. [Full audit](../anticyclotomic_11/SESSION17_CANONICAL_SIGMA_MOD1331.md).
+
+```bash
+python3 -I -B research/anticyclotomic_11/canonical_sigma_integrality_121.py
+python3 -I -B research/anticyclotomic_11/conditional_heights_mod1331.py
+```
+
+No independent Sage/Magma global height or expert review, no exact Q11 derived radical, no complex L'' bridge and no BSD theorem are claimed.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
