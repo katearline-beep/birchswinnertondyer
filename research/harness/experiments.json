@@ -229,7 +229,8 @@
         "python3 -I -B research/anticyclotomic_11/point_prerequisites.py",
         "python3 -I -B research/anticyclotomic_11/provisional_height_mod11.py",
         "python3 -I -B research/anticyclotomic_11/published_389a1_height_control.py",
-        "python3 -I -B research/anticyclotomic_11/conditional_first_radical_mod11.py"
+        "python3 -I -B research/anticyclotomic_11/conditional_first_radical_mod11.py",
+        "python3 -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarization.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -245,9 +246,10 @@
         "research/anticyclotomic_11/provisional_height_mod11.py",
         "research/anticyclotomic_11/published_389a1_height_control.py",
         "research/anticyclotomic_11/FIRST_HEIGHT_RADICAL_MOD11.md",
-        "research/anticyclotomic_11/conditional_first_radical_mod11.py"
+        "research/anticyclotomic_11/conditional_first_radical_mod11.py",
+        "research/anticyclotomic_11/independent_affine_ideal_and_polarization.py"
       ],
-      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence. Session 13 character coefficients must change sign under conjugation and vanish at inert/ramified fixed ideals; independent Fermat-quotient digits and polarization on model pairings are asserted before any heights. Session 14: on three A_i the uncorrected division-polynomial denominator generator is nonprimitive by norm factor 16; exact Euclidean gcd must reject it. Separate 2A*18 and 4A*9 denominator routes agree; 72A height must equal 4 times 36A modulo 11. Independent published BCLMN 389a1 example has h(P1+S)=3 mod5, reproduced by exact affine additions using the paper's denominator generator; a conjugate orientation sign swap intentionally fails. Published 389a1 A2 calculation is independently checked against norm-Euclidean primitive ideal gcd, while the conditional real global first radical excludes P2, which old local-log kernel includes.",
+      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence. Session 13 character coefficients must change sign under conjugation and vanish at inert/ramified fixed ideals; independent Fermat-quotient digits and polarization on model pairings are asserted before any heights. Session 14: on three A_i the uncorrected division-polynomial denominator generator is nonprimitive by norm factor 16; exact Euclidean gcd must reject it. Separate 2A*18 and 4A*9 denominator routes agree; 72A height must equal 4 times 36A modulo 11. Independent published BCLMN 389a1 example has h(P1+S)=3 mod5, reproduced by exact affine additions using the paper's denominator generator; a conjugate orientation sign swap intentionally fails. Published 389a1 A2 calculation is independently checked against norm-Euclidean primitive ideal gcd, while the conditional real global first radical excludes P2, which old local-log kernel includes. Session 15 independently tests primitivity directly at all ten [36]Q points via coprime integer norms N(D),N(xD²), and six distinct points Pi+Pj+R. Any false global height/denominator formula may break these identities; all pass mod11, unlike an uncorrected bad-2 denominator.",
       "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative. Do not promote L11 on finite congruence coincidence or unnormalized zero vectors; demand genuine global anticyclotomic heights with controlled 11-adic valuations/precision.",
       "nonclaims": [
         "No proof of complex analytic rank four",
@@ -255,7 +257,8 @@
         "The primitive projective gate uses toy height vectors only, not a computed global anticyclotomic pairing",
         "Session 13 computed prime-to-11 idele-class character coefficients and minimal-point coordinates, but neither p-adic sigma heights nor denominator ideals of [36]Ai",
         "The provisional height residues C-0011 do not imply Sha finiteness, a nonzero derived-height Pfaffian, a complex L'' bridge, or BSD; no independent height-library review yet",
-        "Published 389a1 first digit does not replace independent Sage/Magma sigma or rank-four denominator audit"
+        "Published 389a1 first digit does not replace independent Sage/Magma sigma or rank-four denominator audit",
+        "Six agreement checks and exact denominator primitivity do not establish the original complex second-derivative vanishing or full BSD"
       ],
       "cross_disciplines": [
         {
@@ -275,7 +278,7 @@
           "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/split11/KERNEL.md"
         }
       ],
-      "deciding_comment": "Session 14 C-0011 gives provisional h(A_i)=[1,2,7,8] mod 11 by exact ideal-gcd and division polynomials with [36]/[72] homogeneity. This conditionally falsifies subhypothesis L11 alignment, not H2 mixed regulator/complex comparison. Independent Sage or PARI height implementation and normalization audit are mandatory before upgrading. Published 389a1 regression strengthened with a second computed denominator and matching 3 mod5. If C-0011 passes future independent height audit, cross-height first Gram rank is exactly 2 over Q11 and its reduced 3D radical is P2-2P1,P3-7P1,P4-8P1 mod11; it excludes old local kernel."
+      "deciding_comment": "Session 14 C-0011 gives provisional h(A_i)=[1,2,7,8] mod 11 by exact ideal-gcd and division polynomials with [36]/[72] homogeneity. This conditionally falsifies subhypothesis L11 alignment, not H2 mixed regulator/complex comparison. Independent Sage or PARI height implementation and normalization audit are mandatory before upgrading. Published 389a1 regression strengthened with a second computed denominator and matching 3 mod5. If C-0011 passes future independent height audit, cross-height first Gram rank is exactly 2 over Q11 and its reduced 3D radical is P2-2P1,P3-7P1,P4-8P1 mod11; it excludes old local kernel. Session 15 independent MINIMAL-affine direct 36-point coordinates and norm gcd establish global D primitivity on 10 inputs; six different-pair polarization identities reproduce exact height residues (3,8,9,9,10,4) mod11. Published p-adic sigma and character normalization remain shared; external validation required."
     },
     {
       "id": "EX-006",
