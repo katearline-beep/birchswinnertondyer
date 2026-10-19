@@ -29,3 +29,12 @@ jobs:
           if grep -qF '***' pari-output.log; then echo 'PARI/GP interpreter error detected' >&2; exit 1; fi
           grep -q '^PASS PARI/GP C-0002: all twelve' pari-output.log
           grep -q '^PASS PARI/GP C-0002: determinant' pari-output.log
+      - name: Independently verify canonical sigma with PARI ellpadics2
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/anticyclotomic_11/pari_canonical_sigma_oracle.gp 2>&1 | tee pari-sigma.log
+          if grep -qF '***' pari-sigma.log; then echo 'PARI/GP interpreter error detected' >&2; exit 1; fi
+          grep -q '^PASS PARI canonical sigma C-0013: c11 = 26' pari-sigma.log
+          grep -q '^PASS PARI MST E37 canonical sigma: c5 = 6' pari-sigma.log
+          grep -q '^PASS PARI E2 = 48' pari-sigma.log
