@@ -31,6 +31,24 @@ def rank_from_orbits(p,n,d,m):
     assert result>=0
     return result,orbits,(c2,c3)
 
+def quotient_P2(q,orbits):
+    """Published Corollary 7.7 + Proposition 8.1 give a Frobenius H2 factor.
+
+    P2(Fd/Gamma,T) = product_orbits (1 - q^len(orbit)*T^len(orbit)).
+    This constructs the GLOBAL factor conditional on Ulmer's Jacobi-sum theorem.
+    """
+    poly=[1]
+    for orbit in orbits:
+        n=len(orbit)
+        other=[0]*(len(poly)+n)
+        for i,c in enumerate(poly):
+            other[i]+=c
+            other[i+n]-=c*q**n
+        poly=other
+    assert len(poly)-1==sum(map(len,orbits))
+    assert poly[0]==1
+    return poly
+
 if __name__=="__main__":
     for p,n,d,base,geometric in ((5,1,6,2,3),(7,1,8,3,7),(5,2,26,7,25)):
         rank0,o0,c0=rank_from_orbits(p,n,d,1)
@@ -39,10 +57,18 @@ if __name__=="__main__":
         assert rank_big>=rank0 and base!=geometric
         assert p**(2*n)%d==1
         assert all(len(z)==1 for z in obig)
+        small_poly=quotient_P2(p,o0)
+        big_poly=quotient_P2(p**(2*n),obig)
+        assert len(small_poly)-1 == len(big_poly)-1
+        # Nontrivial global Frobenius factors, NOT deductions from local fibres.
+        if (p,d)==(5,6):assert small_poly==[1,-5]
+        if (p,d)==(7,8):assert len(o0)==4 and sorted(map(len,o0))==[1,2,2,2]
+        if (p,d)==(5,26):assert len(o0)==7 and sorted(map(len,o0))==[1,4,4,4,4,4,4]
         print(f"PASS p={p},d={d}: Fp(t) rank={rank0}, "
               f"Fp^(2n)(t) rank={rank_big}; orbit counts={len(o0)},{len(obig)}, corrections={c0},{cbig}")
     try:rank_from_orbits(5,1,7,1)
     except AssertionError:pass
     else:raise AssertionError("invalid Ulmer d not rejected")
+    print("PASS published Jacobi-sum-based GLOBAL quotient surface P2 factors, distinct from finite fibre counts")
     print("PASS prevents erroneous equation of geometric rank with Fp(t) rank")
     print("NONCLAIM: published Tate, BSD, and Jacobi-sum Frobenius eigenvalue theorem are dependencies")
