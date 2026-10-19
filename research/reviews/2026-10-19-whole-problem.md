@@ -94,3 +94,23 @@ Reviewed [the claim ledger](../../CLAIMS.md), [C-0009 exact program](../anticycl
 **Negative controls:** a naive `psi_2(A_i)d(A_i)^4` is integral but nonprimitive at bad prime 2 for three points; the old local-log/height alignment conjecture is actively challenged by different numerical profiles. Exact 11-adic finite digits do not prove complex analytic vanishing.
 
 **References:** [C-0011 audit](../anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md), [verifier](../anticyclotomic_11/provisional_height_mod11.py), [BCLMN Proposition 2.4](https://arxiv.org/pdf/1610.08729), [Mazur–Tate sigma Sage docs](https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html). The repository's research standards and independent reviewer rules remain mandatory.
+
+
+---
+
+## Session 15 supplement — WPR-2026-10-19-04
+
+**Goal check:** General Birch–Swinnerton-Dyer, the original rank-four curve's complex \(L''(E,1)=0\), finiteness of Sha and the full leading-coefficient identity are all **still unproved** here. No new theorem about the original complex analytic rank or general BSD has emerged. This is an AI-assisted internal analysis, not independent human review.
+
+**What actually changed since Session 14:** Using a separate affine addition law on the original minimal model, we directly constructed all ten points \([36]Q\) for \(Q\in\{P_i+R,\;P_i+P_j+R\}\). For each we certified both coordinate integrality after multiplication by the candidate \(D^2,D^3\), and *primitivity* through
+\(\gcd_{\mathbf Z}(N(x([36]Q)D^2),N(D))=1\). This proves the enormous denominator ideals have no hidden cancellations, independent of the earlier projective group-law route (though the denominator candidates still originate from the same division-polynomial recurrence). Direct minimal-model p-adic substitution reproduces individual C-0011 first digits \((1,2,7,8)\bmod11\). Six genuinely mixed points produce first-digit heights \(3,8,9,9,10,4\), equal to every predicted sum \(h(P_i+R)+h(P_j+R)\). The published 389a1 mod5 height-control has also passed all GitHub CI checks (merged PR #35). These checks materially strengthen **internal** corroboration but do not replace an independent Sage/Magma height algorithm or expert mathematical audit of BCLMN normalization.
+
+**Conditional arithmetic implication:** The nonzero anticyclotomic cross-height vector is \((1,2,7,8)\bmod11\), whereas the two-prime elliptic logarithm vector is projectively \((1,0,2,9)\bmod11\). *If* the published height input and sigma coefficient are correctly specialized, the first-height pairing has rank exactly two on the five-dimensional eigenspace and three-dimensional positive radical. Its mod11 generators are \(P_2-2P_1,\ P_3-7P_1,\ P_4-8P_1\). This provides strong conditional evidence **against auxiliary L11 kernel alignment**, not against BSD, and no exactly 11-adic lift of the radical or higher derived height has yet been calculated.
+
+**Six-track audit:** H1 remains blocked by the complex reciprocity bridge and finiteness assumptions; H2 now has a plausible nontrivial first global height and a concrete *different* radical, but no mixed derived height or complex bridge; H3 stays the leading speculative higher complex-derivative geometry direction without a third-derivative theorem; H4 and H6 remain parked; H5 remains numerical diagnostics. None is promoted to a BSD theorem or mathematical novelty claim.
+
+**Conservative next test:** independently verify the Mazur–Tate sigma power series and BCLMN character/ideal normalization in an external Sage/Magma implementation. **Credible moonshot:** evaluate a genuine derived height on the actual global height radical and find a *noncircular* complex comparison only if available. **Wild alternative:** derive a genuinely rank-sensitive period projector that forces complex second-derivative vanishing and survives rank-two counterexamples.
+
+**Negative controls and stop rule:** nonprimitive bad-2 denominator trap, exact direct-affine ideal primitivity, and six cross-point bilinearity controls all enforced in CI. Stop if a claimed "global height" uses only a local elliptic logarithm or if an auxiliary p-adic statement is substituted for complex \(L''=0\). Next full review by 2026-10-26, earlier for substantive merges.
+
+Source: [Session 14/15 updated audit](../anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md), [independent affine/polarization test](../anticyclotomic_11/independent_affine_ideal_and_polarization.py), [published BCLMN method](https://arxiv.org/abs/1610.08729).
