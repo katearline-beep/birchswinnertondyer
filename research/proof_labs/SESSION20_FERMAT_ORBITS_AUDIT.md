@@ -86,3 +86,27 @@ python3 -I -B research/proof_labs/ulmer_function_field_fibres.py
 All three scripts are separate from the preexisting rank-four \(11\)-adic height experiments. The first checks a characteristic-independent map identity; the second computes theorem-based Frobenius orbit factors and rank formulas; the third gives local affine/Legendre-count corroboration and checks smoothness. The source ranks, BSD proof, Tate conjecture, existence of cycles and actual Jacobi-sum identity **are not independently proved in our code**. No theorem for the original complex \(L''(E,1)=0\) or general BSD follows.
 
 References: [Ulmer full primary text, §§4,7–9](https://arxiv.org/pdf/math/0109163), [Annals landing page](https://annals.math.princeton.edu/2002/155-1/p09), [Session 19 pivot](../strategy/THEOREM_FIRST_PIVOT_2026-10-19.md), [Issue #42](https://github.com/katearline-beep/birchswinnertondyer/issues/42).
+
+
+## 3. An independent global Jacobi eigenvalue, beyond the published-orbit formula (C-0018)
+
+The [independent F49 character enumerator](ulmer_jacobi_f49.py) reconstructs a **nontrivial** factor of the p7,d8 global quotient cohomology without relying on Ulmer's *evaluation* of this particular Jacobi sum. For Γ-perpendicular character \(a=(3,-6,2,1)\bmod8=(3,2,2,1)\), the q=7 Frobenius orbit has length \(u(a)=2\); the character values live in \(\mathbb Q(\zeta_8)\) and the defining finite field is \(\mathbb F_{49}\).
+
+Construct \(\mathbb F_{49}=\mathbb F_7[i]/(i^2+1)\) explicitly, find a multiplicative primitive generator \(g\) of order 48 and define \(\chi(g)=\zeta_8\). For \((x_0,x_1,x_2)\in(\mathbb F_{49}^{\times})^3\), the equation \(x_3=-x_0-x_1-x_2\) determines the fourth coordinate; omit the cases \(x_3=0\). The enumerated sum is *exactly*
+\[
+\sum_{\substack{x_0,\ldots,x_3\in\mathbb F_{49}^{\times}\\x_0+x_1+x_2+x_3=0}}
+\chi(x_0)^3\chi(x_1)^2\chi(x_2)^2\chi(x_3).
+\]
+After reducing by \(\zeta_8^4=-1\), the four rational integer coefficients in the basis \(1,\zeta_8,\zeta_8^2,\zeta_8^3\) are
+\[
+\boxed{(2352,0,0,0)=48(49,0,0,0).}
+\]
+The number of admissible triples is exactly \(48^3-(48^2-48)=108336\). Ulmer §7 defines \(J(a)\) by dividing this sum by \(q^{u(a)}-1=48\), so
+\[
+\boxed{J(3,2,2,1)=49=7^2}.
+\]
+This independently verifies the specific **nontrivial Frobenius eigenvalue** predicted by Ulmer's Proposition 8.1 and used by one of the three factors \((1-49T^2)\) in the previously computed global \(P_2(F_8/\Gamma,T)\). The verifier repeats the complete character sum with a different primitive generator, checks the total admissible-triple count and rejects a four-character tuple whose product is not the identity.
+
+**Claim boundary:** one verified Jacobi eigenvalue is not the full Jacobi-sum theorem for all characters, not an independent proof of the surface Tate conjecture, not a proof of BSD over \(\mathbb F_7(t)\), and certainly not a theorem about the original **complex** \(L''(E/\mathbb Q,1)\).
+
+**Research decision:** The next experiment can target a different character orbit (e.g. p5,d26, requiring \(\mathbb F_{625}\)) or, with higher priority, the **algebraic-cycle/Tate-to-zeta** step and what a proposed characteristic-zero motivic regulator would actually need to prove. Do not repeat this success as an assertion that a number-field BSD comparison now exists.
