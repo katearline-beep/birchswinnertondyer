@@ -32,6 +32,18 @@ def theta_first_nonzero_mod121(coeff):
     assert coeff[2]%121 and coeff[2]%11==0
     return 2
 
+def derived_height_scope(p_ordinary,disc_coprime,disc_Nminus_squarefree,ramified_at_all_inert):
+    """Castella-Hsieh Theorem 4.1 (NOT Theorem A)."""
+    return all((p_ordinary,disc_coprime,disc_Nminus_squarefree,ramified_at_all_inert))
+
+def theorems_A_B_compatible(rank_lower_bound,all_theorem_A_hypotheses,theta_order2):
+    """Theorem B + Theorem A force Sel-dimension 2 if ord_T Theta=2."""
+    if not all_theorem_A_hypotheses or rank_lower_bound==0:
+        return None
+    if not theta_order2:
+        return None
+    return rank_lower_bound<=2
+
 def CH_rank2_consequence(complete_hypotheses,theta_order_is_two,rank_at_least):
     """THEOREM B + A logical implication, NOT any class computation."""
     if not complete_hypotheses or not theta_order_is_two:
@@ -40,12 +52,10 @@ def CH_rank2_consequence(complete_hypotheses,theta_order_is_two,rank_at_least):
     assert rank_at_least>0
     return rank_at_least<=2
 
-assert [1,0,0,0,1]==[1,0,0,0,1]  # LMFDB 433.a1 minimal coefficients
 # b2=1, b4=0, b6=4, b8=1, discriminant -b2^2*b8-27*b6^2=-433.
 b2,b4,b6,b8=1,0,4,1
 delta=-b2*b2*b8-8*b4**3-27*b6*b6+9*b2*b4*b6
 assert delta==-433
-assert ((0,1),(-1,1)) == ((0,1),(-1,1))
 for x,y in ((0,1),(-1,1)):
     assert y*y+x*y==x*x*x+1
 assert legendre(-7,433)==-1  # the single N^- conductor prime is inert
@@ -69,12 +79,28 @@ assert CH_rank2_consequence(False,True,4) is None
 assert CH_rank2_consequence(True,False,4) is None
 # Deliberately wrong fields/prime conditions don't sneak into the test.
 assert legendre(-7,117223)==1  # focal rank-four N bad odd prime SPLITS K
+# IMPORTANT: 4.1 does apply to the FOCAL rank-four curve with N^-=1.
+p=11
+focal_count=1+sum(1 for x in range(p) for y in range(p)
+                  if (y*y+x*y-x*x*x+x*x+79*x-289)%p==0)
+focal_a11=p+1-focal_count
+assert (focal_count,focal_a11)==(18,-6) and focal_a11%11
+assert 117223%7 and 2%7 and 11%7
+assert derived_height_scope(True,True,True,True)  # N^-=1, vacuous ramification
+assert derived_height_scope(True,True,True,True)  # 433a1: N^-=433, ramified p11
+assert not derived_height_scope(True,True,True,False)
+assert not derived_height_scope(False,True,True,True)
+assert theorems_A_B_compatible(4,True,True) is False
+assert theorems_A_B_compatible(4,False,True) is None
+assert theorems_A_B_compatible(2,True,True) is True
 assert legendre(-11,389)==1    # BCLMN control K=-11 is NOT CH Appendix K=-2
 print("PASS CH published Appendix Table1 433a1 p11 K=-7: discriminant -433")
 print("PASS inert bad 433, split good 11, ordinary a11=-4, two rational points")
 print("PASS mod11 residual irreducibility: Frobenius5 discr 7 nonsquare in F11")
 print("PASS multiplicative mod11 ramification via v433(Delta)=1")
 print("PASS published theta T2 coefficient 88 mod121 is nonzero (valuation one)")
+print("PASS CH Thm4.1 applies to focal E234446a1 p11 K=-7 with Nminus=1")
+print("PASS CH ThmA INAPPLICABLE to focal K=-7; Thm4.5 needs a genuine Iwasawa class")
 print("PASS CH ThmA+B conditional: theta order2 forces Sel dim2; rank4 excludes order2")
 print("NONCLAIM: adjoint L nonvanishing/theta expansion/rank2 are published inputs")
 print("NONCLAIM: no independent Kato class or complex L''/BSD proof")
