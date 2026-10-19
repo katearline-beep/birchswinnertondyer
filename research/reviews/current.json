@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-10-19-07",
+  "review_id": "WPR-2026-10-19-08",
   "reviewed_on": "2026-10-19",
   "next_due_on": "2026-10-26",
   "reviewer_type": "ai_assisted_unreviewed",
-  "review_kind": "supporting_certificate_and_whole_problem_reorientation",
+  "review_kind": "theorem_first_proof_laboratory_and_whole_problem_reorientation",
   "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
   "target_curve": "234446.a1",
   "goal_general": "For every elliptic curve over Q prove equality of Mordell–Weil rank and complex L-function order of vanishing, and the full normalized leading coefficient formula with Sha finiteness.",
@@ -32,7 +32,9 @@
     "C-0011",
     "C-0012",
     "C-0013",
-    "C-0014"
+    "C-0014",
+    "C-0015",
+    "C-0016"
   ],
   "reviewed_prs": [
     "#24",
@@ -46,10 +48,11 @@
     "#35",
     "#37",
     "#38",
-    "#39"
+    "#39",
+    "#40"
   ],
-  "previous_review_id": "WPR-2026-10-19-06",
-  "mathematical_breakthrough_since_previous": "NONE toward general BSD, original complex L''(E,1)=0, analytic rank-four theorem or Sha finiteness. C-0014 is an elementary but new-to-this-project CONDITIONAL integral consequence: C-0002 local-log and C-0011/13 provisional global-height functionals have an 11-adic unit minor 35≡2 mod11 on P1,P2. If that first global-height digit holds, their combined Z11-linear map is split surjective and the common kernel is a saturated rank-two direct summand with explicit mod1331 frame; no Selmer or complex comparison follows.",
+  "previous_review_id": "WPR-2026-10-19-07",
+  "mathematical_breakthrough_since_previous": "NONE toward original complex L''(E,1)=0, general BSD, Sha finiteness or leading term. C-0015 is an exact applicability/scope audit of *published* Castella–Hsieh rank-two generalized Kato nonvanishing vs existing arbitrary-rank derived-height filtration, with a conditional rank-four contrapositive and old K=-7 odd-inert failure. C-0016 imports Ulmer's already-proved characteristic-p BSD ranks 3,7,25 and reproducibly double-checks finite smooth-fibre point counts, including identical F5 local traces at globally different ranks. These are new-to-project theorem selection controls, not new rank or BSD theorems.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -95,17 +98,29 @@
     {
       "category": "provisional_computational_certificate",
       "statement": "C-0014 exact DVR linear algebra conditional on still-provisional BCLMN first-height digit: unit minor 35 mod1331, saturated rank-two common kernel, modular frame and negative determinant/scale controls."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0015: Castella–Hsieh 2022 Theorem A nonzero generalized Kato class forces Selmer dimension 2 under all hypotheses; known rank4 gives ≥4, so the same class must vanish if Theorem A applies. Our current K=-7 odd-inert condition fails. Separate CH Theorem4.1/4.5 arbitrary-rank derived-height scope."
+    },
+    {
+      "category": "published_theorem",
+      "statement": "C-0016: Ulmer 2002 independently published BSD/rank p^n or p^n−2 theorem over Fp(t) for d=p^n+1, yielding the selected ranks 3,7,25. The repository's finite-fibre counts are not a proof of any global theorem."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0016 local-fibre enumeration and independent Legendre character-sum traces agree, bad fibres excluded and Hasse bounds checked; p5 d6 vs d26 have identical F5 rational local counts despite distinct theorem-supplied global ranks."
     }
   ],
-  "deepest_open_implication": "Unchanged: no noncircular bridge from known rank-four points or tested 11-adic information to the exact original complex L''(E,1)=0; independent expert audit of subsidiary twist derivative remains pending.",
+  "deepest_open_implication": "UNCHANGED: no noncircular arrow from independently known rank-four rational points, CH generalized Kato/derived Selmer structures, Ulmer positive-characteristic Frobenius geometry, or our provisional anticyclotomic heights to the exact ORIGINAL COMPLEX L''(E,1)=0; Sha and BSD leading coefficient separately unresolved.",
   "tracks": [
     {
       "track": "H1",
-      "decision": "active_limited",
-      "last_evidence": "Exact cyclotomic field, integral augmentation and BKS scope audits; C-0007/8 and no-go controls on false vanishing.",
-      "missing_bridge": "No independently computed Kato class and no proven comparison from I-adic derived classes to complex L''(E,1); unknown Sha finiteness.",
-      "falsifier": "If available results only show finite-layer augmentation containment or assume BSD/Sha that we seek, do not increase effort.",
-      "next_test": "Produce a typed feasibility memo for a genuine cohomology-valued derived class; limit to literature audit before new computation."
+      "decision": "active_prioritized",
+      "last_evidence": "C-0015 primary-source rank-two generalized Kato theorem audit: Theorem A nonzero κ forces Selmer dimension two under all hypotheses, contradicting rank4 via Kummer. Old K=-7 fails odd-inert N^-; CH Theorems 4.1/4.5 already supply arbitrary-rank derived height tools under distinct hypotheses.",
+      "missing_bridge": "No actual rank-four higher Iwasawa class satisfying CH Coleman-map hypotheses and no comparison to original complex L''; rank-two nonzero κ is expressly incompatible with rank4 if Theorem A applies.",
+      "falsifier": "Reject an unverified Theorem A hypothesis, automatic extension of nonzero κ to rank4, or misrepresentation of existing arbitrary-rank derived height filtration as a new theorem.",
+      "next_test": "Issue #41: select genuinely admissible published CH appendix rank-two control; type domains and hypotheses for Theorem4.1/4.5 and identify missing new rank-four class."
     },
     {
       "track": "H2",
@@ -113,15 +128,15 @@
       "last_evidence": "C-0014 new-to-project conditional DVR deduction: local-log and provisional global anticyclotomic height rows have 2×2 unit minor 35≡2 mod11 and a saturated rank-two intersection, with explicit mod1331 frame. Global-height pipeline still awaits completely independent certification.",
       "missing_bridge": "No independently certified full BCLMN global-height computation, no defined exact sequence identifying the common rank-two kernel with one-prime modified Selmer/Bockstein objects, no higher derived regulator, no comparison to original complex L''.",
       "falsifier": "Independent global height contradicting C-0011 mod11 kills the C-0014 conditional input; no valid typed map to one-prime Selmer complex kills the proposed intersection interpretation.",
-      "next_test": "Independent complete global-height audit first; only after success test one-prime Selmer-complex inclusion/exact sequence for the saturated rank-two intersection, keeping original complex L'' separate."
+      "next_test": "Only independently check the COMPLETE existing BCLMN global height, beyond PARI sigma, as a lower-budget control (15%); no digit-only improvements. Treat the rank4 curve as stress test of any theorem-first class."
     },
     {
       "track": "H3",
-      "decision": "active_prioritized",
+      "decision": "active_limited",
       "last_evidence": "Exact identity L'''(E/K_D,1)=3 L''(E,1)L'(E^D,1) and admissible quadratic fields; targeted 2024/2026 papers supply first derivatives, not a third derivative formula for weight-two E/K_D.",
       "missing_bridge": "An independently established geometric identity forcing the third derivative of weight-two L(E/K_D,s) to vanish.",
       "falsifier": "Higher-weight cycle/first-derivative formula is not a third-derivative theorem for the target L-function; reject as irrelevant unless specialized.",
-      "next_test": "Search theorem statements with exact derivative order and specialization; produce a go/no-go lemma inventory, without calculating more fields."
+      "next_test": "Restrict to a named exact complex third-derivative identity or verified period/cycle construction; no automatic Heegner first-derivative analogies. In parallel Ulmer surface/global zeta lab is tracked independently as EX-011."
     },
     {
       "track": "H4",
@@ -148,13 +163,13 @@
       "next_test": "Require a precisely defined operator with nontrivial action before new coding."
     }
   ],
-  "selected_next_experiment": "Independently implement/verify the COMPLETE BCLMN anticyclotomic height over Q(sqrt(-7)) at 11, not just PARI's canonical sigma slope; compare one full self-height on Pi+R and all local terms. If it survives, audit a mathematically typed one-prime modified Selmer/Bockstein exact sequence and test whether C-0014's saturated rank-two intersection arises as its actual domain. In parallel seek a theorem for the complex third base-change derivative, not automatic p-adic digits.",
-  "selected_experiment_kill_criterion": "If independently implemented BCLMN global-height first digits disagree, withdraw C-0011/13's height-dependent consequences including C-0014 and L11 counterevidence. If no defined injection or exact sequence to the proposed one-prime Selmer complex exists, park the kernel-identification leapfrog. Neither p-adic heights nor their common kernel prove original complex L''(E,1)=0.",
-  "conservative_next_lemma": "Certify one full BCLMN global 11-adic anticyclotomic height using a second software pipeline or external arithmetic-geometer verification, including all primes, ideals, split embeddings and invariant differential.",
-  "credible_leapfrog": "Test a fully defined one-prime Selmer/Bockstein model for the saturated 2D common kernel of the verified local-log and global-height forms, carefully auditing source/target maps before computing any derived regulator.",
-  "speculative_wild_option": "H6: geometric annihilation of the original complex second derivative by an exact period projector beyond root-sign parity, tested against rank-two controls; remain parked absent a noncircular formula.",
-  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation. Session16 no further two-prime local log precision; the local profile mod121 [1:99:46:9] differs from provisional global [1:13:40:63]. Session17: no further local-log or sigma precision-only upgrades without independent third-party sigma verification; global height first three digits already disagree with local two-prime logarithm profile. Session18: unit-minor transversality already detected at mod11. Further local-log and sigma digits are low priority until independent complete global height or typed derived-height reciprocity is found.",
-  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification. Published MST E37/p5 t7 sigma polynomial reproduced with canonical c5=1, target t13 polynomial forces unique c11=4; wrong c0 changes only second height digits. Six mixed heights pass mod121; modular inverse check corrects an intermediate assistant mistake in radical coefficients to 13,40,63. Session17 series u11=26 mod121 is unique root of t23 integrality; published MST E37/p5 second digit c5=6 matches. Stale c=4 preserves heights mod121 but changes mod1331; all 6 mixed points satisfy bilinear sums mod1331 with ten primitive denominator checks. Independent PARI ellpadics2 reports s2=4 (mod121) while sigma-series u=26 (mod121), consistent via E2=12u=70 and s2=(b2−E2)/12. On E37/p5 PARI s2=19 but series u=6. Previous prose E2=48 was erroneous and is expressly corrected. C-0014 unit pivot D=35≡2 mod11, explicit splitting Z11^4→Z11² and saturated rank-two conditional kernel; reject equal or nearly equal rows with nonunit minor and the primitive-scale trap on vectors multiplied by 11.",
+  "selected_next_experiment": "Start two theorem-first proof labs instead of local 11-adic precision. Issue #41: select a true Castella–Hsieh rank-two appendix example satisfying all Theorem A conditions and type the Theorem4.1/4.5 Coleman-map global class and derived Selmer hypotheses. Issue #42: reconstruct Ulmer p5,d6 Fermat quotient and a global Gauss-sum zeta factor, then test characteristic-zero transfer barriers. Preserve rank-four E as test case. 45% rank-two Kato, 30% Ulmer, 15% independent complete old global-height verification, 10% complex geometry exploratory.",
+  "selected_experiment_kill_criterion": "If a proposed rank-four nonzero generalized Kato class contradicts CH Theorem A's dimSel2 conclusion or lacks odd-inert/adjoint hypotheses, reject. If an Ulmer transfer assumes Frobenius/Tate finite-characteristic geometry equals original complex Taylor vanishing, reject; his Q(t) bounded-rank example is negative control. Neither published theorem proves L''(E,1)=0 for our E/Q.",
+  "conservative_next_lemma": "Construct a real source-matched rank-two CH theorem A example and a typed Theorems4.1/4.5 proof-obligation map of Selmer spaces, Iwasawa class and Coleman localization, including both missing global-class and complex-derivative arrows.",
+  "credible_leapfrog": "Reconstruct Ulmer's explicit Fermat surface quotient for p=5,d=6 and one exact Gauss-sum global zeta computation to identify what cycle-to-complex-L comparison would genuinely need to be newly proved in characteristic zero.",
+  "speculative_wild_option": "Find and independently prove a rank-sensitive period/cycle formula for the original complex L''(E,1) that survives rank-two completed-L countermodels; no such operator has yet been defined.",
+  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation. Session16 no further two-prime local log precision; the local profile mod121 [1:99:46:9] differs from provisional global [1:13:40:63]. Session17: no further local-log or sigma precision-only upgrades without independent third-party sigma verification; global height first three digits already disagree with local two-prime logarithm profile. Session18: unit-minor transversality already detected at mod11. Further local-log and sigma digits are low priority until independent complete global height or typed derived-height reciprocity is found. Session19 binding pivot: stop routine global height sigma precision upgrades, p-adic kernel congruences, local prime scans and numerical curvature runs without a new exact theorem/hypothesis. Prioritize published rank-two and proved characteristic-p global mechanisms with explicit characteristic-zero transfer no-go checks.",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification. Published MST E37/p5 t7 sigma polynomial reproduced with canonical c5=1, target t13 polynomial forces unique c11=4; wrong c0 changes only second height digits. Six mixed heights pass mod121; modular inverse check corrects an intermediate assistant mistake in radical coefficients to 13,40,63. Session17 series u11=26 mod121 is unique root of t23 integrality; published MST E37/p5 second digit c5=6 matches. Stale c=4 preserves heights mod121 but changes mod1331; all 6 mixed points satisfy bilinear sums mod1331 with ten primitive denominator checks. Independent PARI ellpadics2 reports s2=4 (mod121) while sigma-series u=26 (mod121), consistent via E2=12u=70 and s2=(b2−E2)/12. On E37/p5 PARI s2=19 but series u=6. Previous prose E2=48 was erroneous and is expressly corrected. C-0014 unit pivot D=35≡2 mod11, explicit splitting Z11^4→Z11² and saturated rank-two conditional kernel; reject equal or nearly equal rows with nonunit minor and the primitive-scale trap on vectors multiplied by 11. C-0015: CH Theorem A cannot turn a nonzero κ into rank4; our old K=-7 gives N^-=1 (no odd inert conductor prime), so theorem A is inapplicable. CH Theorem4.1 already has derived-height filtration at general rank. C-0016: Ulmer rank3 p5,d6 and rank25 p5,d26 have identical F5 finite-fibre trace profiles; two independent local count methods plus bad-fibre/Hasse checks make the local-vs-global proof limitation explicit. Ulmer Q(t) rank bounded despite characteristic-p unbounded families.",
   "sources": [
     "CLAIMS.md",
     "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -190,7 +205,16 @@
     "research/anticyclotomic_11/conditional_heights_mod1331.py",
     "research/anticyclotomic_11/pari_canonical_sigma_oracle.gp",
     "research/anticyclotomic_11/SESSION18_TRANSVERSALITY_AUDIT.md",
-    "research/methodology/local_global_transversality_11.py"
+    "research/methodology/local_global_transversality_11.py",
+    "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md",
+    "research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md",
+    "research/proof_labs/kato_rank_scope_gate.py",
+    "research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md",
+    "research/proof_labs/ulmer_function_field_fibres.py",
+    "https://doi.org/10.1017/fms.2021.85",
+    "https://annals.math.princeton.edu/2002/155-1/p09",
+    "https://github.com/katearline-beep/birchswinnertondyer/issues/41",
+    "https://github.com/katearline-beep/birchswinnertondyer/issues/42"
   ],
   "journal_path": "research/reviews/2026-10-19-whole-problem.md",
   "not_established": [

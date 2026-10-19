@@ -9,7 +9,7 @@ code=run_path(str(Path(__file__).resolve().with_name("validate_leapfrogs.py")))
 validator=code["validate"]
 data=json.loads(code["REGISTRY"].read_text(encoding="utf8"))
 experiments=json.loads(code["EXPERIMENTS"].read_text(encoding="utf8"))
-assert validator(data,experiments)==6
+assert validator(data,experiments)==len(data["leapfrogs"])  # extensible registry; corruptions still fail closed
 
 def must_reject(label,mutation):
     corrupted=deepcopy(data)

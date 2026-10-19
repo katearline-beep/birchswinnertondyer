@@ -127,6 +127,17 @@ Run: `python3 -I -B research/methodology/local_global_transversality_11.py`.
 
 The conditional common kernel is *not* a proven Selmer kernel or derived height radical, and no complex L'' vanishing or BSD proof follows. Prioritize independent complete global BCLMN height audit and an actual typed Selmer-exact-sequence proposal, not further digit accumulation.
 
+## Theorem-first pivot: two independent proof laboratories (Session 19)
+
+The default research allocation now favors **published mechanisms**, not more rank-four 11-adic precision. Read [theorem-first binding plan](../strategy/THEOREM_FIRST_PIVOT_2026-10-19.md). The [rank-two Kato theorem-scope lab](../proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md) verifies Theorem A's conditional nonzero κ ⇒ Sel dimension two cannot be repurposed as a rank-four certificate, while CH 4.1's derived filtration itself already exists at arbitrary rank. The old K=-7 fails odd-inert requirements. The [Ulmer function-field lab](../proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md) uses an **already proved** BSD/rank 3,7,25 family: local finite-fibre point counts are independently verified, but identically counted F5 fibres can have very different proven global ranks. Neither lab claims a new proof or a characteristic-zero transfer.
+
+```bash
+python3 -I -B research/proof_labs/kato_rank_scope_gate.py
+python3 -I -B research/proof_labs/ulmer_function_field_fibres.py
+```
+
+New EX-010/EX-011 and LF-007/LF-008 give typed theorem hypotheses, falsifiers, actual nonclaims and stage-gated follow-ups. C-0015/16 mark published inputs separately from project calculations. The original complex L'' remains unproved and general BSD unsolved.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.

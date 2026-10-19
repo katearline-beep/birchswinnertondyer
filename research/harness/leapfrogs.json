@@ -240,6 +240,64 @@
           "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
         }
       ]
+    },
+    {
+      "id": "LF-007",
+      "experiment_id": "EX-010",
+      "title": "Rank-sensitive higher cohomology class beyond rank-two generalized Kato nonvanishing",
+      "known_baseline": "Castella–Hsieh Theorem 4.1 gives arbitrary-rank derived p-adic Selmer heights, Theorem 4.5 a Coleman-map expression under precise global-class hypotheses; Theorem A only gives nonzero generalized Kato class implying Selmer dimension two.",
+      "missing_arrow": "No explicit rank-four global Iwasawa/cohomology class with verified Coleman-map hypotheses, and no comparison from its derived p-adic height to the original complex L''(E,1).",
+      "hypothetical_bridge": "Construct a new rank-sensitive higher derived class in the already-established Selmer filtration, distinguish it from rank-two generalized Kato κ (which Theorem A excludes under its hypotheses), and prove a noncircular explicit reciprocity reaching the original complex second derivative.",
+      "if_then_statement": "IF a genuinely defined higher class satisfies all available derived-height hypotheses AND a new proved comparison identifies its regulator with original complex L'' and proves regulator vanishing, THEN L''(E,1)=0.",
+      "would_unlock": "A coherent path from established arbitrary-rank Selmer filtration to a rank-four-specific complex derivative constraint rather than another local logarithm.",
+      "unverified_dependencies": "Rank-four κ nonvanishing directly contradicts Theorem A's dimension-two conclusion whenever its full hypotheses hold; at old K=-7 its odd-inert hypothesis fails, so the theorem gives no result. No alternate higher cohomology class, universal norm or complex comparison currently exists.",
+      "negative_control": "EX-010 rejects both a rank-four nonzero Theorem-A κ claim and applying Theorem A at old K=-7 with N^-=1; rank-two nonvanishing is not equivalent to a general rank-four complex analytic theorem.",
+      "next_decisive_test": "Write a typed map table for Theorems 4.1,4.5 and one candidate universal-norm class on an actual rank-two appendix example, then enumerate exactly which constructions survive unchanged for rank four.",
+      "kill_criterion": "Park if the only claimed new class is a nonzero κ excluded by rank-two nonvanishing theorem, if the Iwasawa class cannot be specified, or if the last arrow is only p-adic rather than original complex.",
+      "source": "https://doi.org/10.1017/fms.2021.85",
+      "test_path": "research/proof_labs/kato_rank_scope_gate.py",
+      "gate": "G0",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No nonzero rank-four generalized Kato class, independent derived Selmer regulator, Sha finiteness, original complex L'' zero or full/general BSD proof.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Theorem first audit: CH 4.1/4.5 already offer arbitrary-rank derived-height tools; CH A nonzero κ forces Selmer dimension two under full hypotheses and cannot directly certify our rank-four group. A new global class and complex bridge are missing."
+        }
+      ]
+    },
+    {
+      "id": "LF-008",
+      "experiment_id": "EX-011",
+      "title": "Ulmer Fermat-surface Tate mechanism to characteristic-zero complex L-values",
+      "known_baseline": "Ulmer (2002) proves BSD and arbitrarily large ranks for nonisotrivial y²+xy=x³-t^(p^n+1) over finite characteristic using Fermat-surface quotients, Tate conjecture and Gauss-sum zeta computations.",
+      "missing_arrow": "No characteristic-zero analogue of the exact Tate/Fermat geometric cycle-to-Frobenius pole identity that proves vanishing of the original complex Hasse–Weil L(E/Q,s).",
+      "hypothetical_bridge": "Construct a genuinely motivic/cohomological correspondence over a number field with a proved map from independently detected algebraic cycles to the original complex L-function Taylor coefficients; distinguish this from finite-characteristic Frobenius zeta identities.",
+      "if_then_statement": "IF a characteristic-zero geometric correspondence and independently proved complex regulator/period comparison convert the relevant rank-four cycle relations into an exact zero of original L''(E,1), THEN the analytic rank-at-least-four obligation is met.",
+      "would_unlock": "A conceptually different high-rank analytic vanishing mechanism informed by one of the few already-proved high-rank BSD families.",
+      "unverified_dependencies": "Ulmer's Fermat surface map and Tate conjecture are specific to positive characteristic; his Remark 1.6 notes the analogous Q(t) family has rank bounded independently of d. Local finite-fibre counts alone do not determine the global rank.",
+      "negative_control": "EX-011 produces identical F5 finite-fibre traces for global rank-three d=6 and rank-25 d=26 Ulmer examples; naively transferring y²+xy=x³-t^d to Q(t) fails to preserve unbounded rank per the original paper.",
+      "next_decisive_test": "Reconstruct and independently verify Ulmer's Fermat quotient map for p5,d6 and at least one actual global zeta/Gauss-sum step, then draft a precisely typed characteristic-zero analogue with an explicit falsifying control.",
+      "kill_criterion": "Park any candidate that equates finite-field Frobenius zeros with complex L-function Taylor zeros without a new theorem, or that ignores Ulmer's bounded Q(t) family.",
+      "source": "https://annals.math.princeton.edu/2002/155-1/p09",
+      "test_path": "research/proof_labs/ulmer_function_field_fibres.py",
+      "gate": "G0",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No transferred characteristic-zero proof, no Hasse–Weil L'' zero of original E/Q, no Sha finiteness, and no general BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Ulmer high-rank BSD theorem provides complete global surface proof laboratory; local F5 fibres fail to distinguish published ranks 3 and 25 and the Q(t) analogue is bounded. Characteristic-zero cycle-to-complex-L comparison is missing."
+        }
+      ]
     }
   ]
 }

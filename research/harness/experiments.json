@@ -461,6 +461,86 @@
           "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/strategy/HIGH_UPSIDE_PORTFOLIO.md"
         }
       ]
+    },
+    {
+      "id": "EX-010",
+      "claim_ids": [
+        "C-0015"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Can rank-two generalized Kato nonvanishing or already-existing arbitrary-rank derived height theory produce a legitimate rank-four Selmer class and eventually an original complex L'' implication?",
+      "decisive_observation": "Published Castella–Hsieh Theorem A nonzero κ forces Sel dimension two under all hypotheses, incompatible with four independent rational points; old K=-7 does not even satisfy its odd-inert premise. Theorem4.1 already gives higher derived-height filtration at general rank, with no constructed rank-four Iwasawa class or complex comparison.",
+      "dependencies": [
+        "Castella–Hsieh (2022) Theorem A complete hypotheses including auxiliary adjoint central nonvanishing, residual irreducibility and odd-inert conductor factor",
+        "Kummer injection E(Q)⊗Qp→Sel(Q,VpE), with four independent known rational points",
+        "Distinguish Theorem 4.1 derived-height filtration from Theorem A nonvanishing and Theorem 4.5 Coleman-map class prerequisites"
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/kato_rank_scope_gate.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/kato_rank_scope_gate.py",
+        "research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md",
+        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md"
+      ],
+      "negative_control": "Test that rank four and all Theorem A hypotheses exclude κ nonvanishing, whereas the same theorem cannot be applied when its odd-inert hypothesis fails (N^-=1 at K=-7). Reject nonzero κ⇒Sel dimension2 as an existence proof or automatic rank-four complex L'' zero.",
+      "stop_condition": "Park direct rank-two nonzero κ extension; resume only with a precisely defined global Iwasawa class and verified Theorem4.5 hypotheses, and never infer complex L'' from p-adic derived height alone.",
+      "nonclaims": [
+        "No class κ or Coleman map has been computed",
+        "No new general arbitrary-rank derived-height theory is claimed",
+        "Published rank-two criterion does not establish original complex rank-four BSD"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "formal methods",
+          "kind": "validation_method",
+          "mechanism": "Treat theorem hypotheses as typed preconditions and forbid contraposition or composition when a precondition fails.",
+          "proof_boundary": "The compatibility checker is a logical sanity test and cannot prove Castella–Hsieh's theorem, auxiliary L nonvanishing or construct cohomology classes.",
+          "validating_test": "research/proof_labs/kato_rank_scope_gate.py",
+          "reference": "https://doi.org/10.1017/fms.2021.85"
+        }
+      ]
+    },
+    {
+      "id": "EX-011",
+      "claim_ids": [
+        "C-0016"
+      ],
+      "status": "computationally_reproduced",
+      "human_reviewed": false,
+      "question": "Which GLOBAL geometry makes Ulmer's characteristic-p high ranks and BSD provable, and what fails in the naive number-field transfer?",
+      "decisive_observation": "Published Ulmer rank3, rank7 and rank25 curve instances come from Fermat-surface Tate/zeta theory, while exact local counts independently agree by two methods; the p5 rank3 and rank25 examples have identical F5-rational finite fibre traces despite different published global ranks.",
+      "dependencies": [
+        "Ulmer Annals (2002) Theorem 1.5, Remark 1.6 and surface Tate-to-BSD mechanism are externally PUBLISHED inputs not proved by our code",
+        "The field is Fp(t), characteristic p, and d=p^n+1; do not substitute Q(t) or the original Q-elliptic curve",
+        "The finite fibre checker only handles smooth fibres with nonzero discriminant and Hasse bounds; no global zeta factor or Mordell–Weil rank is computed"
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/ulmer_function_field_fibres.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/ulmer_function_field_fibres.py",
+        "research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md",
+        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md"
+      ],
+      "negative_control": "For p=5, d=6 and d=26, compare all F5-rational finite-fibre traces: identical point counts coexist with published ranks 3 and 25, so a local count pattern does not prove global rank. Reject bad fibres and confirm each good trace independently via enumeration and Legendre symbols.",
+      "stop_condition": "Do not claim any characteristic-zero transfer until a typed geometric/cohomological map and a proved comparison to the original complex L-function are specified; stop repetitive finite-fibre counting absent a global zeta theorem experiment.",
+      "nonclaims": [
+        "No independent proof of Ulmer's rank formula, BSD or Tate conjecture",
+        "No global function-field L-polynomial computed in this stage",
+        "No proof that positive-characteristic Frobenius eigenvalues translate into original complex L''(E,1)"
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "experimental design",
+          "kind": "validation_method",
+          "mechanism": "Orthogonal point enumeration and quadratic-character sums with a matched-local-data but different-global-rank negative control.",
+          "proof_boundary": "Independent local agreement does not certify a global L-polynomial or rank: both d=6 and 26 have identical local F5 point counts but different theorem-proved ranks.",
+          "validating_test": "research/proof_labs/ulmer_function_field_fibres.py",
+          "reference": "https://annals.math.princeton.edu/2002/155-1/p09"
+        }
+      ]
     }
   ]
 }
