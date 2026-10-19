@@ -274,14 +274,14 @@
       "id": "LF-008",
       "experiment_id": "EX-011",
       "title": "Ulmer Fermat-surface Tate mechanism to characteristic-zero complex L-values",
-      "known_baseline": "Ulmer (2002) proves BSD and arbitrarily large ranks for nonisotrivial y²+xy=x³-t^(p^n+1) over finite characteristic using Fermat-surface quotients, Tate conjecture and Gauss-sum zeta computations.",
+      "known_baseline": "Ulmer's 2002 Fermat quotient/tame Tate/Frobenius theory proves BSD and exact Fq(t) ranks. The correct Fp(t) ranks for p5,d6;p7,d8;p5,d26 are 2,3,7, while geometric ranks after constants p^(2n) are 3,7,25. Session20 reconstructs the exact characteristic-independent Fermat map and the global quotient Frobenius P2 factor using the published Jacobi sum theorem.",
       "missing_arrow": "No characteristic-zero analogue of the exact Tate/Fermat geometric cycle-to-Frobenius pole identity that proves vanishing of the original complex Hasse–Weil L(E/Q,s).",
       "hypothetical_bridge": "Construct a genuinely motivic/cohomological correspondence over a number field with a proved map from independently detected algebraic cycles to the original complex L-function Taylor coefficients; distinguish this from finite-characteristic Frobenius zeta identities.",
       "if_then_statement": "IF a characteristic-zero geometric correspondence and independently proved complex regulator/period comparison convert the relevant rank-four cycle relations into an exact zero of original L''(E,1), THEN the analytic rank-at-least-four obligation is met.",
       "would_unlock": "A conceptually different high-rank analytic vanishing mechanism informed by one of the few already-proved high-rank BSD families.",
-      "unverified_dependencies": "Ulmer's Fermat surface map and Tate conjecture are specific to positive characteristic; his Remark 1.6 notes the analogous Q(t) family has rank bounded independently of d. Local finite-fibre counts alone do not determine the global rank.",
-      "negative_control": "EX-011 produces identical F5 finite-fibre traces for global rank-three d=6 and rank-25 d=26 Ulmer examples; naively transferring y²+xy=x³-t^d to Q(t) fails to preserve unbounded rank per the original paper.",
-      "next_decisive_test": "Reconstruct and independently verify Ulmer's Fermat quotient map for p5,d6 and at least one actual global zeta/Gauss-sum step, then draft a precisely typed characteristic-zero analogue with an explicit falsifying control.",
+      "unverified_dependencies": "Ulmer's Fermat surface map and Tate conjecture are specific to positive characteristic; his Remark 1.6 notes the analogous Q(t) family has rank bounded independently of d. Local finite-fibre counts alone do not determine the global rank. Session20: The Fermat rational map identity holds over Z and Γ acts invariantly, but deriving the surface zeta eigenvalues depends on Ulmer's characteristic-p Jacobi/Gauss and Tate theorems. Previously reported 3,7,25 as Fp(t) ranks were incorrect (they are geometric); corrected Fp(t) ranks 2,3,7 verified from Theorem9.2.",
+      "negative_control": "Session20 exact Fermat polynomial identity accepts the published map but rejects a corrupted x3 exponent. The same finite F5 fibre traces occur for d6 and d26 even though corrected F5(t) global ranks are 2 and 7. A single map identity survives over Z while characteristic-p Frobenius pole/Tate cycle theorem does not automatically reach original complex L''(E,1).",
+      "next_decisive_test": "Independently compute and compare a NONTRIVIAL Jacobi sum in one Ulmer p7,d8 or p5,d26 Frobenius character orbit (beyond the published Prop8.1 identity), then audit the associated surface algebraic cycle correspondence; define a genuine characteristic-zero motivic regulator into the original complex central Taylor coefficient before any attempted transfer.",
       "kill_criterion": "Park any candidate that equates finite-field Frobenius zeros with complex L-function Taylor zeros without a new theorem, or that ignores Ulmer's bounded Q(t) family.",
       "source": "https://annals.math.princeton.edu/2002/155-1/p09",
       "test_path": "research/proof_labs/ulmer_function_field_fibres.py",
@@ -296,6 +296,11 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Ulmer high-rank BSD theorem provides complete global surface proof laboratory; local F5 fibres fail to distinguish published ranks 3 and 25 and the Q(t) analogue is bounded. Characteristic-zero cycle-to-complex-L comparison is missing."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session20 exact Z-polynomial Fermat map, Γ order d², global quotient P2 orbit polynomials reconstructed conditional on Ulmer's Jacobi theorem, with historical field-rank error corrected: Fp(t)=(2,3,7), geometric=(3,7,25). Characteristic-zero map alone is insufficient for complex BSD."
         }
       ]
     }
