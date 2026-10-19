@@ -65,7 +65,7 @@ def validate(obj, root=ROOT):
          "Previous review reference must be typed")
     claims=obj.get("claim_ids_audited")
     ledger=(root / "CLAIMS.md").read_text(encoding="utf8")
-    expected_claims=set(re.findall(r"^\\| (C-\\d{4}) \\|",ledger,re.M))
+    expected_claims=set(re.findall(r"^\| (C-\d{4}) \|",ledger,re.M))
     need(bool(expected_claims),"No claim IDs in canonical ledger")
     need(type(claims) is list and len(claims)==len(expected_claims) and set(claims)==expected_claims,
          "Review must inspect ALL C-series claims actually present in CLAIMS.md")
