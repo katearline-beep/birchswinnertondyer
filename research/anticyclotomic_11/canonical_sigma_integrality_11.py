@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Derive Mazur--Tate canonical sigma's unknown c_p modulo p by integrality.
+"""Derive the canonical sigma-series coefficient u=E2/12 modulo p.
 
 Exact stdlib Fraction series from Mazur--Stein--Tate formal-group equations.
-sigma_c(z) = sigma_0(z) * exp(c*z^2/2). The first coefficient with
+sigma_u(z) = sigma_0(z) * exp(u*z^2/2). NOT PARI s2=b2/12-u. The first coefficient with
 denominator p forces c_p mod p. Published E37/p5 result is an oracle.
 AI-authored symbolic implementation, not a peer-reviewed theorem or BSD proof.
 """
@@ -66,7 +66,8 @@ def sigma_c_polynomial(a1,a2,a3,a4,a6,degree):
     wp={1:g2/20,2:g3/28}
     for k in range(3,degree//2+1):
         wp[k]=6*sum(wp[i]*wp[k-1-i] for i in range(1,k-1))/(2*k*(2*k-1)-12)
-    # d^2/dz^2 log(sigma_c(z)/z)=1/z^2-wp(z)+c.
+    # Here c is series u=E2/12. PARI ellpadics2 returns s2=b2/12-u.
+    # d^2/dz^2 log(sigma_u(z)/z)=1/z^2-wp(z)+u.
     f0=[F(0)]*n0
     for k,val in wp.items():
         power=2*k+2
@@ -104,7 +105,8 @@ assert poly==[F(x,D) for x in numer],(poly,numer)
 assert D%11==0 and (D//11)%11!=0
 c11=primitive_integral_c(poly,11)
 assert c11==4
-assert (1+4*(-1)-12*c11)%11==4
+assert (12*c11)%11==4
+assert ((-3*pow(12,-1,11)-c11)%11)==4
 print('PASS exact sigma t^13 polynomial and unique canonical c_11=4 mod11')
-print('PASS E2=b2-12c=4 mod11, sigma=t+t^2/2+c*t^3/2+...')
+print('PASS E2=12*u=4 mod11; PARI s2=b2/12-u=4 mod11')
 print('NONCLAIM: canonical sigma theorem and BCLMN height normalization remain dependencies')
