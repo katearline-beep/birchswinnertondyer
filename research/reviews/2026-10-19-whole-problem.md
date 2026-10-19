@@ -197,3 +197,29 @@ The numeric self-heights were calculated using u in the sigma expansion, not s2,
 **Negative controls/stop rules:** CH Theorem A's rank-two nonzero κ cannot certify rank four; K=-7 fails its odd-inert hypothesis. Theorem 4.1's arbitrary-rank height filtration is already published; do not reinvent it. Two Ulmer curves have equal *local* finite-fibre traces despite different *global* ranks. Do not transport Frobenius/Tate BSD proofs to complex Hasse–Weil Taylor coefficients or infer general BSD. Distinguish an independently published theorem from our elementary reproduction and from speculative conjectural transfers. No more automatic 11-adic digits without a named comparison hypothesis or independent complete height certification.
 
 **Sources:** [Theorem-first program](../strategy/THEOREM_FIRST_PIVOT_2026-10-19.md), [Castella–Hsieh 2022](https://doi.org/10.1017/fms.2021.85), [Ulmer Annals 2002](https://annals.math.princeton.edu/2002/155-1/p09), [GitHub issues #41](https://github.com/katearline-beep/birchswinnertondyer/issues/41) and [#42](https://github.com/katearline-beep/birchswinnertondyer/issues/42). **New direct progress on the central complex rank-four implication: none.**
+
+
+---
+
+## Session 20 supplement — WPR-2026-10-19-09, an important field-of-definition correction
+
+**Complex BSD checkpoint (2026-10-19):** No new theorem about the original complex \(L''(E,1)=0\), exact analytic rank four, Sha finiteness, or full BSD over \(\mathbb Q\). The function-field experiment is an application and source audit of **published** Ulmer 2002 positive-characteristic results, not a transferred number-field proof or independently proved Tate theorem. No expert review of our full interpretation.
+
+**Critical error corrected:** Session19's first function-field lab mislabeled the simple geometric ranks \((3,7,25)\) as ranks over \(\mathbb F_p(t)\). Ulmer Remark 1.6(2) gives those larger ranks only over \(\mathbb F_{p^{2n}}(t)\) or \(\overline{\mathbb F}_p(t)\). His Theorem 9.2 gives the actual **prime-field ranks \((2,3,7)\)** for \((p,n,d)=(5,1,6),(7,1,8),(5,2,26)\). This is now checked by direct Frobenius-orbit enumeration and published special-fibre corrections, with an explicit regression to reject the older label. The local F5-fibre traces of the first and third still coincide, but their F5(t) ranks are **2 and 7** (not 3 and 25). We preserve the correction in historical audit, active ledger C-0016 and new C-0017.
+
+**New project reconstruction C-0017, exact versus theorem-dependent parts:** Ulmer §4.2's dominant Fermat-to-Weierstrass rational map \(X=(x_0x_1x_2)^d,\ Y=(x_0^2x_2)^d,\ Z=-x_1^{3d},\ t=x_0^3x_2^2x_3/x_1^6\) passes the exact **integral** polynomial factorization
+\[
+Y^2 Z+XYZ-X^3+Z^3t^d
+=-(x_0^3x_1^3x_2^2)^d\sum_{j=0}^{3}x_j^d.
+\]
+Γ symmetry and its order d² are checked for 6,8,26, alongside characteristic-5/7 point tests and deliberately wrong exponent. Thus the *algebraic map itself* exists as a formula over \(\mathbb Z\), a useful counterexample to the claim that positive-characteristic algebraic correspondences categorically cannot exist in characteristic zero. The rank-producing theorem still depends on characteristic-p Frobenius and Tate.
+
+**First global zeta polynomial reconstructed:** Using Ulmer's **published** Corollary 7.7 and Proposition 8.1 eigenvalues \(J(a)=q^{|\mathcal O|}\), the quotient's second cohomology factor is
+\[
+P_2(F_d/\Gamma,T)=\prod_{\mathcal O}(1-q^{|\mathcal O|}T^{|\mathcal O|}).
+\]
+The script enumerates exact Frobenius character orbits and factors: \((1-5T)\) for p5,d6, \((1-7T)(1-49T^2)^3\) for p7,d8, \((1-5T)(1-625T^4)^6\) for p5,d26. It applies published special-fibre terms to recover ranks 2,3,7 and, after extension, 3,7,25. This is much stronger than local fibre enumeration but **still not** an independent proof of the Jacobi-sum identity, Tate equivalence or BSD. Next independent challenge is to calculate a nontrivial Jacobi sum, preferably in p7,d8 or p5,d26.
+
+**All-track strategic review:** H1 rank-two Castella–Hsieh applicability issue #41 remains open and prioritized; no new rank-four Iwasawa class or complex comparison. The H2 old 11-adic global height remains provisional and secondary. H3/H6 genuine complex geometric bridges remain speculative. H4 circular Mazur–Tate route parked; H5 numerics inconclusive. Proof lab B issue #42 has now reconstructed the actual map and global Frobenius-orbit factors, and should shift to independent Jacobi sums/characteristic-zero comparison. **The new characteristic-independent map alone does not imply complex L'' vanishing**; it pinpoints the arithmetic theorem that genuinely fails to transplant automatically.
+
+**Falsifiers:** If prime and geometric ranks are conflated, reject; if local fibre counts are used as evidence of exact rank, reject; if the integral map identity is assumed to carry Tate/BSD across characteristic, reject. Correct bibliography: [Ulmer 2002 full paper §§4,7–9](https://arxiv.org/pdf/math/0109163), [source audit and correction](../proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md), [map verifier](../proof_labs/ulmer_fermat_quotient.py), [global orbit/zeta calculation](../proof_labs/ulmer_frobenius_orbits.py). Next whole-review due by 2026-10-26 or earlier upon material research changes.
