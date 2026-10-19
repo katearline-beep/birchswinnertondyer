@@ -124,3 +124,36 @@ And **after all of that**, a new noncircular comparison to the **original comple
 **Next milestone:** Verify the weight-two specialization/local-control exact sequence and construct a **typed, source-checked** map \(Z_\infty\to \widehat H^1(D_\infty,V_{11}E)\), or produce a real obstacle; only then investigate its two Coleman orders. Preserve high-rank nontriviality at elevated ring class levels and zero classical base simultaneously. In parallel continue Ulmer's Tate-cycle source audit. Do not add routine local height digits.
 
 **No general BSD theorem, rank-four complex analytic-order theorem, Sha finiteness or leading-coefficient formula has been proved.**
+
+
+## 6. Stronger source result: Howard already supplies the extended-to-Greenberg map
+
+An additional close read of Howard's **Definitions 2.4.2–2.4.3, Lemma 2.4.4, and equations (21)–(23)** substantially narrows the missing arrow yet again. The source gives the **canonical exact sequence**
+\[
+0\longrightarrow\bigoplus_{v\mid11}
+H^0(D_{s,v},F_v^-(M))
+\longrightarrow\widetilde H^1_f(D_s,M)
+\longrightarrow\operatorname{Sel}_{\rm Gr}(D_s,M)
+\longrightarrow0
+\]
+for relevant Hida-family modules \(M\). Howard calls a weight-two arithmetic prime *exceptional* when its character is trivial and its \(U_p\) eigenvalue \(\alpha_p=\pm1\). Our ordinary weight-two specialization has
+\[
+\alpha_{11}\equiv5\pmod{11},\quad
+\alpha_{11}\ne\pm1,
+\]
+so **it is nonexceptional**. Lemma 2.4.4 makes all these local \(H^0\) groups vanish. Consequently, at each finite level Howard's **published** isomorphisms give
+\[
+\boxed{\widetilde H^1_f(D_s,T^\dagger)
+\ \simeq\ \operatorname{Sel}_{\rm Gr}(D_s,T^\dagger),\qquad
+\widetilde H^1_f(D_s,V^\dagger_{\rm wt2})
+\ \simeq\ \operatorname{Sel}_{\rm Gr}(D_s,V^\dagger_{\rm wt2}).}
+\]
+The Greenberg Selmer group is by definition a **subspace** of ordinary \(H^1(D_s,M)\). These maps are natural and compatible with the norm/corestriction maps defining Howard's \(Z_\infty\). The **weight-two coefficient specialization** \(T^\dagger\to V^\dagger_{\rm wt2}\) also exists in Howard §1; for weight two and trivial character, he says this recovers the Kummer images of classical Heegner points.
+
+**Thus a norm-compatible collection of ordinary global cohomology classes is already available abstractly from published constructions**, subject to the usual normalization/critical-twist identification \(V^\dagger_{\rm wt2}\cong V_{11}E\). Under the standard identification of the original elliptic curve's Tate module with its modular representation (after the paper's self-dual twist), this is a candidate class in the **precise type** of Castella–Hsieh's compact inverse-limit \(\widehat H^1(D_\infty,V_{11}E)\). We have **not** computed its coordinates, Coleman images, or a positive \(J\)-adic order.
+
+This overturns the earlier suggestion that the comparison **extended Selmer → Greenberg Selmer** itself needed a new theorem. At our **nonexceptional** specialization Howard already proves it. The core unresolved questions are now (i) the exact elliptic-module identification and compatibility with the Coleman maps' chosen local normalization, (ii) how a **base-zero** universal norm can yield a well-defined nonzero **derived** class in the augmentation filtration, and (iii) any independently valid bridge to the **original complex** \(L''\).
+
+**Caution on interpretation:** Because Kolyvagin forces the *classical* base \(P_K\) torsion, the weight-two Kummer image is zero in rationalized cohomology. Even if the Howard base specialization agrees with it under the cited normalizations, a naive application of CH Theorem4.5 to its zero projection gives only a **zero input pairing**; a nonzero higher **Bockstein derivative class** would need a genuine divisibility/control theorem, not merely an analogy with the formal power series \(T\). Theorem 4.5 by itself does not supply the requisite derivative class.
+
+**Exact regression extension:** [ring class/ordinary verifier](heegner_ring_class_tower_11.py) now explicitly checks the Howard Definition2.4.3 nonexceptional gate and rejects exceptional \(\alpha=\pm1\) as a valid ordinary input for the source isomorphism. Sources: [Howard §§2.4 and 3.3](https://arxiv.org/pdf/1202.6358), [CH compact Iwasawa cohomology definition and Thm4.5](https://web.math.ucsb.edu/~castella/Kato.pdf).
