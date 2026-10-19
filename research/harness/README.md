@@ -129,7 +129,7 @@ The conditional common kernel is *not* a proven Selmer kernel or derived height 
 
 ## Theorem-first pivot: two independent proof laboratories (Session 19)
 
-The default research allocation now favors **published mechanisms**, not more rank-four 11-adic precision. Read [theorem-first binding plan](../strategy/THEOREM_FIRST_PIVOT_2026-10-19.md). The [rank-two Kato theorem-scope lab](../proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md) verifies Theorem A's conditional nonzero κ ⇒ Sel dimension two cannot be repurposed as a rank-four certificate, while CH 4.1's derived filtration itself already exists at arbitrary rank. The old K=-7 fails odd-inert requirements. The [Ulmer function-field lab](../proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md) uses an **already proved** BSD/rank 3,7,25 family: local finite-fibre point counts are independently verified, but identically counted F5 fibres can have very different proven global ranks. Neither lab claims a new proof or a characteristic-zero transfer.
+The default research allocation now favors **published mechanisms**, not more rank-four 11-adic precision. Read [theorem-first binding plan](../strategy/THEOREM_FIRST_PIVOT_2026-10-19.md). The [rank-two Kato theorem-scope lab](../proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md) verifies Theorem A's conditional nonzero κ ⇒ Sel dimension two cannot be repurposed as a rank-four certificate, while CH 4.1's derived filtration itself already exists at arbitrary rank. The old K=-7 fails odd-inert requirements. The [Ulmer function-field lab](../proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md) uses an **already proved** BSD family with prime-field ranks 2,3,7 (geometric ranks 3,7,25): local finite-fibre point counts are independently verified, but identically counted F5 fibres can have different published F5(t) ranks 2 and 7 (geometric 3 and 25). Neither lab claims a new proof or a characteristic-zero transfer.
 
 ```bash
 python3 -I -B research/proof_labs/kato_rank_scope_gate.py
@@ -143,3 +143,6 @@ New EX-010/EX-011 and LF-007/LF-008 give typed theorem hypotheses, falsifiers, a
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
 
 It cannot certify local Kummer compatibility, analytic continuation, Satake/Euler-factor identities, Selmer upper bounds, a global height pairing, or BSD. External review must be real and attributed. A checked box in this JSON file proves nothing mathematically.
+
+
+**Session20 authoritative correction:** [Ulmer Fermat global mechanism audit](../proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) records that an earlier lab misattributed ranks 3,7,25 to Fp(t). The scripts now check prime-field 2,3,7 versus geometric 3,7,25 separately and reconstruct exact Fermat quotient map and Ulmer's published-Jacobi-sum global P2 factors. Do not conceal this error or claim finite field counts prove high rank.
