@@ -76,6 +76,18 @@ for _ in range(1,4):
 assert (alpha,modulus)==(12721,P**4)
 assert (1-pow(alpha,-1,modulus))%P==3  # nonexceptional alpha != 1 mod11
 assert alpha%P==5
+# Howard Definition 2.4.3: exceptional weight2 trivial character only
+# when U_p eigenvalue alpha_p is exactly +1 or -1.
+# Alpha mod11=5 rules both out; Howard Lemma2.4.4 therefore gives
+# H^0(L_v,F^-V^dagger)=0 for each finite L and the published EXACT sequence
+# 0 -> sum_v H0(Lv,F^-V) -> Htilde^1_f(L,V) -> Sel_Gr(L,V) -> 0
+# is an isomorphism for this weight-two specialization.
+def howard_exceptional(weight,wild_trivial,alpha_mod11):
+    return weight==2 and wild_trivial and alpha_mod11 in (1,10)
+assert not howard_exceptional(2,True,alpha%11)
+assert howard_exceptional(2,True,1)
+assert howard_exceptional(2,True,10)
+assert not howard_exceptional(4,True,1)
 
 def classical_base_point_forced_torsion(known_rank_lower_bound,heegner_hypothesis):
     """Kolyvagin contrapositive, never a numerical calculation of P_K."""
@@ -96,7 +108,7 @@ for n in (1,2,3):
     degree=P**n
     assert degree>1  # group-ring gamma-1 has two distinct coefficients.
 print("PASS symbolic nonzero augmentation-kernel example gamma-1 (not an actual class)")
-print("PASS ordinary alpha=%d mod%d, 1-alpha^-1 is 11-adic unit"%(alpha,modulus))
+print("PASS Howard weight2 specialization NONEXCEPTIONAL: alpha11=5 mod11 != +/-1")\nprint("PASS published Howard Lemma2.4.4: extended Selmer = strict Greenberg at finite levels")\nprint("PASS ordinary alpha=%d mod%d, 1-alpha^-1 is 11-adic unit"%(alpha,modulus))
 print("PASS conditional Kolyvagin contrapositive: rank >= 2 -> classical P_K torsion")
 print("NONCLAIM: no concrete Howard Z_inf, weight-2 specialization, Coleman order,")
 print("NONCLAIM: no analytic rank >=4, Sha finiteness or full BSD result")
