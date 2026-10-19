@@ -67,6 +67,16 @@ python3 -I -B research/anticyclotomic_11/point_prerequisites.py
 
 The next implementation must supply 11-adic sigma series **and** exact denominator ideals of [36](P_i+R), including all split bad primes, before making any height or kernel-alignment claim. The [2026-10-19 whole-problem supplement](../reviews/2026-10-19-whole-problem.md) preserves the original complex L'' obstruction.
 
+## Session 14 — provisional global height digits and a necessary change of strategy
+
+An [exact-arithmetic implementation](../anticyclotomic_11/provisional_height_mod11.py) of BCLMN Proposition 2.4 now gives *provisional* anticyclotomic self-height residues `(1,2,7,8)` mod 11. The [audit](../anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md) proves denominator ideals for `A_i` and `2A_i` by Euclidean gcd, computes immense `[36]A_i` denominator generators via integral division polynomials, checks equality by distinct `2A_i*18` and `4A_i*9` routes, and checks height homogeneity at `[72]A_i`. The naive denominator recurrence from the unadjusted `A_i` fails at bad prime 2 for three points. The primitive height vector disagrees with local-log `[1:0:2:9]`, **conditionally falsifying speculative L11 kernel alignment**.
+
+This is AI-authored and **not yet independently reproduced with a second p-adic height library or peer reviewed**. Do not promote it to a certified global-height computation without Sage/Magma/PARI sigma and denominator audit; certainly do not infer original complex L'' vanishing. H2's genuine derived-height/complex comparison problem is still open.
+
+```bash
+python3 -I -B research/anticyclotomic_11/provisional_height_mod11.py
+```
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.

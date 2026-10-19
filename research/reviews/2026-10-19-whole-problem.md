@@ -75,4 +75,22 @@ Reviewed [the claim ledger](../../CLAIMS.md), [C-0009 exact program](../anticycl
 
 **Priority and stopping rule:** do not mistake primes in rational coordinate denominators of P_i+R for the *complete* denominator ideals of [36](P_i+R), and do not use finite agreement as evidence that two exact Q11-hyperplanes coincide. Even successful global height computation would not prove the complex L'' bridge.
 
-**Provenance and next review:** AI-assisted internal review; no external mathematical peer review. Revisit the full problem by 2026-10-26 or after three mathematical merges. Detailed source and reproduction: [Session 13 note](../anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md), [C-0010](../../CLAIMS.md), [BCLMN arXiv](https://arxiv.org/abs/1610.08729). 
+**Provenance and next review:** AI-assisted internal review; no external mathematical peer review. Revisit the full problem by 2026-10-26 or after three mathematical merges. Detailed source and reproduction: [Session 13 note](../anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md), [C-0010](../../CLAIMS.md), [BCLMN arXiv](https://arxiv.org/abs/1610.08729).
+
+---
+
+## Session 14 supplement — WPR-2026-10-19-03
+
+**General BSD:** No new implication is established from Mordell–Weil rank to complex analytic order, no theorem proves the original complex `L''(E,1)=0`, and neither Sha finiteness nor a leading-term BSD formula has been proved. This is an AI-assisted *internal* mathematical review, not peer review. The next whole-problem checkpoint is due by 2026-10-26 or sooner upon meaningful changes.
+
+**What changed:** C-0011 gives exact prime-ideal denominator generators for `A_i=P_i+R` and `2A_i`. A previously tempting uncorrected division-polynomial formula fails primitivity by ideal norm factor 16 for three points; the correct factor 2 is detected by norm-Euclidean gcd. Using BCLMN's explicit anticyclotomic height formula, integral division polynomials, and the universal first sigma coefficient, a standard-library verifier reports *provisional* `h_rho(A_i)=(1,2,7,8) mod 11`. The computation agrees for `2A_i × 18` versus `4A_i × 9` denominator generators and satisfies the 36/72 quadraticity test. **No external Sage/Magma/PARI full height reproduction yet.**
+
+**Falsification decision:** Session 12's speculative local/global kernel-alignment profile was `[1:0:2:9]`. Conditional on the height implementation and normalization, the new *global* first-digit profile is `[1:2:7:8]`. Their second coordinates already differ; thus the *auxiliary alignment conjecture* has serious counterevidence, and should be **killed after** an independent actual height implementation confirms C-0011. The broader H2 derived-height route is not logically ruled out.
+
+**Six-track reorientation:** H1 derived Kato remains blocked by the complex comparison and Sha hypotheses. H2 shifts from assuming local alignment to independently computing genuine global first/derived height radicals and the missing reciprocity bridge. H3 higher geometric third complex derivatives remains the main prospective complex-route leapfrog but lacks a proven theorem. H4 modular congruence route is parked due to circularity risk. H5 numerical central curvature is diagnostic only. H6 geometric projector remains parked without a new period identity.
+
+**Conservative next step:** reproduce one or more anticyclotomic height digits with Sage's actual `padic_sigma(11,...)` and an independent denominator/division-polynomial library, plus a published 389a1 rank-two sample. **Credible leapfrog:** use real derived heights and a separately proved complex comparison theorem if one can be found; do not confuse their output types. **Wild alternative:** find a rank-sensitive geometric operator that annihilates the second complex period, and reject generic Atkin–Lehner/parity restatements.
+
+**Negative controls:** a naive `psi_2(A_i)d(A_i)^4` is integral but nonprimitive at bad prime 2 for three points; the old local-log/height alignment conjecture is actively challenged by different numerical profiles. Exact 11-adic finite digits do not prove complex analytic vanishing.
+
+**References:** [C-0011 audit](../anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md), [verifier](../anticyclotomic_11/provisional_height_mod11.py), [BCLMN Proposition 2.4](https://arxiv.org/pdf/1610.08729), [Mazur–Tate sigma Sage docs](https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html). The repository's research standards and independent reviewer rules remain mandatory.

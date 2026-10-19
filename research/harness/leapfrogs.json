@@ -55,9 +55,9 @@
       "hypothetical_bridge": "Construct a comparison law between the actual one-prime modified Selmer complex and an analytically relevant complex regulator, fully stating characters and local splittings.",
       "if_then_statement": "IF a valid comparison identifies a rigorously zero derived regulator with L'' and is nondegenerate, THEN L''=0.",
       "would_unlock": "A different route via globally-defined Selmer-complex data could bypass raw analytic zero testing.",
-      "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness. Session 13 sourced a rank-independent *height computation* in BCLMN (2016), but no sigma-series or denominator-ideal calculation for [36]Ai is yet available. Anticyclotomic character coefficients alone cannot determine heights.",
-      "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure. Additional scale trap: a toy vector (0,1,0,0) times 11^3 makes all wedge residues vanish mod 11^3 while primitive normalization immediately rejects projective profile [1:0:2:9].",
-      "next_decisive_test": "BCLMN 2016 Algorithm 4.2 computes the self-height of Ai=Pi+R for any nontorsion input under good-ordinary split-11 and suitable component/formal-group hypotheses. Use Proposition 1.4 class-number-one character, sigma function, and true global denominator ideal for [36]Ai. By anti-Galois bilinear symmetry h(Ai,Ai)=2 h(Pi,R). Check additivity on Pi+Pj+R, a published rank-two control, and 11-adic precision. Only then apply Session 12's primitive projective test to measured heights. Algorithm 4.3 rank-two shadow-line conclusions are inapplicable to our rank-four/five curve.",
+      "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness. Session 13 sourced a rank-independent *height computation* in BCLMN (2016), but no sigma-series or denominator-ideal calculation for [36]Ai is yet available. Anticyclotomic character coefficients alone cannot determine heights. The exact division polynomial and minimal model calculations now yield C-0011 provisional mod11 heights, but an independent p-adic sigma / height library and paper normalization audit are not yet complete; full higher derived regulator and complex L'' comparison remain unknown.",
+      "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure. Additional scale trap: a toy vector (0,1,0,0) times 11^3 makes all wedge residues vanish mod 11^3 while primitive normalization immediately rejects projective profile [1:0:2:9]. Session14 provisional genuine self-height vector (1,2,7,8) mod11 differs projectively from two-place local-log vector (1,0,2,9); the candidate L11 kernel-alignment is therefore conditionally *refuted*, pending a separate Sage/PARI global height check. Three naive denominator generators are nonprimitive by ideal norm factor 16, a specific bad-component false positive.",
+      "next_decisive_test": "Independently recompute C-0011's first global self-height digits with Sage's actual p-adic sigma function, verify BCLMN Proposition 2.4 character/ideal sign and a published 389a1 control. If confirmed, mark the auxiliary L11 local/global kernel alignment as killed; retain H2 only for global derived-height and mixed-direction reciprocity questions. Increase height precision or compute the actual radical, not local logarithm precision.",
       "kill_criterion": "Park if no map with specified domain, codomain and analytic normalization can be stated.",
       "source": "https://doi.org/10.5802/jtnb.1174",
       "test_path": "research/methodology/height_alignment_scale_gate.py",
@@ -82,6 +82,11 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "BCLMN2016 supplies actual anticyclotomic p-adic height algorithm (independent of their lower-rank shadow-line interpretation); six split-prime character coefficients and four P_i+R exact coordinates computed with tests. Global heights and complex L'' bridge remain open."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "C-0011 computes provisional global anticyclotomic self-height residues (1,2,7,8), rejecting the auxiliary L11 profile (1,0,2,9) conditional on BCLMN normalization. Independent Sage/PARI and published control still needed. H2 remains active for real derived-height work, not this alignment idea."
         }
       ]
     },
