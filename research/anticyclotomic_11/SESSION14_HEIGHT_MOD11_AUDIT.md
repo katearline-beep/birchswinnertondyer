@@ -115,3 +115,41 @@ The executable [provisional_height_mod11.py](provisional_height_mod11.py) runs e
 **References:** BCLMN (2016), [Shadow Lines in the Arithmetic of Elliptic Curves](https://arxiv.org/pdf/1610.08729), §1, Proposition 2.4, Algorithm 4.2; Mazur–Tate p-adic sigma function as documented by [SageMath](https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html); [Session 13](SHADOW_LINES_HEIGHT_IMPLEMENTATION.md); [Session 12](../split11/LOCAL_GLOBAL_ALIGNMENT_AUDIT.md).
 
 **What was proved about complex BSD in this session:** **nothing new**. This is a potentially substantive, but not externally certified, arithmetic computation and a negative test of a speculative auxiliary conjecture.
+
+
+---
+
+## Session 15 independent affine certificate and complete six-pair polarization (2026-10-19)
+
+The [new second verifier](independent_affine_ideal_and_polarization.py) starts on the **original minimal Weierstrass model** \(y^2+xy=x^3-x^2-79x+289\), with an explicitly coded affine group law. It computes all ten actual points \([36]Q\) as exact pairs of rational numbers in \(\mathbb Q(\sqrt{-7})\). For the four \(A_i=P_i+R\) and the six \(A_{ij}=P_i+P_j+R\), its candidate denominator generators \(D_Q\) are obtained from an independent square-root-of-the-ideal construction at \(Q\), primitive corrected doubling, and the previous division-polynomial recurrence at \([18](2Q)\).
+
+**New exact certificate of primitivity at the *full* [36] point:** for \(T=[36]Q\), on the minimal model set \(U=x(T)D_Q^2\), \(V=y(T)D_Q^3\). All ten cases pass exact \(\mathcal O_K\)-integrality of \(U,V\) and
+\[
+\boxed{\gcd_{\mathbb Z}\bigl(N_{K/\mathbb Q}(U),N_{K/\mathbb Q}(D_Q)\bigr)=1.}
+\]
+This elementary integer gcd test is sufficient for the *ideal* \((U,D_Q)\) to equal \(\mathcal O_K\). In conjunction with integrality and the Weierstrass denominator-square property it **certifies** the candidate \(D_Q\) is primitive for the full \([36]Q\) coordinates. It avoids a huge-number Euclidean gcd in \(\mathcal O_K\) and does **not** rely on the same Jacobian scalar multiplication as C-0011. The candidate construction still shares the previous integral division-polynomial recurrence; this is an independent verification rather than a wholly independent method of generating \(D_Q\).
+
+The same verifier computes the local sigma-to-denominator ratios from those **exact affine** \([36]Q\) coordinates, rather than Jacobian projective formal parameters. Results for all six off-axis points:
+
+| \(Q=P_i+P_j+R\) | \(q(Q)\bmod121\) | \(h_\rho(Q)\bmod11\) | \(h_\rho(P_i+R)+h_\rho(P_j+R)\bmod11\) |
+|---|---:|---:|---:|
+| \(P_1+P_2+R\) | 47 | 3 | 3 |
+| \(P_1+P_3+R\) | 67 | 8 | 8 |
+| \(P_1+P_4+R\) | 15 | 9 | 9 |
+| \(P_2+P_3+R\) | 15 | 9 | 9 |
+| \(P_2+P_4+R\) | 16 | 10 | 10 |
+| \(P_3+P_4+R\) | 64 | 4 | 4 |
+
+**All six independent-input polarization controls pass.** These are more discriminating than testing the scalar homogeneity \([36]\to[72]\) alone. The formal height's conjugation anti-invariance predicts the sum rule, as established in Session 13. A falsifying pair would have required revisiting the arithmetic or sign convention.
+
+### Conditional first-height radical, not the *local* log kernel
+
+Assuming Proposition 2.4's normalization and the first sigma coefficient are implemented correctly, the four residues \(a=(1,2,7,8)\bmod11\) are **not all zero**, with \(a_1\) an 11-adic unit. In the five eigendirections \((P_1,P_2,P_3,P_4,R)\), the symmetric anticyclotomic first-height pairing is block off-diagonal by conjugation symmetry. Its rank is then exactly two and its positive-direction radical has rank three over \(\mathbb Q_{11}\). A basis *modulo 11* for that positive-direction kernel is
+\[
+\boxed{P_2-2P_1,\qquad P_3-7P_1,\qquad P_4-8P_1.}
+\]
+These mod-11 coefficient vectors are **not** literal global height-zero Mordell–Weil points over \(\mathbb Q_{11}\), but mod-11 approximations to a 3-dimensional height radical; determining the exact radical requires higher precision. In particular the previously guessed local-log radical had a different reduction, so the auxiliary L11 equality has substantive conditional counterevidence.
+
+**Status boundary:** This stronger affine/ideal/polarization corroboration still uses the same published BCLMN height formula and Mazur–Tate sigma truncation as C-0011; it does not replace an independent Sage/Magma full p-adic sigma calculation or human expert audit. It does not supply a theorem about the original complex \(L''(E,1)\), Sha finiteness, a higher derived-height regulator, or BSD.
+
+**Next cheapest experiment:** independently calculate the actual Mazur–Tate sigma series on the original minimal model to one digit higher and use a separate computer-algebra library for the first-height pairing; then compute genuine higher-precision cross-heights and the derived pairing restricted to the *global* radical rather than the local-log kernel.

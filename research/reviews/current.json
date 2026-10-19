@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-10-19-03",
+  "review_id": "WPR-2026-10-19-04",
   "reviewed_on": "2026-10-19",
   "next_due_on": "2026-10-26",
   "reviewer_type": "ai_assisted_unreviewed",
@@ -37,10 +37,13 @@
     "#27",
     "#28",
     "#29",
-    "#31"
+    "#31",
+    "#33",
+    "#34",
+    "#35"
   ],
-  "previous_review_id": "WPR-2026-10-19-02",
-  "mathematical_breakthrough_since_previous": "NONE for general BSD or the original complex L''(E,1). C-0011 supplies exact ideal denominators and a provisional calculation of first global anticyclotomic height digits (1,2,7,8) mod11. This conditionally challenges the auxiliary L11 alignment vector (1,0,2,9), but has not yet been corroborated by an independent p-adic height implementation and does not yield a complex analytic-rank-four statement.",
+  "previous_review_id": "WPR-2026-10-19-03",
+  "mathematical_breakthrough_since_previous": "NONE toward general BSD or the original complex L''(E,1) vanishing. C-0011 is now independently corroborated in exact minimal-affine arithmetic: ten candidate global denominator ideals are proved primitive by integral coordinates and integer norm gcd=1, and all six mixed Pi+Pj+R first-digit heights satisfy the predicted polarization sums. These remain conditional first-digit global anticyclotomic heights pending third-party Sage/Magma sigma verification and mathematical expert review.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -89,10 +92,10 @@
     {
       "track": "H2",
       "decision": "active_limited",
-      "last_evidence": "C-0011 computes provisional global anticyclotomic self-height residues (1,2,7,8) mod11 using BCLMN sigma truncation, exact denominator ideals and checked division polynomials; external independent height reproduction remains outstanding.",
-      "missing_bridge": "No constructed global derived height, mixed reciprocity or comparison with complex L''.",
-      "falsifier": "The old speculative kernel alignment predicts [1:0:2:9] mod11 but provisional global heights give [1:2:7:8], so alignment is conditionally rejected. Require Sage canonical sigma and full denominator audit before formally killing the auxiliary conjecture.",
-      "next_test": "Audit and independently reproduce the C-0011 first-digit global height vector via Sage/Magma or PARI and published rank-two 389a1 control, then compute true first-height radical and eventually derived heights. Do not infer a complex comparison."
+      "last_evidence": "C-0011 provisional self-height vector (1,2,7,8) mod11 now corroborated by ten separate minimal-model affine [36] point calculations, exact norm-gcd proof of global denominator primitivity, six cross-point polarization sums, and a published 389a1 first-digit regression. Third-party sigma library and expert audit remain missing.",
+      "missing_bridge": "Global height first-digit computation is still conditional on the published BCLMN normalization and integrality; the exact Q11-height radical, higher derived height and any theorem comparing them to original complex L'' are not constructed.",
+      "falsifier": "A distinct Sage/Magma global-height implementation returning a different vector refutes C-0011. If confirmed, the old auxiliary local/global L11 equality fails mod11, but H2 derived heights and complex comparison remain unproved.",
+      "next_test": "Independently recompute sigma and BCLMN heights, then derive exact Q11-radical from higher-precision heights; currently mod11 generators are P2−2P1, P3−7P1, P4−8P1 under the C-0011 hypotheses."
     },
     {
       "track": "H3",
@@ -127,13 +130,13 @@
       "next_test": "Require a precisely defined operator with nontrivial action before new coding."
     }
   ],
-  "selected_next_experiment": "Independently evaluate C-0011 first anticyclotomic self-height digits using the canonical Sage 11-adic sigma series, separately check BCLMN Proposition 2.4 signs/ideal normalization and compare with published 389a1 example. If validated, explicitly kill only L11 kernel alignment, then compute the real global first-height radical and its derived height.",
-  "selected_experiment_kill_criterion": "If independent sigma or denominator calculation does not reproduce (1,2,7,8) mod 11, downgrade C-0011 and investigate the mismatch; do not call L11 falsified until reproduced. Under no circumstance treat a p-adic height or kernel mismatch as proof about the original complex L''(E,1).",
-  "conservative_next_lemma": "C-0011 is still provisional despite both published 389a1 mod5 controls. Independently recompute the focal E/K four global 11-adic heights with canonical Sage/Magma sigma and divisor implementations; then upgrade or retract conditional first-height radical and L11 falsification accordingly.",
-  "credible_leapfrog": "Pursue a verified global derived-height radical and a genuinely typed mixed Bockstein/regulator comparison, while first attempting to falsify the speculative local/global kernel identification using independently validated C-0011 heights.",
+  "selected_next_experiment": "Independently construct the genuine Mazur–Tate sigma series and BCLMN anticyclotomic global height via Sage/Magma for E=234446.a1 and K=Q(sqrt(-7)), p=11; reproduce the C-0011 first digit for four A_i and six mixed pairs. If confirmed, lift the actual global first-height radical (mod11 P2−2P1, P3−7P1, P4−8P1) and evaluate a derived height. In parallel maintain H3 as a speculative COMPLEX L'' route.",
+  "selected_experiment_kill_criterion": "If independent sigma coefficients, global ideals, or BCLMN normalization give a different mod11 height vector, correct/downgrade C-0011 and suspend the auxiliary L11 falsification claim; a p-adic height rank or mod11 hyperplane discrepancy never establishes complex L''=0, Sha finiteness or BSD.",
+  "conservative_next_lemma": "Verify the 11-adic sigma first coefficients with a separately maintained Sage/Magma implementation and reproduce at least one mixed-input global height; exact ten-point primitivity and six pair checks have already passed on direct minimal-model coordinates.",
+  "credible_leapfrog": "After independently confirming anticyclotomic first heights, compute the higher derived pairing on the true three-dimensional global radical rather than local-log kernel and search for a noncircular complex second-derivative bridge.",
   "speculative_wild_option": "H6: geometric annihilation of the original complex second derivative by an exact period projector beyond root-sign parity, tested against rank-two controls; remain parked absent a noncircular formula.",
   "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation.",
-  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel.",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification.",
   "sources": [
     "CLAIMS.md",
     "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -158,7 +161,8 @@
     "https://arxiv.org/pdf/1610.08729",
     "research/anticyclotomic_11/published_389a1_height_control.py",
     "research/anticyclotomic_11/FIRST_HEIGHT_RADICAL_MOD11.md",
-    "research/anticyclotomic_11/conditional_first_radical_mod11.py"
+    "research/anticyclotomic_11/conditional_first_radical_mod11.py",
+    "research/anticyclotomic_11/independent_affine_ideal_and_polarization.py"
   ],
   "journal_path": "research/reviews/2026-10-19-whole-problem.md",
   "not_established": [

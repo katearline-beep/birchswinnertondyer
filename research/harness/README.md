@@ -87,6 +87,16 @@ python3 -I -B research/anticyclotomic_11/published_389a1_height_control.py
 
 **Second published control and first radical:** The published BCLMN 389a1 example now yields both first height digits 3 mod5, with the second divisor computed and checked using an independent Euclidean ideal gcd. The [conditional first-height radical](../anticyclotomic_11/FIRST_HEIGHT_RADICAL_MOD11.md) shows that, if C-0011 is confirmed, the global first pairing has exact rank two with mod-11 radical `P2−2P1, P3−7P1, P4−8P1`, distinct from the old local-log kernel. Verify with `python3 -I -B research/anticyclotomic_11/conditional_first_radical_mod11.py`. Neither result upgrades C-0011 beyond **provisional** or proves complex BSD.
 
+## Session 15 — full [36] denominator certificate and six-pair falsification
+
+The [independent minimal-model affine verifier](../anticyclotomic_11/independent_affine_ideal_and_polarization.py) directly computes [36]Q for all ten Q among P_i+R and P_i+P_j+R, verifies `x([36]Q)*D^2,y([36]Q)*D^3∈O_K`, and proves denominator ideal primitivity by the **integer norm gcd** `gcd(N(xD²),N(D))=1` in every case. Unlike our previous denominator-route checks, this does not use the same projective scalar multiplication. It then verifies all six distinct-vector polarization identities (height values 3,8,9,9,10,4 mod11), compared to the individual first digits (1,2,7,8). See the [extended C-0011 audit](../anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md).
+
+```bash
+python3 -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarization.py
+```
+
+**Scope:** validates the *candidate division-polynomial denominator generator* against exact direct affine points, but still shares the published BCLMN height formula and Mazur–Tate sigma first coefficients. Not a substitute for an independent Sage/Magma height computation, and not proof of complex BSD.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
