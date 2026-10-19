@@ -214,7 +214,8 @@
       "decisive_observation": "Write the missing comparison law and calculate a genuine one-place modified Selmer cross-height before inferring any radical.",
       "dependencies": [
         "Choice of p=11 local splitting, anticyclotomic character and full Selmer complex.",
-        "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function."
+        "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function.",
+        "Number-field software source audit: QCMod-NF quadratic-Chabauty driver assumes genus>1 and rank=2g, neither satisfied by our E/K case"
       ],
       "commands": [
         "python -I -B research/strategy/kill_tests.py",
@@ -226,7 +227,8 @@
         "research/strategy/kill_tests.py",
         "research/split11/LOCAL_GLOBAL_ALIGNMENT_AUDIT.md",
         "research/methodology/height_alignment_scale_gate.py",
-        "research/split11/independent_jacobian_all_columns.py"
+        "research/split11/independent_jacobian_all_columns.py",
+        "research/anticyclotomic_11/GLOBAL_HEIGHT_SOFTWARE_AUDIT.md"
       ],
       "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence.",
       "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative. Do not promote L11 on finite congruence coincidence or unnormalized zero vectors; demand genuine global anticyclotomic heights with controlled 11-adic valuations/precision.",
