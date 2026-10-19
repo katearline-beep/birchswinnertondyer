@@ -40,7 +40,7 @@ def main():
     crosscheck(gp,py)
     digest=sha256(",".join(map(str,gp)).encode("ascii")).hexdigest()
     print("PASS: PARI ellan matches all 6000 Python Fourier coefficients")
-    print("SHA256 canonical CSV of 2000 coefficients:",digest)
+    print("SHA256 canonical CSV of 6000 coefficients:",digest)
     mutated=gp[:]
     mutated[16]+=1
     try:
