@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Canonical Mazur--Tate sigma c11 modulo 11^2 via t^23 integrality.
+"""Canonical sigma-series auxiliary u11=E2/12 modulo 11^2 via t^23 integrality.
 
 Reuses exact formal sigma-family constructor from Session 16, and extends its
 precision and the published MST conductor-37/p5 control to the second digit.
@@ -30,7 +30,7 @@ for degree in range(1,12):
     roots=[c for c in choices5 if integral_at(evaluate(polynomial,c),5)]
     if degree<11:assert roots==choices5,(degree,roots)
     else:assert roots==[6],roots
-print("PASS published MST E37 p=5 second sigma digit c_5=6 mod25")
+print("PASS published MST E37 p=5 series u_5=6 mod25, PARI s2=19")
 
 # Target E=[1,-1,0,-79,289] at p=11:
 # c_11=4 mod11 from t^13; t^23 is next discriminating integrality condition.
@@ -49,8 +49,9 @@ for k in range(11):
     assert value.denominator%11
     residue=value.numerator*pow(value.denominator,-1,11)%11
     assert residue==(8-4*k)%11,(k,residue)
-assert (-3-12*26)%121==48
-print("PASS target t^23 sigma integrality, unique canonical c_11=26 mod121")
-print("PASS E2=b2-12c=48 mod121 and residual 11*sigma23=(8-4k) mod11")
+assert (12*26)%121==70
+assert ((-3-70)*pow(12,-1,121))%121==4
+print("PASS target t^23 sigma integrality, unique canonical series u_11=26 mod121")
+print("PASS E2=12*u=70 and PARI s2=b2/12-u=4 mod121; 11*sigma23=(8-4k) mod11")
 print("NONCLAIM: canonical sigma integrality is a published theorem,")
 print("NONCLAIM: no external Sage/Magma sigma, complex L'' or BSD proof")
