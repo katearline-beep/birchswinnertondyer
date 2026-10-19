@@ -54,12 +54,13 @@
       "id": "EX-002",
       "claim_ids": [
         "C-0005",
-        "C-0006"
+        "C-0006",
+        "C-0009"
       ],
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Does a fully bounded exponential-integral sum, under the modular L-function identity and correct coefficients, enclose L'(E^-7,1) strictly above zero?",
-      "decisive_observation": "Independent rational interval produces a positive lower bound; independent PARI coefficient oracle and numerical derivative provide separate cross-checks.",
+      "decisive_observation": "The 6,000-term exact-rational interval (34.1691,34.1750) is strictly positive under the documented analytic identity and coefficient bounds; independent PARI oracle agrees on every one of 6,000 original Fourier coefficients, with mutation test. No original complex L'' implication.",
       "dependencies": [
         "Twist conductor 49*234446 and global sign -1",
         "Correct all a_n of original E and quadratic character",
@@ -70,17 +71,23 @@
       "commands": [
         "python -I -B research/anticyclotomic_11/independent_rational_derivative.py",
         "gp -q -f research/anticyclotomic_11/twist_analytic.gp",
-        "python -I -B research/anticyclotomic_11/verify_root_sign.py"
+        "python -I -B research/anticyclotomic_11/verify_root_sign.py",
+        "python -I -B research/anticyclotomic_11/independent_rational_derivative_6000.py",
+        "gp -q -f research/harness/pari_fourier_6000.gp"
       ],
       "artifacts": [
         "research/anticyclotomic_11/independent_rational_derivative.py",
         "research/anticyclotomic_11/DERIVATIVE_CERTIFICATE_AUDIT.md",
         "research/anticyclotomic_11/twist_analytic.gp",
         "research/anticyclotomic_11/MELLIN_IDENTITY.md",
-        "research/anticyclotomic_11/verify_root_sign.py"
+        "research/anticyclotomic_11/verify_root_sign.py",
+        "research/anticyclotomic_11/EXACT_6000_AUDIT.md",
+        "research/anticyclotomic_11/independent_rational_derivative_6000.py",
+        "research/harness/pari_fourier_6000.gp",
+        "research/harness/compare_fourier_coefficients_6000.py"
       ],
       "negative_control": "Deliberately corrupt an exponential-tail exponent or a Fourier coefficient; the checked equality/positivity preconditions must reject it.",
-      "stop_condition": "Do not publish a theorem of analytic nonvanishing before Mellin identity, local Euler factors, coefficient oracle, and tail bounds are independently audited.",
+      "stop_condition": "C-0009 remains a supporting result. Stop additional derivative precision unless it tests an independent analytic hypothesis, upgrades meaningful human review, or provides an explicit theorem reaching the original complex L''.",
       "nonclaims": [
         "No mathematical peer review",
         "Numerical PARI is not an interval proof",
