@@ -44,10 +44,13 @@ def run_case(p,n,want_rank,want_good):
     assert all(pow(t,d,p)==t*t%p for t in range(p))
     assert any(good.values())
     print(f"p={p} n={n} d={d}: published theorem rank={rank}; good fibres={len(good)}; sum a_p(t)={sum(good.values())}; finite-count PASS")
+    return good
 
 if __name__=="__main__":
-    for v in ((5,1,3,4),(7,1,7,6),(5,2,25,4)):
-        run_case(*v)
+    a=run_case(5,1,3,4)
+    run_case(7,1,7,6)
+    b=run_case(5,2,25,4)
+    assert a==b, (a,b)  # CRITICAL: identical local traces, globally different ranks
     assert fibre_trace(5,6,0) is None
     assert all(fibre_trace(5,6,t) is not None for t in range(1,5))
     print("PASS independent affine/Legendre point counts, Hasse bounds and excluded bad fibres")
