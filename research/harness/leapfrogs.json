@@ -56,11 +56,11 @@
       "if_then_statement": "IF a valid comparison identifies a rigorously zero derived regulator with L'' and is nondegenerate, THEN L''=0.",
       "would_unlock": "A different route via globally-defined Selmer-complex data could bypass raw analytic zero testing.",
       "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness.",
-      "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure.",
-      "next_decisive_test": "Write the actual definition of a single mixed height and list all local/global corrections.",
+      "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure. Additional scale trap: a toy vector (0,1,0,0) times 11^3 makes all wedge residues vanish mod 11^3 while primitive normalization immediately rejects projective profile [1:0:2:9].",
+      "next_decisive_test": "Obtain a genuine globally normalized anticyclotomic cross-height vector a_i=h_ac(P_i,R), with character, splitting, and precision documented. Before any expensive higher derived-height calculation, divide out its common 11-adic valuation and test [a1:a2:a3:a4] mod11 against the necessary local-log profile [1:0:2:9]; then test exact projective wedges at higher precision. If zero at reported precision, mark indeterminate. Neither passing finite congruences nor global p-adic regulators alone implies complex L''.",
       "kill_criterion": "Park if no map with specified domain, codomain and analytic normalization can be stated.",
       "source": "https://doi.org/10.5802/jtnb.1174",
-      "test_path": "research/methodology/local_kernel_negative_controls.py",
+      "test_path": "research/methodology/height_alignment_scale_gate.py",
       "gate": "G0",
       "decision": "active",
       "reviewed": false,
@@ -72,6 +72,11 @@
           "date": "2026-10-17",
           "outcome": "active",
           "evidence": "Initial portfolio assessment; no new comparison theorem or proof established."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Independent Jacobian computation confirms all six local columns including P4; primitive 11-adic projective [1:0:2:9] provides an inexpensive necessary L11 falsifier. No global anticyclotomic heights or complex derivative comparison computed; hypothesis remains speculative."
         }
       ]
     },
