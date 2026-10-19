@@ -51,3 +51,8 @@ The prior work answered *what local/global arithmetic data look like*. This pivo
 
 
 **Session 20 correction and milestone:** [Ulmer §4 exact Fermat map and §9 Frobenius orbit audit](../proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) correct Session19's erroneous identification of geometric rank with Fp(t) rank. The map's polynomial identity holds integrally, while the global Frobenius/Jacobi and Tate mechanism is the characteristic-p-specific step. Codes now reproduce rank 2,3,7 over Fp(t) and 3,7,25 after extending constants; Ulmer is the source of the theorems, not the scripts.
+
+
+## Session21 realized theorem-first rank-two control
+
+The concrete valid published CH case is now **433a1 / p11 / K=Q(sqrt(-7))**, as in [Session21 source map](../proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md). Unlike the prior BCLMN height-only example 389a1/K=-11, it meets the CH Appendix's odd-inert situation and has published theta order2; a short exact checker proves many local and residual irreducibility hypotheses. CH Thm4.1 simultaneously **does apply** to our focal rank4 curve with Nminus1, whereas ThmA/B does not for this old field. Hence stop reselecting a rank-two example: Issue41 should focus on **genuinely constructing and checking global Iwasawa z and Coleman maps**, and separately the impossible-without-new-theorem complex L'' bridge. We did not construct any class or prove BSD.

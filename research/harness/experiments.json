@@ -465,31 +465,38 @@
     {
       "id": "EX-010",
       "claim_ids": [
-        "C-0015"
+        "C-0015",
+        "C-0019"
       ],
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Can rank-two generalized Kato nonvanishing or already-existing arbitrary-rank derived height theory produce a legitimate rank-four Selmer class and eventually an original complex L'' implication?",
-      "decisive_observation": "Published Castella–Hsieh Theorem A nonzero κ forces Sel dimension two under all hypotheses, incompatible with four independent rational points; old K=-7 does not even satisfy its odd-inert premise. Theorem4.1 already gives higher derived-height filtration at general rank, with no constructed rank-four Iwasawa class or complex comparison.",
+      "decisive_observation": "Session21: genuine published CH appendix rank-two control E433a1/p11/K=-7 identified, sharing p11,K=-7 with target. Exact q433 inert, 11 split/ordinary, rho_bar11 irreducible via Frobenius-5 nonsquare discriminant. CH Theorem4.1 derived-height filtration IS applicable to focal rank4 E with Nminus=1 (squarefree, ramification condition vacuous). Separate Theorem A/B still not applicable at old K=-7 due to odd-inert requirement. Rank4 under all TheoremA/B hypotheses would force ord theta !=2.",
       "dependencies": [
         "Castella–Hsieh (2022) Theorem A complete hypotheses including auxiliary adjoint central nonvanishing, residual irreducibility and odd-inert conductor factor",
         "Kummer injection E(Q)⊗Qp→Sel(Q,VpE), with four independent known rational points",
-        "Distinguish Theorem 4.1 derived-height filtration from Theorem A nonvanishing and Theorem 4.5 Coleman-map class prerequisites"
+        "Distinguish Theorem 4.1 derived-height filtration from Theorem A nonvanishing and Theorem 4.5 Coleman-map class prerequisites",
+        "CH Theorem 4.1 needs only Nminus squarefree, E[p] ramified at primes dividing Nminus, ordinary p and discriminant prime to Np. It does not require Nminus to have odd number of primes; Theorem A/B does.",
+        "CH Table1 theta coefficient 88*T^2 mod121, L(E^-7,1) !=0 and auxiliary adjoint L(E/K,chi,1) !=0 are PUBLISHED inputs, not independently computed by local gate."
       ],
       "commands": [
-        "python3 -I -B research/proof_labs/kato_rank_scope_gate.py"
+        "python3 -I -B research/proof_labs/kato_rank_scope_gate.py",
+        "python3 -I -B research/proof_labs/castella_hsieh_433a1_control.py"
       ],
       "artifacts": [
         "research/proof_labs/kato_rank_scope_gate.py",
         "research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md",
-        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md"
+        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md",
+        "research/proof_labs/castella_hsieh_433a1_control.py",
+        "research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md"
       ],
-      "negative_control": "Test that rank four and all Theorem A hypotheses exclude κ nonvanishing, whereas the same theorem cannot be applied when its odd-inert hypothesis fails (N^-=1 at K=-7). Reject nonzero κ⇒Sel dimension2 as an existence proof or automatic rank-four complex L'' zero.",
-      "stop_condition": "Park direct rank-two nonzero κ extension; resume only with a precisely defined global Iwasawa class and verified Theorem4.5 hypotheses, and never infer complex L'' from p-adic derived height alone.",
+      "negative_control": "Test that rank four and all Theorem A hypotheses exclude κ nonvanishing, whereas the same theorem cannot be applied when its odd-inert hypothesis fails (N^-=1 at K=-7). Reject nonzero κ⇒Sel dimension2 as an existence proof or automatic rank-four complex L'' zero. Session21: theta 88*T² vanishes modulo11 but not modulo121 (precision trap). For 433a1/p11/K=-7 all accessible local hypotheses pass and Frobenius5 mod11 characteristic polynomial irreducible; focal E/p11/K=-7 meets Thm4.1 but fails ThmA/B odd-inert hypothesis. Contrapositive prohibits ordTheta=2 at rank4 *only under all TheoremA/B premises*.",
+      "stop_condition": "Stop claiming ThmA nonzero kappa for old rank4 K=-7, or treating published Thm4.1's existing derived filtration as an unbuilt object. Next construct a named global Iwasawa z with two Coleman augmentation orders, compare complete BCLMN height normalization to CH h^(1), and identify any separately proved original complex L'' bridge.",
       "nonclaims": [
         "No class κ or Coleman map has been computed",
         "No new general arbitrary-rank derived-height theory is claimed",
-        "Published rank-two criterion does not establish original complex rank-four BSD"
+        "Published rank-two criterion does not establish original complex rank-four BSD",
+        "An applicable derived-height filtration is an existing published construction, NOT our computation of its higher stages; theta coefficients and analytic nonvanishing for 433a1 are published inputs."
       ],
       "cross_disciplines": [
         {
