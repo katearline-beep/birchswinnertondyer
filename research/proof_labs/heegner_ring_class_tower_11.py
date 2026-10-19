@@ -108,7 +108,9 @@ for n in (1,2,3):
     degree=P**n
     assert degree>1  # group-ring gamma-1 has two distinct coefficients.
 print("PASS symbolic nonzero augmentation-kernel example gamma-1 (not an actual class)")
-print("PASS Howard weight2 specialization NONEXCEPTIONAL: alpha11=5 mod11 != +/-1")\nprint("PASS published Howard Lemma2.4.4: extended Selmer = strict Greenberg at finite levels")\nprint("PASS ordinary alpha=%d mod%d, 1-alpha^-1 is 11-adic unit"%(alpha,modulus))
+print("PASS Howard weight2 specialization NONEXCEPTIONAL: alpha11=5 mod11 != +/-1")
+print("PASS published Howard Lemma2.4.4: extended Selmer = strict Greenberg at finite levels")
+print("PASS ordinary alpha=%d mod%d, 1-alpha^-1 is 11-adic unit"%(alpha,modulus))
 print("PASS conditional Kolyvagin contrapositive: rank >= 2 -> classical P_K torsion")
 print("NONCLAIM: no concrete Howard Z_inf, weight-2 specialization, Coleman order,")
 print("NONCLAIM: no analytic rank >=4, Sha finiteness or full BSD result")
