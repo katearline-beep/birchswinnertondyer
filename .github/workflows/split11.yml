@@ -48,6 +48,8 @@ jobs:
         run: python -I -B research/anticyclotomic_11/character_coefficients.py
       - name: Exact cross-height input points and denominator candidate supports
         run: python -I -B research/anticyclotomic_11/point_prerequisites.py
+      - name: Independent minimal affine denominator primitivity and all six polarization checks
+        run: python -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarization.py
       - name: Published BCLMN 389a1 height-control at p=5
         run: python -I -B research/anticyclotomic_11/published_389a1_height_control.py
       - name: Provisional exact anticyclotomic first-digit height and bad-component falsification
