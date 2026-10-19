@@ -48,6 +48,8 @@ jobs:
         run: python -I -B research/anticyclotomic_11/character_coefficients.py
       - name: Exact cross-height input points and denominator candidate supports
         run: python -I -B research/anticyclotomic_11/point_prerequisites.py
+      - name: Provisional exact anticyclotomic first-digit height and bad-component falsification
+        run: python -I -B research/anticyclotomic_11/provisional_height_mod11.py
       - name: Agboola-Castella local hypothesis certificate
         run: python -I -B research/anticyclotomic_11/verify_local_hypotheses.py
       - name: Exact quadratic-twist and mod-11 symmetry data check
