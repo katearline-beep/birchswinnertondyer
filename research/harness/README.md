@@ -158,6 +158,14 @@ python3 -I -B research/proof_labs/castella_hsieh_433a1_control.py
 
 No independent theta/adjoint L-value, cohomology class or full BSD proof has been produced; this is a source-qualified applicability milestone, not a new general theorem.
 
+## Session22 — Howard entry hypotheses and absolute residual irreducibility of the focal curve
+
+[Howard's published big-Heegner class source audit](../proof_labs/SESSION22_HOWARD_HEEGNER_ENTRY_AUDIT.md) now identifies a realistic rank4 candidate instead of an undefined Iwasawa class. Exact stdlib [two split-Frobenius verifier](../proof_labs/howard_heegner_residual_focal.py) proves the original curve's mod11 residual representation **absolutely irreducible even over GK** using good split primes 23 and43 with characteristic discriminants 10 nonsquare and9 nonzero square. Independent point enumeration/Legendre sums, ordinary p11, Heegner splitting at all bad N factors, class number1 and Howard Hyp1.0.1 are checked. Howard's global extended Selmer Euler classes remain **PUBLISHED theorem outputs**; no class has been computed or moved into CH4.5's particular compact Iwasawa target and no Coleman valuations or original complex derivative theorem follows.
+
+```bash
+python3 -I -B research/proof_labs/howard_heegner_residual_focal.py
+```
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.

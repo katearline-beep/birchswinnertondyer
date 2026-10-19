@@ -4,6 +4,8 @@
 
 We investigate specific elliptic curves and the boundary between numerical evidence, exact computation, conditional mathematical implications, and proof. All reasoning and code remain open to correction. This project includes AI-assisted contributions, explicitly attributed as such.
 
+**New global-class candidate (Session22):** [Howard big-Heegner entry audit on original rank4 curve](research/proof_labs/SESSION22_HOWARD_HEEGNER_ENTRY_AUDIT.md), with two-split-Frobenius absolute residual irreducibility certificate. Published class family exists under checked starting hypotheses; specialization to CH4.5 and complex BSD bridge remain open.
+
 ## Start here
 
 **Session21 verified theorem scope:** [Castella–Hsieh 433a1 rank-two control and original-rank4 Theorem4.1 applicability](research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md) is now part of the source-checked proof lab. The derived-height filtration on focal E/p11/K=-7 exists **by published theorem**, but TheoremA/B nonzero-Kato criterion does not apply there, and the needed global Iwasawa class/complex L'' comparison are missing.
