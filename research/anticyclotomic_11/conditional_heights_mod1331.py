@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Provisional anticyclotomic heights modulo 11^3 on ten exact E(K) points.
 
-The canonical sigma parameter c_11=26 mod121 is derived separately by
+The canonical sigma SERIES parameter u_11=E2/12=26 mod121 (PARI s2=4), derived by
 canonical_sigma_integrality_121.py. This script extends BCLMN height
 calculations by one digit and rechecks all ten primitive denominator ideals
 and all six genuinely mixed inputs. Conditional on published Mazur--Tate and
@@ -50,7 +50,7 @@ for i,Pi in enumerate(P):
 assert singles==[1068,1300,854,8],singles
 assert qs==[13126,3587,13985,9553],qs
 
-# A deliberately stale sigma value (c=4) leaves first two digits intact
+# A deliberately stale SERIES sigma value (u=4) leaves first two digits intact
 # but must alter at least one third digit.
 wrong=[]
 for Pi in P:
