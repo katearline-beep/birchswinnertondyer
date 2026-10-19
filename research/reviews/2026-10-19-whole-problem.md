@@ -152,3 +152,11 @@ Ten complete [36]Q global denominator ideals have exact direct-coordinate primit
 **Negative controls and kill gates:** (i) the published E37/p5 sigma second digit is a cross-curve oracle; (ii) wrong \(c=4\) fails only on the new third height digit; (iii) six mixed-input heights must remain additive and all ten exact [36] ideal denominators primitive; (iv) finite mod1331 agreement would not prove an exact Q11 equality; (v) any external full sigma disagreement requires claim downgrading; (vi) no p-adic result may be silently relabeled complex rank or BSD. Next full review due no later than 2026-10-26 or after substantive merges.
 
 **Source and provenance:** [Session17 exact sigma/height audit](../anticyclotomic_11/SESSION17_CANONICAL_SIGMA_MOD1331.md), [canonical second digit](../anticyclotomic_11/canonical_sigma_integrality_121.py), [ten-point height verifier](../anticyclotomic_11/conditional_heights_mod1331.py), [MST2006](https://ems.press/content/book-chapter-files/27479) and [BCLMN2016](https://arxiv.org/abs/1610.08729). Internal AI-authored mathematics and software, not peer review.
+
+
+### Explicit sigma-convention erratum (2026-10-19, Session 17)
+
+The exact formal-series variable `u` in `sigma_u(z)=sigma_0(z) exp(u z²/2)` equals **E2/12**. PARI `ellpadics2` instead reports the Mazur–Stein–Tate slope **s2=(b2−E2)/12=b2/12−u**. For the target curve b2=−3, series u=26 modulo 121 and independent PARI s2=4 modulo 121, so **E2=70 modulo 121**, correcting the erroneous E2=48 printed in the historical Session17 review. In the published E37/p5 example u=6 and independent PARI s2=19 modulo25. At precision 11, u and s2 accidentally both reduce to 4.
+
+The numeric self-heights were calculated using u in the sigma expansion, not s2, so their provisional residues remain unchanged. Independent PARI sigma agreement does not replace an independent complete global anticyclotomic height computation or provide any complex BSD theorem. Review the executable [PARI oracle](../anticyclotomic_11/pari_canonical_sigma_oracle.gp) and [Session17 audit](../anticyclotomic_11/SESSION17_CANONICAL_SIGMA_MOD1331.md).
+
