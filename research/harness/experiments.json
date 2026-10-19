@@ -467,7 +467,8 @@
       "claim_ids": [
         "C-0015",
         "C-0019",
-        "C-0020"
+        "C-0020",
+        "C-0021"
       ],
       "status": "conditionally_supported",
       "human_reviewed": false,
@@ -479,12 +480,15 @@
         "Distinguish Theorem 4.1 derived-height filtration from Theorem A nonvanishing and Theorem 4.5 Coleman-map class prerequisites",
         "CH Theorem 4.1 needs only Nminus squarefree, E[p] ramified at primes dividing Nminus, ordinary p and discriminant prime to Np. It does not require Nminus to have odd number of primes; Theorem A/B does.",
         "CH Table1 theta coefficient 88*T^2 mod121, L(E^-7,1) !=0 and auxiliary adjoint L(E/K,chi,1) !=0 are PUBLISHED inputs, not independently computed by local gate.",
-        "Howard Hypothesis 1.0.1 requires an ordinary p-stabilized modular form, p∤6N, a Heegner splitting ideal, and absolutely irreducible residual representation. Intro extra conditions p∤phi(N), discK coprime N also hold by exact arithmetic; global Hida class exists by Howard published construction, not our code."
+        "Howard Hypothesis 1.0.1 requires an ordinary p-stabilized modular form, p∤6N, a Heegner splitting ideal, and absolutely irreducible residual representation. Intro extra conditions p∤phi(N), discK coprime N also hold by exact arithmetic; global Hida class exists by Howard published construction, not our code.",
+        "Kolyvagin's theorem as in Darmon Theorem3.21: non-torsion classical traced Heegner point => rank E(K)=1, so known E(Q) rank4 forces the base P_K torsion; Gross-Zagier gives complex base-change FIRST derivative zero, not original complex L''.",
+        "Howard §3.3 already constructs Z∞ in ANTICYCLOTOMIC inverse-limit extended Selmer; its Cor3.1.2 supplies nonvanishing at high ring-class levels. Weight2 specialization and compact CH cohomology/Greenberg control remain a separate missing arrow."
       ],
       "commands": [
         "python3 -I -B research/proof_labs/kato_rank_scope_gate.py",
         "python3 -I -B research/proof_labs/castella_hsieh_433a1_control.py",
-        "python3 -I -B research/proof_labs/howard_heegner_residual_focal.py"
+        "python3 -I -B research/proof_labs/howard_heegner_residual_focal.py",
+        "python3 -I -B research/proof_labs/heegner_ring_class_tower_11.py"
       ],
       "artifacts": [
         "research/proof_labs/kato_rank_scope_gate.py",
@@ -493,16 +497,19 @@
         "research/proof_labs/castella_hsieh_433a1_control.py",
         "research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md",
         "research/proof_labs/howard_heegner_residual_focal.py",
-        "research/proof_labs/SESSION22_HOWARD_HEEGNER_ENTRY_AUDIT.md"
+        "research/proof_labs/SESSION22_HOWARD_HEEGNER_ENTRY_AUDIT.md",
+        "research/proof_labs/heegner_ring_class_tower_11.py",
+        "research/proof_labs/SESSION23_HEEGNER_TOWER_BASE_VANISHING.md"
       ],
-      "negative_control": "Test that rank four and all Theorem A hypotheses exclude κ nonvanishing, whereas the same theorem cannot be applied when its odd-inert hypothesis fails (N^-=1 at K=-7). Reject nonzero κ⇒Sel dimension2 as an existence proof or automatic rank-four complex L'' zero. Session21: theta 88*T² vanishes modulo11 but not modulo121 (precision trap). For 433a1/p11/K=-7 all accessible local hypotheses pass and Frobenius5 mod11 characteristic polynomial irreducible; focal E/p11/K=-7 meets Thm4.1 but fails ThmA/B odd-inert hypothesis. Contrapositive prohibits ordTheta=2 at rank4 *only under all TheoremA/B premises*. Session22: split Frobenius primes 23 and 43 yield mod11 discriminants 10 nonsquare and 9 nonzero square, respectively, excluding both an F11 invariant line and absolute reducibility after F121 extension. Two independent point-count algorithms verify a23=-6,a43=-4. This proves only the RESIDUAL hypothesis, not CH4.5 augmentation orders.",
+      "negative_control": "Test that rank four and all Theorem A hypotheses exclude κ nonvanishing, whereas the same theorem cannot be applied when its odd-inert hypothesis fails (N^-=1 at K=-7). Reject nonzero κ⇒Sel dimension2 as an existence proof or automatic rank-four complex L'' zero. Session21: theta 88*T² vanishes modulo11 but not modulo121 (precision trap). For 433a1/p11/K=-7 all accessible local hypotheses pass and Frobenius5 mod11 characteristic polynomial irreducible; focal E/p11/K=-7 meets Thm4.1 but fails ThmA/B odd-inert hypothesis. Contrapositive prohibits ordTheta=2 at rank4 *only under all TheoremA/B premises*. Session22: split Frobenius primes 23 and 43 yield mod11 discriminants 10 nonsquare and 9 nonzero square, respectively, excluding both an F11 invariant line and absolute reducibility after F121 extension. Two independent point-count algorithms verify a23=-6,a43=-4. This proves only the RESIDUAL hypothesis, not CH4.5 augmentation orders. Session23: known rank4 over Q forces classical P_K torsion by Kolyvagin; lower rank1 does NOT force torsion; theta/infinite Heegner family can remain nonzero at higher conductor. For K=-7, p=11, ring-class Pic(O11^n)=C10×C11^(n-1) with explicit CRT and primitive 2 mod11^n, integral order10 projection; α ordinary unit root 12721 mod14641 and 1−α^-1 unit. Formal element gamma−1 demonstrates nonzero tower element with zero augmentation without falsely producing actual Heegner z.",
       "stop_condition": "Stop claiming ThmA nonzero kappa for old rank4 K=-7, or treating published Thm4.1's existing derived filtration as an unbuilt object. Next construct a named global Iwasawa z with two Coleman augmentation orders, compare complete BCLMN height normalization to CH h^(1), and identify any separately proved original complex L'' bridge.",
       "nonclaims": [
         "No class κ or Coleman map has been computed",
         "No new general arbitrary-rank derived-height theory is claimed",
         "Published rank-two criterion does not establish original complex rank-four BSD",
         "An applicable derived-height filtration is an existing published construction, NOT our computation of its higher stages; theta coefficients and analytic nonvanishing for 433a1 are published inputs.",
-        "Verifying Howard's entry hypotheses does not construct the class in CH4.5's precise cohomology target or prove any positive derived-height or original complex BSD conclusion."
+        "Verifying Howard's entry hypotheses does not construct the class in CH4.5's precise cohomology target or prove any positive derived-height or original complex BSD conclusion.",
+        "Torsion base Heegner point does not force Howard Z∞ to vanish over anticyclotomic tower or imply a J-derivative exists in exact Selmer cohomology; the original complex L'' remains unknown."
       ],
       "cross_disciplines": [
         {
@@ -514,7 +521,7 @@
           "reference": "https://doi.org/10.1017/fms.2021.85"
         }
       ],
-      "deciding_comment": "C-0020 Howard's published Hida Heegner class family has main entry hypotheses verified on focal E234446a1/p11/K=-7, including ABSOLUTE irreducibility of rho|GK via two split Frobenius primes. Missing typed map from extended Selmer class to compact anticyclotomic Hhat1(Kinfty,VpE), two Coleman images, J-adic valuations, Bockstein derivative and original complex comparison."
+      "deciding_comment": "C-0021: classical base Heegner point forced torsion by rank>=4 and Kolyvagin, exact L'(E/K,1)=0 by GZ, but no original complex L'' result. Howard §3.3 constructs published non-R∞-torsion Z∞ already in anticyclotomic EXTENDED Selmer; ring-class→tower map is NOT a missing invention. Remaining: weight2 specialisation to compact CH4.5 target, both Coleman J-orders, independent complex reciprocity."
     },
     {
       "id": "EX-011",
