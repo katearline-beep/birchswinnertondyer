@@ -55,9 +55,9 @@
       "hypothetical_bridge": "Construct a comparison law between the actual one-prime modified Selmer complex and an analytically relevant complex regulator, fully stating characters and local splittings.",
       "if_then_statement": "IF a valid comparison identifies a rigorously zero derived regulator with L'' and is nondegenerate, THEN L''=0.",
       "would_unlock": "A different route via globally-defined Selmer-complex data could bypass raw analytic zero testing.",
-      "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness.",
+      "unverified_dependencies": "One-place modified Selmer must not be replaced by the two-place logarithm kernel; related published results may require Sha finiteness. Session 13 sourced a rank-independent *height computation* in BCLMN (2016), but no sigma-series or denominator-ideal calculation for [36]Ai is yet available. Anticyclotomic character coefficients alone cannot determine heights.",
       "negative_control": "Identical dimensions of two kernel spaces may conceal different subspaces; explicit toy counterpairing shows the failure. Additional scale trap: a toy vector (0,1,0,0) times 11^3 makes all wedge residues vanish mod 11^3 while primitive normalization immediately rejects projective profile [1:0:2:9].",
-      "next_decisive_test": "Obtain a genuine globally normalized anticyclotomic cross-height vector a_i=h_ac(P_i,R), with character, splitting, and precision documented. Before any expensive higher derived-height calculation, divide out its common 11-adic valuation and test [a1:a2:a3:a4] mod11 against the necessary local-log profile [1:0:2:9]; then test exact projective wedges at higher precision. If zero at reported precision, mark indeterminate. Neither passing finite congruences nor global p-adic regulators alone implies complex L''.",
+      "next_decisive_test": "BCLMN 2016 Algorithm 4.2 computes the self-height of Ai=Pi+R for any nontorsion input under good-ordinary split-11 and suitable component/formal-group hypotheses. Use Proposition 1.4 class-number-one character, sigma function, and true global denominator ideal for [36]Ai. By anti-Galois bilinear symmetry h(Ai,Ai)=2 h(Pi,R). Check additivity on Pi+Pj+R, a published rank-two control, and 11-adic precision. Only then apply Session 12's primitive projective test to measured heights. Algorithm 4.3 rank-two shadow-line conclusions are inapplicable to our rank-four/five curve.",
       "kill_criterion": "Park if no map with specified domain, codomain and analytic normalization can be stated.",
       "source": "https://doi.org/10.5802/jtnb.1174",
       "test_path": "research/methodology/height_alignment_scale_gate.py",
@@ -77,6 +77,11 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Independent Jacobian computation confirms all six local columns including P4; primitive 11-adic projective [1:0:2:9] provides an inexpensive necessary L11 falsifier. No global anticyclotomic heights or complex derivative comparison computed; hypothesis remains speculative."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "BCLMN2016 supplies actual anticyclotomic p-adic height algorithm (independent of their lower-rank shadow-line interpretation); six split-prime character coefficients and four P_i+R exact coordinates computed with tests. Global heights and complex L'' bridge remain open."
         }
       ]
     },

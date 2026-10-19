@@ -56,6 +56,17 @@ python3 -I -B research/harness/test_full_review.py
 
 The validator enforces completeness, review chronology and explicit nonclaims, but neither proves mathematical progress nor guarantees that future scheduled reviews will run. The operating cadence is a **separate human/agent obligation**.
 
+## Session 13 — an executable global-height entry point, not a result yet
+
+Our [published-height adaptation audit](../anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md) identifies a genuine elliptic anticyclotomic height formula (BCLMN 2016, Algorithm 4.2) and a practical polarization identity `h_ac(P_i+R)=2h_ac(P_i,R)` for the symmetric height. The [character coefficient calculator](../anticyclotomic_11/character_coefficients.py) computes six unramified split-prime values (C-0010) with a separate first-digit Fermat quotient; [point prerequisites](../anticyclotomic_11/point_prerequisites.py) verify minimal-model coordinates and possible denominator primes. These are **not** global heights. The rank-two *shadow line theorem* of BCLMN does not apply directly to our rank-four E.
+
+```bash
+python3 -I -B research/anticyclotomic_11/character_coefficients.py
+python3 -I -B research/anticyclotomic_11/point_prerequisites.py
+```
+
+The next implementation must supply 11-adic sigma series **and** exact denominator ideals of [36](P_i+R), including all split bad primes, before making any height or kernel-alignment claim. The [2026-10-19 whole-problem supplement](../reviews/2026-10-19-whole-problem.md) preserves the original complex L'' obstruction.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.

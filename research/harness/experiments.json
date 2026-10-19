@@ -215,12 +215,15 @@
       "dependencies": [
         "Choice of p=11 local splitting, anticyclotomic character and full Selmer complex.",
         "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function.",
-        "Number-field software source audit: QCMod-NF quadratic-Chabauty driver assumes genus>1 and rank=2g, neither satisfied by our E/K case"
+        "Number-field software source audit: QCMod-NF quadratic-Chabauty driver assumes genus>1 and rank=2g, neither satisfied by our E/K case",
+        "Use the rank-independent self-height Algorithm 4.2 from Balakrishnan–Ciperiani–Lang–Mirza–Newton, not the rank-two shadow-line conclusions of Algorithm 4.3"
       ],
       "commands": [
         "python -I -B research/strategy/kill_tests.py",
         "python3 -I -B research/methodology/height_alignment_scale_gate.py",
-        "python3 -I -B research/split11/independent_jacobian_all_columns.py"
+        "python3 -I -B research/split11/independent_jacobian_all_columns.py",
+        "python3 -I -B research/anticyclotomic_11/character_coefficients.py",
+        "python3 -I -B research/anticyclotomic_11/point_prerequisites.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -228,14 +231,18 @@
         "research/split11/LOCAL_GLOBAL_ALIGNMENT_AUDIT.md",
         "research/methodology/height_alignment_scale_gate.py",
         "research/split11/independent_jacobian_all_columns.py",
-        "research/anticyclotomic_11/GLOBAL_HEIGHT_SOFTWARE_AUDIT.md"
+        "research/anticyclotomic_11/GLOBAL_HEIGHT_SOFTWARE_AUDIT.md",
+        "research/anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md",
+        "research/anticyclotomic_11/character_coefficients.py",
+        "research/anticyclotomic_11/point_prerequisites.py"
       ],
-      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence.",
+      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence. Session 13 character coefficients must change sign under conjugation and vanish at inert/ramified fixed ideals; independent Fermat-quotient digits and polarization on model pairings are asserted before any heights.",
       "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative. Do not promote L11 on finite congruence coincidence or unnormalized zero vectors; demand genuine global anticyclotomic heights with controlled 11-adic valuations/precision.",
       "nonclaims": [
         "No proof of complex analytic rank four",
         "No new published theorem or validated reciprocity law",
-        "The primitive projective gate uses toy height vectors only, not a computed global anticyclotomic pairing"
+        "The primitive projective gate uses toy height vectors only, not a computed global anticyclotomic pairing",
+        "Session 13 computed prime-to-11 idele-class character coefficients and minimal-point coordinates, but neither p-adic sigma heights nor denominator ideals of [36]Ai"
       ],
       "cross_disciplines": [
         {
@@ -255,7 +262,7 @@
           "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/split11/KERNEL.md"
         }
       ],
-      "deciding_comment": "Session 12 refined the L11 falsifier without computing a_i or upgrading the H2 theorem bridge; see LOCAL_GLOBAL_ALIGNMENT_AUDIT.md."
+      "deciding_comment": "Session 13 located BCLMN2016 Algorithm 4.2 applicable to individual height computations under stated local hypotheses; its rank-two shadow-line theorem does not apply. Next implement sigma and global denominator ideal, not new local-log precision."
     },
     {
       "id": "EX-006",
