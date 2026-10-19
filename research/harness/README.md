@@ -34,6 +34,17 @@ python3 -I -B research/strategy/logic_gate_tests.py
 
 This is an organizational quality gate, **not** formal verification of any conjecture. The initial six records are all speculative; nothing here has external expert review.
 
+## Session 12 local/global alignment falsifier
+
+The [primitive 11-adic projective height gate](../split11/LOCAL_GLOBAL_ALIGNMENT_AUDIT.md) refines the H2/L11 speculation. The existing local logarithm coefficient vector projects to **[1:0:2:9] mod 11**; a genuinely global anticyclotomic cross-height vector would have to agree after removing common powers of 11 for the proposed hyperplanes to coincide. This is a necessary criterion, not an actual height calculation; all-zero finite observations are indeterminate. Run the deliberately masked false-positive and independent all-column Jacobian checks:
+
+```bash
+python3 -I -B research/methodology/height_alignment_scale_gate.py
+python3 -I -B research/split11/independent_jacobian_all_columns.py
+```
+
+CI now enforces both checks. The formal toy heights do not belong to the curve's actual global p-adic height pairing. No claim toward complex L'' has been promoted.
+
 ## Periodic whole-problem checkpoint
 
 [WPR-1](../strategy/FULL_PROBLEM_REVIEW.md) is mandatory at the beginning of each research sprint, at least weekly, after three substantive merges, and before major mathematical announcements. A dated [whole-problem review](../reviews/2026-10-17-whole-problem.md) and its [machine-readable current snapshot](../reviews/current.json) capture general BSD, the original complex analytic-rank obstacle, all six competing leapfrog tracks, falsifiers and reprioritizations. Crucially the review must answer whether anything previously unproved **about the actual BSD conjecture** became proved. No is an allowed and common answer.
