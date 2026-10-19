@@ -6,6 +6,9 @@ We investigate specific elliptic curves and the boundary between numerical evide
 
 ## Start here
 
+**Research direction as of 19 October 2026:** [theorem-first pivot](research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md), with [rank-two Castella–Hsieh theorem lab](research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md) and [Ulmer proved high-rank function-field BSD lab](research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md). We retain our rank-four elliptic curve as a stress test, not our sole discovery mechanism. Stage-one tasks: [#41](https://github.com/katearline-beep/birchswinnertondyer/issues/41) and [#42](https://github.com/katearline-beep/birchswinnertondyer/issues/42).
+
+
 - [AGENTS.md](AGENTS.md): standing research instructions for human and AI collaborators, including an explicit cross-disciplinary transfer gate and falsifiable experiment design.
 - [Machine-checked research harness](research/harness/README.md): executable experiment registry, review-status enforcement, negative controls, and independent Fourier coefficient checks.
 
@@ -14,9 +17,9 @@ We investigate specific elliptic curves and the boundary between numerical evide
 - [Contribution guidelines](CONTRIBUTING.md): how to provide an independent check or report an error.
 - [Split-11 example](research/split11/NOTE.md) and [reproduction protocol](research/split11/REPRODUCIBILITY.md).
 
-### Current scoped computational result
+### Representative computations and their proof boundaries
 
-For the curve `y²=x³−1267x+17230` over `Q(√−7)`, two AI-authored but algorithmically distinct exact-arithmetic Python programs produce a normalized local 11-adic logarithm minor equal to **85 modulo 121** (a unit modulo 11). See claim C-0001. This is **not** an independently peer-reviewed proof, a computation of anticyclotomic heights, or a BSD advance.
+For the curve `y²=x³−1267x+17230` over `Q(√−7)`, two AI-authored but algorithmically distinct exact-arithmetic Python programs produce a normalized local 11-adic logarithm minor equal to **85 modulo 121** (a unit modulo 11). See claim C-0001. This historical local-log calculation is **not** a global anticyclotomic height or a BSD advance. Later [C-0011 through C-0013](CLAIMS.md) compute **provisional** global anticyclotomic heights (three 11-adic digits) using BCLMN and Mazur–Tate. Their canonical sigma input has an independent PARI check, but the **complete global height pipeline has not independently been reviewed** and none of the calculations proves the original **complex** L''(E,1)=0.
 
 Reproduce without third-party packages:
 
@@ -29,11 +32,11 @@ GitHub Actions runs both on Python 3.11, 3.12, and 3.13, with immutable pinned a
 
 ## High-risk leapfrog portfolio
 
-[Leapfrog conjecture protocol](research/strategy/LEAPFROG_PROTOCOL.md) and [H1 derived-Kato gap audit](research/strategy/KATO_BRIDGE_AUDIT.md) are now part of the standing [AI-agent contract](AGENTS.md). The accompanying [leapfrog research registry](research/harness/leapfrogs.json) keeps six moonshot directions falsifiable, explicit about missing mathematical bridges and willing to be killed. These are **speculative ideas**, not newly established theorems.
+[Leapfrog conjecture protocol](research/strategy/LEAPFROG_PROTOCOL.md) and [H1 derived-Kato gap audit](research/strategy/KATO_BRIDGE_AUDIT.md) are now part of the standing [AI-agent contract](AGENTS.md). The accompanying [leapfrog research registry](research/harness/leapfrogs.json) keeps eight tracked moonshot directions falsifiable, explicit about missing mathematical bridges and willing to be killed. These are **speculative ideas**, not newly established theorems.
 
 ## Periodic whole-problem reorientation
 
-We deliberately [reassess the **entire** Birch–Swinnerton-Dyer conjecture](research/strategy/FULL_PROBLEM_REVIEW.md) at every research-sprint start, at least weekly, and after major results or three mathematical merges. The [current six-track checkpoint](research/reviews/2026-10-17-whole-problem.md) distinguishes the general conjecture, this curve's unresolved **complex** L''(E,1), exact analytic-rank-four requirements, and the still-open Sha/leading-coefficient formula.
+We deliberately [reassess the **entire** Birch–Swinnerton-Dyer conjecture](research/strategy/FULL_PROBLEM_REVIEW.md) at every research-sprint start, at least weekly, and after major results or three mathematical merges. The [current machine-checked whole-problem review](research/reviews/current.json) distinguishes the general conjecture, this curve's unresolved **complex** L''(E,1), exact analytic-rank-four requirements, and the still-open Sha/leading-coefficient formula.
 
 The review must answer what *new mathematical implication* toward BSD was actually **proved**; “none” is a valid and often essential result. The [machine-readable research snapshot](research/reviews/current.json) is checked in CI with negative controls. **This is research accountability, not an automatic theorem verifier.**
 
