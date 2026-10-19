@@ -31,6 +31,6 @@ must_reject("no negative control",lambda d:d.update(negative_control_reviewed=""
 must_reject("review scheduled more than a week ahead",lambda d:d.update(next_due_on="2026-11-10"))
 must_reject("empty evidence classification",lambda d:d.update(evidence_classes=[]))
 must_reject("missing immutable journal",lambda d:d.update(journal_path="research/reviews/missing.md"))
-must_reject("missing claim ledger coverage",lambda d:d["claim_ids_audited"].remove("C-0008"))
+must_reject("missing claim ledger coverage",lambda d:d["claim_ids_audited"].remove("C-0009"))
 must_reject("unsafe external file path",lambda d:d["sources"].append("../../etc/passwd"))
 print("PASS: 13 full-problem integrity negative controls")
