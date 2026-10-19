@@ -102,6 +102,8 @@ jobs:
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
         run: python -I -B research/methodology/local_global_transversality_11.py
+      - name: Howard anticyclotomic ring class tower and Kolyvagin basepoint torsion gate
+        run: python -I -B research/proof_labs/heegner_ring_class_tower_11.py
       - name: Howard focal Heegner entry and absolute residual irreducibility certificate
         run: python -I -B research/proof_labs/howard_heegner_residual_focal.py
       - name: Genuine Castella Hsieh 433a1 p11 Kminus7 rank two theorem control

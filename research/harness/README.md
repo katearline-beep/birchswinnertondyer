@@ -166,6 +166,14 @@ No independent theta/adjoint L-value, cohomology class or full BSD proof has bee
 python3 -I -B research/proof_labs/howard_heegner_residual_focal.py
 ```
 
+## Session23 — forced classical basepoint torsion, existing Howard tower class
+
+By the published Kolyvagin theorem, a non-torsion classical base Heegner point over K forces rank E(K)=1; known rank E(Q)=4 therefore **forces its classical base Heegner point to be torsion**. Via Gross–Zagier the **complex base-change first derivative** L'(E/K,1)=0, but this gives no proof of original complex L''(E/Q,1)=0. Meanwhile Howard §3.3 **already constructs** an anticyclotomic *extended Selmer* Iwasawa class Z∞ using exact norm-compatible corestriction of his big Heegner classes; its high-level nonvanishing does NOT contradict the basepoint statement. [Session23 audit](../proof_labs/SESSION23_HEEGNER_TOWER_BASE_VANISHING.md) and [ring-class CRT certificate](../proof_labs/heegner_ring_class_tower_11.py) establish Pic(O_11^n)=C10×C11^(n−1) and D_s=H_11^(s+1)^C10; ordinary alpha11 mod14641 also checked. Remain blocked by exact weight2/extended-to-compact Selmer control map, both Coleman augmentation orders and **original complex** regulator comparison.
+
+```bash
+python3 -I -B research/proof_labs/heegner_ring_class_tower_11.py
+```
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
