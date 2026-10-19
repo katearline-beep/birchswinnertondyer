@@ -1,6 +1,6 @@
 # Proof laboratory B: Ulmer's proved function-field BSD mechanism
 
-**2026-10-19. The BSD/rank results below are ALREADY PUBLISHED THEOREMS by Douglas Ulmer, not new project results.** The executable code only checks local finite-field arithmetic, and **does not** compute the global Hasse–Weil L-polynomial or prove BSD.
+**2026-10-19. The BSD/rank results below are ALREADY PUBLISHED THEOREMS by Douglas Ulmer, not new project results.** The first local-fibre script checks local arithmetic; the new Session 20 program also reconstructs the published *global Fermat quotient cohomology factor* using Ulmer's Jacobi-sum theorem. Neither program proves Tate or BSD.
 
 Primary source: D. Ulmer, [*Elliptic curves with large rank over function fields*](https://annals.math.princeton.edu/2002/155-1/p09), Annals of Mathematics **155** (2002), 295–315, [arXiv:math/0109163](https://arxiv.org/abs/math/0109163), especially Theorem 1.5, Remarks 1.6, and proof outline §1.7.
 
@@ -10,20 +10,16 @@ For any prime \(p\), integer \(n\ge1\) and \(d=p^n+1\), Ulmer studies the noniso
 \[
 E_d/\mathbb F_p(t):\quad y^2+xy=x^3-t^d.
 \]
-Ulmer proves BSD for this family via the Tate conjecture for associated elliptic surfaces and gives the **exact rank** over \(\mathbb F_p(t)\):
-\[
-\operatorname{rank}E_d(\mathbb F_p(t))=
-\begin{cases}p^n&6\nmid d,\\p^n-2&6\mid d.\end{cases}
-\]
-The precise formula is reported in Remark 1.6 via Theorem 9.2, and depends on the **global theorem**, not on our point-counting program.
+Ulmer proves BSD for this family. **Important correction to Session 19:** the simple formula \(p^n\) (or \(p^n-2\) if \(6\mid d\)) is the **geometric rank**, attained over \(\mathbb F_{p^{2n}}(t)\); it is **not generally the rank over \(\mathbb F_p(t)\)**. Exact ranks over \(\mathbb F_q(t)\) require **Theorem 9.2** with Frobenius orbit lengths and special-fibre corrections.
 
-| Case | d | Published exact rank | Independently enumerated good finite fibres \(t\in\mathbb F_p\) | Sum of their a_p(t), local diagnostic only |
-|---|---:|---:|---:|---:|
-| p=5,n=1 | 6 | 3 | 4 | −6 |
-| p=7,n=1 | 8 | 7 | 6 | +6 |
-| p=5,n=2 | 26 | 25 | 4 | −6 |
+| Case | d | Published rank over \(\mathbb F_p(t)\) | Published geometric rank (attained over \(\mathbb F_{p^{2n}}(t)\)) | Good \(\mathbb F_p\)-rational finite fibres | Sum local traces |
+|---|---:|---:|---:|---:|---:|
+| p=5,n=1 | 6 | **2** | 3 | 4 | −6 |
+| p=7,n=1 | 8 | **3** | 7 | 6 | +6 |
+| p=5,n=2 | 26 | **7** | 25 | 4 | −6 |
 
-The \(p=5,n=2\) case is useful because the **same** finite-field fibre values as \(p=5,n=1\) coexist with **very different global Mordell–Weil ranks (25 versus 3)**. Indeed, \(t^{p^n+1}=t^2\) for \(t\in\mathbb F_p\), while the function-field degree \(d\) and the associated global surface vary. **A test using only these local fibres cannot distinguish the two global ranks.** This is a robust negative control against treating point counts, numerics or a visible local pattern as a proof of rank.
+The \(p=5,n=2\) and \(p=5,n=1\) examples have identical \(\mathbb F_5\)-rational finite-fibre traces, but different global ranks (**7 versus 2** over \(\mathbb F_5(t)\), or **25 versus 3** geometrically). This is the intended negative control: finite local counts cannot establish global rank. The [Session 20 erratum and global orbit audit](SESSION20_FERMAT_ORBITS_AUDIT.md) derives the correct prime-field and extended-field values directly from Ulmer's published Theorem 9.2.
+
 
 ## Why BSD is provable here: the typed mechanism
 
@@ -54,7 +50,7 @@ Run [ulmer_function_field_fibres.py](ulmer_function_field_fibres.py):
 - Verify Hasse's bound for each good fibre.
 - Demonstrate that different \(d=p^n+1\) can produce **identical counts on all \(\mathbb F_p\)-rational t** while the theorem gives different global ranks.
 
-**No rank or BSD proof follows from these finite enumerations.** Rank and BSD are explicitly imported from Ulmer's theorem. A future deeper experiment should reconstruct the actual Fermat-quotient surface map and its Gauss-sum zeta factorization for the small \(p=5,n=1,d=6\) example, with independent formula verification. That is the next meaningful mathematical milestone; a larger table of point counts is not.
+**No rank or BSD proof follows from these finite enumerations.** Rank and BSD are explicitly imported from Ulmer's theorem. Session 20 [reconstructs the exact Fermat-quotient map](ulmer_fermat_quotient.py) and [published Jacobi-sum-based global quotient zeta factors](ulmer_frobenius_orbits.py) for the small \(p=5,n=1,d=6\) example, with exact symbolic identity and Frobenius-orbit checks. The next open milestone is an **independent Jacobi-sum computation or deeper Tate/BSD mechanism audit**, not another local-fibre table.
 
 ## Novelty and decision
 
