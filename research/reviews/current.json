@@ -133,7 +133,7 @@
   "credible_leapfrog": "Pursue a verified global derived-height radical and a genuinely typed mixed Bockstein/regulator comparison, while first attempting to falsify the speculative local/global kernel identification using independently validated C-0011 heights.",
   "speculative_wild_option": "H6: geometric annihilation of the original complex second derivative by an exact period projector beyond root-sign parity, tested against rank-two controls; remain parked absent a noncircular formula.",
   "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation.",
-  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review.",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011.",
   "sources": [
     "CLAIMS.md",
     "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -155,7 +155,8 @@
     "https://arxiv.org/abs/1610.08729",
     "research/anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md",
     "research/anticyclotomic_11/provisional_height_mod11.py",
-    "https://arxiv.org/pdf/1610.08729"
+    "https://arxiv.org/pdf/1610.08729",
+    "research/anticyclotomic_11/published_389a1_height_control.py"
   ],
   "journal_path": "research/reviews/2026-10-19-whole-problem.md",
   "not_established": [
