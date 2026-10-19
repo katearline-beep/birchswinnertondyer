@@ -6,6 +6,8 @@ We investigate specific elliptic curves and the boundary between numerical evide
 
 ## Start here
 
+**Session21 verified theorem scope:** [Castella–Hsieh 433a1 rank-two control and original-rank4 Theorem4.1 applicability](research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md) is now part of the source-checked proof lab. The derived-height filtration on focal E/p11/K=-7 exists **by published theorem**, but TheoremA/B nonzero-Kato criterion does not apply there, and the needed global Iwasawa class/complex L'' comparison are missing.
+
 **Research direction as of 19 October 2026:** [theorem-first pivot](research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md), with [rank-two Castella–Hsieh theorem lab](research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md) and [Ulmer proved high-rank function-field BSD lab](research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md). We retain our rank-four elliptic curve as a stress test, not our sole discovery mechanism. Stage-one tasks: [#41](https://github.com/katearline-beep/birchswinnertondyer/issues/41) and [#42](https://github.com/katearline-beep/birchswinnertondyer/issues/42).
 
 
