@@ -40,6 +40,10 @@ jobs:
         run: python -I -B research/split11/independent_check.py
       - name: Higher-precision split-11 kernel (rational + projective cross-check)
         run: python -I -B research/split11/kernel_mod11_4.py
+      - name: Independent Jacobian all-column 11-adic corroboration
+        run: python -I -B research/split11/independent_jacobian_all_columns.py
+      - name: Primitive height-alignment negative control
+        run: python -I -B research/methodology/height_alignment_scale_gate.py
       - name: Agboola-Castella local hypothesis certificate
         run: python -I -B research/anticyclotomic_11/verify_local_hypotheses.py
       - name: Exact quadratic-twist and mod-11 symmetry data check

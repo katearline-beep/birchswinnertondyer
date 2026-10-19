@@ -214,20 +214,28 @@
       "decisive_observation": "Write the missing comparison law and calculate a genuine one-place modified Selmer cross-height before inferring any radical.",
       "dependencies": [
         "Choice of p=11 local splitting, anticyclotomic character and full Selmer complex.",
-        "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function."
+        "Two-place local logs differ from the one-prime modified Selmer pairing and complex L-function.",
+        "Number-field software source audit: QCMod-NF quadratic-Chabauty driver assumes genus>1 and rank=2g, neither satisfied by our E/K case"
       ],
       "commands": [
-        "python -I -B research/strategy/kill_tests.py"
+        "python -I -B research/strategy/kill_tests.py",
+        "python3 -I -B research/methodology/height_alignment_scale_gate.py",
+        "python3 -I -B research/split11/independent_jacobian_all_columns.py"
       ],
       "artifacts": [
         "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
-        "research/strategy/kill_tests.py"
+        "research/strategy/kill_tests.py",
+        "research/split11/LOCAL_GLOBAL_ALIGNMENT_AUDIT.md",
+        "research/methodology/height_alignment_scale_gate.py",
+        "research/split11/independent_jacobian_all_columns.py",
+        "research/anticyclotomic_11/GLOBAL_HEIGHT_SOFTWARE_AUDIT.md"
       ],
-      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical.",
-      "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative.",
+      "negative_control": "Toy pairing has the same radical dimension as local logs but a different radical. Session-12 primitive normalization: a formal bad height vector (0,1,0,0), masked by 11^3, makes raw wedges vanish mod 11^3 yet fails the projective [1:0:2:9] criterion after removing common factors. All-zero observed heights are indeterminate, not positive evidence.",
+      "stop_condition": "Stop if no explicit reciprocity carries the local p-adic output to the complex derivative. Do not promote L11 on finite congruence coincidence or unnormalized zero vectors; demand genuine global anticyclotomic heights with controlled 11-adic valuations/precision.",
       "nonclaims": [
         "No proof of complex analytic rank four",
-        "No new published theorem or validated reciprocity law"
+        "No new published theorem or validated reciprocity law",
+        "The primitive projective gate uses toy height vectors only, not a computed global anticyclotomic pairing"
       ],
       "cross_disciplines": [
         {
@@ -237,8 +245,17 @@
           "proof_boundary": "No current computation relates their p-adic derivative directly to the complex L'' value.",
           "validating_test": "research/strategy/kill_tests.py",
           "reference": "https://arxiv.org/abs/2308.10474"
+        },
+        {
+          "discipline": "error detection / coding theory",
+          "kind": "validation_method",
+          "mechanism": "A primitive projective signature and three wedge checks detect falsely aligned finite-precision vectors even when a common 11-power masks all raw congruences.",
+          "proof_boundary": "A mathematical negative control of a conjectural height alignment, never evidence for an actual global anticyclotomic height or complex L-function derivative.",
+          "validating_test": "research/methodology/height_alignment_scale_gate.py",
+          "reference": "https://github.com/katearline-beep/birchswinnertondyer/blob/main/research/split11/KERNEL.md"
         }
-      ]
+      ],
+      "deciding_comment": "Session 12 refined the L11 falsifier without computing a_i or upgrading the H2 theorem bridge; see LOCAL_GLOBAL_ALIGNMENT_AUDIT.md."
     },
     {
       "id": "EX-006",
