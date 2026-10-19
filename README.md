@@ -47,3 +47,5 @@ One narrowly scoped claim per issue/PR; define mathematical objects and dependen
 ## Attribution, permissions, and reuse
 
 Research emerged from human–AI exploration in October 2026. The code and documents in this repository are not yet accompanied by an explicit reuse license: public visibility alone is **not** permission to reuse or redistribute. Selecting a license is an open maintainer decision. Please provide attribution for both human and AI contributions when describing this work.
+
+**Ulmer proof-lab correction (Session20):** [source-audited Fermat map and global Frobenius rank computation](research/proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) distinguishes ranks 2,3,7 over the prime constant fields from geometric ranks 3,7,25. Earlier prime-field labels were wrong and have been corrected. The original complex L'' remains open.

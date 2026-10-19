@@ -505,31 +505,45 @@
     {
       "id": "EX-011",
       "claim_ids": [
-        "C-0016"
+        "C-0016",
+        "C-0017",
+        "C-0018"
       ],
-      "status": "computationally_reproduced",
+      "status": "conditionally_supported",
       "human_reviewed": false,
-      "question": "Which GLOBAL geometry makes Ulmer's characteristic-p high ranks and BSD provable, and what fails in the naive number-field transfer?",
-      "decisive_observation": "Published Ulmer rank3, rank7 and rank25 curve instances come from Fermat-surface Tate/zeta theory, while exact local counts independently agree by two methods; the p5 rank3 and rank25 examples have identical F5-rational finite fibre traces despite different published global ranks.",
+      "question": "Can Ulmer's actual Fermat-quotient map and global Frobenius/Jacobi-sum cohomological factors be reconstructed, distinguishing ranks over Fp(t) from geometric ranks and isolating precisely what does not transfer to characteristic zero?",
+      "decisive_observation": "Section4.2 Fermat rational map factors the elliptic-surface cubic over Z and has Gamma invariance/order d². Sections7–9 global quotient Frobenius orbit factors computed using published Jacobi-sum eigenvalues give prime-field ranks 2,3,7 and geometric ranks 3,7,25; this corrects an earlier erroneous assignment of geometric ranks to Fp(t). A separate exact-character enumeration over F49 reconstructs the nontrivial Γ-perp Jacobi eigenvalue J(3,2,2,1)=49, independently confirming one (1−49T²) quotient Frobenius factor without importing Ulmer's evaluation of that sum.",
       "dependencies": [
         "Ulmer Annals (2002) Theorem 1.5, Remark 1.6 and surface Tate-to-BSD mechanism are externally PUBLISHED inputs not proved by our code",
         "The field is Fp(t), characteristic p, and d=p^n+1; do not substitute Q(t) or the original Q-elliptic curve",
-        "The finite fibre checker only handles smooth fibres with nonzero discriminant and Hasse bounds; no global zeta factor or Mordell–Weil rank is computed"
+        "The finite fibre checker only handles smooth fibres with nonzero discriminant and Hasse bounds; no global zeta factor or Mordell–Weil rank is computed",
+        "Ulmer Theorem9.2 gives rank over Fq(t), whereas Remark1.6(2) gives geometric rank after adjoining Fp^(2n) constants; the labels must NOT be conflated.",
+        "Ulmer §7.7/§8.1 Jacobi-sum and Tate/Weil Frobenius eigenvalue identity is a PUBLISHED theorem input, NOT independently proved by our orbit enumerator."
       ],
       "commands": [
-        "python3 -I -B research/proof_labs/ulmer_function_field_fibres.py"
+        "python3 -I -B research/proof_labs/ulmer_function_field_fibres.py",
+        "python3 -I -B research/proof_labs/ulmer_fermat_quotient.py",
+        "python3 -I -B research/proof_labs/ulmer_frobenius_orbits.py",
+        "python3 -I -B research/proof_labs/ulmer_jacobi_f49.py"
       ],
       "artifacts": [
         "research/proof_labs/ulmer_function_field_fibres.py",
         "research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md",
-        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md"
+        "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md",
+        "research/proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md",
+        "research/proof_labs/ulmer_fermat_quotient.py",
+        "research/proof_labs/ulmer_frobenius_orbits.py",
+        "research/proof_labs/ulmer_jacobi_f49.py"
       ],
-      "negative_control": "For p=5, d=6 and d=26, compare all F5-rational finite-fibre traces: identical point counts coexist with published ranks 3 and 25, so a local count pattern does not prove global rank. Reject bad fibres and confirm each good trace independently via enumeration and Legendre symbols.",
-      "stop_condition": "Do not claim any characteristic-zero transfer until a typed geometric/cohomological map and a proved comparison to the original complex L-function are specified; stop repetitive finite-fibre counting absent a global zeta theorem experiment.",
+      "negative_control": "Session20 corrections: ranks over Fp(t) are (2,3,7), not geometric (3,7,25). Every finite F5-rational fibre for d=6 and d=26 has the same trace despite different F5(t) ranks 2 and 7. Corrupt x3 exponent in Ulmer's rational map t and the exact Fermat-factor identity fails; wrong base-field/geometric rank assertion fails orbit theorem check. C-0018 checks two distinct primitive F49 generators, 108336 admissible triples and exact Z[zeta8] integer coefficient [2352,0,0,0]; wrong nontrivial-product character is rejected.",
+      "stop_condition": "Stage1 map and one Jacobi eigenvalue now reconstructed. Stop repetitive finite fibres and single-character sums; next verify a genuine algebraic-cycle/Tate correspondence or source/target of proposed characteristic-zero motivic regulator, while never attributing published BSD proof to code.",
       "nonclaims": [
         "No independent proof of Ulmer's rank formula, BSD or Tate conjecture",
         "No global function-field L-polynomial computed in this stage",
-        "No proof that positive-characteristic Frobenius eigenvalues translate into original complex L''(E,1)"
+        "No proof that positive-characteristic Frobenius eigenvalues translate into original complex L''(E,1)",
+        "Theorem9.2 ranks and global Jacobi sum eigenvalues are Ulmer's published results; our character-orbit enumeration is a conditional implementation, not an independent rank/BSD proof.",
+        "Correction log: prior EX-011 geometrical ranks 3,7,25 mislabeled Fp(t) ranks; corrected base-field values are 2,3,7.",
+        "One independently evaluated Jacobi eigenvalue does not establish the full Fermat surface zeta polynomial, Tate or global BSD theorem."
       ],
       "cross_disciplines": [
         {
