@@ -119,6 +119,14 @@ python3 -I -B research/anticyclotomic_11/conditional_heights_mod1331.py
 
 No independent Sage/Magma global height or expert review, no exact Q11 derived radical, no complex L'' bridge and no BSD theorem are claimed.
 
+## Session 18 — independent rows and a saturated conditional common kernel
+
+The [Session18 transversality verifier](../methodology/local_global_transversality_11.py) reconstructs local and provisional global primitive functionals mod1331 from raw C-0002 and C-0013 data and proves a **unit 2×2 minor** 35≡2 mod11. Conditional on the first global height digit, this gives a split surjection Z11^4→Z11² with saturated rank-two common kernel. The modular kernel basis is (20,1103,1,0),(2,842,0,1). Fail-closed negative controls reject identical functional rows, a nonunit determinant and a vector artificially scaled by 11. [Detailed lemma and caution](../anticyclotomic_11/SESSION18_TRANSVERSALITY_AUDIT.md).
+
+Run: `python3 -I -B research/methodology/local_global_transversality_11.py`.
+
+The conditional common kernel is *not* a proven Selmer kernel or derived height radical, and no complex L'' vanishing or BSD proof follows. Prioritize independent complete global BCLMN height audit and an actual typed Selmer-exact-sequence proposal, not further digit accumulation.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
