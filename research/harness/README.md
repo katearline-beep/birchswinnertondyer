@@ -138,6 +138,16 @@ python3 -I -B research/proof_labs/ulmer_function_field_fibres.py
 
 New EX-010/EX-011 and LF-007/LF-008 give typed theorem hypotheses, falsifiers, actual nonclaims and stage-gated follow-ups. C-0015/16 mark published inputs separately from project calculations. The original complex L'' remains unproved and general BSD unsolved.
 
+## Session20 global Ulmer proof-laboratory advancement and erratum
+
+[Source-audited Session20](../proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) corrects the earlier mistaken label of **geometric ranks (3,7,25)** as `Fp(t)` ranks. Ulmer Thm9.2's **prime-field** ranks are (2,3,7). The [exact Fermat map](../proof_labs/ulmer_fermat_quotient.py) is checked over Z, [global quotient P2 factors](../proof_labs/ulmer_frobenius_orbits.py) follow Ulmer's **published** Jacobi theorem, and an [independent F49 character enumeration](../proof_labs/ulmer_jacobi_f49.py) reproduces one nontrivial Jacobi eigenvalue 49 with two primitive generators. These are a genuine extension beyond local-fibre enumeration and directly reject a field-of-definition mistake, but NOT an independent proof of surface Tate, full BSD or a complex comparison.
+
+```bash
+python3 -I -B research/proof_labs/ulmer_fermat_quotient.py
+python3 -I -B research/proof_labs/ulmer_frobenius_orbits.py
+python3 -I -B research/proof_labs/ulmer_jacobi_f49.py
+```
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
