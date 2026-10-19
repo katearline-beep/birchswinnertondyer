@@ -148,6 +148,16 @@ python3 -I -B research/proof_labs/ulmer_frobenius_orbits.py
 python3 -I -B research/proof_labs/ulmer_jacobi_f49.py
 ```
 
+## Session21 — authentic Castella–Hsieh rank-two control, applicable rank4 derived filtration
+
+A published [Castella–Hsieh Appendix Table1 example](../proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md) is now instantiated at **433a1, p=11, K=Q(sqrt(-7))**. The [exact arithmetic gate](../proof_labs/castella_hsieh_433a1_control.py) proves p ordinary, 433 inert, mod11 irreducibility via Frob5 nonsquare discriminant and demonstrates the published theta coefficient **88T² mod121** is invisible mod11. Independent source audit reveals CH **Theorem4.1 derived-height filtration applies to focal rank4 E with Nminus=1**, while its **Theorem A/B nonvanishing fails the odd-inert hypothesis** there. Under all A/B premises rank4 excludes theta order2; no order4 or complex L'' deduction follows. Theorem4.5 demands an actual Iwasawa class/augmentation control not currently available. Reproduce:
+
+```bash
+python3 -I -B research/proof_labs/castella_hsieh_433a1_control.py
+```
+
+No independent theta/adjoint L-value, cohomology class or full BSD proof has been produced; this is a source-qualified applicability milestone, not a new general theorem.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
