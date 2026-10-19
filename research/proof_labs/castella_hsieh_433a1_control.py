@@ -32,6 +32,13 @@ def theta_first_nonzero_mod121(coeff):
     assert coeff[2]%121 and coeff[2]%11==0
     return 2
 
+def pairing_allowed_by_involution(derived_order,chi_left,chi_right):
+    """CH Thm4.1(d): h^r(x^tau,y^tau)=(-1)^r*h^r(x,y).
+    chi +-1 eigenvalues; this tests POSSIBLE nonzero entries, not values.
+    """
+    assert derived_order>=1 and chi_left in (-1,1) and chi_right in (-1,1)
+    return chi_left*chi_right==(-1)**derived_order
+
 def derived_height_scope(p_ordinary,disc_coprime,disc_Nminus_squarefree,ramified_at_all_inert):
     """Castella-Hsieh Theorem 4.1 (NOT Theorem A)."""
     return all((p_ordinary,disc_coprime,disc_Nminus_squarefree,ramified_at_all_inert))
@@ -93,12 +100,22 @@ assert not derived_height_scope(False,True,True,True)
 assert theorems_A_B_compatible(4,True,True) is False
 assert theorems_A_B_compatible(4,False,True) is None
 assert theorems_A_B_compatible(2,True,True) is True
+# Independent exact structural implication of CH Theorem 4.1(c),(d):
+# Odd first pairing is cross-eigenspace only; even second pairing is
+# within eigenspaces and alternating. No equality to BCLMN normalization!
+assert not pairing_allowed_by_involution(1,1,1)
+assert not pairing_allowed_by_involution(1,-1,-1)
+assert pairing_allowed_by_involution(1,1,-1)
+assert pairing_allowed_by_involution(2,1,1)
+assert pairing_allowed_by_involution(2,-1,-1)
+assert not pairing_allowed_by_involution(2,1,-1)
 assert legendre(-11,389)==1    # BCLMN control K=-11 is NOT CH Appendix K=-2
 print("PASS CH published Appendix Table1 433a1 p11 K=-7: discriminant -433")
 print("PASS inert bad 433, split good 11, ordinary a11=-4, two rational points")
 print("PASS mod11 residual irreducibility: Frobenius5 discr 7 nonsquare in F11")
 print("PASS multiplicative mod11 ramification via v433(Delta)=1")
 print("PASS published theta T2 coefficient 88 mod121 is nonzero (valuation one)")
+print("PASS CH Thm4.1 first derived height is cross eigenspace only; second pairing within eigenspaces")
 print("PASS CH Thm4.1 applies to focal E234446a1 p11 K=-7 with Nminus=1")
 print("PASS CH ThmA INAPPLICABLE to focal K=-7; Thm4.5 needs a genuine Iwasawa class")
 print("PASS CH ThmA+B conditional: theta order2 forces Sel dim2; rank4 excludes order2")
