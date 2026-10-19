@@ -18,6 +18,8 @@
 
 14. **Escalate appropriately.** When a potential theorem emerges, ask for arithmetic-geometry review with a precise lemma and reproducible counterexample/test, not a broad claim that BSD is solved. Do not contact upstream maintainers with speculative theorem claims.
 
+**Session 13 published-height applicability gate:** Before any purported anticyclotomic global height, read [BCLMN 2016 adaptation](research/anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md). Keep the rank-independent individual-height Algorithm 4.2 separate from the rank-two shadow-line conclusions of Algorithm 4.3. Compute the complete denominator ideal of the *formal-group multiple*, not just rational denominators of P_i+R; include sigma function, bad-component checks, all places, normalized character and independent consistency checks. The prime-to-11 character coefficient table C-0010 is an input, **not** a height. Preserve a parallel H3 route targeting original complex L''.
+
 **Current focal problem:** E/Q of conductor 234446, K=Q(√−7), p=11. Our two-place local logarithm kernel is **not** the one-prime modified Selmer group or the radical of an anticyclotomic derived-height pairing. The `L'(E^{-7},1)` candidate rational enclosure is still subject to a complete mathematical assumptions audit.
 
 If new research uncovers an error, open a correction issue and downgrade or withdraw the affected claim. Research integrity outranks throughput.
