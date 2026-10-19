@@ -506,12 +506,13 @@
       "id": "EX-011",
       "claim_ids": [
         "C-0016",
-        "C-0017"
+        "C-0017",
+        "C-0018"
       ],
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Can Ulmer's actual Fermat-quotient map and global Frobenius/Jacobi-sum cohomological factors be reconstructed, distinguishing ranks over Fp(t) from geometric ranks and isolating precisely what does not transfer to characteristic zero?",
-      "decisive_observation": "Section4.2 Fermat rational map factors the elliptic-surface cubic over Z and has Gamma invariance/order d². Sections7–9 global quotient Frobenius orbit factors computed using published Jacobi-sum eigenvalues give prime-field ranks 2,3,7 and geometric ranks 3,7,25; this corrects an earlier erroneous assignment of geometric ranks to Fp(t).",
+      "decisive_observation": "Section4.2 Fermat rational map factors the elliptic-surface cubic over Z and has Gamma invariance/order d². Sections7–9 global quotient Frobenius orbit factors computed using published Jacobi-sum eigenvalues give prime-field ranks 2,3,7 and geometric ranks 3,7,25; this corrects an earlier erroneous assignment of geometric ranks to Fp(t). A separate exact-character enumeration over F49 reconstructs the nontrivial Γ-perp Jacobi eigenvalue J(3,2,2,1)=49, independently confirming one (1−49T²) quotient Frobenius factor without importing Ulmer's evaluation of that sum.",
       "dependencies": [
         "Ulmer Annals (2002) Theorem 1.5, Remark 1.6 and surface Tate-to-BSD mechanism are externally PUBLISHED inputs not proved by our code",
         "The field is Fp(t), characteristic p, and d=p^n+1; do not substitute Q(t) or the original Q-elliptic curve",
@@ -522,7 +523,8 @@
       "commands": [
         "python3 -I -B research/proof_labs/ulmer_function_field_fibres.py",
         "python3 -I -B research/proof_labs/ulmer_fermat_quotient.py",
-        "python3 -I -B research/proof_labs/ulmer_frobenius_orbits.py"
+        "python3 -I -B research/proof_labs/ulmer_frobenius_orbits.py",
+        "python3 -I -B research/proof_labs/ulmer_jacobi_f49.py"
       ],
       "artifacts": [
         "research/proof_labs/ulmer_function_field_fibres.py",
@@ -530,16 +532,18 @@
         "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md",
         "research/proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md",
         "research/proof_labs/ulmer_fermat_quotient.py",
-        "research/proof_labs/ulmer_frobenius_orbits.py"
+        "research/proof_labs/ulmer_frobenius_orbits.py",
+        "research/proof_labs/ulmer_jacobi_f49.py"
       ],
-      "negative_control": "Session20 corrections: ranks over Fp(t) are (2,3,7), not geometric (3,7,25). Every finite F5-rational fibre for d=6 and d=26 has the same trace despite different F5(t) ranks 2 and 7. Corrupt x3 exponent in Ulmer's rational map t and the exact Fermat-factor identity fails; wrong base-field/geometric rank assertion fails orbit theorem check.",
-      "stop_condition": "Stop local finite fibre repetition. Further work only on a global Jacobi-sum character evaluation or exact Tate/cycle-to-zeta proof obligation, or on a separately proved characteristic-zero complex L comparison. No claim that a characteristic-free map proves number-field BSD.",
+      "negative_control": "Session20 corrections: ranks over Fp(t) are (2,3,7), not geometric (3,7,25). Every finite F5-rational fibre for d=6 and d=26 has the same trace despite different F5(t) ranks 2 and 7. Corrupt x3 exponent in Ulmer's rational map t and the exact Fermat-factor identity fails; wrong base-field/geometric rank assertion fails orbit theorem check. C-0018 checks two distinct primitive F49 generators, 108336 admissible triples and exact Z[zeta8] integer coefficient [2352,0,0,0]; wrong nontrivial-product character is rejected.",
+      "stop_condition": "Stage1 map and one Jacobi eigenvalue now reconstructed. Stop repetitive finite fibres and single-character sums; next verify a genuine algebraic-cycle/Tate correspondence or source/target of proposed characteristic-zero motivic regulator, while never attributing published BSD proof to code.",
       "nonclaims": [
         "No independent proof of Ulmer's rank formula, BSD or Tate conjecture",
         "No global function-field L-polynomial computed in this stage",
         "No proof that positive-characteristic Frobenius eigenvalues translate into original complex L''(E,1)",
         "Theorem9.2 ranks and global Jacobi sum eigenvalues are Ulmer's published results; our character-orbit enumeration is a conditional implementation, not an independent rank/BSD proof.",
-        "Correction log: prior EX-011 geometrical ranks 3,7,25 mislabeled Fp(t) ranks; corrected base-field values are 2,3,7."
+        "Correction log: prior EX-011 geometrical ranks 3,7,25 mislabeled Fp(t) ranks; corrected base-field values are 2,3,7.",
+        "One independently evaluated Jacobi eigenvalue does not establish the full Fermat surface zeta polynomial, Tate or global BSD theorem."
       ],
       "cross_disciplines": [
         {
