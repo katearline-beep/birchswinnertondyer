@@ -90,14 +90,14 @@ Thus the elementary Euler factor \(1-\alpha^{-1}\) is a unit; the vanishing of t
 
 ## 4. The remaining diagram is much smaller, but still seriously open
 
-**Already published:**
+**Already published:** Howard §1 also defines \(T^\dagger\to V^\dagger_{\mathfrak p}\) at arithmetic primes and states that weight-two specialization recovers Heegner Kummer classes (up to the documented normalizations). The existence of a basic coefficient-specialization map is therefore **not** something we must invent. Our unresolved issue concerns the **exact compatibility of the anticyclotomic extended-Selmer inverse limit** with CH4.5's compact global cohomology and its local Coleman maps.
 \[
 \mathfrak X_{11^{t+1}}\in \widetilde H_f^1(H_{11^{t+1}},T^\dagger)
 \xrightarrow{\ \operatorname{cor}\,U_{11}^{-t}\ }
 Z_\infty\in\widetilde H_{f,\mathrm{Iw}}^1(D_\infty,T^\dagger).
 \]
 
-**Still needs a precise map and verification for *this* weight-two specialization:**
+**The weight-two specialization map on Galois representations is ALREADY PUBLISHED in Howard's introduction; what still needs precise control is its effect on the ANTICYCLOTOMIC EXTENDED SELMER INVERSE LIMIT and its comparison to the CH compact target:**
 \[
 Z_\infty
 \xrightarrow{\ \text{specialize }T^\dagger\text{ at }E\ }
