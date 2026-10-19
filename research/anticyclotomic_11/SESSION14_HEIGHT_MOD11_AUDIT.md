@@ -96,6 +96,12 @@ The published local-logarithm matrix (C-0002) has primitive projective vector \(
 
 **Conditional conclusion:** the speculative *L11 local-global kernel alignment* is **falsified**, rather than supported. This is **not** a falsification of any established theorem, nor of BSD, and **not** evidence that the global first-height radical cannot be computed. The broader H2 mixed-Bockstein/derived-height route remains separate.
 
+### 5a. Additional historical control: published 389a1 height
+
+The separate [published regression](published_389a1_height_control.py) checks §5.1 of [BCLMN 2016](https://arxiv.org/pdf/1610.08729): on `y²+y=x³+x²−2x`, over `Q(sqrt(-11))` at `p=5`, the exact point `A=P1+S` has printed coordinates `((27−6sqrt(-11))/25,(29−62sqrt(-11))/125)` and a published denominator generator for `[9]A`. **An independent exact AFFINE group law**, rather than the rank-four Jacobian routine, computes `[9]A`; both formal valuations are one and the quotient of first-order sigma terms and the *published* denominator reduces to `9 mod 25`. This gives `h_ρ([9]A)=3 mod5`, and after division by 9² reproduces **`h_ρ(A)=3 mod5`**, agreeing with the paper. Reversing the prime orientation deliberately fails.
+
+A first attempt used a nonprimitive projective lift and produced an incorrect formal valuation; the exact affine computation exposed and resolved that **in the independent published-control implementation**. This test corroborates the first sigma-digit formula and orientation on a different curve and p, but **it does not provide a separate Sage/Magma implementation or independent verification of our own rank-four denominator ideals and 11-adic heights**. C-0011 remains provisional; the stated next expert audit still applies.
+
 ### 6. Review gates and next steps
 
 **Required independent audit before promoting the result:** reproduce the first digit with Sage's actual \`EllipticCurve(...).padic_sigma(11,N)\` series and Magma/PARI or an independent elliptic division-polynomial implementation; verify the exact sign and the invariant-differential normalization in BCLMN Proposition 2.4, including the minimal-vs-short model. Check both split embeddings, ideal orientations, and the published rank-two 389a1 control.

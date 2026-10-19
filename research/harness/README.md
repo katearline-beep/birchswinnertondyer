@@ -77,6 +77,14 @@ This is AI-authored and **not yet independently reproduced with a second p-adic 
 python3 -I -B research/anticyclotomic_11/provisional_height_mod11.py
 ```
 
+### Published BCLMN example as an adversarial control
+
+An additional exact-affine regression reproduces the BCLMN Section 5.1 first digit `h_ρ(P1+S)=3 mod 5` on 389a1 over `Q(sqrt(-11))`, using the paper's printed denominator generator and a different group-law implementation. Unlike the previous 36/72 homogeneity test, this is an independently published numerical target. It checks the elementary first sigma coefficient and prime orientation, **not** the entire sigma series or our rank-four denominator ideals. Run:
+
+```bash
+python3 -I -B research/anticyclotomic_11/published_389a1_height_control.py
+```
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
