@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-10-19-04",
+  "review_id": "WPR-2026-10-19-05",
   "reviewed_on": "2026-10-19",
   "next_due_on": "2026-10-26",
   "reviewer_type": "ai_assisted_unreviewed",
@@ -29,7 +29,8 @@
     "C-0008",
     "C-0009",
     "C-0010",
-    "C-0011"
+    "C-0011",
+    "C-0012"
   ],
   "reviewed_prs": [
     "#24",
@@ -42,8 +43,8 @@
     "#34",
     "#35"
   ],
-  "previous_review_id": "WPR-2026-10-19-03",
-  "mathematical_breakthrough_since_previous": "NONE toward general BSD or the original complex L''(E,1) vanishing. C-0011 is now independently corroborated in exact minimal-affine arithmetic: ten candidate global denominator ideals are proved primitive by integral coordinates and integer norm gcd=1, and all six mixed Pi+Pj+R first-digit heights satisfy the predicted polarization sums. These remain conditional first-digit global anticyclotomic heights pending third-party Sage/Magma sigma verification and mathematical expert review.",
+  "previous_review_id": "WPR-2026-10-19-04",
+  "mathematical_breakthrough_since_previous": "NONE toward general BSD, original complex L''(E,1)=0 or Sha finiteness. C-0012 exactly derives canonical sigma c11=4 mod11 using Mazur–Stein–Tate formal-series/integrality and reproduces published E37/p5 polynomial. Conditional on BCLMN global height normalization, computes all four self-heights (100,90,7,8) mod121 and six mixed heights satisfying polarization, with direct 36-point denominator primitivity tests. Independent Sage/Magma global height certification, derived regulator, complex L'' comparison are missing.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -77,6 +78,10 @@
     {
       "category": "provisional_computational_certificate",
       "statement": "C-0011 norm-Euclidean ideal and integral division polynomial checks yield provisional mod-11 global anticyclotomic height residues, with independent scaling tests but without external Sage or expert audit."
+    },
+    {
+      "category": "conditional_exact_computation",
+      "statement": "C-0012 canonical sigma integrality at p11 from exact Q-coefficient polynomial, E37/p5 published cross check, two-digit global anticyclotomic heights and six distinct-input identities. Not an independent external height implementation nor a complex L'' result."
     }
   ],
   "deepest_open_implication": "Unchanged: no noncircular bridge from known rank-four points or tested 11-adic information to the exact original complex L''(E,1)=0; independent expert audit of subsidiary twist derivative remains pending.",
@@ -92,10 +97,10 @@
     {
       "track": "H2",
       "decision": "active_limited",
-      "last_evidence": "C-0011 provisional self-height vector (1,2,7,8) mod11 now corroborated by ten separate minimal-model affine [36] point calculations, exact norm-gcd proof of global denominator primitivity, six cross-point polarization sums, and a published 389a1 first-digit regression. Third-party sigma library and expert audit remain missing.",
-      "missing_bridge": "Global height first-digit computation is still conditional on the published BCLMN normalization and integrality; the exact Q11-height radical, higher derived height and any theorem comparing them to original complex L'' are not constructed.",
+      "last_evidence": "C-0012 exact rational canonical sigma integrality determines c11=4 mod11, reproduces published E37/p5 coefficient; global anticyclotomic 2-digit candidate self-heights (100,90,7,8) mod121, six mixed polarization tests and 10 exact denominator primitivity tests.",
+      "missing_bridge": "No independent Sage/Magma canonical sigma or complete global-height implementation, no exact higher derived regulator, no theorem from p-adic heights to original complex L''.",
       "falsifier": "A distinct Sage/Magma global-height implementation returning a different vector refutes C-0011. If confirmed, the old auxiliary local/global L11 equality fails mod11, but H2 derived heights and complex comparison remain unproved.",
-      "next_test": "Independently recompute sigma and BCLMN heights, then derive exact Q11-radical from higher-precision heights; currently mod11 generators are P2−2P1, P3−7P1, P4−8P1 under the C-0011 hypotheses."
+      "next_test": "Third-party Sage/Magma reproduce canonical c11 and all heights mod121; if confirmed, lift global radical [1:13:40:63] and compute a true derived height on it; reject substitution by local-log kernel [1:99:46:9]."
     },
     {
       "track": "H3",
@@ -130,13 +135,13 @@
       "next_test": "Require a precisely defined operator with nontrivial action before new coding."
     }
   ],
-  "selected_next_experiment": "Independently construct the genuine Mazur–Tate sigma series and BCLMN anticyclotomic global height via Sage/Magma for E=234446.a1 and K=Q(sqrt(-7)), p=11; reproduce the C-0011 first digit for four A_i and six mixed pairs. If confirmed, lift the actual global first-height radical (mod11 P2−2P1, P3−7P1, P4−8P1) and evaluate a derived height. In parallel maintain H3 as a speculative COMPLEX L'' route.",
-  "selected_experiment_kill_criterion": "If independent sigma coefficients, global ideals, or BCLMN normalization give a different mod11 height vector, correct/downgrade C-0011 and suspend the auxiliary L11 falsification claim; a p-adic height rank or mod11 hyperplane discrepancy never establishes complex L''=0, Sha finiteness or BSD.",
-  "conservative_next_lemma": "Verify the 11-adic sigma first coefficients with a separately maintained Sage/Magma implementation and reproduce at least one mixed-input global height; exact ten-point primitivity and six pair checks have already passed on direct minimal-model coordinates.",
-  "credible_leapfrog": "After independently confirming anticyclotomic first heights, compute the higher derived pairing on the true three-dimensional global radical rather than local-log kernel and search for a noncircular complex second-derivative bridge.",
+  "selected_next_experiment": "Independent Sage/Magma on E=[1,-1,0,-79,289] should compute canonical padic_E2(11) mod11=4, canonical padic_sigma t^3 coefficient c11/2=2 mod11, and complete BCLMN anticyclotomic global heights congruent to (100,90,7,8) mod121 on Pi+R. Check six mixed heights and exact local denominator normalization; only then lift the true global height radical and attempt derived heights.",
+  "selected_experiment_kill_criterion": "If third-party canonical E2/sigma or complete global height differs, downgrade C-0012 and investigate. Never infer original complex L''(E,1)=0, analytic rank four, Sha finiteness, or full BSD from p-adic height digits.",
+  "conservative_next_lemma": "Independently verify canonical c11=4 via Sage padic_E2 and padic_sigma, using precisely original minimal Weierstrass differential; compare one true global BCLMN height with our first two digits.",
+  "credible_leapfrog": "After independent sigma confirmation and higher precision, evaluate genuine derived Bockstein heights restricted to the global positive radical reducing mod121 to P2−13P1, P3−40P1, P4−63P1; explicitly seek a noncircular typed bridge to complex L''.",
   "speculative_wild_option": "H6: geometric annihilation of the original complex second derivative by an exact period projector beyond root-sign parity, tested against rank-two controls; remain parked absent a noncircular formula.",
-  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation.",
-  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification.",
+  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation. Session16 no further two-prime local log precision; the local profile mod121 [1:99:46:9] differs from provisional global [1:13:40:63].",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification. Published MST E37/p5 t7 sigma polynomial reproduced with canonical c5=1, target t13 polynomial forces unique c11=4; wrong c0 changes only second height digits. Six mixed heights pass mod121; modular inverse check corrects an intermediate assistant mistake in radical coefficients to 13,40,63.",
   "sources": [
     "CLAIMS.md",
     "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -162,7 +167,11 @@
     "research/anticyclotomic_11/published_389a1_height_control.py",
     "research/anticyclotomic_11/FIRST_HEIGHT_RADICAL_MOD11.md",
     "research/anticyclotomic_11/conditional_first_radical_mod11.py",
-    "research/anticyclotomic_11/independent_affine_ideal_and_polarization.py"
+    "research/anticyclotomic_11/independent_affine_ideal_and_polarization.py",
+    "research/anticyclotomic_11/SESSION16_CANONICAL_SIGMA_MOD121.md",
+    "research/anticyclotomic_11/canonical_sigma_integrality_11.py",
+    "research/anticyclotomic_11/conditional_heights_mod121.py",
+    "https://ems.press/content/book-chapter-files/27479"
   ],
   "journal_path": "research/reviews/2026-10-19-whole-problem.md",
   "not_established": [
