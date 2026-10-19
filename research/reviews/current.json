@@ -80,7 +80,7 @@
       "statement": "C-0011 norm-Euclidean ideal and integral division polynomial checks yield provisional mod-11 global anticyclotomic height residues, with independent scaling tests but without external Sage or expert audit."
     },
     {
-      "category": "conditional_exact_computation",
+      "category": "provisional_computational_certificate",
       "statement": "C-0012 canonical sigma integrality at p11 from exact Q-coefficient polynomial, E37/p5 published cross check, two-digit global anticyclotomic heights and six distinct-input identities. Not an independent external height implementation nor a complex L'' result."
     }
   ],
