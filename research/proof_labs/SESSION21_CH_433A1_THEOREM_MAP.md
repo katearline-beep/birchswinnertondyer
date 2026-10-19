@@ -97,3 +97,25 @@ python3 -I -B research/proof_labs/castella_hsieh_433a1_control.py
 \`\`\`
 
 This checker is an exact arithmetic/theorem-scope control, **not** an independent computation of \(\Theta\), \(\kappa\), Selmer dimension, \(h^{(r)}\), original complex analytic rank, Sha or BSD.
+
+
+## A source-derived explanation for the cross-height pattern (not a normalization proof)
+
+Castella–Hsieh **Theorem 4.1(c),(d)** says \(h^{(r)}\) is **symmetric** at odd \(r\), **alternating** at even \(r\), and
+\[
+h^{(r)}(x^\tau,y^\tau)=(-1)^r h^{(r)}(x,y).
+\]
+Write \(V^+,V^-\) for the \(+1,-1\) eigenspaces of complex conjugation acting on the **genuine Selmer group** \(\mathrm{Sel}(K,V_{11}E)\). For eigendirections \(x\in V^{\epsilon}, y\in V^\delta\) in the relevant filtration stage, the identity forces
+\[
+(\epsilon\delta-(-1)^r)\,h^{(r)}(x,y)=0.
+\]
+Since the target is a \(\mathbb Q_{11}\)-vector space, we obtain an **exact abstract sparsity rule**, independent of any numeric height data:
+
+| Derived order | Within \(V^+\) | Between \(V^+\) and \(V^-\) | Within \(V^-\) |
+|---|---|---|---|
+| First \(h^{(1)}\), odd/symmetric | **forced zero** | **may be nonzero** | **forced zero** |
+| Second \(h^{(2)}\), even/alternating | **may be nonzero** (alternating) | **forced zero** | **may be nonzero** (alternating) |
+
+For the genuine rank-two control with \(L(E^{-7},1)\ne0\), the authors obtain no anti-invariant Selmer part, so **its first pairing is forced to vanish on the entire two-dimensional Selmer group**. An *alternating second derived pairing* is then a natural next invariant. On our original rank-four E, the rational \(P_1,\ldots,P_4\) lie in \(V^+\), while known \(R\) lies in \(V^-\); **first cross-heights \(h^{(1)}(P_i,R)\) are allowed**, while \(h^{(1)}(P_i,P_j)\) and \(h^{(1)}(R,R)\) vanish structurally.
+
+This explains why the cross-only **shape** in the provisional BCLMN height calculations is plausible and connects it to an established arbitrary-rank theorem. It emphatically **does not** establish a scalar normalization comparison between BCLMN and Castella–Hsieh's \(h^{(1)}\), the actual rank or radical of full \(S^{(2)}\), or a higher derived regulator. The executable checker asserts the signs for r=1,2 and deliberately never uses the provisional C-0011 numeric vector to prove them.
