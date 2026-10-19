@@ -3,8 +3,10 @@
 
 Known THEOREM (not proven here): D. Ulmer, Annals of Mathematics 155
 (2002), Theorem 1.5 + Remark 1.6:
-E: y²+xy=x³-t^d, d=p^n+1 over F_p(t), has rank p^n
-unless 6|d, when rank=p^n-2. The associated BSD/Tate result is
+E: y²+xy=x³-t^d, d=p^n+1, has GEOMETRIC rank p^n
+unless 6|d, when geometric rank=p^n-2 over Fp^(2n)(t).
+The exact rank over Fp(t) is DIFFERENT and given by Theorem 9.2.
+The associated BSD/Tate result is
 an input from the paper. Our point counts test only finite fibres.
 """
 from math import isqrt
@@ -31,11 +33,13 @@ def fibre_trace(p,d,t):
     assert trace*trace<=4*p
     return trace
 
-def run_case(p,n,want_rank,want_good):
+def run_case(p,n,want_base_rank,want_geometric_rank,want_good):
     assert prime(p) and p>=5 and n>=1
     d=p**n+1
-    rank=p**n-(2 if d%6==0 else 0)
-    assert rank==want_rank
+    geometric_rank=p**n-(2 if d%6==0 else 0)
+    assert geometric_rank==want_geometric_rank
+    # These PRIME FIELD ranks follow from Ulmer Thm9.2, not our fibre counts.
+    assert {(5,1):2,(7,1):3,(5,2):7}[(p,n)]==want_base_rank
     assert d%p==1 and 432%p
     # Delta=t^d(1-432*t^d), j=1/Delta, nonconstant as rational function.
     traces={t:fibre_trace(p,d,t) for t in range(p)}
@@ -43,13 +47,13 @@ def run_case(p,n,want_rank,want_good):
     assert len(good)==want_good,good
     assert all(pow(t,d,p)==t*t%p for t in range(p))
     assert any(good.values())
-    print(f"p={p} n={n} d={d}: published theorem rank={rank}; good fibres={len(good)}; sum a_p(t)={sum(good.values())}; finite-count PASS")
+    print(f"p={p} n={n} d={d}: published Fp(t) rank={want_base_rank}; geometric rank={geometric_rank}; good fibres={len(good)}; finite count PASS")
     return good
 
 if __name__=="__main__":
-    a=run_case(5,1,3,4)
-    run_case(7,1,7,6)
-    b=run_case(5,2,25,4)
+    a=run_case(5,1,2,3,4)
+    run_case(7,1,3,7,6)
+    b=run_case(5,2,7,25,4)
     assert a==b, (a,b)  # CRITICAL: identical local traces, globally different ranks
     assert fibre_trace(5,6,0) is None
     assert all(fibre_trace(5,6,t) is not None for t in range(1,5))
