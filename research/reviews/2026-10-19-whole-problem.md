@@ -60,3 +60,19 @@ The claim ledger now contains C-0001 through **C-0009**, each subject to its exi
 Reviewed [the claim ledger](../../CLAIMS.md), [C-0009 exact program](../anticyclotomic_11/independent_rational_derivative_6000.py), [its audit](../anticyclotomic_11/EXACT_6000_AUDIT.md), [H3 no-go](../strategy/H3_DERIVATIVE_ORDER_AUDIT.md), prior [whole-problem review](2026-10-17-whole-problem.md) and merged PR #29. Automated independent PARI cross-check and original numerical derivative workflow agree. No independent human expert review has been performed, no new statement proving complex rank four has been established, and no BSD proof is claimed.
 
 **Next periodic review:** 2026-10-26 (with the standing weekly independent-minded review cadence). Never silently promote a computational result to a mathematical theorem.
+
+---
+
+## Session 13 supplement — WPR-2026-10-19-02 (2026-10-19)
+
+**Scope of incremental review:** After merged PR #31 and the present Session 13 source audit, no mathematical implication from four independent rational points to original *complex* L''(E,1)=0 has been proved. No analytic rank-four or BSD claim has been advanced. The Sha finiteness and leading-coefficient obligations remain open.
+
+**Concrete new subsidiary fact (C-0010):** Source verification of BCLMN (2016) Proposition 1.4, Proposition 2.4 and Algorithm 4.2 identified a *genuinely global* elliptic anticyclotomic height formula, distinct from their rank-two shadow-line theorem. We have computed the prime-to-11 anticyclotomic idèle-class-character coefficients for the split primes 2,43,569,1201,1327,117223 and exact four point coordinates P_i+R. The two pure-Python scripts assert Hensel/finite-log congruences, Fermat-quotient first digits, conjugation and polarization. They **do not** compute global p-adic heights; no independently reviewed claim of novelty is made.
+
+**H1** derived Kato: no new complex comparison, still restricted. **H2** Selmer/Bockstein heights: prioritized for the near-term arithmetic implementation, using the published formula only after auditing ordinary splitting, sigma function, component multiples and *global denominator ideals* of [36](P_i+R); no rank-two shadow-line inference. **H3** third-derivative geometry: remains the high-upside complex bridge candidate, no suitable proven theorem found. **H4** Mazur–Tate remains parked due to circularity risks; **H5** is diagnostic only; **H6** geometric period cancellation remains parked.
+
+**Conservative next lemma:** verify the character coefficients with genuinely independent PARI/GP and prove the finite local denominator-ideal input. **Credible leapfrog:** compute global height cross-pairings via the BCLMN formula and falsify the proposed local/global kernel alignment using primitive 11-adic ratios. **Wild option:** search for a noncircular geometric map from a derived two-variable height to original complex L''; kill if it just connects to p-adic order.
+
+**Priority and stopping rule:** do not mistake primes in rational coordinate denominators of P_i+R for the *complete* denominator ideals of [36](P_i+R), and do not use finite agreement as evidence that two exact Q11-hyperplanes coincide. Even successful global height computation would not prove the complex L'' bridge.
+
+**Provenance and next review:** AI-assisted internal review; no external mathematical peer review. Revisit the full problem by 2026-10-26 or after three mathematical merges. Detailed source and reproduction: [Session 13 note](../anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md), [C-0010](../../CLAIMS.md), [BCLMN arXiv](https://arxiv.org/abs/1610.08729). 
