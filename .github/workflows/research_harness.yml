@@ -15,7 +15,7 @@ concurrency:
 jobs:
   compare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - name: Checkout immutable action
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -43,3 +43,15 @@ jobs:
           test "$(wc -l < /tmp/bsd-pari-coefficients.txt)" -eq 2000
       - name: Verify all coefficients and deliberate mutation control
         run: python -I -B research/harness/compare_fourier_coefficients.py /tmp/bsd-pari-coefficients.txt
+      - name: Generate 6000 PARI Fourier coefficients and reject interpreter errors
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/harness/pari_fourier_6000.gp > /tmp/bsd-pari-coefficients-6000.txt 2>&1
+          if grep -qF '***' /tmp/bsd-pari-coefficients-6000.txt; then
+            tail -40 /tmp/bsd-pari-coefficients-6000.txt >&2
+            exit 1
+          fi
+          test "$(wc -l < /tmp/bsd-pari-coefficients-6000.txt)" -eq 6000
+      - name: Verify 6000 coefficients and negative-control mutation
+        run: python -I -B research/harness/compare_fourier_coefficients_6000.py /tmp/bsd-pari-coefficients-6000.txt

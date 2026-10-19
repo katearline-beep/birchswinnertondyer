@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-10-17-01",
-  "reviewed_on": "2026-10-17",
-  "next_due_on": "2026-10-24",
+  "review_id": "WPR-2026-10-19-01",
+  "reviewed_on": "2026-10-19",
+  "next_due_on": "2026-10-26",
   "reviewer_type": "ai_assisted_unreviewed",
-  "review_kind": "initial_full_project_baseline",
+  "review_kind": "supporting_certificate_and_whole_problem_reorientation",
   "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
   "target_curve": "234446.a1",
   "goal_general": "For every elliptic curve over Q prove equality of Mordell–Weil rank and complex L-function order of vanishing, and the full normalized leading coefficient formula with Sha finiteness.",
@@ -26,16 +26,18 @@
     "C-0005",
     "C-0006",
     "C-0007",
-    "C-0008"
+    "C-0008",
+    "C-0009"
   ],
   "reviewed_prs": [
     "#24",
     "#26",
     "#27",
-    "#28"
+    "#28",
+    "#29"
   ],
-  "previous_review_id": null,
-  "mathematical_breakthrough_since_previous": "None. Baseline review: no newly proved rank-four complex L'' vanishing or theorem bridging our Kato, Selmer, local-log or twist computations to the original complex derivative.",
+  "previous_review_id": "WPR-2026-10-17-01",
+  "mathematical_breakthrough_since_previous": "None: although a six-thousand-term independent twist first-derivative interval and 6,000 PARI coefficients were checked, no new mathematical implication has been proved concerning the original rank-four curve's complex L''(E,1), exact analytic rank four, Sha finiteness, or BSD leading coefficient.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -61,9 +63,13 @@
     {
       "category": "numerical_evidence",
       "statement": "PARI second derivative of original E shrinks with precision; this is not an exact zero."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0009 improves -7 twist derivative interval to (34.1691,34.1750) using 6,000 exact-rational terms and all-coefficient PARI cross-check; original L''(E,1) unaffected."
     }
   ],
-  "deepest_open_implication": "There is no established, noncircular implication from four independently certified rational points or our 11-adic/Kato information to exact vanishing of the original complex L''(E,1).",
+  "deepest_open_implication": "Unchanged: no noncircular bridge from known rank-four points or tested 11-adic information to the exact original complex L''(E,1)=0; independent expert audit of subsidiary twist derivative remains pending.",
   "tracks": [
     {
       "track": "H1",
@@ -100,7 +106,7 @@
     {
       "track": "H5",
       "decision": "diagnostic",
-      "last_evidence": "PARI precision sweep gives small L'' residual and stable nonzero fourth derivative; rank-two control behaves as expected.",
+      "last_evidence": "Original E's L'' remains numerically very close to zero and L'''' appears nonzero; separately, C-0009 supports the -7 twist L'(1) using 6,000 rigorously bounded rational terms with independent PARI coefficient verification. No original complex L'' zero proven.",
       "missing_bridge": "A proof of exact vanishing of L''; arbitrary additional floating precision cannot provide it.",
       "falsifier": "Rank-two control or changed arithmetic model breaks apparent stability; numerical near-zero is never exact zero.",
       "next_test": "Only independent validated interval/nonzero fourth derivative if needed for conditional rank-four result; stop precision-only runs."
@@ -114,12 +120,12 @@
       "next_test": "Require a precisely defined operator with nontrivial action before new coding."
     }
   ],
-  "selected_next_experiment": "H3 exact theorem audit: inspect higher Gross–Zagier and generalized Heegner cycle statements for central derivative ORDER THREE of weight-two L(E/K_D,s), distinguish derivative order from modular weight, and document precisely whether any theorem provides a noncircular geometric vanishing identity.",
-  "selected_experiment_kill_criterion": "Stop the H3 theorem application immediately if a candidate proves only FIRST-derivative formulas for higher-weight forms, or a statement assuming analytic rank at least four.",
-  "conservative_next_lemma": "Bring C-0006 twist derivative arithmetic/Mellin proof to external expert review, as a subsidiary result; do not substitute it for L''(E,1)=0.",
+  "selected_next_experiment": "Seek mathematical expert review of C-0009's 6,000-term positive twist derivative certificate and separately audit only genuinely third-order higher Heegner derivative theorem candidates as a route to original complex L''.",
+  "selected_experiment_kill_criterion": "Stop additional derivative precision unless a different mathematical proof obligation is tested; reject first derivative or p-adic order as a substitute for original complex L''=0.",
+  "conservative_next_lemma": "Audit C-0009: root sign, Mellin identity, uniform Fourier bounds, exact E1 enclosure, coefficient comparison and complete exponential tail, preferably independent expert or FLINT/Arb.",
   "credible_leapfrog": "H3: a rigorously stated geometric cubic-derivative identity for the quadratic base change that could force original complex L''(E,1)=0.",
   "speculative_wild_option": "H6: a new exact period projector with an independently established comparison to the second complex derivative, falsified against rank-two controls.",
-  "deprioritized_work": "No new cyclotomic field or high-precision local-log computations until a defined derived cohomology class and an explicit complex comparison map exist; H4 and H6 remain parked.",
+  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined.",
   "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0.",
   "sources": [
     "CLAIMS.md",
@@ -132,9 +138,12 @@
     "https://arxiv.org/abs/2603.15795",
     "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1",
     "research/strategy/H3_DERIVATIVE_ORDER_AUDIT.md",
-    "research/strategy/h3_first_height_no_go.py"
+    "research/strategy/h3_first_height_no_go.py",
+    "research/anticyclotomic_11/EXACT_6000_AUDIT.md",
+    "research/anticyclotomic_11/independent_rational_derivative_6000.py",
+    "research/reviews/2026-10-17-whole-problem.md"
   ],
-  "journal_path": "research/reviews/2026-10-17-whole-problem.md",
+  "journal_path": "research/reviews/2026-10-19-whole-problem.md",
   "not_established": [
     "No original complex L''(E,1)=0 theorem",
     "No complex analytic rank-four proof for curve 234446.a1",
