@@ -34,6 +34,10 @@ python3 -I -B research/split11/kernel_mod11_4.py
 
 The script recomputes all six logarithm columns via exact number-field arithmetic and rechecks P1/P2/P3/R/H by modular projective arithmetic. P4 is **not** independently verified by the second algorithm because its projective coordinates are nonprimitive. Reviewers should cross-check with Sage, PARI/GP or a third implementation; confirm the series truncation, unit hypotheses and embedding normalization.
 
+## Additional independent algorithm and scale-safe falsification
+
+[Session 12](LOCAL_GLOBAL_ALIGNMENT_AUDIT.md) supplies an independent guarded-precision Jacobian computation including **P4**, plus a primitive projective gate for speculative local/global height alignment. Its mod-11 necessary profile is [1:0:2:9]; a common 11-power in a height vector can fake raw wedge vanishing, so the [negative control](../methodology/height_alignment_scale_gate.py) divides out that factor. Neither test computes a genuine anticyclotomic height, Sha, or complex L''.
+
 ## Why this is not yet a derived-height computation
 
 The kernel of a local logarithm map is **not canonically identified** with the radical of an anticyclotomic p-adic height pairing. A putative anticyclotomic first-height matrix on four positive and one negative conjugation eigendirections has off-diagonal form determined by an unknown four-component functional. Our local map supplies a *different* functional on the rational eigenspace. Two nonzero functionals on a four-dimensional vector space can have different three-dimensional kernels.
