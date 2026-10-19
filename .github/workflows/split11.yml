@@ -102,5 +102,9 @@ jobs:
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
         run: python -I -B research/methodology/local_global_transversality_11.py
+      - name: Theorem-first Castella-Hsieh rank two Kato scope and contrapositive gate
+        run: python -I -B research/proof_labs/kato_rank_scope_gate.py
+      - name: Ulmer function-field high-rank published theorem local-fibre control
+        run: python -I -B research/proof_labs/ulmer_function_field_fibres.py
       - name: 6000-term independent exact rational twist derivative certificate
         run: python -I -B research/anticyclotomic_11/independent_rational_derivative_6000.py
