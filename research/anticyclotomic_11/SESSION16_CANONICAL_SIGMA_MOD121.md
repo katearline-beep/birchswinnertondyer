@@ -10,7 +10,7 @@ The falsifiable Session 16 question is: can the canonical Mazur–Tate sigma coe
 
 ## A published integrality algorithm, not an arbitrary sigma parameter
 
-Mazur–Stein–Tate, [*p-Adic Heights and Log Convergence* (2006)](https://ems.press/content/book-chapter-files/27479), Algorithms 3.1 and 3.3, describe the sigma series in terms of \(c=(b_2-E_2)/12\), where \(b_2=a_1^2+4a_2=-3\) for our minimal model. The **canonical** \(c\in\mathbb Z_{11}\) is constrained by integrality of the coefficients of the canonical sigma series. Here the first informative denominator is the coefficient of \(t^{13}\).
+Mazur–Stein–Tate, [*p-Adic Heights and Log Convergence* (2006)](https://ems.press/content/book-chapter-files/27479), Algorithms 3.1 and 3.3, describe the canonical sigma series with **two different conventions**: their sigma-series auxiliary variable \(c_{\mathrm{series}}=E_2/12\) (the coefficient in \(\exp(c_{\mathrm{series}}z^2/2)\)) and the PARI/MST slope \(s_2=(b_2-E_2)/12=b_2/12-c_{\mathrm{series}}\). Here \(b_2=a_1^2+4a_2=-3\) for our minimal model. The **canonical sigma-series parameter** is constrained by integrality of the coefficients of the canonical sigma series. Here the first informative denominator is the coefficient of \(t^{13}\).
 
 For \(t=-x/y\), \(w=-1/y\), on \(y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6\), use the exact formal equation
 \[
@@ -37,7 +37,7 @@ The complete derived coefficient is
 \]
 The denominator has \(v_{11}=1\); every \(c\in\{0,\ldots,10\}\) except \(c=4\) gives a coefficient with \(11\)-adic valuation \(-1\). Thus **under the published Mazur–Tate integrality theorem**, the unique candidate is
 \[
-\boxed{c_{11}\equiv4\pmod{11},\qquad E_2=b_2-12c_{11}\equiv4\pmod{11}.}
+\boxed{c_{\mathrm{series},11}\equiv4\pmod{11},\quad E_2=12c_{\mathrm{series},11}\equiv4\pmod{11},\quad s_2\equiv4\pmod{11}.}
 \]
 At the precision needed here,
 \[
@@ -119,3 +119,6 @@ These are **modular approximations to a \(\mathbb Q_{11}\)-subspace**, not liter
 python3 -I -B research/anticyclotomic_11/canonical_sigma_integrality_11.py
 python3 -I -B research/anticyclotomic_11/conditional_heights_mod121.py
 \`\`\`
+
+
+**Correction (2026-10-19, independently exposed by PARI):** The symbol `c` in the polynomial `sigma_0(z)*exp(c*z²/2)` is the *series auxiliary parameter* `u=E2/12`. It is not PARI's `ellpadics2` return `s2=b2/12-u`. These coincide modulo 11 **for this curve by accident**, but diverge at higher precision. All self-height coefficients used the series `u` and are numerically unchanged; the displayed relation `E2=b2−12c` was incorrect and must be read as `E2=12u`. The Session17 [PARI oracle](pari_canonical_sigma_oracle.gp) tests both conventions explicitly.

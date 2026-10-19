@@ -54,6 +54,10 @@ jobs:
         run: python -I -B research/anticyclotomic_11/canonical_sigma_integrality_11.py
       - name: Conditional global heights mod121 and six polarization identities
         run: python -I -B research/anticyclotomic_11/conditional_heights_mod121.py
+      - name: MST canonical sigma second digit and published E37 p5 control
+        run: python -I -B research/anticyclotomic_11/canonical_sigma_integrality_121.py
+      - name: Conditional global heights mod1331 and all six mixed polarizations
+        run: python -I -B research/anticyclotomic_11/conditional_heights_mod1331.py
       - name: Published BCLMN 389a1 height-control at p=5
         run: python -I -B research/anticyclotomic_11/published_389a1_height_control.py
       - name: Provisional exact anticyclotomic first-digit height and bad-component falsification

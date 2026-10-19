@@ -99,7 +99,7 @@ python3 -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarizati
 
 ## Session 16 — two-digit global p-adic height and exact sigma integrality
 
-[The MST canonical sigma coefficient checker](../anticyclotomic_11/canonical_sigma_integrality_11.py) reconstructs the rational sigma family through t^13 from the original minimal Weierstrass formal group and enforces canonical 11-adic integrality, uniquely obtaining c11=4 mod11. Its independent oracle is the published MST conductor-37/p5 sigma t^7 polynomial, which it also reproduces. The [two-digit height checker](../anticyclotomic_11/conditional_heights_mod121.py) combines the sigma coefficient with BCLMN Proposition 2.4, certifies primitive denominator ideals at ten exact [36]Q points, and verifies all six mixed global height identities modulo 121; it rejects c=0 as the wrong second-digit normalization. The provisional vector is (100,90,7,8), normalized [1:13:40:63] mod121 (manually guessed incorrect alternatives must never be used). Full [audit and obligations](../anticyclotomic_11/SESSION16_CANONICAL_SIGMA_MOD121.md).
+[The MST canonical sigma coefficient checker](../anticyclotomic_11/canonical_sigma_integrality_11.py) reconstructs the rational sigma family through t^13 from the original minimal Weierstrass formal group and enforces canonical 11-adic integrality, uniquely obtaining sigma-series u11=4 mod11 (E2=4 mod11). Its independent oracle is the published MST conductor-37/p5 sigma t^7 polynomial, which it also reproduces. The [two-digit height checker](../anticyclotomic_11/conditional_heights_mod121.py) combines the sigma coefficient with BCLMN Proposition 2.4, certifies primitive denominator ideals at ten exact [36]Q points, and verifies all six mixed global height identities modulo 121; it rejects c=0 as the wrong second-digit normalization. The provisional vector is (100,90,7,8), normalized [1:13:40:63] mod121 (manually guessed incorrect alternatives must never be used). Full [audit and obligations](../anticyclotomic_11/SESSION16_CANONICAL_SIGMA_MOD121.md).
 
 ```bash
 python3 -I -B research/anticyclotomic_11/canonical_sigma_integrality_11.py
@@ -107,6 +107,17 @@ python3 -I -B research/anticyclotomic_11/conditional_heights_mod121.py
 ```
 
 Passing AI-authored code is not independently maintained Sage/Magma sigma, expert theorem review, a derived height or a result on original complex BSD. Continue H3 in parallel with H2.
+
+## Session 17 — canonical p-adic sigma and third height digit
+
+[Exact MST sigma second-digit checker](../anticyclotomic_11/canonical_sigma_integrality_121.py) uses sigma integrality at t^23 to select series u=E2/12=26 mod121; the independent PARI ellpadics2 slope is s2=b2/12−u=4 mod121 and E2=70 mod121, and independently reconstructs the published E37/p5 c5=6 mod25. [Conditional height verifier](../anticyclotomic_11/conditional_heights_mod1331.py) computes global self-height vector (1068,1300,854,8) mod1331, projective [1:739:766:668], and six mixed inputs satisfying bilinearity; all ten denominator ideals pass exact primitivity checks. Stale c=4 preserves first two digits but changes the third, a precision-sensitive negative control. [Full audit](../anticyclotomic_11/SESSION17_CANONICAL_SIGMA_MOD1331.md).
+
+```bash
+python3 -I -B research/anticyclotomic_11/canonical_sigma_integrality_121.py
+python3 -I -B research/anticyclotomic_11/conditional_heights_mod1331.py
+```
+
+No independent Sage/Magma global height or expert review, no exact Q11 derived radical, no complex L'' bridge and no BSD theorem are claimed.
 
 ## Security / completeness boundaries
 
