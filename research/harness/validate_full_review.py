@@ -13,7 +13,6 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 CURRENT = ROOT / "research/reviews/current.json"
 TRACKS = {f"H{i}" for i in range(1,7)}
-CLAIM_IDS = {f"C-{i:04}" for i in range(1,9)}
 EVIDENCE_CATEGORIES = {
     "finite_computation", "conditional_published_theorem",
     "existing_algebraic_theory", "provisional_computational_certificate",
@@ -65,8 +64,11 @@ def validate(obj, root=ROOT):
     need(type(obj.get("previous_review_id")) in (str,type(None)),
          "Previous review reference must be typed")
     claims=obj.get("claim_ids_audited")
-    need(type(claims) is list and len(claims)==8 and set(claims)==CLAIM_IDS,
-         "Every C-0001 through C-0008 claim must be inspected")
+    ledger=(root / "CLAIMS.md").read_text(encoding="utf8")
+    expected_claims=set(re.findall(r"^\\| (C-\\d{4}) \\|",ledger,re.M))
+    need(bool(expected_claims),"No claim IDs in canonical ledger")
+    need(type(claims) is list and len(claims)==len(expected_claims) and set(claims)==expected_claims,
+         "Review must inspect ALL C-series claims actually present in CLAIMS.md")
     need(type(obj.get("reviewed_prs")) is list and
          all(re.fullmatch(r"#\d+",p) for p in obj["reviewed_prs"]) and
          len(obj["reviewed_prs"])>0,"Provide prior merged PR identifiers")
@@ -106,7 +108,7 @@ def validate(obj, root=ROOT):
 def main():
     d=json.loads(CURRENT.read_text(encoding="utf8"))
     n=validate(d)
-    print("PASS: whole BSD goal, seven no-proof flags, eight claims and "+str(n)+" research tracks reviewed")
+    print("PASS: full BSD goal, seven no-proof flags, every live claim and "+str(n)+" research tracks reviewed")
     print("PASS: next review date within seven days and historical checkpoint exists")
     print("NONCLAIM: structured review metadata and passing CI never prove BSD")
 
