@@ -97,6 +97,17 @@ python3 -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarizati
 
 **Scope:** validates the *candidate division-polynomial denominator generator* against exact direct affine points, but still shares the published BCLMN height formula and Mazur–Tate sigma first coefficients. Not a substitute for an independent Sage/Magma height computation, and not proof of complex BSD.
 
+## Session 16 — two-digit global p-adic height and exact sigma integrality
+
+[The MST canonical sigma coefficient checker](../anticyclotomic_11/canonical_sigma_integrality_11.py) reconstructs the rational sigma family through t^13 from the original minimal Weierstrass formal group and enforces canonical 11-adic integrality, uniquely obtaining c11=4 mod11. Its independent oracle is the published MST conductor-37/p5 sigma t^7 polynomial, which it also reproduces. The [two-digit height checker](../anticyclotomic_11/conditional_heights_mod121.py) combines the sigma coefficient with BCLMN Proposition 2.4, certifies primitive denominator ideals at ten exact [36]Q points, and verifies all six mixed global height identities modulo 121; it rejects c=0 as the wrong second-digit normalization. The provisional vector is (100,90,7,8), normalized [1:13:40:63] mod121 (manually guessed incorrect alternatives must never be used). Full [audit and obligations](../anticyclotomic_11/SESSION16_CANONICAL_SIGMA_MOD121.md).
+
+```bash
+python3 -I -B research/anticyclotomic_11/canonical_sigma_integrality_11.py
+python3 -I -B research/anticyclotomic_11/conditional_heights_mod121.py
+```
+
+Passing AI-authored code is not independently maintained Sage/Magma sigma, expert theorem review, a derived height or a result on original complex BSD. Continue H3 in parallel with H2.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
