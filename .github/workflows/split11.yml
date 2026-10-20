@@ -138,3 +138,7 @@ jobs:
         run: python -I -B research/anticyclotomic_11/independent_rational_derivative_6000.py
       - name: Actual anticyclotomic Artin character and faithful truncated tower action
         run: python -I -B research/proof_labs/anticyclotomic_artin_t3.py
+      - name: Actual five-point Kummer reduction independence and11-saturation
+        run: python -I -B research/proof_labs/kummer_reduction_11_certificate.py
+      - name: Finite quotient Bockstein obstruction and nonabelian refinement controls
+        run: python -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py

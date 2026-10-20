@@ -520,7 +520,7 @@
       "would_unlock": "A verified arithmetic coefficient input and concrete cochain equations, which are necessary but insufficient for an actual second-height computation.",
       "unverified_dependencies": "Global class field theory and ring-class exact sequence are source inputs; E Tate-module cochains, local homotopies, integral compatibility, actual obstruction evaluation, expert review and original complex comparison remain missing.",
       "negative_control": "Cyclotomic sum fails conjugation inversion. Omitting binomial quadratic term breaks the group action. Finite C11 imposes (1+T)^11=1 and corrupts integral T3 data even though it correctly models F11 T3 action.",
-      "next_decisive_test": "Use the five explicit Kummer torsors and arithmetic character to obtain a usable Galois/cohomological presentation with all local conditions, then solve c1; identify integral torsion before claiming a finite lift.",
+      "next_decisive_test": "Session31 C0035/36 now certifies residual independence and rules out first lifts on the natural Kummer/character product quotient under recorded image inputs. Continue through LF015 explicit further twisted embedding problem, with Greenberg local constraints and integral torsion; do not enumerate the insufficient quotient.",
       "kill_criterion": "Stop or correct the character if certified conductor, Artin prime values or anticyclotomic conjugation disagree. No finite coefficient input alone may be called an actual Selmer lift.",
       "source": "https://pari.math.u-bordeaux.fr/dochtml/html/Galois_theory_and_class_field_theory.html",
       "test_path": "research/proof_labs/anticyclotomic_artin_t3.py",
@@ -540,6 +540,45 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "C0033/34 actual C11/C121 Artin map, first-layer polynomial and five division torsors verified. C11 integral truncation and uniform-conductor720 guess rejected. Actual c1 and h2 remain missing."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Session31 supplies five-point11-saturation and a conditional finite-quotient lift no-go. Arithmetic inputs remain valid; any actual c1 needs the further group extension tracked by LF015."
+        }
+      ]
+    },
+    {
+      "id": "LF-015",
+      "experiment_id": "EX-018",
+      "title": "Reduction certificates and nonabelian embedding problems bypass huge Kummer closures",
+      "known_baseline": "C0035 supplies exact11-saturation of the five known MW classes without height/Sha inputs. Conditional C0036 gives an enormous joint Kummer group and an obstruction to first lifts on the natural finite quotient. An explicit twisted kernel-E11 extension defines the necessary further embedding problem.",
+      "missing_arrow": "Actual global/local solution of the twisted E11 embedding problem is unknown. Natural finite Kummer and anticyclotomic data may not support any lift even when a lift exists after inflation.",
+      "hypothetical_bridge": "Use independent actual reduction rows to certify residual independence. Audit the smallest quotient and then express the first lift as a twisted finite embedding problem with kernel E11, rather than enumerating the whole Galois closure.",
+      "if_then_statement": "IF the residual lift embedding problem has a global solution with all Greenberg local constraints and compatible integral control THEN that solution supplies an actual first Bockstein lift; these existence and local assumptions are still unresolved.",
+      "would_unlock": "An exact saturation certificate and a decisive rejection of an insufficient finite quotient, plus a typed alternative that could avoid enormous splitting-field enumeration.",
+      "unverified_dependencies": "The arithmetic quotient application uses recorded residual GL2 image input, subject to expert review. Global embedding-problem solvability, Greenberg local compatibility, integral torsion, actual second obstruction and complex BSD comparison remain missing.",
+      "negative_control": "Dependent point replacement must lose reduction rank; order divisible by121 refused. A Heisenberg nonabelian extension permits a lift that is impossible on its abelian quotient; next-order lift can still fail.",
+      "next_decisive_test": "Find a published or explicit method to solve the twisted kernel-E11 embedding problem with the actual Galois inputs, restricted ramification, local Greenberg conditions and integral torsion accounted for. Do not enumerate the known insufficient quotient.",
+      "kill_criterion": "Reject the finite-quotient no-go application if disjointness or residual image fails; never extend the quotient obstruction to the absolute Galois group without an inflation argument. Stop at an embedding problem unless a global/local solution is supplied.",
+      "source": "https://wangjiuya.github.io/research/augmentation.pdf",
+      "test_path": "research/proof_labs/kummer_reduction_11_certificate.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No global/local embedding-problem solution, actual c1 Selmer lift, computed second height, full Selmer upper bound or original complex BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Before the lift computation: actual reduction checks and a commuting-element obstruction can test whether the natural finite quotient is sufficient; nonabelian cover is a candidate replacement only."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "C0035 actual five-prime determinant5 certificate and independent PARI succeeded. Conditional C0036 eliminates the natural finite product quotient by the commuting-element equation. Explicit twisted121-kernel cover is constructed algebraically but not arithmetically realized."
         }
       ]
     }
