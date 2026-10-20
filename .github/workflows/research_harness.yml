@@ -75,6 +75,17 @@ jobs:
         run: python -I -B research/proof_labs/anticyclotomic_artin_t3.py /tmp/bsd-artin-oracle.txt
       - name: Construct and verify five actual Kummer division torsors
         run: python -I -B research/proof_labs/kummer_11_torsors.py /tmp/bsd-kummer-oracle.txt
+      - name: Independent minimal-model Kummer reduction certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/proof_labs/pari_kummer_reduction_11.gp > /tmp/bsd-reduction11.txt 2>&1
+          if grep -qF '***' /tmp/bsd-reduction11.txt; then
+            cat /tmp/bsd-reduction11.txt
+            exit 1
+          fi
+      - name: Compare all reduction counts, generators and discrete logs
+        run: python -I -B research/proof_labs/kummer_reduction_11_certificate.py /tmp/bsd-reduction11.txt
 
   direct-height:
     name: Direct-coordinate global first-height oracle

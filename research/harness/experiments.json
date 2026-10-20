@@ -874,6 +874,68 @@
           "reference": "https://pari.math.u-bordeaux.fr/dochtml/html/Elliptic_curves.html"
         }
       ]
+    },
+    {
+      "id": "EX-018",
+      "claim_ids": [
+        "C-0035",
+        "C-0036"
+      ],
+      "status": "computationally_reproduced",
+      "human_reviewed": false,
+      "question": "Can actual finite reduction maps certify11-saturation of the five-point subgroup, and can a commuting-element obstruction reject the natural finite quotient before attempting huge Galois closures?",
+      "decisive_observation": "Five good split-prime rows have determinant5 mod11, all matched by independent PARI minimal-model arithmetic; split23 excludes E(K)[11], proving11-saturation. Under recorded GL2 input, the joint Kummer group is V5 semidirect GL2 and disjoint from D1. Product-quotient first lift would make c0 a coboundary. Explicit further kernel-V cover and Heisenberg controls show why this is not a global non-liftability result.",
+      "dependencies": [
+        "Good reduction homomorphism, valuation-one cyclic11-primary finite group, prime-to-residue-characteristic torsion injectivity and Kummer exact sequence; no height or analytic input for C0035.",
+        "C0036 uses recorded residual-image source argument: local I1 Tate transvection, transverse split Frobenius23, determinant disjointness and finite elementary generation. Expert review outstanding.",
+        "Central-scalar H1 vanishing, inflation-restriction and the special isotypic natural-module argument; Maschke is NOT used in characteristic11.",
+        "Global realization of the twisted embedding problem, Greenberg local constraints, integral torsion and actual second-height evaluation remain open."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/kummer_reduction_11_certificate.py",
+        "gp -q -f research/proof_labs/pari_kummer_reduction_11.gp",
+        "python3 -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION31_KUMMER_SATURATION_AND_LIFT_OBSTRUCTION.md",
+        "research/proof_labs/kummer_reduction_11_certificate.py",
+        "research/proof_labs/pari_kummer_reduction_11.gp",
+        "research/proof_labs/finite_quotient_bockstein_obstruction.py"
+      ],
+      "negative_control": "Actual replacement P4=P1+P2 loses rank; actual q911 has order8*121 and is refused. Mutated PARI row rejected by same comparator. Coboundary classes DO lift on product; Heisenberg inflation kills a first obstruction yet can retain a second. Matrix realization independently checks cover multiplication.",
+      "stop_condition": "Do not compute the natural product quotient expecting it to contain c1. Its obstruction may inflate to zero; do not conclude global non-liftability. Stop at the explicit embedding problem until a global/local solution is supplied.",
+      "nonclaims": [
+        "No full Selmer upper bound or height-based exact S2 membership for the finite integer combinations.",
+        "No independently computed enormous splitting field; degree and disjointness use the stated residual image argument.",
+        "No actual arithmetic cover realization, local Greenberg lift, integral torsion removal or second-height value.",
+        "No new original complex Lpp equality, original Sha finiteness, BSD leading term or expert review."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "coding theory and finite-group arithmetic",
+          "kind": "exact_math",
+          "mechanism": "Actual reduction homomorphisms give an invertible syndrome matrix on the five-generator MW subgroup. Its determinant forces divisibility of every coefficient in a global11-divisibility relation.",
+          "proof_boundary": "This certifies the known MW subgroup, not completeness of global Selmer localization or a height radical.",
+          "validating_test": "research/proof_labs/kummer_reduction_11_certificate.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html/Elliptic_curves.html"
+        },
+        {
+          "discipline": "nonabelian cohomology and deformation theory",
+          "kind": "exact_math",
+          "mechanism": "The first coefficient lift is equivalent to lifting a Galois homomorphism into an explicit twisted group cover with kernel E11; commuting elements reject a section on the insufficient product quotient.",
+          "proof_boundary": "A finite group extension is supplied, but its arithmetic realization with Greenberg local conditions is not proved.",
+          "validating_test": "research/proof_labs/finite_quotient_bockstein_obstruction.py",
+          "reference": "https://wangjiuya.github.io/research/augmentation.pdf"
+        },
+        {
+          "discipline": "formal methods abstraction refinement",
+          "kind": "validation_method",
+          "mechanism": "A finite quotient preserving the input cocycle may lose a correction cochain; inflation and a nonabelian Heisenberg control distinguish quotient failure from global failure.",
+          "proof_boundary": "This is a soundness check for the finite model, not an automatic global embedding-problem solver or a BSD theorem.",
+          "validating_test": "research/proof_labs/finite_quotient_bockstein_obstruction.py",
+          "reference": "https://wangjiuya.github.io/research/augmentation.pdf"
+        }
+      ]
     }
   ]
 }
