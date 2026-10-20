@@ -15,3 +15,7 @@ def run():
     jordan=((0,1),(0,0))
     split=((0,0),(0,0))
     assert charpoly(jordan)==charpoly(split)==(1,0,0)
+    print('PASS: equal characteristic polynomials')
+
+if __name__ == '__main__':
+    run()
