@@ -328,6 +328,35 @@
           "evidence": "C-0018 exact F49 direct Jacobi sum J(3,2,2,1)=49 checks nontrivial Ulmer quotient Frobenius factor. Next bottleneck is published Tate algebraic-cycle mechanism and a genuinely missing characteristic-zero comparison; no BSD over Q implication."
         }
       ]
+    },
+    {
+      "id": "LF-009",
+      "experiment_id": "EX-012",
+      "title": "Two-variable Hida/anticyclotomic tangent cone for rank-four derived Heegner classes",
+      "known_baseline": "Original E has four rational points and K=-7 Heegner splitting; Kolyvagin forces classical base Heegner torsion. Howard §3.3 nevertheless constructs a non-R∞-torsion Heegner class Z∞ over a Hida-weight/anticyclotomic two-variable Iwasawa ring. Howard §3.4 Conj3.4.1 separately concerns horizontal non-R-torsion of base Z0. CH4.1 defines a derived Selmer filtration; CH4.5 requires two separately controlled local Coleman J-orders.",
+      "missing_arrow": "No exact localized Hida-weight tangent chart/flatness, no injective base augmentation control for weight2 global Selmer, no canonical higher Bockstein derivative after base vanishing, no actual two-variable coefficient or TWO Coleman maps, and no comparison to original complex L''.",
+      "hypothetical_bridge": "Prove weight-two local branch regularity or use its cotangent complex, compute a canonical nonzero first tangent-cone piece of Howard Z∞ or its two local Coleman maps in the full (weight, anticyclotomic) augmentation filtration. Restrict to the verified surviving direction, construct canonical derived Selmer class via a cohomological Bockstein and identify its actual height. Seek a new independently proved complex reciprocity bridge.",
+      "if_then_statement": "IF a genuinely canonical nonzero two-variable derived Heegner class and two compatible Coleman leading terms are produced under rigorous Selmer-control hypotheses AND a separately proved regulator-to-original-complex-L'' comparison forces the second Taylor coefficient to vanish, THEN the focal original complex rank-at-least-four obligation is met.",
+      "would_unlock": "Potentially avoid betting on the wrong single anticyclotomic derivative when the Hida weight direction carries the first nonzero signal; create a rank-sensitive derived-class strategy with formal failure checks.",
+      "unverified_dependencies": "Regularity/flatness of actual Howard Hida branch at focal weight2 and torsion-freeness of its Iwasawa Selmer module are not established. Non-R∞-torsion big Z∞ can still specialize to zero at weight2. Classical Kolyvagin basepoint vanishing is not a control-theoretic ideal divisibility theorem. A new complex comparison is missing.",
+      "negative_control": "Exact toy F11[W,T]/(W,T)^5 supports W-only, T-only, T² and WT nonzero big classes with zero joint base, including whole weight2 class identically zero. Noninjective base cohomology map kills e2 outside augmentation ideal, T-torsion causes nonunique division, and nonzero big classes can be killed by both toy local Coleman maps. Never convert this toy experiment into an actual Howard coefficient claim.",
+      "next_decisive_test": "Audit localized Hida branch regularity at E234446a1 p11 and actual Howard extended→weight2 compact Selmer specialization via derived base change. Determine if a weight2 nonzero class survives. Then obtain at least ONE actual anticyclotomic/weight leading coefficient from a rigorously normalized local Coleman map and test the OTHER Coleman map independently; otherwise kill this bridge. Alongside, search for an ORIGINAL COMPLEX comparison theorem rather than treating p-adic jets as enough.",
+      "kill_criterion": "Park when the actual local Hida branch has uncontrolled Tor, the Selmer specialization to Kummer base is not injective, both local images vanish or cannot be normalized, derivative is choice-dependent, or no theorem converts any p-adic leading coefficient to the original complex L''(E,1). A source-independent big nonzero class does not rescue these failures.",
+      "source": "https://arxiv.org/pdf/1202.6358",
+      "test_path": "research/proof_labs/two_variable_heegner_specialization_controls.py",
+      "gate": "G0",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No actual weight/anticyclotomic Howard class jets, no two verified Coleman valuations, no nonzero derived regulator, no original complex L'' vanishing, analytic rank four, Sha finiteness or general BSD.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session24 source audit: Howard §3.3 proves two-variable nontorsion, §3.4 base non-R-torsion conjectural; Kolyvagin classical basepoint forced torsion. Five exact truncated bivariate classes plus module-control/T-torsion/Coleman negative controls force two-direction measurement before claiming derived height or any complex comparison."
+        }
+      ]
     }
   ]
 }
