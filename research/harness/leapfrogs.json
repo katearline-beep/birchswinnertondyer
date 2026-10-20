@@ -372,6 +372,35 @@
           "evidence": "C-0023: Castella 2019 Theorem6.5 Remark6.6 proves weight2 Z0=(1−α^-1)^2 Kummer P_K; alpha mod11=5 factor9 unit, Kolyvagin forces torsion and Howard injective weight control gives Z0 in Hida weight prime. Castella Theorem5.3 already gives two-variable p-adic explicit reciprocity. Nonzero horizontal order, BOTH CH Coleman valuations and original complex L'' remain unproved."
         }
       ]
+    },
+    {
+      "id": "LF-010",
+      "experiment_id": "EX-013",
+      "title": "Nonzero divided Heegner Iwasawa Selmer class to a genuine first nonzero base derived regulator",
+      "known_baseline": "C-0024 Howard Prop2.3.1/§3.3 exact base relation prK Z∞=U11 X1 and Castella Thm6.5/Rem6.6+Kolyvagin give weight2 base prK z=0. C-0025 Howard Cor3.1.2 TRIVIAL torsion-character nonvanishing plus C10 corestriction give NONZERO weight2 norm-compatible tower z. Integral Shapiro/Galois LES and H0(K,T11E)=0 give unique NONZERO first T-division z1. C-0026 Howard local Greenberg definitions and two local LES (α11≠1 at v|11 and inertia-trivial Λ at v∤11) prove z1 remains STRICT GREENBERG in the inverse-limit Selmer. This is EXISTING algebraic theory applied to focal E, not an established nonzero base-derived regulator.",
+      "missing_arrow": "No proof pr_K(z1) is nonzero: the first divided inverse-limit Selmer class may have zero base. No exact minimal positive J-order, both properly normalized local Coleman leading coefficients, nondegenerate higher derived height, or theorem connecting any p-adic class to original complex L''.",
+      "hypothetical_bridge": "Compute/source-certify the finite first nonzero base augmentation order of Howard weight2 z in STRICT GREENBERG Iwasawa M and show its divided class survives in the genuine base Selmer group. Use Castella Theorem5.3 explicit reciprocity plus CH4.5 BOTH local Coleman maps to identify a nontrivial base derived height pairing; then seek a separate noncircular original complex L'' comparison.",
+      "if_then_statement": "IF the first canonically divided Howard Greenberg Iwasawa class with nonzero base projection can be identified, its two Coleman maps have compatible rigorously nonzero leading coefficients, AND a separately proved comparison maps that derived regulator to the ORIGINAL COMPLEX second Hasse–Weil Taylor coefficient, THEN the original rank-four analytic vanishing problem may be advanced.",
+      "would_unlock": "A concrete nonzero higher rank-four Selmer-derived class rather than formal augmentation speculation, with a testable pair of local regulators and a potential new bridge to complex analytic vanishing.",
+      "unverified_dependencies": "Howard Cor3.1.2 deep-level class nonvanishing is published, not our code; exact compact lattice identifications, normalization of divided Greenberg classes and local two Coleman maps need external review. Base pr_K(z1) and exact order are unknown, and ordinary 11-adic p-adic L-function cannot replace the original complex L'' theorem.",
+      "negative_control": "Wrong global norm omit Up; wrong torsion-character projector deep nonzero class can norm to zero; T-torsion toy produces nonunique division but true H0(K,T11E)=0 excludes it; p-local α=1 invalidates quotient-injectivity, hypothetical ramified inertia invalidates outside-p proof. Even z1≠0 and Greenberg do NOT force prK z1≠0; local J1 constant zero is not a nonzero Coleman first coefficient.",
+      "next_decisive_test": "Find the first actual r≥1 for which pr_K(z/T^r)≠0, starting with r=1 on our E, by source-normalized augmentation control or explicit compact Selmer cohomology at p11,K=-7. Use Castella big logarithm and CH4.5 to audit BOTH split-p regulators on this DIVIDED class; do not repeat first-digit local logs. Track a separate COMPLEX L'' comparison hypothesis; kill any inference using p-adic regulator alone.",
+      "kill_criterion": "Suspend if pr_K(z1)=0 and no genuine finite r can be verified, if normalization of Galois/Greenberg lattice changes the class incompatibly, or if local quotient T-torsion appears contrary to the stated hypotheses. Even if a nonzero base class exists, do NOT claim original complex analytic rank four without an independent theorem.",
+      "source": "https://arxiv.org/pdf/1202.6358",
+      "test_path": "research/proof_labs/howard_bockstein_exact_sequence_gate.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "Nonzero first *base-field* derived Heegner Selmer class, a nonzero CH derived height/regulator, two actually evaluated Coleman leading terms, exact complex L''(E,1)=0, analytic rank four, Sha finiteness and BSD leading term all remain open.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session25 C-0024–26: Howard exact U11 base norm, weight2 zero base, and trivial C10 projector deep nonvanishing plus Shapiro/LES construct a nonzero canonical T-divided global Iwasawa class. Local quotient LES at both split11 and inertia outside11 preserves Howard strict Greenberg conditions. prK divided class/nonzero derived regulator and original complex L'' remain unproved."
+        }
+      ]
     }
   ]
 }
