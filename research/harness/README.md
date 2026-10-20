@@ -174,6 +174,14 @@ By the published Kolyvagin theorem, a non-torsion classical base Heegner point o
 python3 -I -B research/proof_labs/heegner_ring_class_tower_11.py
 ```
 
+## Session24 — leapfrog LF-009: two-variable Heegner tangent cone (unproved)
+
+Howard §3.3's big anticyclotomic Hida (Z_\infty) is non-R∞-torsion by published theorem, whereas Howard §3.4 non-R-torsion of base (Z_0) is **Conjecture 3.4.1**. From the classical torsion basepoint one cannot guess whether the first nonzero term of the big class is in weight W, anticyclotomic T, or a higher/mixed direction. [Session24 theorem-scope audit](../proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md) and [exact negative controls](../proof_labs/two_variable_heegner_specialization_controls.py) show toy (W,T,T^2,WT) all have zero base with incompatible weight-two specializations. Additional fail-closed tests reject noninjective base-control and T-torsion Bockstein assumptions and force **both** Coleman maps to be considered.
+
+Run `python3 -I -B research/proof_labs/two_variable_heegner_specialization_controls.py`.
+
+The toy coefficient ring F11[W,T]/(W,T)^5 is NOT the actual Howard module. Actual Hida regularity, Selmer control, any class leading term, two Coleman valuations, and original complex L'' comparison are still absent; no BSD proof.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
