@@ -11,3 +11,7 @@ def charpoly(A):
     (a,b),(c,d)=A
     return (1,-a-d,a*d-b*c)
 
+def run():
+    jordan=((0,1),(0,0))
+    split=((0,0),(0,0))
+    assert charpoly(jordan)==charpoly(split)==(1,0,0)
