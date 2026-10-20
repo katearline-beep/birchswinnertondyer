@@ -1,4 +1,4 @@
-# Research-agent working contract
+**SESSION27 INTERDISCIPLINARY TRANSFER GATE:** For each new leapfrog, type the exact arithmetic/cohomology object and source theorem; demand a genuine bridge map, an independent falsifier, and a full-BSD scope audit. Use [the permanent transfer protocol](research/harness/INTERDISCIPLINARY_LEAPFROG_PROTOCOL.md). In particular, import homological Bockstein methods for true h², symplectic rank certificates for conditional 3→1, coding-theory syndromes for independent full global-height validation, and motivic cycle geometry ONLY with an explicit original COMPLEX L'' comparison. No analogy alone constitutes a theorem.\n\n# Research-agent working contract
 
 **Read this before every research task and PR.** These are repo-level instructions for AI agents and human contributors; they cannot override mathematical evidence or independent review.
 
