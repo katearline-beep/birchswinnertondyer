@@ -76,3 +76,8 @@ Session30: [explicit arithmetic inputs for the second Bockstein](research/proof_
 ## Session32 — unrestricted existence is weaker than supported Selmer feasibility
 
 [C0037/38 source deduction](research/proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md) uses standard global duality and recorded residual/local inputs: every supported residual class has an unrestricted global T3 lift, allowing unspecified extra ramification. Yet supported H2 has dimension at least3 and its entire absolute inflation is zero. No actual correction cochains, specific nonzero Bockstein, supported Greenberg lift, integral upgrade or second height is supplied. Prioritize the actual finite-support local cone. Original complex BSD remains open; this is AI-assisted and not expert reviewed.
+
+
+## Session33 — a supported obstruction and a designed auxiliary prime
+
+[Source and arithmetic audit](research/proof_labs/SESSION33_FINE_LOCALIZATION_AND_HEIGHT_DETECTOR.md) turns the local logs into an actual finite-Kummer map on the five known MW classes. Under the stated integral/height assumptions, fine-class duality detects a nonzero supported first Bockstein for R: extra ramification is necessary. A standard Chebotarev argument gives one-prime first-stage existence, and an independent PARI check verifies q3389 as a candidate matching the known-MW detector. Full fine coverage for that prime, actual correction cochains, Greenberg compatibility and the second height remain open. No original complex BSD implication or expert review is claimed.

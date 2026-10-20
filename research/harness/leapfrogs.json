@@ -598,7 +598,7 @@
       "would_unlock": "A sharper arithmetic construction problem with a source-derived existence baseline and a proved nontrivial supported obstruction space, avoiding repeated unrestricted embedding searches.",
       "unverified_dependencies": "Recorded residual image/local inputs require expert audit; actual supported obstruction values, finite-support cochains, Greenberg conditions, integral lifting, second-height normalization and original complex comparison remain unresolved.",
       "negative_control": "All13200 GL2 matrices test Cartier dual against omitted determinant twist. Identity scalar leaves nonzero H1(C11,F11). Synthetic T*I3 and T2*I3 complexes retain constrained first/second obstructions while their unconstrained targets erase them; five-to-two kernel bound is not exact dimension.",
-      "next_decisive_test": "Construct the actual supported augmentation cochain cone and calculate its connecting class or a certified allowed correction; distinguish this finite-module fine-localization kernel from elliptic Sha.",
+      "next_decisive_test": "Session33 now detects the supported R obstruction and gives one-prime first-stage existence plus a q3389 known-MW candidate. Next construct actual constrained cochains or certify missing fine directions; do not confuse this benchmark with positive S2 or h2.",
       "kill_criterion": "Reject any claimed Selmer solution obtained merely by allowing unspecified extra ramification or replacing the supported cone with absolute Galois cohomology. Correct the deduction if Cartier dual, scalar or local torsion hypotheses fail.",
       "source": "https://jmilne.org/math/Books/ADTnot.pdf",
       "test_path": "research/proof_labs/global_duality_support_controls.py",
@@ -613,6 +613,45 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "Issue64 predeclared the source/local-global test. Milne duality gives unrestricted residual T3 existence and a supported H2 lower bound at least3 under recorded inputs; remaining construction is explicitly constrained."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "C0040 detects an actual supported first obstruction through a fine-class height; C0041 gives a nonconstructive one-prime mechanism and a separately tested known-MW candidate. Greenberg/higher data remain missing."
+        }
+      ]
+    },
+    {
+      "id": "LF-017",
+      "experiment_id": "EX-020",
+      "title": "Dual supported-obstruction certificates and targeted auxiliary primes",
+      "known_baseline": "Actual local Kummer matrix has rank2 and a three-dimensional known-MW fine kernel. Under explicit integral/source/height inputs, q(P2+R)=2 detects nonzero supported beta_G(R), so extra ramification is necessary. A standard isotypic/Chebotarev argument gives one-auxiliary-prime existence for a single supported H2 class. All32 subsets of the old five candidates were tested; none of size<=2 removes the known detector. Targeted q3389 has fine row5*(2,5,10), independently PARI-verified, but full fine coverage is unknown.",
+      "missing_arrow": "An actual correction cochain and full-fine coverage for the particular q3389 candidate remain missing; first-stage one-prime existence does not impose Greenberg or second-order compatibility.",
+      "hypothetical_bridge": "Use the measured q3389 row and the one-prime duality existence mechanism as a support-design contract for a genuine arithmetic correction solver, retaining all full-fine and local constraints.",
+      "if_then_statement": "IF q3389 annihilates the full supported obstruction and actual correction cochains with Greenberg/local integral compatibility can be constructed THEN the first-stage benchmark supports a genuine next Bockstein calculation; a known-MW row match alone does not supply those premises.",
+      "would_unlock": "A cheap scalar certificate of actual supported non-liftability and a designed one-prime candidate, replacing blind enlargement or huge Galois closure enumeration.",
+      "unverified_dependencies": "Source arithmetic/height inputs remain AI-assisted unreviewed; finite normalization is audited but not expert checked. Full fine classes, actual cochains, Greenberg local data, integral higher precision and original complex comparison remain missing.",
+      "negative_control": "Non-fine test classes can see local boundaries even when the global obstruction is zero. All32 candidate supports are checked by row spans and independent dual witnesses. A hidden fine direction defeats zero tests on known MW; nonunit character scaling hides mod11 data. Mutated PARI local columns and interpreter diagnostics are rejected.",
+      "next_decisive_test": "Use the q3389 candidate for an actual first-stage cochain construction or identify missing fine directions; do not repeat prime searches or height digits. R is a benchmark, while exact positive S2 classes remain the h2 target.",
+      "kill_criterion": "Stop prime searches at the designed q3389 candidate. No actual supported correction or full-fine completeness is supplied. Do not generalize the first-stage one-prime existence argument to Greenberg or second-order compatibility.",
+      "source": "https://arxiv.org/pdf/2603.23978",
+      "test_path": "research/proof_labs/fine_localization_height_detector.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No actual supported correction, full-fine coverage, Greenberg lift, second height or original complex BSD implication. A one-prime existence theorem does not identify q3389 as the full solution.",
+      "decision_log": [
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Precomputation issue66 records the prediction and falsifiers; no successful arithmetic conclusion is presumed."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "C0039 actual finite Kummer kernel and independent PARI agree. Conditional C0040 detects beta_G(R) nonzero. C0041 proves nonconstructive one-prime killing for one H2 class; q3389 passes only the known-MW test. Continue toward actual constrained cochains."
         }
       ]
     }
