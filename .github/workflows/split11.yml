@@ -102,6 +102,8 @@ jobs:
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
         run: python -I -B research/methodology/local_global_transversality_11.py
+      - name: Howard universal norm radical and second alternating height quotient falsifiers
+        run: python -I -B research/proof_labs/howard_second_height_quotient_controls.py
       - name: Howard exact Up universal norm and zero weight-two base augmentation
         run: python -I -B research/proof_labs/howard_base_augmentation_gate.py
       - name: Howard trivial C10 norm and cohomological unique T division falsifiers
