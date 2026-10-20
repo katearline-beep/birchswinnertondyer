@@ -383,13 +383,13 @@
       "if_then_statement": "IF the first canonically divided Howard Greenberg Iwasawa class with nonzero base projection can be identified, its two Coleman maps have compatible rigorously nonzero leading coefficients, AND a separately proved comparison maps that derived regulator to the ORIGINAL COMPLEX second Hasse–Weil Taylor coefficient, THEN the original rank-four analytic vanishing problem may be advanced.",
       "would_unlock": "A concrete nonzero higher rank-four Selmer-derived class rather than formal augmentation speculation, with a testable pair of local regulators and a potential new bridge to complex analytic vanishing.",
       "unverified_dependencies": "Howard Cor3.1.2 deep-level class nonvanishing is published, not our code; exact compact lattice identifications, normalization of divided Greenberg classes and local two Coleman maps need external review. Base pr_K(z1) and exact order are unknown, and ordinary 11-adic p-adic L-function cannot replace the original complex L'' theorem.",
-      "negative_control": "Wrong global norm omit Up; wrong torsion-character projector deep nonzero class can norm to zero; T-torsion toy produces nonunique division but true H0(K,T11E)=0 excludes it; p-local α=1 invalidates quotient-injectivity, hypothetical ramified inertia invalidates outside-p proof. Even z1≠0 and Greenberg do NOT force prK z1≠0; local J1 constant zero is not a nonzero Coleman first coefficient.",
-      "next_decisive_test": "Find the first actual r≥1 for which pr_K(z/T^r)≠0, starting with r=1 on our E, by source-normalized augmentation control or explicit compact Selmer cohomology at p11,K=-7. Use Castella big logarithm and CH4.5 to audit BOTH split-p regulators on this DIVIDED class; do not repeat first-digit local logs. Track a separate COMPLEX L'' comparison hypothesis; kill any inference using p-adic regulator alone.",
+      "negative_control": "Wrong global norm omit Up; wrong torsion-character projector deep nonzero class can norm to zero; T-torsion toy produces nonunique division but true H0(K,T11E)=0 excludes it; p-local α=1 invalidates quotient-injectivity, hypothetical ramified inertia invalidates outside-p proof. Even z1≠0 and Greenberg do NOT force prK z1≠0; local J1 constant zero is not a nonzero Coleman first coefficient. CORRECTION Session26: base projection of any norm-compatible divided tower is a universal norm and has identically zero pairing for every Howard derived height. Even proving its nonzero base projection CANNOT serve as a nonzero higher regulator; Issue51 should be parked as a regulator route.",
+      "next_decisive_test": "Park pursuit of pr_K(z_r) as a NONZERO higher-height regulator: Howard 1202.6343 Theorem4.2 proves EVERY universal norm is in the intersection of ALL derived-height kernels. Krull finite Λ lemma makes a finite nonzero base divided norm existence a formal consequence (conditional on exact lattice/finiteness), not an actual nonzero pairing. Pursue LF-011 second derived height on non-universal radical classes.",
       "kill_criterion": "Suspend if pr_K(z1)=0 and no genuine finite r can be verified, if normalization of Galois/Greenberg lattice changes the class incompatibly, or if local quotient T-torsion appears contrary to the stated hypotheses. Even if a nonzero base class exists, do NOT claim original complex analytic rank four without an independent theorem.",
       "source": "https://arxiv.org/pdf/1202.6358",
       "test_path": "research/proof_labs/howard_bockstein_exact_sequence_gate.py",
       "gate": "G1",
-      "decision": "active",
+      "decision": "parked",
       "reviewed": false,
       "proof_status": "speculative",
       "novelty_status": "unverified",
@@ -399,6 +399,40 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Session25 C-0024–26: Howard exact U11 base norm, weight2 zero base, and trivial C10 projector deep nonvanishing plus Shapiro/LES construct a nonzero canonical T-divided global Iwasawa class. Local quotient LES at both split11 and inertia outside11 preserves Howard strict Greenberg conditions. prK divided class/nonzero derived regulator and original complex L'' remain unproved."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "parked",
+          "evidence": "C-0027 Howard Derived p-adic heights Thm4.2 identifies universal norms with S-infinity, intersection of every derived-height radical; LF010 nonzero base norm cannot be a nonzero regulator. Finite order itself follows from f.g Λ and Krull. Source-based pivot to LF011 quotient second height."
+        }
+      ]
+    },
+    {
+      "id": "LF-011",
+      "experiment_id": "EX-014",
+      "title": "Second derived anticyclotomic height on non-universal first radical: one-pairing 5-to-3-to-1 leapfrog",
+      "known_baseline": "Howard 1202.6343 Theorem4.2: all universal norms lie in EVERY derived height radical; Howard Conjecture4.4 predicts dim S2=|s+-s-|, dim S3=1. In conditional exact full Selmer signature s+=4,s-=1, conjugation forces h1 symmetric cross block rank0/2. Provisional global BCLMN mod11 v=(1,2,7,8) suggests first rank2, but not independently confirmed. Then S2 dimension3 positive. h2 alternating on dimension3 can only have rank0/2, and any truly nonzero pair forces S3 dimension1 equal Howard's known universal-norm line.",
+      "missing_arrow": "Full Selmer dimension signature not certified, complete BCLMN first-height implementation not independently audited or proven equal to source Howard/CH h1, no exact S2 classes, no actual second Bockstein pairing or true nonzero coefficient, and no ORIGINAL COMPLEX L'' regulator comparison.",
+      "hypothetical_bridge": "Independently certify first global anticyclotomic height and its source normalization; establish exact Selmer s+/s− dimension or keep conditional. Construct two non-universal exact cohomology classes in S2, compute ONE source-defined second alternating derived height and show nonzero. A separate rank-sensitive motivic/analytic theorem must then connect the p-adic structure to original complex L''.",
+      "if_then_statement": "IF the full base Selmer has s+=4,s-=1, the normalized first mixed Howard height is nonzero, and a genuine second alternating height on two exact non-universal S2 classes is nonzero, THEN the S2->S3 dimension drop is 3->1 and S3 equals the universal-norm line; this still does NOT solve original complex BSD.",
+      "would_unlock": "A concrete, falsifiable partial verification of Howard's published anticyclotomic higher-height conjecture for a rank4 original curve, with only ONE genuine nonzero second pairing needed under established dimensional hypotheses.",
+      "unverified_dependencies": "Selmer s+=4,s-=1 and Sha[11∞] unknown; full first BCLMN height is provisional and not source-normalized against Howard's entire Selmer space; no true second Bockstein height computation; universal norm line source matching and complex L'' comparison remain open.",
+      "negative_control": "For any exact 3x3 alternating matrix over F11 rank is 0 or 2. The ZERO second pairing leaves 3-dim radical and disproves the hoped-for 3->1 drop; first nonzero provisional mixed vector alone cannot reject it. Nonzero universal-norm base classes ALWAYS have zero Howard derived pairing and cannot certify nonzero h2. Approximate mod1331 kernel vectors are not exact S2 Selmer classes.",
+      "next_decisive_test": "First SOURCE MATCH Howard 1202.6343 Theorem4.2/Conj4.4 to actual Howard/CH strict Greenberg Selmer. Independently recompute COMPLETE BCLMN height at p11,K=-7 with exact denominator ideal and local terms; prove first pairing is source-normalized and construct exact S2 classes, and only then compute a single TRUE second Bockstein height on two non-universal classes. Parallel seek original COMPLEX third-derivative bridge.",
+      "kill_criterion": "Park conditional 5->3->1 if full Selmer extra dimensions invalidate signature, independent global h1 contradicts provisional v, first height source comparison cannot be proved, or a genuine second height vanishes for all exact pairs. Never infer analytic rank4 or Sha from finite-field toy or p-adic Selmer pattern.",
+      "source": "https://arxiv.org/pdf/1202.6343",
+      "test_path": "research/proof_labs/howard_second_height_quotient_controls.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No true nonzero second derived-height pairing, no exact full 11-Selmer eigenspace dimensions, no independent BCLMN global height/source equality and no ORIGINAL COMPLEX L''(E/Q,1)=0, Sha or BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session26 source Howard Thm4.2 makes universal norm a permanent height radical, killing LF010 norm-as-regulator plan. Conj4.4 and h2 alternating parity make a single true nonzero second pairing on an exact 3D radical a decisive 3->1 certificate under still-unverified 4+1/full h1 assumptions."
         }
       ]
     }
