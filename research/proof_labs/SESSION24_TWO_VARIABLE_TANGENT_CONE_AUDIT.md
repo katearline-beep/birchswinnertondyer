@@ -88,3 +88,23 @@ A further primary-source check of **Howard §3.4, proof of Corollary 3.4.3**, re
 Accordingly, the noninjective control **toy counterexample in §3 is not a purported counterexample to Howard's actual base-field injection**; it shows exactly why that *published injection* or its analog must be verified at the **different** Iwasawa/simultaneous specialization arrow before promoting a divisibility claim. This refinement **reduces the open proof obligation** to a new finite-to-infinite compatibility/control calculation, not discovering a base-weight injection from scratch.
 
 **Next decisive experiment upgraded:** Source-audit the Iwasawa-theoretic analogue of the displayed exact sequence for \(D_\infty/K\), including the order of specializing and taking inverse limits, the \(H^2\)-torsion/derived tensor terms, and which local Greenberg conditions are preserved. An actual statement in this direction could convert the forced torsion classical Heegner point into *rigorously controlled* augmentation information; until then the first two-variable jet remains unknown.
+
+
+## 7. Higher-upside conditional consequence: a horizontal *weight*-derived base class
+
+The same source creates a **genuinely curve-directed leapfrog** when combined with C-0021. Howard §3.4 proves the *base-\(K\)* **weight-specialization injection** written in §6. Under the additional **unverified** identification of the specialized \(Z_0\) with the classical traced Heegner Kummer class (with its specific Euler/unit normalization), Kolyvagin's theorem forces the image of \(Z_0\) in \(\widetilde H^1_f(K,V^\dagger_{\mathfrak p})\) to be zero, because \(P_K\) is torsion. Injectivity would imply
+\[
+\boxed{Z_0\in\mathfrak p\,\widetilde H^1_f(K,T^\dagger)_{\mathfrak p}.}
+\]
+This is a *conditional divisibility statement about the base-field Hida-weight class*, **not** about \(Z_\infty\) being divisible by the **anticyclotomic** augmentation \(T\), and **not** claimed unconditionally until the specialized \(Z_0\leftrightarrow P_K\) normalizations are inspected. In particular, we have not computed \(Z_0\).
+
+Now also assume Howard's still-unproved **Conjecture 3.4.1** (\(Z_0\) is non-\(R\)-torsion), a discrete-valuation/regular local weight parameter \(\pi\) at \(\mathfrak p\), and finite torsionfree/separated local Selmer module \(M\) with \(\bigcap_{n\ge0}\pi^nM=0\). Then \(Z_0\neq0\) and \(\pi\mid Z_0\), so there is a **finite** \(r\ge1\) with
+\[
+Z_0\in\pi^rM\setminus\pi^{r+1}M.
+\]
+Its leading quotient determines a **nonzero weight-leading graded class**
+\(\operatorname{gr}_\pi^r(Z_0)\in\pi^rM/\pi^{r+1}M\); after choosing a uniformizer, the divided representative \(\pi^{-r}Z_0\bmod\pi M\) is meaningful up to unit scaling. This is **elementary DVR module algebra**, not a theorem that Howard's \(\mathfrak p\)-local Heegner class actually satisfies all premises, or that its weight derivative is nonzero at order exactly one.
+
+**Why it could bear fruit:** A source-normalized *horizontal Hida-weight* leading term is a more logically justified alternative than assuming a first anticyclotomic derivative. It leverages an EXISTING injection, the known rank obstruction, and a specific published (but unproved) horizontal conjecture. The next falsifying experiment is therefore **the exact equality of the specialized Howard \(Z_0\) and the p-stabilized classical Kummer \(P_K\)**, followed by local regularity and the horizontal non-torsion condition. If any premise fails, do **not** promote the deduction. Even when they hold, a new derived reciprocity and independently proved **original complex** \(L''\) comparison are still missing.
+
+This conditional horizontal lemma complements—not replaces—the two-variable \(Z_\infty\) experiment. Crucially a weight-leading base class need not induce any anticyclotomic leading jet of \(Z_\infty\) after weight-two specialization.
