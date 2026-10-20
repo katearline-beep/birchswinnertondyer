@@ -66,3 +66,25 @@ What is **actually** new to our project: a source-grounded shift from an unsuppo
 What remains unproved: a nonzero weight-two Howard \(Z_\infty\) specialization, exact leading jets/augmented Coleman images, a higher derived Selmer class, comparison with BCLMN numerics or CH \(h^{(r)}\), original complex \(L''(E/\mathbb Q,1)=0\), Sha finiteness and full/general BSD.
 
 **Cross-discipline methodology:** use two-variable deformation theory (tangent cones/flatness), singularity-theoretic associated graded structures, and software negative controls to find hidden category errors before attempting elliptic-curve theorems. The *biological/physical intuition* is only heuristic: a two-control-parameter system can be invisible along one slice despite meaningful variation in another. No biological/physical model is mathematical evidence here.
+
+
+## 6. Published base-field weight-control sequence: the obstacle is narrower
+
+A further primary-source check of **Howard §3.4, proof of Corollary 3.4.3**, reveals an explicit control sequence we must **not** pretend is missing at the *base field*. If \(\mathfrak p\subset R\) is a weight arithmetic prime, Nekovář's Selmer-complex specialization gives, after localization at \(\mathfrak p\),
+\[
+0\longrightarrow
+\frac{\widetilde H_f^1(K,T^\dagger)_{\mathfrak p}}
+     {\mathfrak p\,\widetilde H_f^1(K,T^\dagger)_{\mathfrak p}}
+\longrightarrow
+\widetilde H_f^1(K,V^\dagger_{\mathfrak p})
+\longrightarrow
+\widetilde H_f^2(K,T^\dagger)_{\mathfrak p}[\mathfrak p]
+\longrightarrow0.
+\]
+**This is a published INJECTION for weight specialization at \(K\)**, under the source's localization/setup. The last \(H^2[\mathfrak p]\) is a **cokernel**, not a kernel that makes the first arrow noninjective. It does not require us to postulate arbitrary failure of weight-control at base \(K\).
+
+**Exact remaining boundaries:** (i) this is the **base-field** weight-only specialization for \(\widetilde H_f^1(K,T^\dagger)\), NOT a verified simultaneous weight-plus-anticyclotomic specialization of the inverse-limit \(\widetilde H^1_{f,\mathrm{Iw}}(D_\infty,T^\dagger)\); (ii) mapping a specialized extended Selmer class into a *particular observed classical Kummer point* involves the correct normalization and comparison; (iii) knowing that this base Kummer observation is zero does not, without a fully verified identification, show \(Z_\infty\in(W,T)M\) or \(Z_{\mathrm{wt2}}\in T M_{\mathrm{wt2}}\).
+
+Accordingly, the noninjective control **toy counterexample in §3 is not a purported counterexample to Howard's actual base-field injection**; it shows exactly why that *published injection* or its analog must be verified at the **different** Iwasawa/simultaneous specialization arrow before promoting a divisibility claim. This refinement **reduces the open proof obligation** to a new finite-to-infinite compatibility/control calculation, not discovering a base-weight injection from scratch.
+
+**Next decisive experiment upgraded:** Source-audit the Iwasawa-theoretic analogue of the displayed exact sequence for \(D_\infty/K\), including the order of specializing and taking inverse limits, the \(H^2\)-torsion/derived tensor terms, and which local Greenberg conditions are preserved. An actual statement in this direction could convert the forced torsion classical Heegner point into *rigorously controlled* augmentation information; until then the first two-variable jet remains unknown.
