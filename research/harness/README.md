@@ -200,6 +200,12 @@ python3 -I -B research/proof_labs/howard_divided_greenberg_local_gate.py
 
 Source theorem, Shapiro/LES, integration of the p-stabilized lattice and local exact sequences are proof inputs; toy finite models only test dangerous shortcuts. LF-010/EX-013 tracks the still-missing actual first nonzero BASE derived class and BOTH Coleman terms.
 
+## Session26 — universal norm NO-GO and LF-011 second-height quotient
+
+Howard [Theorem4.2](../proof_labs/SESSION26_UNIVERSAL_NORM_QUOTIENT_AND_SECOND_HEIGHT.md) PROVES anticyclotomic universal norms lie in intersection of ALL derived-height radicals: even nonzero base of divided Howard Iwasawa class C0025/26 cannot witness a nonzero height. Standard f.g Λ Krull theorem conditionally forces a finite first nonzero base universal-norm stage, but this is NOT an actual regulator. [Source-constrained LF011 experiment](../proof_labs/howard_second_height_quotient_controls.py) uses the hypothetical **full Selmer** signature s+=4,s−=1 and still-provisional global first mixed h1 nonzero to get 5→3; an exact second ALTERNATING pairing on 3D radical has rank **0 or2**, and a SINGLE REAL nonzero coefficient would force 3→1, as Howard **Conjecture4.4** predicts. The zero second form is a required falsifier. These are logical exact F11 tests, NOT genuine higher derived heights or proof of complex BSD.
+
+Run: `python3 -I -B research/proof_labs/howard_second_height_quotient_controls.py`.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
