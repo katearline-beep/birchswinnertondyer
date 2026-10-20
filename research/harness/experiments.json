@@ -717,6 +717,56 @@
           "reference": "https://arxiv.org/pdf/1202.6343"
         }
       ]
+    },
+    {
+      "id": "EX-015",
+      "claim_ids": [
+        "C-0029",
+        "C-0030"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Can a division-polynomial-free direct-coordinate ideal oracle corroborate the first global height digit, and can a source-defined lift/quotient formula specify the missing actual second Bockstein calculation?",
+      "decisive_observation": "Direct integral-basis ideal gcd at multiplied minimal coordinates removes old denominator recurrences; squared sigma needs only t+t^2/2 for first digit. Two-term beta2 requires D2*x+D1*x1 in the quotient by imD0+D1kerD0; raw D2 fails. MCS2026 preprint Thm4.2 compares BD and Nekovar with MINUS sign under Hyp4.1; actual arithmetic matrices, lifts and duality remain absent.",
+      "dependencies": [
+        "BCLMN Proposition2.4 character and integral sigma normalization; n18 kills order18 p-reductions and bad component orders dividing2; class number one.",
+        "MCS2603.23978v1 Hyp4.1/Thm4.2 and AppendixA, C0007 residual image plus C0020 ordinary/local hypotheses; source theorem is not checked by code.",
+        "Full Selmer signature and BCLMN to Howard/CH first pairing normalization remain open; no arithmetic D(T) or second derived height."
+      ],
+      "commands": [
+        "python3 -I -B research/anticyclotomic_11/direct_coordinate_height_mod11.py",
+        "python3 -I -B research/proof_labs/second_bockstein_lift.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION28_SECOND_BOCKSTEIN_AND_DIRECT_HEIGHT.md",
+        "research/anticyclotomic_11/direct_coordinate_height_mod11.py",
+        "research/proof_labs/second_bockstein_lift.py"
+      ],
+      "negative_control": "Wrong minimal sigma term, nonrational ideal inflation and swapped embedding must change height data; published p5 examples control sign. Same D0,D1 admit zero and rank2 second obstruction, and raw D2=0 can hide a nonzero corrected obstruction. Finite mod11 zero cannot exclude nonzero 11*T^2*J.",
+      "stop_condition": "Stop arithmetic interpretation on any independent residue disagreement or lift/quotient inconsistency. Do not evaluate actual h2 until a true Selmer complex presentation, exact lifts and duality are supplied. No original complex-L implication without a separate theorem.",
+      "nonclaims": [
+        "No independently maintained Sage/Magma global-height audit or independent human review.",
+        "No actual Selmer D(T), arithmetic x1, second height or exact full Selmer dimension.",
+        "No proof of original complex Lpp zero, Sha finiteness or BSD."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "homological algebra",
+          "kind": "exact_math",
+          "mechanism": "Lift and quotient implements the derived Bockstein of a specified two-term complex; x1 correction and its ambiguity are necessary.",
+          "proof_boundary": "Synthetic matrices verify algebra only; actual Greenberg arithmetic data and duality are missing.",
+          "validating_test": "research/proof_labs/second_bockstein_lift.py",
+          "reference": "https://arxiv.org/pdf/2603.23978"
+        },
+        {
+          "discipline": "error detection and independent arithmetic algorithms",
+          "kind": "validation_method",
+          "mechanism": "Compute global denominator ideals directly from exact coordinates using a different integral basis and squared sigma formula, avoiding shared recurrences.",
+          "proof_boundary": "First digit only; shared BCLMN theorem and character; no Howard comparison or library/expert certification.",
+          "validating_test": "research/anticyclotomic_11/direct_coordinate_height_mod11.py",
+          "reference": "https://arxiv.org/pdf/1610.08729"
+        }
+      ]
     }
   ]
 }

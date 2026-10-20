@@ -1,4 +1,6 @@
-**Interdisciplinary leapfrog gate:** [Session27 permanent protocol](INTERDISCIPLINARY_LEAPFROG_PROTOCOL.md) integrates homological algebra/Bockstein, alternating linear algebra, certified numerical arithmetic, error-detecting controls, Iwasawa algebra, motives and formal proof obligations. Every transfer must state typed objects, a source theorem, an explicit bridge, a falsifier and original-complex BSD scope. No second derived height or original complex bridge is claimed.\n\n# Machine-checkable research harness
+**Interdisciplinary leapfrog gate:** [Session27 permanent protocol](INTERDISCIPLINARY_LEAPFROG_PROTOCOL.md) integrates homological algebra/Bockstein, alternating linear algebra, certified numerical arithmetic, error-detecting controls, Iwasawa algebra, motives and formal proof obligations. Every transfer must state typed objects, a source theorem, an explicit bridge, a falsifier and original-complex BSD scope. No second derived height or original complex bridge is claimed.
+
+# Machine-checkable research harness
 
 The repository's **permanent research operating procedure** is in [AGENTS.md](../../AGENTS.md). Read it with [RESEARCH_STANDARDS.md](../../RESEARCH_STANDARDS.md) and the [cross-disciplinary audit](../INTERDISCIPLINARY_TRANSFER_AUDIT.md).
 
@@ -214,3 +216,12 @@ It cannot certify local Kummer compatibility, analytic continuation, Satake/Eule
 
 
 **Session20 authoritative correction:** [Ulmer Fermat global mechanism audit](../proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) records that an earlier lab misattributed ranks 3,7,25 to Fp(t). The scripts now check prime-field 2,3,7 versus geometric 3,7,25 separately and reconstruct exact Fermat quotient map and Ulmer's published-Jacobi-sum global P2 factors. Do not conceal this error or claim finite field counts prove high rank.
+
+## Session28 — direct first-digit oracle and actual Bockstein input contract
+
+[C0029/30](../proof_labs/SESSION28_SECOND_BOCKSTEIN_AND_DIRECT_HEIGHT.md) remove shared division-polynomial denominators from first-digit corroboration and specify the second lifting obstruction, quotient ambiguity and duality obligation. MCS Thm4.2 is a 2026 preprint, compares pairings with a minus sign, and has checked/recorded arithmetic hypothesis boundaries. The executable second-stage model is synthetic: actual arithmetic Selmer matrices and lifts are missing. Zero mod11 is not exact Q11 zero.
+
+```bash
+python3 -I -B research/anticyclotomic_11/direct_coordinate_height_mod11.py
+python3 -I -B research/proof_labs/second_bockstein_lift.py
+```

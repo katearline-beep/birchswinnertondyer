@@ -417,8 +417,8 @@
       "if_then_statement": "IF the full base Selmer has s+=4,s-=1, the normalized first mixed Howard height is nonzero, and a genuine second alternating height on two exact non-universal S2 classes is nonzero, THEN the S2->S3 dimension drop is 3->1 and S3 equals the universal-norm line; this still does NOT solve original complex BSD.",
       "would_unlock": "A concrete, falsifiable partial verification of Howard's published anticyclotomic higher-height conjecture for a rank4 original curve, with only ONE genuine nonzero second pairing needed under established dimensional hypotheses.",
       "unverified_dependencies": "Selmer s+=4,s-=1 and Sha[11∞] unknown; full first BCLMN height is provisional and not source-normalized against Howard's entire Selmer space; no true second Bockstein height computation; universal norm line source matching and complex L'' comparison remain open.",
-      "negative_control": "For any exact 3x3 alternating matrix over F11 rank is 0 or 2. The ZERO second pairing leaves 3-dim radical and disproves the hoped-for 3->1 drop; first nonzero provisional mixed vector alone cannot reject it. Nonzero universal-norm base classes ALWAYS have zero Howard derived pairing and cannot certify nonzero h2. Approximate mod1331 kernel vectors are not exact S2 Selmer classes.",
-      "next_decisive_test": "First SOURCE MATCH Howard 1202.6343 Theorem4.2/Conj4.4 to actual Howard/CH strict Greenberg Selmer. Independently recompute COMPLETE BCLMN height at p11,K=-7 with exact denominator ideal and local terms; prove first pairing is source-normalized and construct exact S2 classes, and only then compute a single TRUE second Bockstein height on two non-universal classes. Parallel seek original COMPLEX third-derivative bridge.",
+      "negative_control": "For any exact 3x3 alternating matrix over F11 rank is 0 or 2. The ZERO second pairing leaves 3-dim radical and disproves the hoped-for 3->1 drop; first nonzero provisional mixed vector alone cannot reject it. Nonzero universal-norm base classes ALWAYS have zero Howard derived pairing and cannot certify nonzero h2. Approximate mod1331 kernel vectors are not exact S2 Selmer classes. Session28 synthetic complexes with SAME D0,D1 have zero or rank2 beta2; raw D2=0 may give nonzero corrected beta2. A zero finite residue is inconclusive since 11*T^2*J survives mod121.",
+      "next_decisive_test": "Session28 first-digit direct-coordinate global ideal oracle supplies algorithmic corroboration only. MCS2026 preprint comparison and second-Bockstein lift formula are now source typed. Next construct an ACTUAL Greenberg Iwasawa Selmer complex presentation modulo T^3 with local conditions, exact x,x1 satisfying D0*x1=-D1*x and duality; compute beta2=[D2*x+D1*x1] in its quotient. Do not use a synthetic D(T), finite first kernel, or universal norm as an arithmetic h2 witness. Maintain exact signature and original complex-L obligations.",
       "kill_criterion": "Park conditional 5->3->1 if full Selmer extra dimensions invalidate signature, independent global h1 contradicts provisional v, first height source comparison cannot be proved, or a genuine second height vanishes for all exact pairs. Never infer analytic rank4 or Sha from finite-field toy or p-adic Selmer pattern.",
       "source": "https://arxiv.org/pdf/1202.6343",
       "test_path": "research/proof_labs/howard_second_height_quotient_controls.py",
@@ -433,6 +433,40 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Session26 source Howard Thm4.2 makes universal norm a permanent height radical, killing LF010 norm-as-regulator plan. Conj4.4 and h2 alternating parity make a single true nonzero second pairing on an exact 3D radical a decisive 3->1 certificate under still-unverified 4+1/full h1 assumptions."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session28 EX015 provides direct-coordinate first-digit corroboration and typed MCS minus-sign second-Bockstein construction. Actual arithmetic presentation/lifts/duality not obtained; no BSD flags upgraded."
+        }
+      ]
+    },
+    {
+      "id": "LF-012",
+      "experiment_id": "EX-015",
+      "title": "Arithmetic realization of the corrected second Bockstein via a T-cubed Selmer presentation",
+      "known_baseline": "MCS2026 preprint Thm4.2 compares BD and Nekovar pairings with minus sign for k<=p-1 under Hyp4.1. In a two-term free complex, beta2(x)=[D2*x+D1*x1] with D0*x1=-D1*x; exact source-normalized duality is needed for a height. First BCLMN digit corroboration alone supplies no chain presentation.",
+      "missing_arrow": "No actual arithmetic Greenberg Selmer differential D(T) modulo T^3, exact first-stage lift or duality/cup-product data on focal curve; BCLMN to BD/Howard normalization and full Selmer dimensions remain open.",
+      "hypothetical_bridge": "Supply an actual arithmetic two-term Selmer complex with valid local conditions, exact S2 classes and lifts and self-duality; pass its second Bockstein to BD via the source comparison, then certify a genuinely nonzero height. A separate theorem would still be needed for original complex Lpp.",
+      "if_then_statement": "IF an arithmetic Greenberg presentation to T^3 and its exact lifts/duality are verified, AND its corrected beta2 pairs nontrivially, THEN a genuine second BD height is nonzero by MCS comparison; under independent (4,1)/h1 hypotheses LF011 gives S3 dimension1.",
+      "would_unlock": "A concrete, falsifiable partial verification of Howard's published anticyclotomic higher-height conjecture for a rank4 original curve, with only ONE genuine nonzero second pairing needed under established dimensional hypotheses.",
+      "unverified_dependencies": "Selmer s+=4,s-=1 and Sha[11∞] unknown; full first BCLMN height is provisional and not source-normalized against Howard's entire Selmer space; no true second Bockstein height computation; universal norm line source matching and complex L'' comparison remain open.",
+      "negative_control": "Synthetic same-D0,D1 complexes yield zero OR rank2 second obstruction. Raw D2 can vanish while corrected obstruction is nonzero. A finite-zero residue is inconclusive: 11*T^2*J is nonzero modulo121. Wrong ideal and sigma corrections are rejected by independent first-digit oracle.",
+      "next_decisive_test": "Construct actual arithmetic Selmer D(T) modulo T^3, local maps, exact x1 lifts and duality. Fail immediately if a candidate only consists of first-height residues, local logs or synthetic matrices. First source-normalize BCLMN versus BD/Howard.",
+      "kill_criterion": "Park if no valid arithmetic presentation or normalized duality can be constructed, if input is merely the provisional finite first-height kernel, or if only finite-zero observations are obtained. Reject any assertion that this alone proves original complex BSD.",
+      "source": "https://arxiv.org/pdf/2603.23978",
+      "test_path": "research/proof_labs/second_bockstein_lift.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No true nonzero second derived-height pairing, no exact full 11-Selmer eigenspace dimensions, no independent BCLMN global height/source equality and no ORIGINAL COMPLEX L''(E/Q,1)=0, Sha or BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session28 gives executable lift/quotient algebra and a distinct direct global-ideal first-digit oracle; actual arithmetic realization remains missing. A new experimental subtrack of LF011, not a new arithmetic theorem."
         }
       ]
     }

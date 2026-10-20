@@ -351,3 +351,12 @@ The script enumerates exact Frobenius character orbits and factors: \((1-5T)\) f
 **Kill and ethics:** Never claim a nonzero higher regulator from a universal norm; Howard Thm4.2 forbids it. Never promote approximate mod1331 radical vectors to exact S² classes; never promote full Selmer signature=4+1 without 11-Selmer upper bounds. True h²=0 is a live falsifier; a real nonzero coefficient would need external mathematical review. Nothing about analytic rank or general BSD can follow from merely p-adic height nonvanishing.
 
 **Primary** [Howard Thm4.2 and Conj4.4](https://arxiv.org/pdf/1202.6343), [Session26 scoped theorem audit](../proof_labs/SESSION26_UNIVERSAL_NORM_QUOTIENT_AND_SECOND_HEIGHT.md), [exact algebraic controls](../proof_labs/howard_second_height_quotient_controls.py), [finite module Krull theorem](https://websites.umich.edu/~mmustata/ReviewSheet3_2017.pdf). Next full WPR by 2026-10-26.
+
+
+## WPR-2026-10-19-16 — Session28, after Session27 PR55
+
+Baseline main 4d2f6df. Reviewed open issues 53,49,42,41,32 and all ledger C-series scopes; historical claims retain their caveats. All six workflow families passed PR55 before merge. General BSD, original complex Lpp=0, exact analytic rank4, Sha and leading coefficient remain open. **New proved implication toward original complex BSD: NONE.**
+
+[C0029/30 audit](../proof_labs/SESSION28_SECOND_BOCKSTEIN_AND_DIRECT_HEIGHT.md) records a direct-coordinate full-ideal first-digit oracle and an executable source-defined second-Bockstein lifting interface. The source MCS2026 preprint compares BD and Nekovar pairings with minus sign, under recorded arithmetic hypotheses; no actual arithmetic presentation or h2 coefficient is obtained. Prior current metadata preserved in 2026-10-19-session28-prior-review.json.
+
+H1/H2 remain active but now target actual Selmer D(T) to T^3, x1 lifts and duality, following first-height normalization. H3 requires a precise complex third-derivative identity; none found in sources examined. H4/H6 remain parked for absent noncircular period comparison, and H5 remains diagnostic. Safe: normalize first pairing. Credible moonshot: one true nonzero h2 on non-universal exact S2. Wild: motivic complex regulator comparison. Additional first-height digits and universal-norm regulator calculations remain deprioritized. A finite zero cannot refute a nonzero Q11 pairing. Next checkpoint due 2026-10-26 or earlier after three substantive merges.
