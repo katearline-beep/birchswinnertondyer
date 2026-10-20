@@ -8,6 +8,10 @@ We investigate specific elliptic curves and the boundary between numerical evide
 
 **Session23 advance:** [forced base Heegner torsion, Howard's already-constructed anticyclotomic extended-Selmer Z∞, and exact 11-power ring-class fields](research/proof_labs/SESSION23_HEEGNER_TOWER_BASE_VANISHING.md). The new bottleneck is weight-two control/compact CH4.5 localization and two Coleman J-adic orders, not inventing a ring-class-to-tower class. No original complex BSD proof.
 
+**New leapfrog research gate (Session24):** [Howard two-variable tangent cone and source-defined stop conditions](research/proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md). Howard's big class non-torsion does not imply weight-two first anticyclotomic derivative; test Hida weight, anticyclotomic and mixed jets **after** proving Selmer specialization and two Coleman controls. This is a hypothesis and exact toy falsification exercise, not a BSD result.
+
+**Proved source-level advancement (Session24):** [Castella 2019 weight-two theorem plus Howard base-K control force Hida WEIGHT-prime divisibility of the original curve's big base Heegner class](research/proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md); the two-variable p-adic reciprocity law already exists. A nonzero higher derivative, the two Coleman J-orders and the original COMPLEX L'' comparison are still open.
+
 ## Start here
 
 **Session21 verified theorem scope:** [Castella–Hsieh 433a1 rank-two control and original-rank4 Theorem4.1 applicability](research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md) is now part of the source-checked proof lab. The derived-height filtration on focal E/p11/K=-7 exists **by published theorem**, but TheoremA/B nonzero-Kato criterion does not apply there, and the needed global Iwasawa class/complex L'' comparison are missing.

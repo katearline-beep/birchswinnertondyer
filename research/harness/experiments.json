@@ -577,6 +577,54 @@
           "reference": "https://annals.math.princeton.edu/2002/155-1/p09"
         }
       ]
+    },
+    {
+      "id": "EX-012",
+      "claim_ids": [
+        "C-0022",
+        "C-0023"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does Howard's proven two-variable non-Rinfinity-torsion Z-infinity plus forced torsion of classical base P_K determine a first anticyclotomic Heegner derivative, or must we isolate weight and anticyclotomic tangent directions separately?",
+      "decisive_observation": "Howard 2012 §3.3 proves non-R∞-torsion of its Hida/anticyclotomic Z∞ but separately calls base-field non-R-torsion Conjecture3.4.1. Exact algebraic controls show Z=W can be nonzero over two-variable ring and vanish identically at weight2; Z=T,T²,WT have different first nonzero degrees. Vanishing Kummer observation can fail to lift to augmentation ideal absent injective cohomology control; T-torsion creates derivative ambiguity; two Coleman maps have different zeros. **Major primary-source upgrade C-0023:** Castella 2019 TheoremA/6.5 Remark6.6 ACTUALLY proves weight2 ν_f(Z0)=(1−α11^-1)^2 Heegner Kummer(P_K), with Euler square9 mod11 unit. C20 residual GK irr/p-dist/Heegner hypotheses checked; Kolyvagin base P_K torsion, so Howard base-K weight Selmer injection proves Z0 lies in the localized Hida WEIGHT prime. Castella TheoremB/5.3 also ALREADY PROVES two-variable big-log reciprocity to p-adic L_(p,ξ), not original complex L''.",
+      "dependencies": [
+        "Howard §3.3 theorem supplies a big class Z∞ over R∞=R[[Gamma_ac]]; the base-field non-R-torsion of Z0 is Conjecture3.4.1, not a proven result.",
+        "The actual Hida local branch R near the focal weight2 modular form has not been proven regular/flat, so O[[W,T]] is a TOY analytic chart, not a source-certified isomorphism.",
+        "Kolyvagin forces classical traced base Heegner P_K torsion; the equality of this Kummer observation to an actual augmentation of the Howard compact-Iwasawa class needs a verified Selmer control map.",
+        "CH Theorem4.5 needs two separately verified split-p Coleman J-adic orders for the ACTUAL chosen class; abstract nonzero big Heegner cohomology is insufficient.",
+        "Howard §3.4 proof Corollary3.4.3 ALREADY proves an injective WEIGHT-prime base-field extended Selmer specialization, 0→Htilde1(K,Tdagger)_P/P→Htilde1(K,V_Pdagger)→Htilde2(K,Tdagger)_P[P]→0. H2[P] is the cokernel. The unverified map is the simultaneous weight-plus-anticyclotomic Iwasawa/observed-Kummer control, NOT this base-field injection.",
+        "Conditional horizontal leading term: Howard base-K weight-control injection + exact Z0 weight2 p-stabilized classical P_K Kummer normalization (not yet verified) + Kolyvagin P_K torsion gives Z0 divisible by weight prime; Howard §3.4 Conj3.4.1 non-R-torsion and local DVR/separated module then imply finite POSITIVE leading weight order, not necessarily one.",
+        "Castella 2019 Thm6.5 Rem6.6 covers original weight2 p-OLD ordinary stabilization; hypotheses met on E234446a1 p11 K=-7 including distinct ordinary inertia chars and rho_bar|G_K irreduc C20. This removes previously conditional Z0/P_K normalization and establishes weight-prime divisibility via Howard published base-K injection."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/two_variable_heegner_specialization_controls.py",
+        "python3 -I -B research/proof_labs/castella_howard_weight_prime_gate.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/two_variable_heegner_specialization_controls.py",
+        "research/proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md",
+        "research/proof_labs/castella_howard_weight_prime_gate.py",
+        "research/proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md"
+      ],
+      "negative_control": "Exact F11[W,T]/(W,T)^5 toy classes W,T,T²,WT,W+T all have zero base and distinct tangent directions; Z=W specialization weight2 is identically zero despite big nonzero. M=A² base map projecting first summand kills a class outside ideal (W,T); M=A⊕A/(T) has nonunique T-derivative; two toy Coleman maps can have unrelated orders or both kill a nonzero class. IMPORTANT: noninjective M=A² toy projection is NOT a counterexample to Howard's source-proved base-field weight injection; it models only a different unverified combined Iwasawa-to-observed-Kummer map. Nonzero first horizontal derivative is NOT forced: Z0 could have weight order ≥2, could vanish identically if Howard's horizontal non-torsion conjecture fails, or critical-twist normalization to classical Heegner Kummer might not match. Euler (1−α^-1)^2=9 mod11 is unit: torsion classical Kummer maps to zero and does not signal exceptional-zero. Castella big-log explicit reciprocity is TWO VARIABLE P-ADIC and does not automatically supply both CH4.5 Coleman orders or original complex L''.",
+      "stop_condition": "Do not assert any actual weight or anticyclotomic first/second Heegner leading coefficient until localized Hida regularity, weight2 Selmer control, T-torsion-free Bockstein or canonical derived construction, and both Coleman J-orders are certified. If no such data, park the leapfrog and return to other proof laboratories. No original complex BSD without new comparison. Before attempting any new result, derive Iwasawa analogue of Howard's known base-field weight-control exact sequence, including whether H2/Tor modules obstruct simultaneous specialization. Check weight2 Z0/P_K equality and nonexceptional Euler factors in Howard's paper BEFORE promoting the conditional weight-divisibility lemma. Horizontal nontorsion §3.4 remains conjectural. Do not continue treating original weight2 Z0/P_K normalization or two-variable big-log law as missing; they are Castella source-proved. Next calculate actual big-log L_(p,ξ) anti J-orders, compare conjugate CH Coleman, or prove Howard horizontal nontorsion/finite weight graded order.",
+      "nonclaims": [
+        "The polynomial examples are exact TOY negative controls, not arithmetic evaluation of Howard's classes or Hida family.",
+        "Howard big non-Rinfinity-torsion says nothing by itself about the value or order of a specific weight-two class at joint/base augmentation.",
+        "No positive J-valuation, Bockstein regulator, complex L''(E,1)=0, Sha finiteness, or BSD theorem has been established.",
+        "Published Castella source-identified base weight divisibility does NOT establish nonzero Z0, derivative of order one, anticyclotomic J-adic order, or ORIGINAL complex L'' zero."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "deformation theory / singularity theory",
+          "kind": "validation_method",
+          "mechanism": "Use a two-variable associated graded tangent-cone model to split Hida weight and anticyclotomic directions and expose flatness, Tor and specialisation-kernel failure modes.",
+          "proof_boundary": "A toy regular F11 bivariate ring does not prove the actual local Hida branch is smooth or the global Iwasawa Selmer module is flat; no cohomological class or Coleman regulator was computed.",
+          "validating_test": "research/proof_labs/two_variable_heegner_specialization_controls.py",
+          "reference": "https://arxiv.org/pdf/1202.6358"
+        }
+      ]
     }
   ]
 }

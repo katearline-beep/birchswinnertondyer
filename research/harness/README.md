@@ -174,6 +174,20 @@ By the published Kolyvagin theorem, a non-torsion classical base Heegner point o
 python3 -I -B research/proof_labs/heegner_ring_class_tower_11.py
 ```
 
+## Session24 — leapfrog LF-009: two-variable Heegner tangent cone (unproved)
+
+Howard §3.3's big anticyclotomic Hida (Z_\infty) is non-R∞-torsion by published theorem, whereas Howard §3.4 non-R-torsion of base (Z_0) is **Conjecture 3.4.1**. From the classical torsion basepoint one cannot guess whether the first nonzero term of the big class is in weight W, anticyclotomic T, or a higher/mixed direction. [Session24 theorem-scope audit](../proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md) and [exact negative controls](../proof_labs/two_variable_heegner_specialization_controls.py) show toy (W,T,T^2,WT) all have zero base with incompatible weight-two specializations. Additional fail-closed tests reject noninjective base-control and T-torsion Bockstein assumptions and force **both** Coleman maps to be considered.
+
+Run `python3 -I -B research/proof_labs/two_variable_heegner_specialization_controls.py`.
+
+The toy coefficient ring F11[W,T]/(W,T)^5 is NOT the actual Howard module. Actual Hida regularity, Selmer control, any class leading term, two Coleman valuations, and original complex L'' comparison are still absent; no BSD proof.
+
+## Session24 C-0023 promoted source theorem, not speculative missing map
+
+[Castella 2019 TheoremA/6.5, Remark6.6 and TheoremB/5.3](../proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md) **ALREADY ESTABLISH** weight-two Howard base Z0=\((1-\alpha^{-1})^2\) classical Heegner Kummer and **two-variable p-adic Perrin–Riou big-log explicit reciprocity**. Our p11 ordinary unit root α≡5 gives multiplier square≡9 (unit); Kolyvagin forces classical P_K torsion, so Howard's base-K weight-control injection proves Z0 is WEIGHT-prime divisible. [Exact arithmetic source-checker](../proof_labs/castella_howard_weight_prime_gate.py). This does NOT establish nonzero derivative (Howard horizontal non-R-torsion Conjecture3.4.1), anticyclotomic J order, two CH4.5 Coleman coefficients or original complex L'' zero.
+
+Run: `python3 -I -B research/proof_labs/castella_howard_weight_prime_gate.py`.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
