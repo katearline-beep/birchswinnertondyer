@@ -67,3 +67,5 @@ Research emerged from human–AI exploration in October 2026. The code and docum
 **Session28:** [independent first-digit oracle and second-Bockstein construction contract](research/proof_labs/SESSION28_SECOND_BOCKSTEIN_AND_DIRECT_HEIGHT.md) removes shared division-polynomial denominators and makes the missing arithmetic T^3 presentation/lift/duality inputs explicit. No actual h2 or original complex BSD theorem is claimed.
 
 **Session29:** [direct first-height comparison and one-sided Selmer lemma](research/proof_labs/SESSION29_ONE_SIDED_SELMER_AND_HEIGHT_COMPARISON.md) uses the separately corroborated twist analytic input to define an exact three-class S2 domain **conditionally on that certificate**, without first bounding the positive Selmer dimension. No actual second-height value or original complex BSD theorem.
+
+Session30: [explicit arithmetic inputs for the second Bockstein](research/proof_labs/SESSION30_ARITHMETIC_CHARACTER_LIFTS.md): certified anticyclotomic Artin layers and five verified Kummer division torsors. These supply concrete character and torsor algebras; evaluated Galois actions, Selmer lifts and the actual second height remain open.

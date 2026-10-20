@@ -60,6 +60,21 @@ jobs:
           python -m pip install --only-binary=:all: --no-deps python-flint==0.9.0
       - name: Independent Arb twist derivative certificate on PARI coefficients
         run: python -I -B research/anticyclotomic_11/arb_twist_derivative.py /tmp/bsd-pari-coefficients-6000.txt
+      - name: Construct certified anticyclotomic layers and division polynomials
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -s 128000000 -q -f research/proof_labs/pari_anticyclotomic_artin_t3.gp > /tmp/bsd-artin-oracle.txt 2>&1
+          gp -q -f research/proof_labs/pari_kummer_11_torsors.gp > /tmp/bsd-kummer-oracle.txt 2>&1
+          if grep -qF '***' /tmp/bsd-artin-oracle.txt /tmp/bsd-kummer-oracle.txt; then
+            tail -30 /tmp/bsd-artin-oracle.txt
+            tail -30 /tmp/bsd-kummer-oracle.txt
+            exit 1
+          fi
+      - name: Compare every ideal Artin value and coefficient with independent arithmetic
+        run: python -I -B research/proof_labs/anticyclotomic_artin_t3.py /tmp/bsd-artin-oracle.txt
+      - name: Construct and verify five actual Kummer division torsors
+        run: python -I -B research/proof_labs/kummer_11_torsors.py /tmp/bsd-kummer-oracle.txt
 
   direct-height:
     name: Direct-coordinate global first-height oracle
