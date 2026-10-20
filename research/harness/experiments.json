@@ -577,6 +577,46 @@
           "reference": "https://annals.math.princeton.edu/2002/155-1/p09"
         }
       ]
+    },
+    {
+      "id": "EX-012",
+      "claim_ids": [
+        "C-0022"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does Howard's proven two-variable non-Rinfinity-torsion Z-infinity plus forced torsion of classical base P_K determine a first anticyclotomic Heegner derivative, or must we isolate weight and anticyclotomic tangent directions separately?",
+      "decisive_observation": "Howard 2012 §3.3 proves non-R∞-torsion of its Hida/anticyclotomic Z∞ but separately calls base-field non-R-torsion Conjecture3.4.1. Exact algebraic controls show Z=W can be nonzero over two-variable ring and vanish identically at weight2; Z=T,T²,WT have different first nonzero degrees. Vanishing Kummer observation can fail to lift to augmentation ideal absent injective cohomology control; T-torsion creates derivative ambiguity; two Coleman maps have different zeros.",
+      "dependencies": [
+        "Howard §3.3 theorem supplies a big class Z∞ over R∞=R[[Gamma_ac]]; the base-field non-R-torsion of Z0 is Conjecture3.4.1, not a proven result.",
+        "The actual Hida local branch R near the focal weight2 modular form has not been proven regular/flat, so O[[W,T]] is a TOY analytic chart, not a source-certified isomorphism.",
+        "Kolyvagin forces classical traced base Heegner P_K torsion; the equality of this Kummer observation to an actual augmentation of the Howard compact-Iwasawa class needs a verified Selmer control map.",
+        "CH Theorem4.5 needs two separately verified split-p Coleman J-adic orders for the ACTUAL chosen class; abstract nonzero big Heegner cohomology is insufficient."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/two_variable_heegner_specialization_controls.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/two_variable_heegner_specialization_controls.py",
+        "research/proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md"
+      ],
+      "negative_control": "Exact F11[W,T]/(W,T)^5 toy classes W,T,T²,WT,W+T all have zero base and distinct tangent directions; Z=W specialization weight2 is identically zero despite big nonzero. M=A² base map projecting first summand kills a class outside ideal (W,T); M=A⊕A/(T) has nonunique T-derivative; two toy Coleman maps can have unrelated orders or both kill a nonzero class.",
+      "stop_condition": "Do not assert any actual weight or anticyclotomic first/second Heegner leading coefficient until localized Hida regularity, weight2 Selmer control, T-torsion-free Bockstein or canonical derived construction, and both Coleman J-orders are certified. If no such data, park the leapfrog and return to other proof laboratories. No original complex BSD without new comparison.",
+      "nonclaims": [
+        "The polynomial examples are exact TOY negative controls, not arithmetic evaluation of Howard's classes or Hida family.",
+        "Howard big non-Rinfinity-torsion says nothing by itself about the value or order of a specific weight-two class at joint/base augmentation.",
+        "No positive J-valuation, Bockstein regulator, complex L''(E,1)=0, Sha finiteness, or BSD theorem has been established."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "deformation theory / singularity theory",
+          "kind": "validation_method",
+          "mechanism": "Use a two-variable associated graded tangent-cone model to split Hida weight and anticyclotomic directions and expose flatness, Tor and specialisation-kernel failure modes.",
+          "proof_boundary": "A toy regular F11 bivariate ring does not prove the actual local Hida branch is smooth or the global Iwasawa Selmer module is flat; no cohomological class or Coleman regulator was computed.",
+          "validating_test": "research/proof_labs/two_variable_heegner_specialization_controls.py",
+          "reference": "https://arxiv.org/pdf/1202.6358"
+        }
+      ]
     }
   ]
 }
