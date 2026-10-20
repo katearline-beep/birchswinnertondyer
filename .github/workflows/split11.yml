@@ -102,6 +102,8 @@ jobs:
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
         run: python -I -B research/methodology/local_global_transversality_11.py
+      - name: Castella published weight-two Howard Heegner unit-specialization and divisibility gate
+        run: python -I -B research/proof_labs/castella_howard_weight_prime_gate.py
       - name: Howard two-variable Hida and anticyclotomic jet falsification controls
         run: python -I -B research/proof_labs/two_variable_heegner_specialization_controls.py
       - name: Howard anticyclotomic ring class tower and Kolyvagin basepoint torsion gate
