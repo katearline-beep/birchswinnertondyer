@@ -936,6 +936,54 @@
           "reference": "https://wangjiuya.github.io/research/augmentation.pdf"
         }
       ]
+    },
+    {
+      "id": "EX-019",
+      "claim_ids": [
+        "C-0037",
+        "C-0038"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does global duality supply unrestricted residual T3 lifts while fixed ramification support retains a nontrivial obstruction space?",
+      "decisive_observation": "Under recorded residual-image/local inputs, central(-I,0), Chebotarev and Poitou-Tate imply absolute H2 localization injectivity. Local connecting classes vanish, so every supported residual class admits an unrestricted T3 lift. Five independent MW classes localize into at most two Kummer dimensions, giving supported H2 dimension at least3; its entire absolute inflation is zero.",
+      "dependencies": [
+        "C0007/20/33/35/36 residual GL2 image, actual anticyclotomic C11 disjointness, local no11-torsion at Sigma and five MW classes independent mod11; expert audit remains outstanding.",
+        "Milne ADT I Cor2.3, Thm4.10(a), Lemma9.3; Cartier dual includes cyclotomic determinant twist; number field and finite11-primary coefficients.",
+        "Unrestricted continuous finite-module lift existence permits unspecified finite auxiliary ramification; it gives no effective correction cochains, fixed-support solution, local Greenberg homotopies or integral compatibility."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/global_duality_support_controls.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md",
+        "research/proof_labs/global_duality_support_controls.py"
+      ],
+      "negative_control": "All13200 GL2 matrices test Cartier dual against omitted determinant twist. Identity scalar leaves nonzero H1(C11,F11). Synthetic T*I3 and T2*I3 complexes retain constrained first/second obstructions while their unconstrained targets erase them; five-to-two kernel bound is not exact dimension.",
+      "stop_condition": "Stop before calling unrestricted residual existence a supported Selmer lift. Reject the specialization if central scalar/disjointness or any local torsion input fails; no computation of arithmetic connecting classes or h2 is claimed.",
+      "nonclaims": [
+        "No evaluated arithmetic correction cochains or particular nonzero supported connecting class.",
+        "No supported Greenberg lift, E121 cocycle, integral Tate-module lift, genuine second height or full Selmer upper bound.",
+        "No original complex Lpp equality, analytic rank-four proof, original Sha finiteness, BSD theorem, claimed novelty or expert review. Local execution unavailable; Python control execution belongs to exact-head GitHub CI."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "nonabelian deformation theory and global duality",
+          "kind": "exact_math",
+          "mechanism": "The obstruction to lifting an actual finite Galois coefficient sequence is its connecting H2 class. Central-scalar H1 vanishing and Chebotarev eliminate the absolute dual kernel; local duality kills its local obstructions, proving unrestricted residual existence.",
+          "proof_boundary": "The same argument does not eliminate finite-Sigma H2 or impose Greenberg conditions. Its source has dimension at least3 even though absolute inflation is zero.",
+          "validating_test": "research/proof_labs/global_duality_support_controls.py",
+          "reference": "https://jmilne.org/math/Books/ADTnot.pdf"
+        },
+        {
+          "discipline": "formal methods abstraction refinement",
+          "kind": "validation_method",
+          "mechanism": "Track the exact forgetful map between supported and absolute cohomology rather than treating feasibility after removing constraints as a certificate for the constrained problem. Synthetic first/second-order complexes test this information loss.",
+          "proof_boundary": "Finite controls cannot prove global duality or construct arithmetic Selmer data; they detect coefficient-dual and support-erasure shortcuts only.",
+          "validating_test": "research/proof_labs/global_duality_support_controls.py",
+          "reference": "https://arxiv.org/pdf/1602.04998"
+        }
+      ]
     }
   ]
 }

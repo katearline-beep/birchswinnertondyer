@@ -235,3 +235,10 @@ python3 -I -B research/proof_labs/one_sided_selmer_control.py
 ```
 
 The Arb script requires python-flint==0.9.0. Its dependency-backed CI run uses PARI's independently generated 6000 coefficients. See the audit for the standalone command and analytic assumptions.
+
+
+## Session32 — unrestricted existence is weaker than supported Selmer feasibility
+
+[C0037/38 source deduction](../proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md) uses standard global duality and recorded residual/local inputs: every supported residual class has an unrestricted global T3 lift, allowing unspecified extra ramification. Yet supported H2 has dimension at least3 and its entire absolute inflation is zero. No actual correction cochains, specific nonzero Bockstein, supported Greenberg lift, integral upgrade or second height is supplied. Prioritize the actual finite-support local cone. Original complex BSD remains open; this is AI-assisted and not expert reviewed.
+
+Run: `python3 -I -B research/proof_labs/global_duality_support_controls.py` (stdlib exact algebra controls only).
