@@ -673,6 +673,50 @@
           "reference": "https://arxiv.org/pdf/1202.6358"
         }
       ]
+    },
+    {
+      "id": "EX-014",
+      "claim_ids": [
+        "C-0027",
+        "C-0028"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does Howard's universal-norm radical theorem kill the attempted divided-Heegner-norm regulator route, and can one genuinely nonzero second alternating derived height on the non-universal first radical test the proposed anticyclotomic 5→3→1 Selmer filtration?",
+      "decisive_observation": "Howard 1202.6343 Theorem4.2 EQUATES universal norms with S^(infty), the intersection of all derived-height radicals. Therefore nonzero base of ANY Howard norm-compatible divided class cannot witness a nonzero higher height, correcting Session25 LF010 prioritization. Under standard finitely generated Λ=Z11[[T]] control, Krull intersection forces nonzero tower z to have SOME finite T-order and nonzero base divided norm, but its pairing vanishes. In hypothetical exact full s+=4,s-=1, first anticyclotomic pairing is cross-only (max rank2); if v≠0, S2 dimension3. The second alternating form on dim3 has rank 0 or 2; ONE genuine nonzero h2(x,y) between exact non-universal S2 classes implies S3 dimension1 equal Howard's universal-norm line. Howard Conj4.4 predicts this filtration; nonzero h2 and exact full Selmer signature not established.",
+      "dependencies": [
+        "Howard 1202.6343 Theorem4.2 characterizes S(infty) as universal norms and kernels of all h(r); it requires exact source Selmer normalization matching Howard nonexceptional Greenberg weight2 class.",
+        "Finite generation of the chosen integral compact Iwasawa module M over Λ and its precise Tate-module lattice must be checked before using Krull intersection; Howard 1202.6358 Remark3.3.2 cites Nekovar rank1 for big extended Selmer Iwasawa.",
+        "Howard 1202.6343 Conjecture4.4 predicts dim S2=|s+-s-| and dim S3=1; these are conjectural, NOT proof of higher height nonzero.",
+        "Exact full base Selmer dimensions s+=4,s-=1 are not established (Sha11/upper bounds unproved); four positive rational points and one negative point are only LOWER bounds.",
+        "The BCLMN first cross height vector v mod11=(1,2,7,8) remains provisional and not shown equal to the normalized full Selmer h1, and finite-precision modular kernels are not exact S2 points.",
+        "Neither p-adic height or Selmer filtration alone proves ORIGINAL COMPLEX L''(E/Q,1)=0."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/howard_second_height_quotient_controls.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/howard_second_height_quotient_controls.py",
+        "research/proof_labs/SESSION26_UNIVERSAL_NORM_QUOTIENT_AND_SECOND_HEIGHT.md"
+      ],
+      "negative_control": "Second alternating 3x3 matrix identically ZERO leaves radical dimension3 (not1); ALL 11^3 possible F11 skew forms have rank0 or2. Universal norm is in EVERY derived-height kernel by Howard source, so can never witness nonzero pairing. A Laurent module with T invertible is non-f.g and allows infinite T division, showing Krull finite-order hypothesis matters. Provisional first height and unknown Selmer upper dimensions cannot be promoted.",
+      "stop_condition": "Do not spend research time proving nonzero base universal norm as a NONZERO higher regulator: Howard Thm4.2 rules that out. Require independently certified global h1, exact full Selmer dimensions and genuine exact S2 classes before attempting h2. Reject the 5→3→1 conjectural claim if second pairing zero or exact Selmer dims differ, and NEVER claim original complex BSD from p-adic heights alone.",
+      "nonclaims": [
+        "No actual second derived height h2 computed; the 3x3 alternating program is an exact toy matrix test, not Howard/CH cohomology.",
+        "Howard Conjecture4.4 and exact Selmer s+=4,s-=1 remain unproved; first h1 vector and normalization provisional.",
+        "Krull finite-order lemma does not find r, and even a nonzero base divided norm is a universal norm in every higher-height radical.",
+        "No original complex L''(E,1)=0, rank-four analytic theorem, Sha finiteness or full/general BSD result."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "commutative algebra and cohomological duality",
+          "kind": "validation_method",
+          "mechanism": "Krull intersection separates finite order from actual leading-coefficient computation, while universal-norm radical theorem directs the search to a quotient and 3x3 alternating matrix rank rather than the norm line.",
+          "proof_boundary": "Actual Selmer structure and first/second heights are not constructed by the toy matrix; source published theorem and exact rank hypothesis are separate inputs, and complex L'' bridge remains missing.",
+          "validating_test": "research/proof_labs/howard_second_height_quotient_controls.py",
+          "reference": "https://arxiv.org/pdf/1202.6343"
+        }
+      ]
     }
   ]
 }
