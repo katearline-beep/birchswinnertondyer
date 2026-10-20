@@ -65,3 +65,5 @@ Research emerged from human–AI exploration in October 2026. The code and docum
 **Ulmer proof-lab correction (Session20):** [source-audited Fermat map and global Frobenius rank computation](research/proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md) distinguishes ranks 2,3,7 over the prime constant fields from geometric ranks 3,7,25. Earlier prime-field labels were wrong and have been corrected. The original complex L'' remains open.
 
 **Session28:** [independent first-digit oracle and second-Bockstein construction contract](research/proof_labs/SESSION28_SECOND_BOCKSTEIN_AND_DIRECT_HEIGHT.md) removes shared division-polynomial denominators and makes the missing arithmetic T^3 presentation/lift/duality inputs explicit. No actual h2 or original complex BSD theorem is claimed.
+
+**Session29:** [direct first-height comparison and one-sided Selmer lemma](research/proof_labs/SESSION29_ONE_SIDED_SELMER_AND_HEIGHT_COMPARISON.md) uses the separately corroborated twist analytic input to define an exact three-class S2 domain **conditionally on that certificate**, without first bounding the positive Selmer dimension. No actual second-height value or original complex BSD theorem.

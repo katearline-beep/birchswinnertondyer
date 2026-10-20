@@ -767,6 +767,58 @@
           "reference": "https://arxiv.org/pdf/1610.08729"
         }
       ]
+    },
+    {
+      "id": "EX-016",
+      "claim_ids": [
+        "C-0031",
+        "C-0032"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Does direct BD-to-Mazur–Tate comparison plus certified twist analytic rank one construct three exact full-S2 classes without first proving the positive Selmer upper bound?",
+      "decisive_observation": "BD Thm2.18(4) directly identifies the MW first pairing with MT over K; BCLMN Eq15 fixes cross sign. Independent FLINT/Arb E1 balls reproduce the same 6000-term enclosure on PARI-matched coefficients. Accepting C0009 analytic inputs, GZK on twist OVER Q yields negative Q11 Selmer dimension1. Anti-equivariance then places exact Xj=Pj-(aj/a1)P1 in full S2 regardless of extra positive directions.",
+      "dependencies": [
+        "BD Thm2.18(4) and checked C0003/20/30 ordinary nonanomalous/component/Cartan hypotheses; same character and canonical ordinary splitting.",
+        "C0009 modularity, twist local factors, Mellin identity and all-n coefficient bound; FLINT/Arb0.9.0 numerical error guarantees and exact PARI coefficient digest.",
+        "Gross–Zagier–Kolyvagin analytic-rank-one theorem for the twist OVER Q, rational Selmer exact sequence and quadratic restriction/corestriction.",
+        "Exact a_i are canonical heights, not finite residues. Actual Kummer cocycles and Bockstein lifts not supplied; full positive dimension and original complex bridge remain open."
+      ],
+      "commands": [
+        "python3 -I -B research/anticyclotomic_11/arb_twist_derivative.py",
+        "python3 -I -B research/proof_labs/one_sided_selmer_control.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION29_ONE_SIDED_SELMER_AND_HEIGHT_COMPARISON.md",
+        "research/anticyclotomic_11/arb_twist_derivative.py",
+        "research/proof_labs/one_sided_selmer_control.py"
+      ],
+      "negative_control": "A signature(4,3) cross matrix preserves the measured four MW/R heights while preventing the proposed classes from lying in full S2. Extra POSITIVE directions do not obstruct when minus dimension1. A finite Sha can have 11-torsion despite zero Tate module. Arb rejects mutated coefficient digest and an inflated error ball crossing zero despite positive midpoint.",
+      "stop_condition": "Stop full-S2 interpretation if twist certificate or height normalization fails, or negative Selmer dimension1 is not established. Do not require positive bound merely to define U; do require it for full3-to1 claim. No finite approximate kernel, actual h2 or original BSD follows automatically.",
+      "nonclaims": [
+        "No independent human or expert review of the analytic certificate or source specialization.",
+        "No Sha[11] triviality, original E-Sha finiteness or full positive Selmer upper bound.",
+        "No explicit arithmetic cochains, D(T), x1 lifts or actual second pairing.",
+        "No implication proving original complex Lpp zero, rank-four leading coefficient or general BSD."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "validated numerics and computational metrology",
+          "kind": "validation_method",
+          "mechanism": "A separately maintained real-ball E1 implementation removes the shared handwritten gamma/log/E1 numerical pipeline while retaining the same analytic series and tail.",
+          "proof_boundary": "Arb guarantees numerical enclosures under its library assumptions, not modularity, GZK theorem or an original complex rank-four identity.",
+          "validating_test": "research/anticyclotomic_11/arb_twist_derivative.py",
+          "reference": "https://python-flint.readthedocs.io/en/latest/arb.html"
+        },
+        {
+          "discipline": "representation theory and bilinear algebra",
+          "kind": "exact_math",
+          "mechanism": "Conjugation anti-equivariance plus a one-dimensional negative FULL Selmer eigenspace makes a height-kernel recipe annihilate every class; positive dimensions can remain unknown.",
+          "proof_boundary": "Exact characteristic-zero lemma; finite matrices illustrate it only. Twist-side theorem and exact heights remain mathematical inputs, and no second pairing is computed.",
+          "validating_test": "research/proof_labs/one_sided_selmer_control.py",
+          "reference": "https://www.math.mcgill.ca/darmon/pub/Articles/Research/13.Derived-p-adic/paper.pdf"
+        }
+      ]
     }
   ]
 }

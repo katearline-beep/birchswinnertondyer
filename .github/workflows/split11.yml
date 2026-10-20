@@ -50,6 +50,8 @@ jobs:
         run: python -I -B research/anticyclotomic_11/point_prerequisites.py
       - name: Independent minimal affine denominator primitivity and all six polarization checks
         run: python -I -B research/anticyclotomic_11/independent_affine_ideal_and_polarization.py
+      - name: One-sided negative Selmer control and exact radical-domain countermodels
+        run: python -I -B research/proof_labs/one_sided_selmer_control.py
       - name: Source-defined second Bockstein lift and quotient controls
         run: python -I -B research/proof_labs/second_bockstein_lift.py
       - name: MST canonical 11-adic sigma integrality and published E37 control

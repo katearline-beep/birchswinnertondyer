@@ -225,3 +225,13 @@ It cannot certify local Kummer compatibility, analytic continuation, Satake/Eule
 python3 -I -B research/anticyclotomic_11/direct_coordinate_height_mod11.py
 python3 -I -B research/proof_labs/second_bockstein_lift.py
 ```
+
+## Session29 — direct height comparison and one-sided Selmer control
+
+[Source audit](../proof_labs/SESSION29_ONE_SIDED_SELMER_AND_HEIGHT_COMPARISON.md) identifies BD Thm2.18(4) directly on MW classes over K and the BCLMN minus convention. The new pinned FLINT/Arb oracle independently corroborates the old twist enclosure; accepting it, GZ–Kolyvagin on the TWIST OVER Q gives negative Q11 Selmer dimension1. This suffices to define a three-dimensional EXACT S2 subspace without a full positive Selmer bound. No arithmetic lifts/h2 values are supplied; finite Sha is not trivial Sha[11].
+
+```bash
+python3 -I -B research/proof_labs/one_sided_selmer_control.py
+```
+
+The Arb script requires python-flint==0.9.0. Its dependency-backed CI run uses PARI's independently generated 6000 coefficients. See the audit for the standalone command and analytic assumptions.
