@@ -38,3 +38,10 @@ jobs:
           grep -q '^PASS PARI C-0013 s2=4 E2=70 u=26' pari-sigma.log
           grep -q '^PASS PARI E37 p5 s2=19 u=6' pari-sigma.log
           grep -q '^NONCLAIM: independent sigma/E2 confirmation only' pari-sigma.log
+
+      - name: Exact twist modular-symbol control and focal local inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f -s 128000000 research/proof_labs/pari_twist_selmer_gate.gp 2>&1 | tee pari-selmer34.log
+          python3 -I -B research/proof_labs/twist_primary_selmer_gate.py --pari pari-selmer34.log

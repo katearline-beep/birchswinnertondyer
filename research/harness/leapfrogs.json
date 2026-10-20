@@ -654,6 +654,40 @@
           "evidence": "C0039 actual finite Kummer kernel and independent PARI agree. Conditional C0040 detects beta_G(R) nonzero. C0041 proves nonconstructive one-prime killing for one H2 class; q3389 passes only the known-MW test. Continue toward actual constrained cochains."
         }
       ]
+    },
+    {
+      "id": "LF-018",
+      "experiment_id": "EX-021",
+      "title": "Rank-one twist primary arithmetic to residual Selmer lift existence",
+      "known_baseline": "C0032 supplies a negative rational Selmer line under accepted twist nonvanishing, but finite Sha may retain11-torsion; no full negative mod11 bound exists.",
+      "missing_arrow": "Zhang applicability is source-audited but normalized valuation is unproved; Sakamoto provides an alternative exact delta3389 criterion whose focal value remains uncomputed.",
+      "hypothetical_bridge": "Compute the twist one-prime Kurihara number exactly via sparse original minus modular symbols and conductor7 twisting; its nonvanishing gives the residual negative line, then finite duality gives first-stage survivors.",
+      "if_then_statement": "IF the twist has Sha11=0 and the full residual negative Selmer line is R THEN the three height-kernel MW classes survive the first finite Selmer Bockstein without a positive upper bound.",
+      "would_unlock": "A residual integral first-stage existence gate closer to h2, without assuming away the difference between finite Sha and trivial Sha11.",
+      "unverified_dependencies": "Nonsquarefree theorem hypotheses, normalized valuation, first-height finite comparison and actual arithmetic cochains remain explicit obligations.",
+      "negative_control": "A finite Sha group with11-torsion enlarges residual Selmer while leaving rational corank one. Real near-integer intervals do not certify a prime-adic unit.",
+      "next_decisive_test": "Use a sparse/eclib curve-specific modular-symbol implementation to compute exact delta3389; certify period-unit conventions and independently verify the transcript before any Selmer upgrade.",
+      "kill_criterion": "No further blind full-space PARI allocations after timeout/stack overflow. A zero delta is inconclusive; missing exact symbol or valuation leaves the residual bound open.",
+      "source": "https://math.mit.edu/~wz2113/math/online/Kconj.pdf",
+      "test_path": "research/proof_labs/twist_primary_selmer_gate.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No new negative residual bound, actual correction, second height or original complex BSD implication is presumed.",
+      "decision_log": [
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Issue68 and this planned manifest predeclare the source and valuation gates before new arithmetic."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "C0042/43 source gates and exact small-curve controls pass. Focal delta is UNCOMPUTED after resource failures; no Sha11 inference. Shift from numerical reconstruction to a one-prime exact modular-symbol certificate."
+        }
+      ]
     }
   ]
 }
