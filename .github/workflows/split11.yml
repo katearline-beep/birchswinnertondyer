@@ -102,6 +102,12 @@ jobs:
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
         run: python -I -B research/methodology/local_global_transversality_11.py
+      - name: Howard exact Up universal norm and zero weight-two base augmentation
+        run: python -I -B research/proof_labs/howard_base_augmentation_gate.py
+      - name: Howard trivial C10 norm and cohomological unique T division falsifiers
+        run: python -I -B research/proof_labs/howard_bockstein_exact_sequence_gate.py
+      - name: Divided Howard strict Greenberg local quotient preservation gates
+        run: python -I -B research/proof_labs/howard_divided_greenberg_local_gate.py
       - name: Castella published weight-two Howard Heegner unit-specialization and divisibility gate
         run: python -I -B research/proof_labs/castella_howard_weight_prime_gate.py
       - name: Howard two-variable Hida and anticyclotomic jet falsification controls
