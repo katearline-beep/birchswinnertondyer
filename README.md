@@ -12,6 +12,8 @@ We investigate specific elliptic curves and the boundary between numerical evide
 
 **Proved source-level advancement (Session24):** [Castella 2019 weight-two theorem plus Howard base-K control force Hida WEIGHT-prime divisibility of the original curve's big base Heegner class](research/proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md); the two-variable p-adic reciprocity law already exists. A nonzero higher derivative, the two Coleman J-orders and the original COMPLEX L'' comparison are still open.
 
+**Session25 source-derived construction:** [nonzero unique T-divided Howard **strict Greenberg Iwasawa** class on original rank4 E](research/proof_labs/SESSION25_DIVIDED_HEEGNER_GLOBAL_COHOMOLOGY.md), using Howard deep trivial-character nonvanishing, exact norm and Galois-cohomology local LES. Its **base projection could still vanish**; no nonzero higher regulator, complex L'' or BSD theorem. Leapfrog LF-010 tests base nonvanishing and two Coleman coefficients.
+
 ## Start here
 
 **Session21 verified theorem scope:** [Castella–Hsieh 433a1 rank-two control and original-rank4 Theorem4.1 applicability](research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md) is now part of the source-checked proof lab. The derived-height filtration on focal E/p11/K=-7 exists **by published theorem**, but TheoremA/B nonzero-Kato criterion does not apply there, and the needed global Iwasawa class/complex L'' comparison are missing.

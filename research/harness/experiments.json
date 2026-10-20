@@ -625,6 +625,54 @@
           "reference": "https://arxiv.org/pdf/1202.6358"
         }
       ]
+    },
+    {
+      "id": "EX-013",
+      "claim_ids": [
+        "C-0024",
+        "C-0025",
+        "C-0026"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Can Howard's exact norm relations, the Kolyvagin-torsion weight-two base Heegner point, and the trivial ring-class torsion-character deep-level nonvanishing yield a nonzero canonical T-divided Iwasawa class that retains EVERY strict Greenberg local condition on the original rank-four curve?",
+      "decisive_observation": "Howard Prop2.3.1 plus §3.3 prove pr_K(Z∞)=U11 X1, not X1. Castella weight2 specialization plus Kolyvagin force pr_K(weight2 Z∞)=0. Howard Cor3.1.2 at trivial torsion C10 character guarantees NONZERO projected X_11^n at sufficiently high n; nonzero C10 norm implies the weight2 tower z≠0. Integral Shapiro and LES 0→TpE⊗Λ --T→TpE⊗Λ→TpE→0 with H0(K,TpE)=0 give UNIQUE nonzero T-division z=Tz1. At both v|11 Howard nonexceptional α11≡5 implies H0(Kv,F−TpE)=0, making local quotient T-injective; at v∤11 inertia acts trivially on Λ and invariant vectors lift, making H1(Iv,A) T-injective. Thus z1 lies in strict Greenberg Iwasawa Selmer, but pr_K(z1) remains unknown.",
+      "dependencies": [
+        "Howard Proposition2.3.1 applies to first and all higher 11-power conductors and his §3.3 normalizes Z_s with U11^(−t). Class number K=-7 is1, hence H1=K; source maps are cited, not independently constructed.",
+        "Castella Theorem6.5 Remark6.6 at wt2 p-old identifies X1 with (1−α11^-1)^2 Kummer(P_K); Kolyvagin forces P_K torsion for rank E(K)>=4; residual irreducible over GK and nonexceptional α verified previously.",
+        "Howard Theorem3.1.1/Cor3.1.2 applies to EVERY torsion group character, in particular trivial C10, for the weight2 specialization. Norm/corestriction of a nonzero trivial projection is nonzero, yielding nonzero z at sufficiently deep anticyclotomic level.",
+        "Integral Tate lattice/commensurable p-stabilized realization, canonical Shapiro and Galois cohomology LES provide T injectivity since H0(K,T11E)=0; do not silently replace integral Λ with complete Q11[[T]] which erases nontrivial finite-order characters.",
+        "Howard Definition2.4.2 and Proposition2.4.5 impose strict Greenberg local conditions. At v|11 ordinary F− quotient has zero invariants since α mod11=5; away from 11 inertia acts trivially on Λ and invariants lift. Local LES shows divided z1 preserves Greenberg conditions."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/howard_base_augmentation_gate.py",
+        "python3 -I -B research/proof_labs/howard_bockstein_exact_sequence_gate.py",
+        "python3 -I -B research/proof_labs/howard_divided_greenberg_local_gate.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/howard_base_augmentation_gate.py",
+        "research/proof_labs/howard_bockstein_exact_sequence_gate.py",
+        "research/proof_labs/howard_divided_greenberg_local_gate.py",
+        "research/proof_labs/SESSION25_HOWARD_ZERO_AUGMENTATION_AUDIT.md",
+        "research/proof_labs/SESSION25_DIVIDED_HEEGNER_GLOBAL_COHOMOLOGY.md"
+      ],
+      "negative_control": "Wrong norm renormalization gives X1 instead of actual Up X1 and is rejected for nonzero samples. Nontrivial torsion-character component can be nonzero but traces to zero under C10 corestriction, so the TRIVIAL projector in Howard Cor3.1.2 is essential. Deliberate T-torsion in truncated F11[T]/T^6 makes division nonunique, unlike actual H0(K,TpE)=0 LES. At split11 exceptional alpha=1 local H0 appears; away from11 a hypothetical inertia-twisted Λ prevents invariant lifting. First Coleman J1 is automatic from zero base, not nonzero first coefficient or higher Selmer height.",
+      "stop_condition": "Do not equate nonzero norm-compatible z1 with nonzero base pr_K(z1), nor with an actual higher-height Selmer regulator or a nonzero Coleman first coefficient. Source-match the local/compact Iwasawa lattices and both Coleman normalizations; then PROVE exact first nonzero base augmentation order or compute its absence. Park any complex-BSD claim without an independent complex Taylor comparison.",
+      "nonclaims": [
+        "No Heegner class coordinate, first nonzero base-derived Selmer class, or exact J-order computed; nonzero inverse-limit strict Greenberg Selmer z1 may have zero base projection.",
+        "No nonzero CH higher height, two Coleman Taylor coefficient evaluations, original complex L''(E,1)=0, Sha finiteness or general BSD theorem.",
+        "Code uses exact finite-field/scalar NEGATIVE-CONTROL MODELS while corestriction, vertical nonvanishing and cohomology LES are cited published/standard theorems, not independently proved by scripts."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "homological algebra and deformation theory",
+          "kind": "validation_method",
+          "mechanism": "Use long exact sequences from T multiplication on integral Iwasawa coefficient modules and zero local invariants to construct unique divided global classes and propagate Greenberg local conditions without guessing Taylor coefficients.",
+          "proof_boundary": "Homological exactness gives nonzero inverse-limit Selmer division, not a nonzero base projection, exact augmentation order, nonzero derived height or original complex L-function comparison. Finite-field toy modules are falsification aids only.",
+          "validating_test": "research/proof_labs/howard_bockstein_exact_sequence_gate.py",
+          "reference": "https://arxiv.org/pdf/1202.6358"
+        }
+      ]
     }
   ]
 }

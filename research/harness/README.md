@@ -188,6 +188,18 @@ The toy coefficient ring F11[W,T]/(W,T)^5 is NOT the actual Howard module. Actua
 
 Run: `python3 -I -B research/proof_labs/castella_howard_weight_prime_gate.py`.
 
+## Session25 — nonzero canonical divided Heegner Greenberg Iwasawa class (not BSD)
+
+[Howard exact p-power norm and vanishing base](../proof_labs/SESSION25_HOWARD_ZERO_AUGMENTATION_AUDIT.md) gives `pr_K Z∞=U11 X1`, hence the **weight2 base class is ZERO** from Castella/Kolyvagin. [Source-checked divided class](../proof_labs/SESSION25_DIVIDED_HEEGNER_GLOBAL_COHOMOLOGY.md) uses Howard's NONZERO DEEP TRIVIAL C10 projector, integral compact-Iwasawa Shapiro, global and local Galois cohomology long exact sequences, split11 ordinary F− H0=0 and inertia-unramified-away11 invariant-lifts to obtain a **UNIQUE NONZERO T-DIVIDED norm-compatible strict Greenberg Iwasawa class z1** on original E at p11,K=-7. That is a real source-dependent inverse-limit Selmer construction, not a proof of nonzero **base** pr_K(z1), actual two CH Coleman leading coefficients, original COMPLEX L''(E,1) or BSD. Tests:
+
+```bash
+python3 -I -B research/proof_labs/howard_base_augmentation_gate.py
+python3 -I -B research/proof_labs/howard_bockstein_exact_sequence_gate.py
+python3 -I -B research/proof_labs/howard_divided_greenberg_local_gate.py
+```
+
+Source theorem, Shapiro/LES, integration of the p-stabilized lattice and local exact sequences are proof inputs; toy finite models only test dangerous shortcuts. LF-010/EX-013 tracks the still-missing actual first nonzero BASE derived class and BOTH Coleman terms.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
