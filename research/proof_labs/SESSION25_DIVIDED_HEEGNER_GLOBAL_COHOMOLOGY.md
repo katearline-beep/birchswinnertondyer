@@ -71,3 +71,68 @@ The [source-hypothesis/trivial-character exact verifier](howard_bockstein_exact_
 **Kill:** If local-quotient \(T\)-torsion prevents Selmer condition propagation, park the derived **Selmer** claim but retain the genuine global cohomology division. If the divided class is zero at base, repeat the controlled global cohomology division only if precise augmentation control and nontriviality remain; never assert first-order nonvanishing without observing it. If the source weight-two projector for the trivial \(C_{10}\)-character has an overlooked local normalization, correct/withdraw the NONZERO class claim.
 
 **Zero proof-status changes:** No proof of exact analytic rank four, original complex \(L''(E/\mathbb Q,1)=0\), \(\Sha\) finiteness, BSD leading term or general BSD.
+
+
+---
+
+## Session25 source/LES upgrade C-0026 — the first divided class DOES preserve strict Greenberg local conditions
+
+The prior audit stated Selmer local condition preservation as the next unproved test. That test **can be closed directly from Howard's published Definition2.4.2/Proposition2.4.5**, the unramified-away-from-11 nature of the anticyclotomic tower and *two short cohomology long exact sequences*. This does **NOT** prove nonzero base projection or a derived regulator.
+
+Howard **Definition2.4.2** defines strict Greenberg local condition on a module \(A\):
+
+- \(v\mid11\): \(\ker(H^1(K_v,A)\to H^1(K_v,F^-A))\), with ordinary rank-one unramified quotient \(F^-\).
+- \(v\nmid11\): \(\ker(H^1(K_v,A)\to H^1(I_v,A))\), where \(I_v=\operatorname{Gal}(\overline{K_v}/K_v^{\rm unr})\).
+
+Howard **Proposition2.4.5**, since \(N\) and \(\operatorname{disc}K=-7\) are coprime, guarantees the \(X_{11^n}\) lie in strict Greenberg Selmer **without multiplying by a further \(\lambda\)**. Weight-two specialization respects these local conditions (Howard Lemma2.4.4), as do the source's ordinary \(U_{11}\)-renormalization and corestriction.
+
+Let \(A=\Lambda^\#\widehat\otimes T_{11}E\), \(T=\gamma-1\), \(z=Tz_1\) the canonical global division proved above. We now show \(z_1\) preserves all strict Greenberg conditions **at the level of global cohomology**.
+
+### At BOTH \(v\mid11\): no quotient invariants
+
+Use the exact coefficient sequence
+\[
+0\to F^-A\xrightarrow{T}F^-A\to F^-T_{11}E\to0.
+\]
+The ordinary rank-one quotient has unramified Frobenius value \(\alpha_{11}\equiv5\pmod{11}\), which is **not 1**. Hence
+\[
+H^0(K_v,F^-T_{11}E)=0
+\]
+at **each** of the two split-11 completions, in agreement with Howard Lemma2.4.4. The long exact sequence therefore makes multiplication by \(T\) injective on \(H^1(K_v,F^-A)\). Now \(z\) is already strict Greenberg, so its localization in that quotient is zero. As \(z=Tz_1\),
+\[
+0=\operatorname{loc}_{F^-}(z)
+ =T\,\operatorname{loc}_{F^-}(z_1)
+\quad\Longrightarrow\quad
+\operatorname{loc}_{F^-}(z_1)=0.
+\]
+
+### At EVERY finite \(v\nmid11\): inertia invariants lift
+
+The tower \(D_\infty/K\) is **unramified away from 11**. Thus \(I_v\) acts trivially on the Iwasawa \(\Lambda\)-coefficient factor. If \(a\in(T_{11}E)^{I_v}\), then its **constant-coefficient lift** \(a\otimes1\in A^{I_v}\) is invariant. Consequently
+\[
+H^0(I_v,A)\longrightarrow H^0(I_v,T_{11}E)
+\]
+is SURJECTIVE. The long exact sequence for \(0\to A\xrightarrow{T}A\to T_{11}E\to0\) then makes \(T\) injective on \(H^1(I_v,A)\), **even if local multiplicative inertia on \(T_{11}E\) is nontrivial**. Because \(z\) is unramified at \(v\),
+\[
+0=\operatorname{res}_{I_v}(z)
+=T\,\operatorname{res}_{I_v}(z_1)
+\quad\Longrightarrow\quad
+\operatorname{res}_{I_v}(z_1)=0.
+\]
+This includes the two bad-conductor prime types \(v\mid2\) and \(v\mid117223\). Local Frobenius action on \(\Lambda\) may be nontrivial, but INERTIA acts trivially; only the latter is needed.
+
+Therefore the unique nonzero divided global Iwasawa cohomology class from C-0025 is in fact a **nonzero divided strict Greenberg Iwasawa class**
+\[
+\boxed{0\ne z_1\in
+\operatorname{Sel}_{\mathrm{Gr,Iw}}(D_\infty/K,T_{11}E)
+\otimes_{\mathbb Z_{11}}\mathbb Q_{11},
+\qquad T z_1=z.}
+\tag{25.3}
+\]
+Here \(\operatorname{Sel}_{\mathrm{Gr,Iw}}\) denotes the norm-compatible classes in global \(H^1_{\rm Iw}\) satisfying the above Howard **strict Greenberg** conditions at every place; no identification with a *higher derived base-field Selmer point* is claimed.
+
+**Independence / base caveat:** This divided class is **nonzero in the inverse-limit Selmer group**, but its base \(\operatorname{pr}_K(z_1)\) may equal zero. Thus there is **no** established nonzero \(h^{(r)}\), no actual Coleman coefficient in \(J/J^2\), no full algebraic rank of \(E(K)\) certified, and no original complex BSD implication. The next high-value task is to determine whether \(\operatorname{pr}_K(z_1)\ne0\). If zero, the same *global and local* argument provides a further canonical division (provided integral/source compatibility remains), but **the first positive exact order remains unproved**. A finite nonzero order additionally needs a precise separatedness or rank-one/flatness statement for this weight-two inverse-limit Selmer module.
+
+[Exact arithmetic/logic controls](howard_divided_greenberg_local_gate.py) verify split-11 \(\alpha\ne1\), unipotent-multiplicative inertia invariants lifting at primes away from11, and adversarial countermodels with exceptional \(\alpha=1\) or \(\Gamma\)-ramified inertia. They do NOT implement Galois cohomology. The proof consists of the two standard LES applications plus Howard's **published** local Selmer statement, and requires no conjectural Sha finiteness.
+
+**Remaining proof obligations:** Determine actual first nonzero augmentation graded/base class; derive source-normalized pair of Coleman \(J\)-leading coefficients for it using Castella/CH; ensure weight-two lattice identifications and local comparison match the exact conventions; and prove a novel noncircular original complex \(L''(E/\mathbb Q,1)\) bridge. These remain formidable open questions.
