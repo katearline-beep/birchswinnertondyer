@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "review_id": "WPR-2026-10-19-15",
+  "reviewed_on": "2026-10-19",
+  "next_due_on": "2026-10-26",
+  "reviewer_type": "ai_assisted_unreviewed",
+  "review_kind": "theorem_first_proof_laboratory_and_whole_problem_reorientation",
+  "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
+  "target_curve": "234446.a1",
+  "goal_general": "For every elliptic curve over Q prove equality of Mordell–Weil rank and complex L-function order of vanishing, and the full normalized leading coefficient formula with Sha finiteness.",
+  "goal_specific": "For E=234446.a1, known algebraic rank four, establish exact complex L''(E,1)=0 and nonzero fourth derivative to prove exact analytic rank four; subsequently address Sha finiteness and BSD leading coefficient.",
+  "status_flags": {
+    "general_BSD_proved": false,
+    "exact_complex_Lpp_zero_proved": false,
+    "analytic_rank_four_proved": false,
+    "Sha_finiteness_for_E_proved": false,
+    "full_BSD_leading_coefficient_proved": false,
+    "new_bridge_to_complex_Lpp_proved": false,
+    "independently_human_reviewed": false
+  },
+  "claim_ids_audited": [
+    "C-0001",
+    "C-0002",
+    "C-0003",
+    "C-0004",
+    "C-0005",
+    "C-0006",
+    "C-0007",
+    "C-0008",
+    "C-0009",
+    "C-0010",
+    "C-0011",
+    "C-0012",
+    "C-0013",
+    "C-0014",
+    "C-0015",
+    "C-0016",
+    "C-0017",
+    "C-0018",
+    "C-0019",
+    "C-0020",
+    "C-0021",
+    "C-0022",
+    "C-0023",
+    "C-0024",
+    "C-0025",
+    "C-0026",
+    "C-0027",
+    "C-0028"
+  ],
+  "reviewed_prs": [
+    "#24",
+    "#26",
+    "#27",
+    "#28",
+    "#29",
+    "#31",
+    "#33",
+    "#34",
+    "#35",
+    "#37",
+    "#38",
+    "#39",
+    "#40",
+    "#43",
+    "#44",
+    "#46",
+    "#47",
+    "#48",
+    "#50",
+    "#52"
+  ],
+  "previous_review_id": "WPR-2026-10-19-14",
+  "mathematical_breakthrough_since_previous": "NO novel theorem toward original complex L''(E/Q,1)=0, complex analytic rank4, Sha finiteness or general BSD. Substantive CORRECTION C-0027: Howard Derived p-adic heights Theorem4.2 equates universal-norm subspace with intersection of ALL derived-height radicals. Hence any base image of the Session25 norm-compatible divided Heegner class is automatically orthogonal to every derived-height pairing and CANNOT witness nonzero regulator, contrary to prior LF010 practical goal. Under standard f.g Λ Greenberg/Iwasawa and exact lattice/LES control, Krull intersection formally gives a FINITE positive T order and nonzero base divided norm, but it is STILL radical; no T order computed. C-0028: Howard Conjecture4.4 predicts 5->3->1 in CONDITIONAL exact Selmer eigenspace s+=4,s-=1. Symmetric conjugation-odd h1 cross block has rank2 IF nonzero; alternating h2 on resulting dim3 radical has rank0 or2, so a single TRUE nonzero second derived pairing between two exact non-universal radical classes forces S3 dim1 equal universal-norm line. No actual second height, exact full Selmer eigendims or original complex comparison established.",
+  "new_proven_bridge_evidence": [],
+  "evidence_classes": [
+    {
+      "category": "finite_computation",
+      "statement": "C-0001/2 exact local 11-adic logarithms and PARI corroboration; not global derived heights."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0003 Agboola–Castella bound requires currently unproved 11-primary Sha finiteness."
+    },
+    {
+      "category": "existing_algebraic_theory",
+      "statement": "C-0004 classical 11-Selmer quadratic decomposition, no computed upper bound."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0006 positive enclosure for the -7 twist derivative with explicit analytic assumptions, no external mathematical peer review."
+    },
+    {
+      "category": "hypothesis_and_method_audit",
+      "statement": "C-0007/8 local Tate and cyclotomic ring checks, rejection of false integral vanishing and circular Mazur–Tate implication."
+    },
+    {
+      "category": "numerical_evidence",
+      "statement": "PARI second derivative of original E shrinks with precision; this is not an exact zero."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0009 improves -7 twist derivative interval to (34.1691,34.1750) using 6,000 exact-rational terms and all-coefficient PARI cross-check; original L''(E,1) unaffected."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0011 norm-Euclidean ideal and integral division polynomial checks yield provisional mod-11 global anticyclotomic height residues, with independent scaling tests but without external Sage or expert audit."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0012 canonical sigma integrality at p11 from exact Q-coefficient polynomial, E37/p5 published cross check, two-digit global anticyclotomic heights and six distinct-input identities. Not an independent external height implementation nor a complex L'' result."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0013 exact t23 Mazur–Tate integrality constraint and published E37/p5 second-digit control; conditional full BCLMN global height digits modulo 1331 across ten exact quadratic-field points, six mixed bilinear sums, ten primitive denominator ideals and stale-c negative control."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0014 exact DVR linear algebra conditional on still-provisional BCLMN first-height digit: unit minor 35 mod1331, saturated rank-two common kernel, modular frame and negative determinant/scale controls."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0015: Castella–Hsieh 2022 Theorem A nonzero generalized Kato class forces Selmer dimension 2 under all hypotheses; known rank4 gives ≥4, so the same class must vanish if Theorem A applies. Our current K=-7 odd-inert condition fails. Separate CH Theorem4.1/4.5 arbitrary-rank derived-height scope."
+    },
+    {
+      "category": "published_theorem",
+      "statement": "C-0016: Ulmer 2002 independently published BSD/rank p^n or p^n−2 theorem over Fp(t) for d=p^n+1, yielding the selected ranks 3,7,25. The repository's finite-fibre counts are not a proof of any global theorem."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0016 local-fibre enumeration and independent Legendre character-sum traces agree, bad fibres excluded and Hasse bounds checked; p5 d6 vs d26 have identical F5 rational local counts despite distinct theorem-supplied global ranks."
+    },
+    {
+      "category": "provisional_computational_certificate",
+      "statement": "C-0017 exact integral Ulmer Fermat rational-map polynomial identity, Gamma order d^2, characteristic p point controls, and theorem-dependent global Fd/Gamma P2 Frobenius factor with prime-field/geometric rank correction. Published Tate and Jacobi eigenvalue conclusions are NOT re-proved."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0019 source-audited CH (2022) Thm4.1 gives derived-height filtration on focal rank4 E at p11 K=-7 with Nminus=1, but ThmA/B odd-inert nonvanishing not applicable. CH Theorems A+B if fully met imply theta order2 gives Sel dimension2, incompatible with rank>=4."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0019 direct elliptic finite-field counts E433a1 give a5=a11=-4, Frob5 charpoly mod11 irreducible, q433 inert in K=-7, p11 split, Delta=-433 and mod11 ramification at q433; theta 88T2 mod121 is published not independently computed."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "Howard Hypothesis1.0.1 ordinary Heegner Hida/extended Selmer Euler-system construction has independently checked focal E/K entry hypotheses, including p∤6N, Heegner ideal and absolutely irreducible residual representation. Precise specialization to CH compact anticyclotomic cohomology and two Coleman image J-orders remain unverified."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "Independent exact affine and Legendre point counts on E234446a1 at 11,23,43 produce a11=-6,a23=-6,a43=-4, K splits primes 23/43 and mod11 Frobenius discriminants 10 nonsquare,9 nonzero square, proving absolute irreducibility even over GK by Galois descent."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0021 Kolyvagin-Darmon Thm3.21 and Gross–Zagier force classical base Heegner point torsion and base-change L'(E/K,1)=0 from rank E(K)>=4 and classical Heegner splitting; Howard §3.3 already constructs anticyclotomic extended Selmer Z∞, non-R∞-torsion. Neither theorem proves original complex L''(E/Q,1)."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0021 independently Hensel-lifted split roots of omega²-omega+2 at 11^n, CRT ratio witnesses for Pic(O_11^n) cyclic order 10*11^(n−1), primitive root 2 and C10 idempotent; ordinary alpha11=12721 mod14641 with 1-alpha^-1≡3 mod11."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0022 exact toy two-variable F11 polynomial specializations and jets plus noninjective augmentation-control counterexample, T-torsion derivative ambiguity, and two independently vanishing Coleman-map toy linear outputs. This is only logical falsification, not elliptic arithmetic."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "Howard §3.3 establishes non-R∞-torsion of two-variable anticyclotomic Hida Heegner class; Howard §3.4 Conj3.4.1 treats base Z0 non-R-torsion as conjectural. CH Theorem4.5 needs BOTH anticyclotomic local Coleman J-valuation hypotheses. Kolyvagin classical P_K torsion does not determine a two-variable tangent direction."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0023 Castella 2019 Thm6.5 Rem6.6 for ordinary p-stabilized weight2 plus Howard source base-K Selmer injection and Kolyvagin torsion prove localized WEIGHT-prime divisibility of Z0 for focal rank4 E. Castella Thm5.3 already supplies two-variable p-adic big-log explicit reciprocity, not complex Hasse-Weil Taylor comparison."
+    },
+    {
+      "category": "existing_algebraic_theory",
+      "statement": "C-0024–26 Howard exact p-power norm relation and deep trivial-C10 character nonvanishing plus Castella/Kolyvagin torsion, integral Shapiro/Galois LES and Howard strict Greenberg conditions imply a nonzero unique T-divided GLOBAL IWASAWA GREENBERG class for E234446a1,p11,K=-7; no nonzero BASE Selmer class shown."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0024–26 exact modular U11 scalar norm controls, C10 projection/trace tests rejecting nontrivial-character norm, local alpha11=5 vs exceptional1 and local inertia invariants, and T-torsion truncation negative controls. Scripts do NOT independently calculate Galois classes or prove source theorems."
+    },
+    {
+      "category": "conditional_published_theorem",
+      "statement": "C-0027 Howard 1202.6343 Theorem4.2 universal norm=intersection of all derived height radicals: base norm projection cannot witness nonzero higher regulator. Krull intersection finite T-order requires standard f.g integral Λ module and exact source Greenberg lattice."
+    },
+    {
+      "category": "hypothesis_and_method_audit",
+      "statement": "C-0028 Howard Conjecture4.4 is UNPROVED, predicts S2 dimension |s+-s-|, S3 dimension1. Conditional full s+=4,s-=1 and nonzero first mixed height give 3-dimensional S2. A 3x3 alternating h2 has rank0 or2; one genuine nonzero pair would force S3=1, zero matrix falsifier. All input numerics remain provisional."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "C-0028 all 11^3 skew 3x3 forms over F11 have rank0 or2, a conditional cross 5x5 first form has rank2 and positive-only radical3, and zero second form explicitly stays radical3; not a computation of actual higher Galois derived heights."
+    }
+  ],
+  "deepest_open_implication": "UNCHANGED: no noncircular arrow from independently known rank-four rational points, CH generalized Kato/derived Selmer structures, Ulmer positive-characteristic Frobenius geometry, or our provisional anticyclotomic heights to the exact ORIGINAL COMPLEX L''(E,1)=0; Sha and BSD leading coefficient separately unresolved.",
+  "tracks": [
+    {
+      "track": "H1",
+      "decision": "active_prioritized",
+      "last_evidence": "C-0027 source correction: Howard derived heights Thm4.2 says universal norms are in intersection of ALL derived-height radicals. Session25 nonzero divided Greenberg Iw class exists but its base, even if nonzero, CANNOT be a nonzero derived regulator. C-0028 conditional s+=4,s-=1, nonzero source-normalized h1 => dim S2=3; nonzero alternating h2 => dim S3=1 conjectural pattern.",
+      "missing_bridge": "Need full Selmer s+/s- exact dimension, independently verified FULL BCLMN global first pairing and proof equal Howard/CH h1, two EXACT NON-universal S2 classes, true nonzero second Bockstein h2, and independent original COMPLEX L'' theorem. Universal norms are necessarily height-radical.",
+      "falsifier": "If true first mixed height vanishes or exact Selmer dimensions differ, conditional 5->3->1 fails; if second alternating pairing all zero, S3 still 3 not1. Evaluating a divided universal norm cannot prove h2 nonzero by Howard Theorem4.2.",
+      "next_test": "LF011: independently certify h1 and Selmer signature, construct two exact NON-universal S2 cohomology classes and a source-normalized second alternating height; test one true nonzero pair. Separate original complex L'' pathway."
+    },
+    {
+      "track": "H2",
+      "decision": "active_limited",
+      "last_evidence": "C-0014 new-to-project conditional DVR deduction: local-log and provisional global anticyclotomic height rows have 2×2 unit minor 35≡2 mod11 and a saturated rank-two intersection, with explicit mod1331 frame. Global-height pipeline still awaits completely independent certification.",
+      "missing_bridge": "No independently certified full BCLMN global-height computation, no defined exact sequence identifying the common rank-two kernel with one-prime modified Selmer/Bockstein objects, no higher derived regulator, no comparison to original complex L''.",
+      "falsifier": "Independent global height contradicting C-0011 mod11 kills the C-0014 conditional input; no valid typed map to one-prime Selmer complex kills the proposed intersection interpretation.",
+      "next_test": "Only independently check the COMPLETE existing BCLMN global height, beyond PARI sigma, as a lower-budget control (15%); no digit-only improvements. Treat the rank4 curve as stress test of any theorem-first class."
+    },
+    {
+      "track": "H3",
+      "decision": "active_limited",
+      "last_evidence": "Exact identity L'''(E/K_D,1)=3 L''(E,1)L'(E^D,1) and admissible quadratic fields; targeted 2024/2026 papers supply first derivatives, not a third derivative formula for weight-two E/K_D.",
+      "missing_bridge": "An independently established geometric identity forcing the third derivative of weight-two L(E/K_D,s) to vanish.",
+      "falsifier": "Higher-weight cycle/first-derivative formula is not a third-derivative theorem for the target L-function; reject as irrelevant unless specialized.",
+      "next_test": "Restrict to a named exact complex third-derivative identity or verified period/cycle construction; no automatic Heegner first-derivative analogies. In parallel Ulmer surface/global zeta lab is tracked independently as EX-011."
+    },
+    {
+      "track": "H4",
+      "decision": "parked",
+      "last_evidence": "Source audit of Burns–Kurihara–Sano 2025: tempting Mazur–Tate implication assumes BSD and Perrin–Riou; available unconditional corollary targets analytic rank one/supersingular.",
+      "missing_bridge": "Non-circular interpolation/period comparison to the original complex L''.",
+      "falsifier": "Circular premise BSD or finite congruence wrongly promoted to complex equality.",
+      "next_test": "Do not compute further modular elements without a specific new comparison theorem."
+    },
+    {
+      "track": "H5",
+      "decision": "diagnostic",
+      "last_evidence": "Original E's L'' remains numerically very close to zero and L'''' appears nonzero; separately, C-0009 supports the -7 twist L'(1) using 6,000 rigorously bounded rational terms with independent PARI coefficient verification. No original complex L'' zero proven.",
+      "missing_bridge": "A proof of exact vanishing of L''; arbitrary additional floating precision cannot provide it.",
+      "falsifier": "Rank-two control or changed arithmetic model breaks apparent stability; numerical near-zero is never exact zero.",
+      "next_test": "Only independent validated interval/nonzero fourth derivative if needed for conditional rank-four result; stop precision-only runs."
+    },
+    {
+      "track": "H6",
+      "decision": "parked",
+      "last_evidence": "Toy completed-L parity model rules out root sign/ordinary Hecke symmetry as sufficient for L''=0.",
+      "missing_bridge": "A second-order geometric period projector and proven comparison to the complex second derivative.",
+      "falsifier": "If the projector restates ordinary even functional equation, rank-two control disproves its sufficiency.",
+      "next_test": "Require a precisely defined operator with nontrivial action before new coding."
+    }
+  ],
+  "selected_next_experiment": "LF-011 / EX-014: STOP chasing nonzero divided Howard base universal norm as a NONZERO regulator, because Howard Thm4.2 puts universal norm in every h(r) radical. Move to NON-universal first-radical QUOTIENT. First independently certify COMPLETE BCLMN global height AND source equality to Howard/CH h1, plus full Selmer (s+,s-) dimension (currently only rank lower bounds 4 and1). Next construct two EXACT S2 Selmer classes and compute ONE actual nonzero Bockstein second alternating height, with zero matrix as strong null hypothesis. Maintain parallel original COMPLEX L'' theorem hunt and Ulmer Tate-cycle geometry; all BSD flags remain false.",
+  "selected_experiment_kill_criterion": "No nonzero h(r) can be obtained by evaluating Howard h(r) on a universal norm: source Theorem4.2 forbids it. Exact signature s+=4,s-=1, global first h1 normalization, and actual second pairing are unproved. If true h2 zero on 3D S2, stop claiming 3->1. Finite augmentation order from Krull is not a computed class or regulator, and p-adic heights do not prove ORIGINAL COMPLEX L'' without a separate theorem.",
+  "conservative_next_lemma": "Prove/verify exact strict Greenberg-vs-Howard derived Selmer source identification and independent complete anticyclotomic h1 on original E; certify exact nonzero mixed first-height. Then identify two genuine non-universal exact S2 classes before computing any second Bockstein height.",
+  "credible_leapfrog": "With full s+=4,s-=1 and true first h1 nonzero, S2 has dim3; a SINGLE source-defined nonzero alternating second-height value on exact NON-universal S2 classes forces S3=1 (universal norm) and tests Howard's Conj4.4 in the focal rank4 case. This is conditional/novelty-unreviewed, not complex BSD.",
+  "speculative_wild_option": "Higher anticyclotomic Heegner Bocksteins with a nonzero base projection could encode the rank4 derived Selmer obstruction even when the classical base Heegner point vanishes. This is a high-flyer, NOT an established nonzero derived regulator or analytic BSD proof; two local Coleman and original complex comparison are required.",
+  "deprioritized_work": "Do not increase twist summation length beyond 6,000 without a mathematical hypothesis, and suspend local-log and cyclotomic precision-only searches until a complex comparison is defined. Session 13: avoid additional local-log precision, prohibit using the BCLMN rank-two shadow-line theorem at rank four, and do not infer a global height from class-field character coefficients. Session14 provisional global heights contradict the formerly guessed local/global kernel alignment: no more local logs or assumption-driven alignment calculations; demand independent canonical sigma implementation. Session16 no further two-prime local log precision; the local profile mod121 [1:99:46:9] differs from provisional global [1:13:40:63]. Session17: no further local-log or sigma precision-only upgrades without independent third-party sigma verification; global height first three digits already disagree with local two-prime logarithm profile. Session18: unit-minor transversality already detected at mod11. Further local-log and sigma digits are low priority until independent complete global height or typed derived-height reciprocity is found. Session19 binding pivot: stop routine global height sigma precision upgrades, p-adic kernel congruences, local prime scans and numerical curvature runs without a new exact theorem/hypothesis. Prioritize published rank-two and proved characteristic-p global mechanisms with explicit characteristic-zero transfer no-go checks. Session20: old geometric ranks mislabeled Fp(t) corrected. No more local fibre tables; global Frobenius orbit P2 factor already available conditional on published Jacobi-sum theory. Next independent Jacobi computation and genuine complex transfer only. Session21: valid CH rank2 case selected, no further rank2 candidate surveys or local logarithm digits. Theorem4.1 applicability to focal rank4 confirmed; higher height stages remain uncomputed. Need actual Iwasawa class and Coleman valuations. Session22 no extra 11-adic height digits; focus a concrete existing Howard big Heegner class and correctly typed CH4.5 specialization/augmentation, not nominal proof of existence via local conditions alone. Session23: no further search for a non-torsion *base* Heegner point (ruled out by Kolyvagin). Howard anticyclotomic norm tower and weight-two coefficient map already published; stop treating those arrows as hypothetical. Avoid local height precision until exact extended-to-compact Selmer control and Coleman order theorem. Session24: no more first-anticyclotomic derivative assumptions from Howard big nontorsion/base torsion without measuring weight specialization. No repeated finite-field local sums or 11-adic height precision until an actual cohomological specialization and Coleman theorem input exists. Session25: the global norm Z∞→K and weight2 constant vanishing are now EXACT source-theorem deductions; stop searching for base non-torsion P_K or unexplained first Coleman constant. The first J1 divisibility at both split primes follows from zero base for compatible nonexceptional Coleman maps but gives only zero undivided height. Prioritize actual first NONZERO divided base class and two local regulators. Session26 parks LF010 norm-as-regulator proposal (source theorem rules out all derived pairings with universal norm). Stop computing additional theta coefficient digits or first height digits without independent global h1/source normalization. Krull f.g yields only existence finite universal norm base, not nonzero regulator.",
+  "negative_control_reviewed": "Rank-two completed-L parity model permits nonzero second derivative; finite 11-adic augmentation vanishing and Kato I³ containment do not imply original complex L''=0. The C-0010 checks include conjugation signs, inert-ideal vanishing, independent Fermat-quotient first digits, and toy-height polarization. These are not substitute height computations. Session14 bad-2 ideal factor causes 16-fold inflation in denominator-ideal norm, caught by an exact gcd; alternative 2A*18=4A*9 divisor recurrences and 36/72 quadraticity pass, but are not independent software peer review. Session14 independent exact-affine published BCLMN 389a1 mod5 regression reproduces h(P1+S)=3 and rejects swapped prime orientation; this is not an independent library reproduction of C-0011. Two published BCLMN 389a1 mod5 controls h(P1+S)=3,h(P2+S)=3 now reproduced by separate exact-affine implementations; second primitive denominator norm is independently Euclidean-gcd checked. Conditional C-0011 cross heights yield a first pairing of rank 2 and 3D radical, which does not contain P2 unlike the old local-log kernel. Session15 ten direct minimal-affine [36] point constructions have primitive denominator norm-gcd certificates, and all six distinct-pair height sums pass with values 3,8,9,9,10,4 mod11, unlike the untested old local height identification. Published MST E37/p5 t7 sigma polynomial reproduced with canonical c5=1, target t13 polynomial forces unique c11=4; wrong c0 changes only second height digits. Six mixed heights pass mod121; modular inverse check corrects an intermediate assistant mistake in radical coefficients to 13,40,63. Session17 series u11=26 mod121 is unique root of t23 integrality; published MST E37/p5 second digit c5=6 matches. Stale c=4 preserves heights mod121 but changes mod1331; all 6 mixed points satisfy bilinear sums mod1331 with ten primitive denominator checks. Independent PARI ellpadics2 reports s2=4 (mod121) while sigma-series u=26 (mod121), consistent via E2=12u=70 and s2=(b2−E2)/12. On E37/p5 PARI s2=19 but series u=6. Previous prose E2=48 was erroneous and is expressly corrected. C-0014 unit pivot D=35≡2 mod11, explicit splitting Z11^4→Z11² and saturated rank-two conditional kernel; reject equal or nearly equal rows with nonunit minor and the primitive-scale trap on vectors multiplied by 11. C-0015: CH Theorem A cannot turn a nonzero κ into rank4; our old K=-7 gives N^-=1 (no odd inert conductor prime), so theorem A is inapplicable. CH Theorem4.1 already has derived-height filtration at general rank. C-0016: Ulmer rank3 p5,d6 and rank25 p5,d26 have identical F5 finite-fibre trace profiles; two independent local count methods plus bad-fibre/Hasse checks make the local-vs-global proof limitation explicit. Ulmer Q(t) rank bounded despite characteristic-p unbounded families. Session20: exact Fermat map survives over Z and is Gamma-invariant, but a corrupted x3 exponent fails. Frobenius orbit checker enforces Fp(t) ranks 2,3,7 versus extended-geometric 3,7,25, catching historical C-0016 error. Identical F5-rational fibres occur for base-field rank2 and rank7 examples. Global quotient P2 needs published Jacobi/Tate theorem, not just local counts. C-0018: exact F49 cyclotomic numerator (2352,0,0,0) in Z[zeta8] under both primitive generator choices, and a product-nontrivial character rejection; no extrapolation from one eigenvalue to complete Tate or BSD. C-0019 theta coefficient 88*T² vanishes mod11 but not mod121 (false-zero precision trap). CH rank2 433a1/p11/K=-7 has inert q433 and residual irreducibility via nonsquare Frobenius5 discriminant; focal rank4 E at same p/K satisfies CH4.1's Nminus1 squarefree/vacuous local hypotheses while failing CH A/B odd-inert condition. Under all A+B premises rank4 excludes ordTheta2 but no exact order4 claim. Theorem4.1(c,d) conjugation parity: first h1 (odd symmetric anti-equivariant) vanishes within both +/- Selmer eigenspaces and can pair only across; h2 (even alternating invariant) is block diagonal in eigenspaces and has zero cross-block. This predicts only structural zeros, not the value/equality of provisional BCLMN cross heights. C-0020 two split-K good Frobenius at23 (D=10 nonsquare mod11) and43 (D=9 nonzero square) prevent both reducibility over F11 and splitting over F121; both character-sum and full point-enumeration traces agree. Heegner hypothesis/ordinary p/abs irreduc entry does not automatically create a CH4.5 cohomology z or prove Coleman augmentation. C-0021 Kolyvagin rank1-if-nontorsion gives base traced Heegner P_K torsion for known rank>=4; nonzero Howard class at large conductor is consistent. Exact class field Pic(O_11^n)=C10×C11^(n−1) and integral 1/10 projector; formally T=gamma−1 has augmentation0 but is nonzero, without claiming an actual Heegner J-derivative. Simple 1-alpha^-1 factor is a p-adic unit (alpha=12721 mod14641) rather than an exceptional alpha=1. Howard exceptional criterion weight2 trivial α=±1 rejected by alpha11=5 mod11, permitting source-proved extended=Greenberg H1 at finite levels. But local vanishing and a published class do not automatically imply nonzero base specialization or nonzero higher Bockstein. C-0022: model F11[[W,T]] big classes W,T,T²,WT,W+T all have zero base but different weight2/anti orders; W and WT vanish identically at weight2. Noninjective base cohomology kills e2 not in maximal ideal; A⊕A/(T) gives nonunique T-division; arbitrary independent Coleman maps can kill a nonzero class or have distinct J-orders. Howard §3.4 Z0 nontorsion remains conjectural, not implied by §3.3 Z∞ nontorsion. Howard base-K weight-prime specialization is SOURCE-proved injective (H²[P] is cokernel), so the generic noninjective toy cannot be applied to that arrow; it warns only about a DIFFERENT unproved simultaneous Iwasawa/observed-Kummer map. Conditional horizontal conclusion depends on exact specialization equality, unproved Howard Z0 horizontal nontorsion (Conj3.4.1), and local DVR/separation. It cannot produce a first weight derivative automatically (finite order might exceed one), cannot produce anticyclotomic T derivative or original complex L'' zero. C-0023: Cassella weight2 theorem includes r=1 via Remark6.6 for level-prime-to-p ordinary stabilization; alpha11≡5 yields Euler square9 unit, so weight2 Kummer torsion forces zero and Howard BASE-K weight-control injection implies WEIGHT-prime divisibility. This does NOT imply Z0 nonzero (Howard horizontal Conj3.4.1), first weight derivative, anticyclotomic T order, BOTH CH Coleman leading coefficients or original COMPLEX L''. C-0024 wrong norm normalization Z0tower=X1 rejected, proper =U11 X1; C-0025 DEEP χ=nontrivial C10 Heegner component can norm ZERO despite global nonzero, so source Cor3.1.2 TRIVIAL χ vital. Truncated F11[T]/T6 has T-torsion and nonunique division; true H0(K,T11E)=0 removes it on integral compact H1. C-0026 exceptional alpha=1 creates local quotient H0, and hypothetically inertia-ramified Λ breaks outside-p invariants-lift; actual alpha=5 and anticyclotomic tower unramified outside11. Nonzero divided Iwasawa Greenberg class still does NOT imply nonzero prK derived Selmer or complex BSD. C-0027 universal norm belongs to EVERY Howard derived radical; any nonzero base divided universal norm has ALL h(r) pairings zero. C-0028 a 3x3 alternating h2 on first radical may be ZERO (rank0) and then radical remains dim3, or nonzero rank2 and radical dim1; exact F11 enumerates all 11^3 cases. First mixed v mod11 is PROVISIONAL, full Selmer s+=(>=4),s-=(>=1) not exactly 4,1. Non-f.g Laurent module allows infinite T-division, validating Krull hypothesis.",
+  "sources": [
+    "CLAIMS.md",
+    "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
+    "research/strategy/KATO_BRIDGE_AUDIT.md",
+    "research/strategy/CYCLOTOMIC_KATO_FILTRATION_GATE.md",
+    "research/strategy/MAZUR_TATE_2025_SCOPE.md",
+    "research/strategy/kill_tests.py",
+    "https://arxiv.org/abs/2408.04375",
+    "https://arxiv.org/abs/2603.15795",
+    "https://www.lmfdb.org/EllipticCurve/Q/234446/a/1",
+    "research/strategy/H3_DERIVATIVE_ORDER_AUDIT.md",
+    "research/strategy/h3_first_height_no_go.py",
+    "research/anticyclotomic_11/EXACT_6000_AUDIT.md",
+    "research/anticyclotomic_11/independent_rational_derivative_6000.py",
+    "research/reviews/2026-10-17-whole-problem.md",
+    "research/anticyclotomic_11/SHADOW_LINES_HEIGHT_IMPLEMENTATION.md",
+    "research/anticyclotomic_11/character_coefficients.py",
+    "research/anticyclotomic_11/point_prerequisites.py",
+    "https://arxiv.org/abs/1610.08729",
+    "research/anticyclotomic_11/SESSION14_HEIGHT_MOD11_AUDIT.md",
+    "research/anticyclotomic_11/provisional_height_mod11.py",
+    "https://arxiv.org/pdf/1610.08729",
+    "research/anticyclotomic_11/published_389a1_height_control.py",
+    "research/anticyclotomic_11/FIRST_HEIGHT_RADICAL_MOD11.md",
+    "research/anticyclotomic_11/conditional_first_radical_mod11.py",
+    "research/anticyclotomic_11/independent_affine_ideal_and_polarization.py",
+    "research/anticyclotomic_11/SESSION16_CANONICAL_SIGMA_MOD121.md",
+    "research/anticyclotomic_11/canonical_sigma_integrality_11.py",
+    "research/anticyclotomic_11/conditional_heights_mod121.py",
+    "https://ems.press/content/book-chapter-files/27479",
+    "research/anticyclotomic_11/SESSION17_CANONICAL_SIGMA_MOD1331.md",
+    "research/anticyclotomic_11/canonical_sigma_integrality_121.py",
+    "research/anticyclotomic_11/conditional_heights_mod1331.py",
+    "research/anticyclotomic_11/pari_canonical_sigma_oracle.gp",
+    "research/anticyclotomic_11/SESSION18_TRANSVERSALITY_AUDIT.md",
+    "research/methodology/local_global_transversality_11.py",
+    "research/strategy/THEOREM_FIRST_PIVOT_2026-10-19.md",
+    "research/proof_labs/RANK_TWO_KATO_THEOREM_SCOPE.md",
+    "research/proof_labs/kato_rank_scope_gate.py",
+    "research/proof_labs/ULMER_FUNCTION_FIELD_BSD_LAB.md",
+    "research/proof_labs/ulmer_function_field_fibres.py",
+    "https://doi.org/10.1017/fms.2021.85",
+    "https://annals.math.princeton.edu/2002/155-1/p09",
+    "https://github.com/katearline-beep/birchswinnertondyer/issues/41",
+    "https://github.com/katearline-beep/birchswinnertondyer/issues/42",
+    "research/proof_labs/SESSION20_FERMAT_ORBITS_AUDIT.md",
+    "research/proof_labs/ulmer_fermat_quotient.py",
+    "research/proof_labs/ulmer_frobenius_orbits.py",
+    "https://arxiv.org/pdf/math/0109163",
+    "research/proof_labs/ulmer_jacobi_f49.py",
+    "research/proof_labs/SESSION21_CH_433A1_THEOREM_MAP.md",
+    "research/proof_labs/castella_hsieh_433a1_control.py",
+    "https://web.math.ucsb.edu/~castella/Kato.pdf",
+    "https://www.lmfdb.org/EllipticCurve/Q/433/a/1",
+    "research/proof_labs/SESSION22_HOWARD_HEEGNER_ENTRY_AUDIT.md",
+    "research/proof_labs/howard_heegner_residual_focal.py",
+    "https://arxiv.org/pdf/1202.6358",
+    "https://web.math.ucsb.edu/~castella/Heegner.pdf",
+    "research/proof_labs/SESSION23_HEEGNER_TOWER_BASE_VANISHING.md",
+    "research/proof_labs/heegner_ring_class_tower_11.py",
+    "https://www.math.mcgill.ca/darmon/pub/Articles/Research/36.NSF-CBMS/chapter.pdf",
+    "https://arxiv.org/pdf/1202.6358",
+    "https://arxiv.org/pdf/1202.6358#page=18",
+    "research/proof_labs/SESSION24_TWO_VARIABLE_TANGENT_CONE_AUDIT.md",
+    "research/proof_labs/two_variable_heegner_specialization_controls.py",
+    "https://arxiv.org/pdf/1202.6358",
+    "https://web.math.ucsb.edu/~castella/Kato.pdf",
+    "https://arxiv.org/pdf/1202.6358#page=29",
+    "research/proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md",
+    "research/proof_labs/castella_howard_weight_prime_gate.py",
+    "https://web.math.ucsb.edu/~castella/Heegner.pdf",
+    "research/proof_labs/SESSION25_HOWARD_ZERO_AUGMENTATION_AUDIT.md",
+    "research/proof_labs/howard_base_augmentation_gate.py",
+    "research/proof_labs/SESSION25_DIVIDED_HEEGNER_GLOBAL_COHOMOLOGY.md",
+    "research/proof_labs/howard_bockstein_exact_sequence_gate.py",
+    "research/proof_labs/howard_divided_greenberg_local_gate.py",
+    "https://arxiv.org/pdf/1202.6358",
+    "https://web.math.ucsb.edu/~castella/Kato.pdf",
+    "research/proof_labs/SESSION26_UNIVERSAL_NORM_QUOTIENT_AND_SECOND_HEIGHT.md",
+    "research/proof_labs/howard_second_height_quotient_controls.py",
+    "https://arxiv.org/pdf/1202.6343",
+    "https://websites.umich.edu/~mmustata/ReviewSheet3_2017.pdf"
+  ],
+  "journal_path": "research/reviews/2026-10-19-whole-problem.md",
+  "not_established": [
+    "No original complex L''(E,1)=0 theorem",
+    "No complex analytic rank-four proof for curve 234446.a1",
+    "No 11-Selmer upper bounds",
+    "No finiteness or triviality of relevant Sha[11∞]",
+    "No global derived 11-adic height or Kato class with complex comparison",
+    "No leading-coefficient BSD formula or general BSD proof"
+  ]
+}

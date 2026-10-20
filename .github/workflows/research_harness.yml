@@ -55,3 +55,19 @@ jobs:
           test "$(wc -l < /tmp/bsd-pari-coefficients-6000.txt)" -eq 6000
       - name: Verify 6000 coefficients and negative-control mutation
         run: python -I -B research/harness/compare_fourier_coefficients_6000.py /tmp/bsd-pari-coefficients-6000.txt
+
+  direct-height:
+    name: Direct-coordinate global first-height oracle
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable action
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Complete first-digit ideal oracle and published controls
+        run: python -I -B research/anticyclotomic_11/direct_coordinate_height_mod11.py
