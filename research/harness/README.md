@@ -1,4 +1,4 @@
-# Machine-checkable research harness
+**Interdisciplinary leapfrog gate:** [Session27 permanent protocol](INTERDISCIPLINARY_LEAPFROG_PROTOCOL.md) integrates homological algebra/Bockstein, alternating linear algebra, certified numerical arithmetic, error-detecting controls, Iwasawa algebra, motives and formal proof obligations. Every transfer must state typed objects, a source theorem, an explicit bridge, a falsifier and original-complex BSD scope. No second derived height or original complex bridge is claimed.\n\n# Machine-checkable research harness
 
 The repository's **permanent research operating procedure** is in [AGENTS.md](../../AGENTS.md). Read it with [RESEARCH_STANDARDS.md](../../RESEARCH_STANDARDS.md) and the [cross-disciplinary audit](../INTERDISCIPLINARY_TRANSFER_AUDIT.md).
 
