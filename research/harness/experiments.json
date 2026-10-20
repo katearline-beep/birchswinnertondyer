@@ -984,6 +984,66 @@
           "reference": "https://arxiv.org/pdf/1602.04998"
         }
       ]
+    },
+    {
+      "id": "EX-020",
+      "claim_ids": [
+        "C-0039",
+        "C-0040",
+        "C-0041"
+      ],
+      "status": "conditionally_supported",
+      "human_reviewed": false,
+      "question": "Can actual fine MW classes detect a specific supported first Bockstein, and can duality/Chebotarev design a smaller auxiliary support?",
+      "decisive_observation": "Actual local Kummer matrix has rank2 and a three-dimensional known-MW fine kernel. Under explicit integral/source/height inputs, q(P2+R)=2 detects nonzero supported beta_G(R), so extra ramification is necessary. A standard isotypic/Chebotarev argument gives one-auxiliary-prime existence for a single supported H2 class. All32 subsets of the old five candidates were tested; none of size<=2 removes the known detector. Targeted q3389 has fine row5*(2,5,10), independently PARI-verified, but full fine coverage is unknown.",
+      "dependencies": [
+        "C0002 formal logarithm and nonanomalous reduction give an actual E(Kv)/11 Kummer map; C0035 proves five residual MW classes independent. No height/Sha input for C0039.",
+        "C0040 depends on C0029 global first-height arithmetic, C0031 BD/MT/BCLMN conventions, MCS2026 PREPRINT Prop4.7 and finite coefficient comparison in sections4.3-4.4, compact-support cup-product naturality and a unit character calibration. Expert audit outstanding.",
+        "C0041 one-prime existence uses recorded GL2 image, central-scalar H1 vanishing, the isotypic simultaneous-cocycle image, Chebotarev and finite-Sigma Poitou-Tate naturality. It is a nonconstructive standard-method specialization.",
+        "Actual q3389 is certified only on known fine MW classes. Unknown fine classes can retain an obstruction; no full-fine completeness, Greenberg conditions or compatible second-stage lift is assumed."
+      ],
+      "commands": [
+        "gp -q -f research/proof_labs/pari_fine_localization_11.gp",
+        "python3 -I -B research/proof_labs/fine_localization_height_detector.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION33_FINE_LOCALIZATION_AND_HEIGHT_DETECTOR.md",
+        "research/proof_labs/fine_localization_height_detector.py",
+        "research/proof_labs/pari_fine_localization_11.gp"
+      ],
+      "negative_control": "Non-fine test classes can see local boundaries even when the global obstruction is zero. All32 candidate supports are checked by row spans and independent dual witnesses. A hidden fine direction defeats zero tests on known MW; nonunit character scaling hides mod11 data. Mutated PARI local columns and interpreter diagnostics are rejected.",
+      "stop_condition": "Stop prime searches at the designed q3389 candidate. No actual supported correction or full-fine completeness is supplied. Do not generalize the first-stage one-prime existence argument to Greenberg or second-order compatibility.",
+      "nonclaims": [
+        "No evaluated arithmetic Galois cocycle or explicit first lift; R obstruction is a conditional dual certificate.",
+        "No claim q3389 kills the full obstruction without missing fine-group coverage; no full Selmer upper bound, finite Sha11 triviality or exact full H2 dimension.",
+        "No actual h2, original complex Lpp equality, analytic rank-four theorem, original Sha finiteness, BSD leading coefficient, novelty or expert review."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "homological algebra and dual certification",
+          "kind": "exact_math",
+          "mechanism": "The global projection is adjoint to compact-support inclusion under integral Selmer duality; its Bockstein pairing with locally trivial MW classes is the first-height detector. A nonzero scalar certifies supported lift infeasibility.",
+          "proof_boundary": "Finite integral base change and unit normalization are explicit source/derivation inputs. The code does not prove duality or construct correction cochains.",
+          "validating_test": "research/proof_labs/fine_localization_height_detector.py",
+          "reference": "https://arxiv.org/pdf/2603.23978"
+        },
+        {
+          "discipline": "Galois representation theory and experimental design",
+          "kind": "exact_math",
+          "mechanism": "The simultaneous fine-cocycle image is V^d semidirect GL2; Chebotarev can realize a prescribed one-dimensional localization functional, killing a single supported H2 class after one prime. The actual search designs a matching row on the known MW subspace.",
+          "proof_boundary": "Existence uses the entire fine group abstractly; q3389 is measured only on its known MW subspace and is not a certified global or Greenberg lift support.",
+          "validating_test": "research/proof_labs/fine_localization_height_detector.py",
+          "reference": "https://jmilne.org/math/Books/ADTnot.pdf"
+        },
+        {
+          "discipline": "optimization dual certificates and coding theory",
+          "kind": "validation_method",
+          "mechanism": "A row-span failure has an independently enumerated annihilator witness; support choices are tested against the actual obstruction functional rather than only independence. New prime3389 aligns its known-MW functional with the target.",
+          "proof_boundary": "This is finite-field linear algebra, not real Farkas inequalities. Known rows do not establish full fine Selmer coverage or arithmetic solvability.",
+          "validating_test": "research/proof_labs/fine_localization_height_detector.py",
+          "reference": "https://arxiv.org/pdf/1909.05376"
+        }
+      ]
     }
   ]
 }

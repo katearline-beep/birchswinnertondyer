@@ -79,3 +79,14 @@ Previous review WPR-2026-10-20-02; reviewed merged PR63. Claims C0001–C0038 au
 H1 prioritized/H2 limited: replace unrestricted embedding existence with actual fixed-support Greenberg construction. H3 limited: other-instance motive/derivative audits remain separately branched; no characteristic-zero cycle/comparison or independent vanishing proved. H4 parked: no noncircular Mazur–Tate complex comparison. H5 diagnostic: precision does not prove exact zero. H6 parked: no defined projector proving the second derivative vanishes. No original Sha finiteness, full Selmer upper bound or leading-term result.
 
 Issue64 predeclared the experiment. Coordination on PR63 inspected rank2 ad91e78 and old H3 e17b3bc without changing them. No local execution environment was available; exact-head GitHub CI must execute the new Python controls before merge. Source deductions and finite synthetic controls are distinct evidence. Next weekly checkpoint due2026-10-27.
+
+
+## Session33 checkpoint — WPR-2026-10-20-04
+
+Previous WPR-2026-10-20-03; main de7f12a / merged PR65, issue66 predeclared. C0001–C0041 reviewed; all seven proof/review flags remain false. **NONE toward original complex Lpp or BSD.**
+
+C0039 supplies a typed actual finite Kummer/fine-MW kernel, not full fine Selmer completeness. Conditional C0040 detects supported beta_G(R) nonzero by integral first-height duality; unrestricted lifts need extra ramification. C0041 standard duality/Chebotarev yields one-prime first-stage existence, while actual q3389 is verified only on known MW. Full-fine directions, cochains and Greenberg/higher compatibility remain open. Local Python3.12.14 and PARI2.15.4 arithmetic ran; exact-head CI remains the merge gate.
+
+H1 prioritized/H2 limited: use the designed prime as a correction-solver contract and preserve the exact-positive-S2 h2 target. H3 limited: other-instance converse/motive branches untouched, no characteristic-zero complex comparison. H4/H6 parked; H5 diagnostic. Safe lemma: finite Kummer kernel. Credible leapfrog: dual functional prime design without huge field enumeration. Wild option: rank-sensitive geometric cycles with missing comparison/vanishing. Deprioritize additional primes and height digits. No original Sha finiteness, leading term or expert review. Next review due2026-10-27.
+
+Audit: [Session33](../proof_labs/SESSION33_FINE_LOCALIZATION_AND_HEIGHT_DETECTOR.md). Primary assumptions and source/preprint boundaries remain explicit.

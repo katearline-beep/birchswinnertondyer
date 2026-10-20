@@ -145,3 +145,6 @@ jobs:
 
       - name: Cartier duality and constrained versus unrestricted lift controls
         run: python -I -B research/proof_labs/global_duality_support_controls.py
+
+      - name: Actual fine Kummer map and supported first-height detector
+        run: python -I -B research/proof_labs/fine_localization_height_detector.py
