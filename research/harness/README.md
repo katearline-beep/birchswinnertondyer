@@ -182,6 +182,12 @@ Run `python3 -I -B research/proof_labs/two_variable_heegner_specialization_contr
 
 The toy coefficient ring F11[W,T]/(W,T)^5 is NOT the actual Howard module. Actual Hida regularity, Selmer control, any class leading term, two Coleman valuations, and original complex L'' comparison are still absent; no BSD proof.
 
+## Session24 C-0023 promoted source theorem, not speculative missing map
+
+[Castella 2019 TheoremA/6.5, Remark6.6 and TheoremB/5.3](../proof_labs/SESSION24_CASTELLA_WEIGHT2_RECIPROCITY_AUDIT.md) **ALREADY ESTABLISH** weight-two Howard base Z0=\((1-\alpha^{-1})^2\) classical Heegner Kummer and **two-variable p-adic Perrin–Riou big-log explicit reciprocity**. Our p11 ordinary unit root α≡5 gives multiplier square≡9 (unit); Kolyvagin forces classical P_K torsion, so Howard's base-K weight-control injection proves Z0 is WEIGHT-prime divisible. [Exact arithmetic source-checker](../proof_labs/castella_howard_weight_prime_gate.py). This does NOT establish nonzero derivative (Howard horizontal non-R-torsion Conjecture3.4.1), anticyclotomic J order, two CH4.5 Coleman coefficients or original complex L'' zero.
+
+Run: `python3 -I -B research/proof_labs/castella_howard_weight_prime_gate.py`.
+
 ## Security / completeness boundaries
 
 The manifest validator only checks syntax, references, and basic evidence-policy invariants. It does **not** evaluate or execute commands from `experiments.json`. Commands in untrusted PRs must never be interpolated into shell steps. The test runner invokes a fixed list of pinned Python/GP programs.
