@@ -50,3 +50,10 @@ The related form of identifiability error is explicit in [the negative-control p
 ## Research integrity and limitations
 
 The first eight “applications” above vary greatly in evidentiary force. The quadratic Selmer splitting and Selmer-localization kernel are mathematics; physics and coding-theory vocabulary is a guide to *organizing* those facts, not a source of new proofs. Two AI-authored scripts are not independent human peer review. We will not contact outside maintainers without a minimal reproducible result, a precise question, and a scope-accurate status label.
+
+
+## Session32 — unrestricted existence is weaker than supported Selmer feasibility
+
+[C0037/38 source deduction](proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md) uses standard global duality and recorded residual/local inputs: every supported residual class has an unrestricted global T3 lift, allowing unspecified extra ramification. Yet supported H2 has dimension at least3 and its entire absolute inflation is zero. No actual correction cochains, specific nonzero Bockstein, supported Greenberg lift, integral upgrade or second height is supplied. Prioritize the actual finite-support local cone. Original complex BSD remains open; this is AI-assisted and not expert reviewed.
+
+Exact transfer: global duality evaluates an actual finite-module lifting obstruction. Validation transfer: abstraction refinement tracks the supported-to-absolute map, which loses a space of dimension at least3. Falsifier: wrong Cartier dual, missing scalar/local hypotheses or treating unrestricted feasibility as a Selmer solution. Test: `python3 -I -B research/proof_labs/global_duality_support_controls.py`. Sources: Milne ADT I Cor2.3/Thm4.10(a)/Lem9.3 and Pal–Schlank arXiv1602.04998 Thm1.1.

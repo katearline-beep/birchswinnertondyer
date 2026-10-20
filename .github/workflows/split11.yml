@@ -142,3 +142,6 @@ jobs:
         run: python -I -B research/proof_labs/kummer_reduction_11_certificate.py
       - name: Finite quotient Bockstein obstruction and nonabelian refinement controls
         run: python -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py
+
+      - name: Cartier duality and constrained versus unrestricted lift controls
+        run: python -I -B research/proof_labs/global_duality_support_controls.py

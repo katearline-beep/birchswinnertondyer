@@ -71,3 +71,8 @@ Research emerged from human–AI exploration in October 2026. The code and docum
 Session30: [explicit arithmetic inputs for the second Bockstein](research/proof_labs/SESSION30_ARITHMETIC_CHARACTER_LIFTS.md): certified anticyclotomic Artin layers and five verified Kummer division torsors. These supply concrete character and torsor algebras; evaluated Galois actions, Selmer lifts and the actual second height remain open.
 
 **Session31:** [five-prime11-saturation certificate and finite-quotient lift obstruction](research/proof_labs/SESSION31_KUMMER_SATURATION_AND_LIFT_OBSTRUCTION.md). The known five-point subgroup is certified11-saturated without a height or Sha assumption. Under recorded Galois-image inputs, the natural finite Kummer/character quotient cannot contain the required correction cochain; an explicit further embedding problem replaces that insufficient strategy. No actual second height or complex BSD proof.
+
+
+## Session32 — unrestricted existence is weaker than supported Selmer feasibility
+
+[C0037/38 source deduction](research/proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md) uses standard global duality and recorded residual/local inputs: every supported residual class has an unrestricted global T3 lift, allowing unspecified extra ramification. Yet supported H2 has dimension at least3 and its entire absolute inflation is zero. No actual correction cochains, specific nonzero Bockstein, supported Greenberg lift, integral upgrade or second height is supplied. Prioritize the actual finite-support local cone. Original complex BSD remains open; this is AI-assisted and not expert reviewed.

@@ -64,3 +64,18 @@ Session20/C0017 erratum: prime-field ranks2,3,7; geometric ranks3,7,25.
 Historical snapshots remain unchanged; no new Ulmer computation or BSD claim.
 
 Correction tracking: [issue62](https://github.com/katearline-beep/birchswinnertondyer/issues/62).
+
+
+## Session32 checkpoint — WPR-2026-10-20-03
+
+Previous review WPR-2026-10-20-02; reviewed merged PR63. Claims C0001–C0038 audited, all seven proof/review flags remain false. **NONE toward original complex Lpp or BSD.**
+
+
+
+## Session32 — unrestricted existence is weaker than supported Selmer feasibility
+
+[C0037/38 source deduction](../proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md) uses standard global duality and recorded residual/local inputs: every supported residual class has an unrestricted global T3 lift, allowing unspecified extra ramification. Yet supported H2 has dimension at least3 and its entire absolute inflation is zero. No actual correction cochains, specific nonzero Bockstein, supported Greenberg lift, integral upgrade or second height is supplied. Prioritize the actual finite-support local cone. Original complex BSD remains open; this is AI-assisted and not expert reviewed.
+
+H1 prioritized/H2 limited: replace unrestricted embedding existence with actual fixed-support Greenberg construction. H3 limited: other-instance motive/derivative audits remain separately branched; no characteristic-zero cycle/comparison or independent vanishing proved. H4 parked: no noncircular Mazur–Tate complex comparison. H5 diagnostic: precision does not prove exact zero. H6 parked: no defined projector proving the second derivative vanishes. No original Sha finiteness, full Selmer upper bound or leading-term result.
+
+Issue64 predeclared the experiment. Coordination on PR63 inspected rank2 ad91e78 and old H3 e17b3bc without changing them. No local execution environment was available; exact-head GitHub CI must execute the new Python controls before merge. Source deductions and finite synthetic controls are distinct evidence. Next weekly checkpoint due2026-10-27.

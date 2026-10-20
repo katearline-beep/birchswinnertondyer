@@ -553,13 +553,13 @@
       "experiment_id": "EX-018",
       "title": "Reduction certificates and nonabelian embedding problems bypass huge Kummer closures",
       "known_baseline": "C0035 supplies exact11-saturation of the five known MW classes without height/Sha inputs. Conditional C0036 gives an enormous joint Kummer group and an obstruction to first lifts on the natural finite quotient. An explicit twisted kernel-E11 extension defines the necessary further embedding problem.",
-      "missing_arrow": "Actual global/local solution of the twisted E11 embedding problem is unknown. Natural finite Kummer and anticyclotomic data may not support any lift even when a lift exists after inflation.",
+      "missing_arrow": "Session32 C0037 supplies source-derived unrestricted residual T3 existence under recorded inputs, allowing extra ramification. Fixed-support construction, Greenberg local homotopies and integral compatibility remain unknown.",
       "hypothetical_bridge": "Use independent actual reduction rows to certify residual independence. Audit the smallest quotient and then express the first lift as a twisted finite embedding problem with kernel E11, rather than enumerating the whole Galois closure.",
       "if_then_statement": "IF the residual lift embedding problem has a global solution with all Greenberg local constraints and compatible integral control THEN that solution supplies an actual first Bockstein lift; these existence and local assumptions are still unresolved.",
       "would_unlock": "An exact saturation certificate and a decisive rejection of an insufficient finite quotient, plus a typed alternative that could avoid enormous splitting-field enumeration.",
       "unverified_dependencies": "The arithmetic quotient application uses recorded residual GL2 image input, subject to expert review. Global embedding-problem solvability, Greenberg local compatibility, integral torsion, actual second obstruction and complex BSD comparison remain missing.",
       "negative_control": "Dependent point replacement must lose reduction rank; order divisible by121 refused. A Heisenberg nonabelian extension permits a lift that is impossible on its abelian quotient; next-order lift can still fail.",
-      "next_decisive_test": "Find a published or explicit method to solve the twisted kernel-E11 embedding problem with the actual Galois inputs, restricted ramification, local Greenberg conditions and integral torsion accounted for. Do not enumerate the known insufficient quotient.",
+      "next_decisive_test": "Use C0038's at-least-three-dimensional supported obstruction space to locate actual connecting classes and construct allowed corrections with Greenberg local data; absolute residual solvability is no longer the right stopping point.",
       "kill_criterion": "Reject the finite-quotient no-go application if disjointness or residual image fails; never extend the quotient obstruction to the absolute Galois group without an inflation argument. Stop at an embedding problem unless a global/local solution is supplied.",
       "source": "https://wangjiuya.github.io/research/augmentation.pdf",
       "test_path": "research/proof_labs/kummer_reduction_11_certificate.py",
@@ -568,7 +568,7 @@
       "reviewed": false,
       "proof_status": "speculative",
       "novelty_status": "unverified",
-      "not_unlocked": "No global/local embedding-problem solution, actual c1 Selmer lift, computed second height, full Selmer upper bound or original complex BSD theorem.",
+      "not_unlocked": "No evaluated correction cochains, supported Greenberg embedding solution, integral Tate-module lift, genuine second height or original complex BSD theorem.",
       "decision_log": [
         {
           "date": "2026-10-20",
@@ -579,6 +579,40 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "C0035 actual five-prime determinant5 certificate and independent PARI succeeded. Conditional C0036 eliminates the natural finite product quotient by the commuting-element equation. Explicit twisted121-kernel cover is constructed algebraically but not arithmetically realized."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Session32 C0037 resolves unrestricted residual existence by standard global duality under recorded inputs; C0038 proves forgetting support erases a space of dimension at least3. Restricted Selmer realization remains missing."
+        }
+      ]
+    },
+    {
+      "id": "LF-016",
+      "experiment_id": "EX-019",
+      "title": "Global duality separates unrestricted realization from supported Selmer feasibility",
+      "known_baseline": "Under recorded residual-image/local inputs, central(-I,0), Chebotarev and Poitou-Tate imply absolute H2 localization injectivity. Local connecting classes vanish, so every supported residual class admits an unrestricted T3 lift. Five independent MW classes localize into at most two Kummer dimensions, giving supported H2 dimension at least3; its entire absolute inflation is zero.",
+      "missing_arrow": "Need an effective actual finite-support correction cocycle and Greenberg local homotopies, then integral/torsion control and source-normalized second-height duality. Absolute existence does not provide these.",
+      "hypothetical_bridge": "Use the supported/absolute obstruction comparison to locate which ramification and local conditions prevent a chosen lift, then construct corrections inside the actual Selmer cone rather than an insufficient finite quotient or unrestricted Galois group.",
+      "if_then_statement": "IF actual supported correction cochains and compatible Greenberg homotopies can be constructed with integral control THEN the true second Bockstein can be evaluated; unrestricted residual existence alone does not satisfy these hypotheses.",
+      "would_unlock": "A sharper arithmetic construction problem with a source-derived existence baseline and a proved nontrivial supported obstruction space, avoiding repeated unrestricted embedding searches.",
+      "unverified_dependencies": "Recorded residual image/local inputs require expert audit; actual supported obstruction values, finite-support cochains, Greenberg conditions, integral lifting, second-height normalization and original complex comparison remain unresolved.",
+      "negative_control": "All13200 GL2 matrices test Cartier dual against omitted determinant twist. Identity scalar leaves nonzero H1(C11,F11). Synthetic T*I3 and T2*I3 complexes retain constrained first/second obstructions while their unconstrained targets erase them; five-to-two kernel bound is not exact dimension.",
+      "next_decisive_test": "Construct the actual supported augmentation cochain cone and calculate its connecting class or a certified allowed correction; distinguish this finite-module fine-localization kernel from elliptic Sha.",
+      "kill_criterion": "Reject any claimed Selmer solution obtained merely by allowing unspecified extra ramification or replacing the supported cone with absolute Galois cohomology. Correct the deduction if Cartier dual, scalar or local torsion hypotheses fail.",
+      "source": "https://jmilne.org/math/Books/ADTnot.pdf",
+      "test_path": "research/proof_labs/global_duality_support_controls.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No actual arithmetic correction evaluated, no supported Selmer lift, integral compatibility, nonzero second height, positive Selmer upper bound or original complex BSD implication.",
+      "decision_log": [
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Issue64 predeclared the source/local-global test. Milne duality gives unrestricted residual T3 existence and a supported H2 lower bound at least3 under recorded inputs; remaining construction is explicitly constrained."
         }
       ]
     }
