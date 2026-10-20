@@ -508,6 +508,40 @@
           "evidence": "Session29 source theorem, independent Arb corroboration and one-sided eigenspace lemma construct a conditional exact U domain; the nonzero second arithmetic pairing is still the moonshot."
         }
       ]
+    },
+    {
+      "id": "LF-014",
+      "experiment_id": "EX-017",
+      "title": "Arithmetic anticyclotomic character to actual Bockstein cochains",
+      "known_baseline": "C0032 provides conditional exact rational S2 classes. C0033/34 now supply compatible actual Artin characters and five explicit etale Kummer division algebras, independently verified with PARI. These define classes but do not evaluate Galois matrices.",
+      "missing_arrow": "NO COMPLETE COMPUTATIONAL BRIDGE IDENTIFIED: evaluated E11m action and Kummer cocycles on a usable Galois presentation, Greenberg local homotopies, integral torsion control and actual c1 solutions remain absent.",
+      "hypothetical_bridge": "Use the explicit class-field Artin character and its correctly truncated group action as one input to an actual elliptic Selmer cochain calculation, then solve compatible lift equations.",
+      "if_then_statement": "IF actual elliptic Tate-module cocycles and all local conditions can be constructed and lifted under this arithmetic character THEN their corrected obstruction defines a genuine second Bockstein; a nonzero height still needs duality and normalization.",
+      "would_unlock": "A verified arithmetic coefficient input and concrete cochain equations, which are necessary but insufficient for an actual second-height computation.",
+      "unverified_dependencies": "Global class field theory and ring-class exact sequence are source inputs; E Tate-module cochains, local homotopies, integral compatibility, actual obstruction evaluation, expert review and original complex comparison remain missing.",
+      "negative_control": "Cyclotomic sum fails conjugation inversion. Omitting binomial quadratic term breaks the group action. Finite C11 imposes (1+T)^11=1 and corrupts integral T3 data even though it correctly models F11 T3 action.",
+      "next_decisive_test": "Use the five explicit Kummer torsors and arithmetic character to obtain a usable Galois/cohomological presentation with all local conditions, then solve c1; identify integral torsion before claiming a finite lift.",
+      "kill_criterion": "Stop or correct the character if certified conductor, Artin prime values or anticyclotomic conjugation disagree. No finite coefficient input alone may be called an actual Selmer lift.",
+      "source": "https://pari.math.u-bordeaux.fr/dochtml/html/Galois_theory_and_class_field_theory.html",
+      "test_path": "research/proof_labs/anticyclotomic_artin_t3.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No actual elliptic Kummer cocycle, first-order Selmer lift, genuine second height, full positive Selmer bound, original complex Lpp equality or BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "Precomputation plan: actual degree11 anticyclotomic class field, Artin map, T3 action and independent PARI oracle; preserve all open cochain and complex bridges."
+        },
+        {
+          "date": "2026-10-20",
+          "outcome": "active",
+          "evidence": "C0033/34 actual C11/C121 Artin map, first-layer polynomial and five division torsors verified. C11 integral truncation and uniform-conductor720 guess rejected. Actual c1 and h2 remain missing."
+        }
+      ]
     }
   ]
 }

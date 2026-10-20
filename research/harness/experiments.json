@@ -819,6 +819,61 @@
           "reference": "https://www.math.mcgill.ca/darmon/pub/Articles/Research/13.Derived-p-adic/paper.pdf"
         }
       ]
+    },
+    {
+      "id": "EX-017",
+      "claim_ids": [
+        "C-0033",
+        "C-0034"
+      ],
+      "status": "computationally_reproduced",
+      "human_reviewed": false,
+      "question": "Can actual compatible anticyclotomic characters and the five elliptic Kummer torsors be constructed and independently verified as concrete inputs to the second Bockstein?",
+      "decisive_observation": "Certified C11/C121 ray quotients have exact conductor121/1331 and anti-conjugation. First-layer degree11 polynomial compositum matches constructed D11 class field. All278 ideal Artin values agree with independent residue/log formulas. Five etale degree121 division torsors have reconstructed points Q with [11]Q=P; every multiplication/division coefficient agrees with PARI. No evaluated cochains or c1 lift.",
+      "dependencies": [
+        "Ring-class exact sequence, global class field theory and explicit class-number-one quadratic field; bnfcertify removes base GRH dependence.",
+        "Standard division-polynomial identities and [11] pullback of invariant differential; pinned exact FLINT0.9.0 with independent PARI ellxn/elldivpol coefficients.",
+        "Residual torsors do not supply E121 cocycles; rational S2 membership does not itself clear integral obstruction torsion.",
+        "Height-defined Xj retain C0032 conditional source inputs; a genuine lift still needs evaluated Galois action and all Greenberg local cone data."
+      ],
+      "commands": [
+        "python3 -I -B research/proof_labs/anticyclotomic_artin_t3.py",
+        "gp -q -f -s 128000000 research/proof_labs/pari_anticyclotomic_artin_t3.gp",
+        "gp -q -f research/proof_labs/pari_kummer_11_torsors.gp",
+        "python3 -I -B research/proof_labs/kummer_11_torsors.py"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION30_ARITHMETIC_CHARACTER_LIFTS.md",
+        "research/proof_labs/anticyclotomic_artin_t3.py",
+        "research/proof_labs/kummer_11_torsors.py",
+        "research/proof_labs/pari_anticyclotomic_artin_t3.gp",
+        "research/proof_labs/pari_kummer_11_torsors.gp"
+      ],
+      "negative_control": "Cyclotomic norm fails conjugation inversion; missing binomial term breaks group law; C11 kills genuine11T2 mod121. Mutated Artin and polynomial coefficients rejected by same comparators. Changed multiplication map fails actual on-curve identity. GP *** diagnostics fail closed despite zero process status.",
+      "stop_condition": "Stop before claiming evaluated cocycles or first-order lifts: torsor algebras alone do not solve global/local Selmer cochains. E11 arithmetic does not provide E121 precision. No original complex implication.",
+      "nonclaims": [
+        "No evaluated global Galois matrices or Greenberg local null-homotopies.",
+        "No actual c1 Selmer lift, E121 cocycles, nonzero h2 or full positive Selmer dimension.",
+        "No new original complex Lpp equality, original Sha finiteness or BSD leading coefficient; no expert review."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "computational algebra and homological algebra",
+          "kind": "exact_math",
+          "mechanism": "Class-field Artin characters define genuine truncated coefficient actions; division-point etale algebras define actual E11 torsors and hence Kummer classes. These are explicit arithmetic inputs to the cochain lift equations.",
+          "proof_boundary": "The character does not supply the elliptic representation, and a torsor presentation does not evaluate a cocycle on a Galois presentation or solve local Selmer conditions.",
+          "validating_test": "research/proof_labs/anticyclotomic_artin_t3.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html/Galois_theory_and_class_field_theory.html"
+        },
+        {
+          "discipline": "independent computational verification",
+          "kind": "validation_method",
+          "mechanism": "PARI ideal class arithmetic and multiplication maps are compared with separate Python CRT/log and FLINT polynomial recurrences; mutated oracle outputs exercise the same equality checks.",
+          "proof_boundary": "Agreement corroborates exact arithmetic; class field theory, division polynomial identities and expert mathematical review are distinct dependencies.",
+          "validating_test": "research/proof_labs/kummer_11_torsors.py",
+          "reference": "https://pari.math.u-bordeaux.fr/dochtml/html/Elliptic_curves.html"
+        }
+      ]
     }
   ]
 }
