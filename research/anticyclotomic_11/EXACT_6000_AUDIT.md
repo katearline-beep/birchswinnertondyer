@@ -95,3 +95,7 @@ The GitHub Actions [exact Python matrix](../../.github/workflows/split11.yml) an
 - Even after such review, an analytic rank-one result for \(E^{-7}\) proves neither \(\Sha(E^{-7})[11]=0\) nor \(L''(E,1)=0\) for the original E, and does **not** resolve rank-four BSD or the full leading-coefficient conjecture.
 
 **Whole-problem status at this checkpoint:** no new mathematical arrow from four rational points to complex \(L''(E,1)=0\) has been proved. This is a valuable reproducibility improvement on a supporting claim, not a leapfrog toward the central obstruction.
+
+## Session29 independent maintained-library corroboration and typed payoff
+
+The [FLINT/Arb oracle](arb_twist_derivative.py) now independently evaluates pi, sqrt and E1 using outward balls and reproduces the SAME 6000-term/tail rational enclosure. CI supplies PARI ellan input; the standalone square-frequency counts match its SHA256. This discharges the previously missing third maintained-library numerical cross-check, while retaining analytic/source and expert-review boundaries. [C0032](../proof_labs/SESSION29_ONE_SIDED_SELMER_AND_HEIGHT_COMPARISON.md) spells out a payoff previously left unused: ACCEPTING this nonvanishing, GZ–Kolyvagin gives finite Sha of the TWIST OVER Q and negative Q11 Selmer dimension1 for original E/K. This is neither Sha[11]=0 nor original E-Sha finiteness, and no original complex Lpp proof.

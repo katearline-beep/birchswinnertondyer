@@ -418,7 +418,7 @@
       "would_unlock": "A concrete, falsifiable partial verification of Howard's published anticyclotomic higher-height conjecture for a rank4 original curve, with only ONE genuine nonzero second pairing needed under established dimensional hypotheses.",
       "unverified_dependencies": "Selmer s+=4,s-=1 and Sha[11∞] unknown; full first BCLMN height is provisional and not source-normalized against Howard's entire Selmer space; no true second Bockstein height computation; universal norm line source matching and complex L'' comparison remain open.",
       "negative_control": "For any exact 3x3 alternating matrix over F11 rank is 0 or 2. The ZERO second pairing leaves 3-dim radical and disproves the hoped-for 3->1 drop; first nonzero provisional mixed vector alone cannot reject it. Nonzero universal-norm base classes ALWAYS have zero Howard derived pairing and cannot certify nonzero h2. Approximate mod1331 kernel vectors are not exact S2 Selmer classes. Session28 synthetic complexes with SAME D0,D1 have zero or rank2 beta2; raw D2=0 may give nonzero corrected beta2. A zero finite residue is inconclusive since 11*T^2*J survives mod121.",
-      "next_decisive_test": "Session28 first-digit direct-coordinate global ideal oracle supplies algorithmic corroboration only. MCS2026 preprint comparison and second-Bockstein lift formula are now source typed. Next construct an ACTUAL Greenberg Iwasawa Selmer complex presentation modulo T^3 with local conditions, exact x,x1 satisfying D0*x1=-D1*x and duality; compute beta2=[D2*x+D1*x1] in its quotient. Do not use a synthetic D(T), finite first kernel, or universal norm as an arithmetic h2 witness. Maintain exact signature and original complex-L obligations.",
+      "next_decisive_test": "Session29 C0031/32 removes two overly broad obstacles: direct BD Thm2.18(4) identifies MW first height with MT, and accepting the independently Arb-corrobated twist nonvanishing gives negative Q11 Selmer dimension1 by GZK. Exact height-defined Xj then belong to full S2 without a positive upper bound. Next construct actual arithmetic representatives/lifts for these Xj in the Selmer T3 presentation and evaluate h2. Full positive bound remains needed for full5-to3-to1, not for U membership.",
       "kill_criterion": "Park conditional 5->3->1 if full Selmer extra dimensions invalidate signature, independent global h1 contradicts provisional v, first height source comparison cannot be proved, or a genuine second height vanishes for all exact pairs. Never infer analytic rank4 or Sha from finite-field toy or p-adic Selmer pattern.",
       "source": "https://arxiv.org/pdf/1202.6343",
       "test_path": "research/proof_labs/howard_second_height_quotient_controls.py",
@@ -438,6 +438,11 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Session28 EX015 provides direct-coordinate first-digit corroboration and typed MCS minus-sign second-Bockstein construction. Actual arithmetic presentation/lifts/duality not obtained; no BSD flags upgraded."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session29 EX016 direct BD/MT theorem and one-sided negative Selmer control define three exact S2 classes conditional on analytic/height certificate; no actual cochains or h2 obtained."
         }
       ]
     },
@@ -452,7 +457,7 @@
       "would_unlock": "A concrete, falsifiable partial verification of Howard's published anticyclotomic higher-height conjecture for a rank4 original curve, with only ONE genuine nonzero second pairing needed under established dimensional hypotheses.",
       "unverified_dependencies": "Selmer s+=4,s-=1 and Sha[11∞] unknown; full first BCLMN height is provisional and not source-normalized against Howard's entire Selmer space; no true second Bockstein height computation; universal norm line source matching and complex L'' comparison remain open.",
       "negative_control": "Synthetic same-D0,D1 complexes yield zero OR rank2 second obstruction. Raw D2 can vanish while corrected obstruction is nonzero. A finite-zero residue is inconclusive: 11*T^2*J is nonzero modulo121. Wrong ideal and sigma corrections are rejected by independent first-digit oracle.",
-      "next_decisive_test": "Construct actual arithmetic Selmer D(T) modulo T^3, local maps, exact x1 lifts and duality. Fail immediately if a candidate only consists of first-height residues, local logs or synthetic matrices. First source-normalize BCLMN versus BD/Howard.",
+      "next_decisive_test": "Session29 C0031/32 removes two overly broad obstacles: direct BD Thm2.18(4) identifies MW first height with MT, and accepting the independently Arb-corrobated twist nonvanishing gives negative Q11 Selmer dimension1 by GZK. Exact height-defined Xj then belong to full S2 without a positive upper bound. Next construct actual arithmetic representatives/lifts for these Xj in the Selmer T3 presentation and evaluate h2. Full positive bound remains needed for full5-to3-to1, not for U membership.",
       "kill_criterion": "Park if no valid arithmetic presentation or normalized duality can be constructed, if input is merely the provisional finite first-height kernel, or if only finite-zero observations are obtained. Reject any assertion that this alone proves original complex BSD.",
       "source": "https://arxiv.org/pdf/2603.23978",
       "test_path": "research/proof_labs/second_bockstein_lift.py",
@@ -467,6 +472,40 @@
           "date": "2026-10-19",
           "outcome": "active",
           "evidence": "Session28 gives executable lift/quotient algebra and a distinct direct global-ideal first-digit oracle; actual arithmetic realization remains missing. A new experimental subtrack of LF011, not a new arithmetic theorem."
+        },
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session29 EX016 direct BD/MT theorem and one-sided negative Selmer control define three exact S2 classes conditional on analytic/height certificate; no actual cochains or h2 obtained."
+        }
+      ]
+    },
+    {
+      "id": "LF-013",
+      "experiment_id": "EX-016",
+      "title": "Twist-side control to an exact three-class second-height test domain",
+      "known_baseline": "BD Thm2.18(4) identifies first height with MT on MW; BCLMN opposite-eigen cross height is minus its quadratic q. Accepting the twist derivative certificate, GZK gives twist/Q rank1 and finite Sha, hence original E/K negative Q11 Selmer dimension1. Anti-equivariance gives exact full-S2 classes Xj=Pj-(aj/a1)P1 without positive upper bound.",
+      "missing_arrow": "Need accepted analytic/height inputs, actual arithmetic cocycles/lifts and second Bockstein evaluation on Xj. Positive Selmer upper bound remains needed for whole S3 dimension1, and original complex comparison is absent.",
+      "hypothetical_bridge": "Use source-derived one-sided Selmer control to define an exact three-dimensional U in full S2, then compute a genuinely nonzero alternating h2 on U. Under separate positive dimension4 this also tests full3-to1; without it the result remains a nonzero restricted height.",
+      "if_then_statement": "IF twist nonvanishing and source-normalized first heights are accepted, THEN minus Selmer dimension1 and exact U subset S2 follow by established theorems. IF a genuine h2 entry on U is nonzero, THEN its restriction has rank2. A further positive upper bound is required for the full S3 conclusion.",
+      "would_unlock": "A valid second-height arithmetic test domain with three exact height-defined MW classes, bypassing the need to solve the positive Selmer bound before beginning h2 computation.",
+      "unverified_dependencies": "Analytic and global-height certificate expert review remains outstanding; no arithmetic cochains/lifts/h2, full positive Selmer upper bound or original complex comparison has been obtained.",
+      "negative_control": "A minus3 model preserves all four measured cross heights but invalidates full-S2 membership. Extra positive dimensions do not invalidate the one-sided lemma. Finite Sha may have 11-torsion. Zero restricted h2 on U need not imply globally zero h2 if full S2 is larger.",
+      "next_decisive_test": "Use exact canonical ai to define Xj, obtain genuine Kummer cochains and source-compatible first-order lifts in the Greenberg Selmer complex, and compute h2 on a selected pair; keep certificate review and positive-bound/global-comparison obligations explicit.",
+      "kill_criterion": "Reject U as an exact S2 domain if twist-side negative dimension1 or first-height source comparison fails. Reject h2 claims based on synthetic matrices or approximate kernel vectors. Do not promote restricted nonzero h2 to fullS3 or original BSD without missing hypotheses.",
+      "source": "https://www.math.mcgill.ca/darmon/pub/Articles/Research/13.Derived-p-adic/paper.pdf",
+      "test_path": "research/proof_labs/one_sided_selmer_control.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No actual arithmetic Kummer/lift data or nonzero h2, no full positive Selmer bound, no original E-Sha finiteness and no complex BSD theorem.",
+      "decision_log": [
+        {
+          "date": "2026-10-19",
+          "outcome": "active",
+          "evidence": "Session29 source theorem, independent Arb corroboration and one-sided eigenspace lemma construct a conditional exact U domain; the nonzero second arithmetic pairing is still the moonshot."
         }
       ]
     }
