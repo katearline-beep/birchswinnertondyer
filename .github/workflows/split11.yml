@@ -151,3 +151,6 @@ jobs:
 
       - name: Twist primary Selmer source prerequisites and valuation falsifiers
         run: python -I -B research/proof_labs/twist_primary_selmer_gate.py
+
+      - name: Frozen exact Kurihara3389 certificate and integer-denominator prediction
+        run: python -I -B research/proof_labs/verify_kurihara_3389.py research/proof_labs/certificates/session35_kurihara_3389.txt

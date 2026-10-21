@@ -8,10 +8,13 @@ are checked from the exact producer transcript. Malformed data fail closed.
 from fractions import Fraction as F
 import hashlib
 import json
+from math import gcd
 from pathlib import Path
 import sys
 
 Q,P = 3389,11
+EXPECTED_DELTA = 10
+EXPECTED_ROWS_SHA256 = '0997e306c3b838ff43d29cb6eaf34e7ce06701db5c678bf56946cc1ea6e75f78'
 CHI = (1,1,-1,1,-1,-1)
 
 
@@ -45,6 +48,7 @@ def canonical_lines(text):
 
 
 def verify(text):
+    need((count(3),count(5))==(7,10) and gcd(count(3),count(5))==1, 'rational torsion exclusion failed')
     lines=canonical_lines(text)
     need(not any('Traceback (most recent call last)' in s or '***' in s for s in text.splitlines()),'interpreter error')
     def one(tag):
@@ -73,12 +77,13 @@ def verify(text):
     rows=[s for s in lines if s.startswith('S35ROW ')]
     need(len(rows)==Q-1 and result['rows']==Q-1, 'incomplete transcript')
     digest=hashlib.sha256(('\n'.join(rows)+'\n').encode()).hexdigest()
-    need(digest==result['rows_sha256'],'transcript hash mismatch')
+    need(digest==result['rows_sha256']==EXPECTED_ROWS_SHA256,'published transcript hash mismatch')
     values={}
     for a,line in enumerate(rows,1):
         fields=line.split()
         need(len(fields)==9 and int(fields[1])==a,'missing/reordered/duplicate row')
         v=list(map(F,fields[2:])); reduced=list(map(res,v))
+        need(all(x.denominator==1 for x in v), 'pre-transcript integer-denominator prediction failed')
         need(v[-1]==sum(c*x for c,x in zip(CHI,v[:6])),'twisting rational sum mismatch')
         need(reduced[-1]==sum(c*x for c,x in zip(CHI,reduced[:6])) % P,'twisting residue mismatch')
         values[a]=v
@@ -98,7 +103,7 @@ def verify(text):
     alternate=0;x=1
     for j in range(Q-1):
         alternate=(alternate+j*res(values[x][-1])) % P;x=x*pow(3,5,Q) % Q
-    need(x==1 and direct==running==result['delta'] and alternate==pow(5,-1,P)*direct % P,'weighted sum mismatch')
+    need(x==1 and direct==running==result['delta']==EXPECTED_DELTA and alternate==pow(5,-1,P)*direct % P,'weighted sum mismatch')
     need(sum(s.startswith('S35COMPLETE ') for s in lines)==1,'missing completion')
     return direct,digest,meta
 
@@ -107,6 +112,7 @@ def main():
     need(len(sys.argv)==2,'usage: verifier transcript')
     text=Path(sys.argv[1]).read_text()
     d,h,m=verify(text)
+    print('PASS all20328 components satisfy the independent integer-denominator prediction')
     print('PASS all3388 rational rows, symmetry, character, denominator units, Hecke traces and two-generator sums')
     print('VERIFIED_TRANSCRIPT delta='+str(d)+' sha256='+h+' source_head='+m['source_head'])
     for bad in (text.replace('S35ROW 1 ','S35ROW 2 ',1),text+'\n*** synthetic error',text.replace('S35COMPLETE ','INCOMPLETE ',1)):
