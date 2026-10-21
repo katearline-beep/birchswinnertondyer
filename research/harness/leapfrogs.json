@@ -660,14 +660,14 @@
       "experiment_id": "EX-021",
       "title": "Rank-one twist primary arithmetic to residual Selmer lift existence",
       "known_baseline": "C0032 supplies a negative rational Selmer line under accepted twist nonvanishing, but finite Sha may retain11-torsion; no full negative mod11 bound exists.",
-      "missing_arrow": "Zhang applicability is source-audited but normalized valuation is unproved; Sakamoto provides an alternative exact delta3389 criterion whose focal value remains uncomputed.",
+      "missing_arrow": "The negative residual line is now supplied by C0044 under recorded inputs; actual constrained cochains and the finite integral comparison/duality audit remain before genuine h2.",
       "hypothetical_bridge": "Compute the twist one-prime Kurihara number exactly via sparse original minus modular symbols and conductor7 twisting; its nonvanishing gives the residual negative line, then finite duality gives first-stage survivors.",
       "if_then_statement": "IF the twist has Sha11=0 and the full residual negative Selmer line is R THEN the three height-kernel MW classes survive the first finite Selmer Bockstein without a positive upper bound.",
       "would_unlock": "A residual integral first-stage existence gate closer to h2, without assuming away the difference between finite Sha and trivial Sha11.",
-      "unverified_dependencies": "Nonsquarefree theorem hypotheses, normalized valuation, first-height finite comparison and actual arithmetic cochains remain explicit obligations.",
+      "unverified_dependencies": "Recorded GL2/source normalization and independent expert audit remain explicit; finite integral Selmer height-duality comparison and actual arithmetic correction cochains are still required.",
       "negative_control": "A finite Sha group with11-torsion enlarges residual Selmer while leaving rational corank one. Real near-integer intervals do not certify a prime-adic unit.",
-      "next_decisive_test": "Use a sparse/eclib curve-specific modular-symbol implementation to compute exact delta3389; certify period-unit conventions and independently verify the transcript before any Selmer upgrade.",
-      "kill_criterion": "No further blind full-space PARI allocations after timeout/stack overflow. A zero delta is inconclusive; missing exact symbol or valuation leaves the residual bound open.",
+      "next_decisive_test": "Construct an actual constrained c1 for one positive residual height-kernel class, using the certified negative line and retaining all finite integral local-condition/duality hypotheses.",
+      "kill_criterion": "No additional prime or height-digit runs. A finite first-stage existence deduction is not evaluated cochains, integral T3 compatibility or a nonzero second height.",
       "source": "https://math.mit.edu/~wz2113/math/online/Kconj.pdf",
       "test_path": "research/proof_labs/twist_primary_selmer_gate.py",
       "gate": "G1",
@@ -675,7 +675,7 @@
       "reviewed": false,
       "proof_status": "speculative",
       "novelty_status": "unverified",
-      "not_unlocked": "No new negative residual bound, actual correction, second height or original complex BSD implication is presumed.",
+      "not_unlocked": "No evaluated c1, integral T3 lift, h2, positive Selmer upper bound, original Sha finiteness or original complex BSD implication.",
       "decision_log": [
         {
           "date": "2026-10-20",
@@ -686,6 +686,16 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "C0042/43 source gates and exact small-curve controls pass. Focal delta is UNCOMPUTED after resource failures; no Sha11 inference. Shift from numerical reconstruction to a one-prime exact modular-symbol certificate."
+        },
+        {
+          "date": "2026-10-21",
+          "outcome": "active",
+          "evidence": "Issue70 and Session35 predeclare exact Sage/eclib symbols, independent transcript checks and a6GiB/20min GitHub computation cap. No new Selmer conclusion before actual output and normalization audit."
+        },
+        {
+          "date": "2026-10-21",
+          "outcome": "active",
+          "evidence": "C0044 actual delta3389=10 and frozen exact transcript checked, including independent integer prediction. Full-space memory failure led to proven-rational integration,116.1s. C0045 first Selmer survivors remain conditional on finite integral duality; advance to actual cochains."
         }
       ]
     }

@@ -1049,39 +1049,47 @@
       "id": "EX-021",
       "claim_ids": [
         "C-0042",
-        "C-0043"
+        "C-0043",
+        "C-0044",
+        "C-0045"
       ],
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Can published rank-one p-primary BSD or an exact one-prime Kurihara number certify the twist residual Selmer line without assuming Sha11 triviality?",
-      "decisive_observation": "Zhang nonsquarefree hypotheses pass recorded inputs; numerical quotient is near4 but has no valuation certificate. Sakamoto Remark1.6 reduces an exact residual bound to nonzero delta3389; focal delta remains UNCOMPUTED after60s timeout and512MB stack overflow at125.4s. Six exact small-curve twisting controls pass.",
+      "decisive_observation": "Session35 exact denominator-controlled rational symbols give delta3389=10 mod11, all3388 rows independently checked and all20328 components INTEGER. Under recorded source/GL2/local inputs, Sakamoto gives twist Sel11 dimension1 and Sha11-primary zero. First positive Selmer survivors remain conditional on finite integral duality; actual cochains uncomputed.",
       "dependencies": [
         "C0032 accepted analytic rank1 and C0035 eleven-primitive point; recorded residual GL2 and exact reduction inputs.",
         "Zhang Theorems1.4/1.6/10.3 and Sakamoto2022 hypotheses(a)-(c), Remark1.6; future focal modular-symbol normalization and exact nonzero value.",
-        "Finite self-dual Selmer-complex first-Bockstein/height comparison remains explicit for the conditional survivor lemma."
+        "Finite self-dual Selmer-complex first-Bockstein/height comparison remains explicit for the conditional survivor lemma.",
+        "Wuthrich exact rational recovery with proven denominator/error bounds; original semistability and singleton isogeny class; Cesnavicius Manin-constant theorem."
       ],
       "commands": [
-        "python3 -I -B research/proof_labs/twist_primary_selmer_gate.py"
+        "python3 -I -B research/proof_labs/twist_primary_selmer_gate.py",
+        "python3 -I -B research/proof_labs/verify_kurihara_3389.py research/proof_labs/certificates/session35_kurihara_3389.txt"
       ],
       "artifacts": [
         "research/proof_labs/SESSION34_TWIST_PRIMARY_SELMER_GATE.md",
         "research/proof_labs/twist_primary_selmer_gate.py",
-        "research/proof_labs/pari_twist_selmer_gate.gp"
+        "research/proof_labs/pari_twist_selmer_gate.gp",
+        "research/proof_labs/SESSION35_SPARSE_KURIHARA_COMPUTATION.md",
+        "research/proof_labs/sage_kurihara_3389.py",
+        "research/proof_labs/verify_kurihara_3389.py",
+        "research/proof_labs/certificates/session35_kurihara_3389.txt"
       ],
       "negative_control": "Finite Sha may retain11-torsion, a nonunit point index changes regulator by121, and arbitrarily close rational quotients can have distinct11-adic valuations.",
       "stop_condition": "No Sha11 assertion from a decimal, semistable theorem on an additive twist, prime eligibility or resource refusal; stop repeated full-space runs and require an exact focal certificate.",
       "nonclaims": [
-        "Actual focal delta3389 is uncomputed; no twist residual Selmer upper bound or Sha11 triviality.",
-        "No actual correction cochains, integral T3 lift, h2 or original complex BSD result."
+        "No original positive Selmer upper bound, original Sha finiteness, actual correction cochains, integral T3 lift, h2 or complex BSD.",
+        "The full negative residual line follows under recorded arithmetic/source inputs; no expert or formal proof review is asserted."
       ],
       "cross_disciplines": [
         {
           "discipline": "arithmetic duality and validated numerics",
           "kind": "exact_math",
-          "mechanism": "Published rank-one p-primary arithmetic and Sakamoto modular-symbol/Kolyvagin-system theory identify two exact routes to a residual Selmer bound; finite first-height duality would translate the bound into first-stage survivors.",
+          "mechanism": "Proven denominator bounds and controlled analytic integration recover exact rational modular symbols without a full basis; independent integer/parity/Hecke syndromes test the transcript. Published Kolyvagin-system theory converts nonzero weighted sum into residual Selmer dimension.",
           "proof_boundary": "Real proximity does not imply a p-adic unit. Small-curve exact symbols validate the algorithm only; prime eligibility and failed resource runs do not evaluate focal delta.",
           "validating_test": "research/proof_labs/twist_primary_selmer_gate.py",
-          "reference": "https://math.mit.edu/~wz2113/math/online/Kconj.pdf"
+          "reference": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/mod_sym_num.html"
         }
       ]
     }
