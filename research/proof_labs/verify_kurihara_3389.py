@@ -52,8 +52,11 @@ def verify(text):
         need(len(vals)==1,'missing/duplicate '+tag)
         return vals[0]
     meta,control,result=one('S35META'),one('S35CONTROL'),one('S35RESULT')
+    alg=one('S35ALGORITHM')
+    need(alg['backend']=='sage_num_proven_rational' and alg['semistable'] is True
+         and alg['isogeny_class_size']==1 and alg['denominator']==7*Q, 'numerical theorem input gate')
     need(meta['sage'].startswith('10.6') and meta['curve']==[1,-1,0,-79,289], 'runtime/curve mismatch')
-    need(meta['q']==Q and meta['p']==P and meta['sign_space']==0 and meta['evaluation_sign']==-1,'wrong problem/sign')
+    need(meta['q']==Q and meta['p']==P and meta['sign_space']=='numerical_no_basis' and meta['backend']=='sage_num_proven_rational' and meta['evaluation_sign']==-1,'wrong problem/sign')
     need(len(meta['source_head'])==40 and all(c in '0123456789abcdef' for c in meta['source_head']),'missing source provenance')
     expected=[1,1,1,-2,1,-2]
     for name,scale in (('direct','scale_plus'),('twisted','scale_twist')):

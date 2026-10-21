@@ -37,7 +37,7 @@ def emit(kind, data):
 def main():
     start = time.monotonic()
     emit('S35META', {'sage':SAGE_VERSION,'source_head':os.environ.get('SOURCE_HEAD','unknown'),
-                     'curve':[1,-1,0,-79,289],'q':Q,'p':P,'sign_space':0,'evaluation_sign':-1})
+                     'curve':[1,-1,0,-79,289],'q':Q,'p':P,'sign_space':'numerical_no_basis','evaluation_sign':-1,'backend':'sage_num_proven_rational'})
     c = EllipticCurve([0,0,1,-1,0])
     ct = EllipticCurve([0,0,1,-49,-86])
     cm, ctp = ECModularSymbol(c,0), ECModularSymbol(ct,1)
@@ -67,7 +67,12 @@ def main():
     e = EllipticCurve([1,-1,0,-79,289])
     need(e.conductor() == 234446, 'wrong original conductor')
     emit('S35PROGRESS', {'stage':'focal initialization','elapsed':time.monotonic()-start})
-    m = ECModularSymbol(e,0)
+    need(e.conductor().is_squarefree(), 'numerical theorem needs semistable original curve')
+    need(len(e.isogeny_class().curves) == 1, 'outside-table optimality gate unresolved')
+    m = e.modular_symbol(sign=-1, implementation='num')
+    emit('S35ALGORITHM', {'backend':'sage_num_proven_rational','isogeny_class_size':1,
+                          'semistable':True,'denominator':7*Q,
+                          'manin_constant_input':'Cesnavicius semistable optimal theorem'})
     need(m(0,-1) == 0, 'minus base cusp fails')
     emit('S35PROGRESS', {'stage':'focal initialized','elapsed':time.monotonic()-start})
     for ell,r in ((3,QQ(1)/13),(5,QQ(2)/17),(13,QQ(5)/19)):
@@ -76,13 +81,18 @@ def main():
         ap = int(e.ap(ell))
         need(sum(terms) == ap*v, 'Hecke relation failed')
         emit('S35HECKE', {'ell':ell,'r':str(r),'ap':ap,'value':rat(v),'terms':list(map(rat,terms))})
+    # Wuthrich exact rational algorithm: controlled integration plus proven
+    # denominator bounds, not unbounded rational reconstruction from a decimal.
+    table = m.all_values_for_one_denominator(7*Q, sign=-1)
+    emit('S35PROGRESS', {'stage':'all denominator23723 values computed','entries':len(table),
+                       'elapsed':time.monotonic()-start})
     logs = {}
     for j in range(Q-1):
         logs[pow(3,j,Q)] = j % P
     need(len(logs) == Q-1, 'generator3 is not primitive')
     delta, digest = 0, hashlib.sha256()
     for a in range(1,Q):
-        values = [m(QQ(a)/Q+QQ(b)/7,-1) for b in range(1,7)]
+        values = [table[(QQ(a)/Q+QQ(b)/7) % 1] for b in range(1,7)]
         v = sum(chi*x for chi,x in zip(CHI,values))
         for x in values:
             residue(x)
