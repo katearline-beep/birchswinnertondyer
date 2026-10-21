@@ -154,3 +154,6 @@ jobs:
 
       - name: Frozen exact Kurihara3389 certificate and integer-denominator prediction
         run: python -I -B research/proof_labs/verify_kurihara_3389.py research/proof_labs/certificates/session35_kurihara_3389.txt
+
+      - name: Signed integral first-lift torsor and local-normalization boundaries
+        run: python -I -B research/proof_labs/integral_first_lift_controls.py
