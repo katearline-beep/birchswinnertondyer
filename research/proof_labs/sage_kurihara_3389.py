@@ -92,7 +92,7 @@ def main():
     need(len(logs) == Q-1, 'generator3 is not primitive')
     delta, digest = 0, hashlib.sha256()
     for a in range(1,Q):
-        values = [table[(QQ(a)/Q+QQ(b)/7) % 1] for b in range(1,7)]
+        values = [table[QQ((7*a+b*Q) % (7*Q))/(7*Q)] for b in range(1,7)]
         v = sum(chi*x for chi,x in zip(CHI,values))
         for x in values:
             residue(x)
