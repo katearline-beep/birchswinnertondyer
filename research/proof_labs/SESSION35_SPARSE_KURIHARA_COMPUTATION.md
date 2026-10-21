@@ -24,3 +24,7 @@ Reproduce in Sage10.6:
     python3 -I -B research/proof_labs/verify_kurihara_3389.py transcript.txt
 
 Set SOURCE_HEAD to the40-character source commit before the producer. The checker requires explicit provenance. GitHub records the resolved container digest separately.
+
+### First execution: environment failure, no mathematical output
+
+Head e5640cb7b946dec561e0dbff791312bc0a2634dd, workflow39662360034, job119438405489. The official image resolved to sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb. After a50s image pull the container could not open /home/sage/sage/sage because the host runner UID differs from the image's Sage user. No Sage process or focal arithmetic ran. Corrected by using the image's default Sage user, with the repository still read-only and networking disabled; pinned the observed image digest. This retry addresses a diagnosed launch defect, with the same memory/time gate.

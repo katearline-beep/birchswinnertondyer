@@ -129,14 +129,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          timeout 300 docker pull sagemath/sagemath:10.6
-          docker image inspect --format '{{json .RepoDigests}}' sagemath/sagemath:10.6
-          docker image inspect --format '{{.Id}}' sagemath/sagemath:10.6 > /tmp/sage35-image.txt
+          timeout 300 docker pull sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb
+          docker image inspect --format '{{json .RepoDigests}}' sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb
+          docker image inspect --format '{{.Id}}' sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb > /tmp/sage35-image.txt
       - name: Compute exact symbols within declared resource gate
         shell: bash
         run: |
           set -euo pipefail
           image_id=$(cat /tmp/sage35-image.txt)
-          timeout --signal=TERM --kill-after=15s 1200 docker run --rm --memory=6g --memory-swap=6g --cpus=2 --network=none --user="$(id -u):$(id -g)" -e HOME=/tmp -e SOURCE_HEAD="${{ github.event.pull_request.head.sha || github.sha }}" -v "$PWD:/work:ro" -w /work --entrypoint /home/sage/sage/sage "$image_id" -python research/proof_labs/sage_kurihara_3389.py 2>&1 | tee /tmp/kurihara35-transcript.txt
+          timeout --signal=TERM --kill-after=15s 1200 docker run --rm --memory=6g --memory-swap=6g --cpus=2 --network=none -e HOME=/tmp -e SOURCE_HEAD="${{ github.event.pull_request.head.sha || github.sha }}" -v "$PWD:/work:ro" -w /work --entrypoint /home/sage/sage/sage "$image_id" -python research/proof_labs/sage_kurihara_3389.py 2>&1 | tee /tmp/kurihara35-transcript.txt
       - name: Independently verify the complete rational transcript
         run: python3 -I -B research/proof_labs/verify_kurihara_3389.py /tmp/kurihara35-transcript.txt
