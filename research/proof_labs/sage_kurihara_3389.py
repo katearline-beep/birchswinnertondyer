@@ -64,6 +64,13 @@ def main():
     emit('S35CONTROL', {'direct':list(map(rat,direct)),'twisted':list(map(rat,twisted)),
                         'wrong':list(map(rat,wrong)),'scale_plus':rat(scale_plus),
                         'scale_twist':rat(scale_twist)})
+    cn = c.modular_symbol(sign=-1, implementation='num')
+    ctn = ct.modular_symbol(sign=1, implementation='num')
+    ndirect = [ctn(QQ(a)/13,1) for a in range(1,7)]
+    ntwist = [sum(CHI[b-1]*cn(QQ(a)/13+QQ(b)/7,-1) for b in range(1,7)) for a in range(1,7)]
+    need(ndirect == direct and ntwist == twisted, 'new numerical backend disagrees with PARI/eclib controls')
+    need(cn(QQ(0),-1) == 0, 'numerical minus base cusp')
+    emit('S35NUMCONTROL', {'direct':list(map(rat,ndirect)),'twisted':list(map(rat,ntwist))})
     e = EllipticCurve([1,-1,0,-79,289])
     need(e.conductor() == 234446, 'wrong original conductor')
     emit('S35PROGRESS', {'stage':'focal initialization','elapsed':time.monotonic()-start})
@@ -73,7 +80,7 @@ def main():
     emit('S35ALGORITHM', {'backend':'sage_num_proven_rational','isogeny_class_size':1,
                           'semistable':True,'denominator':7*Q,
                           'manin_constant_input':'Cesnavicius semistable optimal theorem'})
-    need(m(0,-1) == 0, 'minus base cusp fails')
+    need(m(QQ(0),-1) == 0, 'minus base cusp fails')
     emit('S35PROGRESS', {'stage':'focal initialized','elapsed':time.monotonic()-start})
     for ell,r in ((3,QQ(1)/13),(5,QQ(2)/17),(13,QQ(5)/19)):
         v = m(r,-1)
