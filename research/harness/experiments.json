@@ -1054,7 +1054,7 @@
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Can published rank-one p-primary BSD or an exact one-prime Kurihara number certify the twist residual Selmer line without assuming Sha11 triviality?",
-      "decisive_observation": "Zhang nonsquarefree hypotheses pass recorded inputs; numerical quotient is near4 but has no valuation certificate. Sakamoto Remark1.6 reduces an exact residual bound to nonzero delta3389; focal delta remains UNCOMPUTED after60s timeout and512MB stack overflow at125.4s. Six exact small-curve twisting controls pass.",
+      "decisive_observation": "Zhang nonsquarefree hypotheses pass recorded inputs; numerical quotient is near4 but has no valuation certificate. Sakamoto Remark1.6 reduces an exact residual bound to nonzero delta3389; focal delta remains UNCOMPUTED after60s timeout and512MB stack overflow at125.4s. Six exact small-curve twisting controls pass. Session35 predeclares a Sage10.6/eclib GitHub resource gate; no focal value is presumed.",
       "dependencies": [
         "C0032 accepted analytic rank1 and C0035 eleven-primitive point; recorded residual GL2 and exact reduction inputs.",
         "Zhang Theorems1.4/1.6/10.3 and Sakamoto2022 hypotheses(a)-(c), Remark1.6; future focal modular-symbol normalization and exact nonzero value.",
@@ -1066,7 +1066,10 @@
       "artifacts": [
         "research/proof_labs/SESSION34_TWIST_PRIMARY_SELMER_GATE.md",
         "research/proof_labs/twist_primary_selmer_gate.py",
-        "research/proof_labs/pari_twist_selmer_gate.gp"
+        "research/proof_labs/pari_twist_selmer_gate.gp",
+        "research/proof_labs/SESSION35_SPARSE_KURIHARA_COMPUTATION.md",
+        "research/proof_labs/sage_kurihara_3389.py",
+        "research/proof_labs/verify_kurihara_3389.py"
       ],
       "negative_control": "Finite Sha may retain11-torsion, a nonunit point index changes regulator by121, and arbitrarily close rational quotients can have distinct11-adic valuations.",
       "stop_condition": "No Sha11 assertion from a decimal, semistable theorem on an additive twist, prime eligibility or resource refusal; stop repeated full-space runs and require an exact focal certificate.",

@@ -686,6 +686,11 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "C0042/43 source gates and exact small-curve controls pass. Focal delta is UNCOMPUTED after resource failures; no Sha11 inference. Shift from numerical reconstruction to a one-prime exact modular-symbol certificate."
+        },
+        {
+          "date": "2026-10-21",
+          "outcome": "active",
+          "evidence": "Issue70 and Session35 predeclare exact Sage/eclib symbols, independent transcript checks and a6GiB/20min GitHub computation cap. No new Selmer conclusion before actual output and normalization audit."
         }
       ]
     }

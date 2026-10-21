@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-10-20-05",
-  "reviewed_on": "2026-10-20",
-  "next_due_on": "2026-10-27",
+  "review_id": "WPR-2026-10-21-01",
+  "reviewed_on": "2026-10-21",
+  "next_due_on": "2026-10-28",
   "reviewer_type": "ai_assisted_unreviewed",
   "review_kind": "theorem_first_proof_laboratory_and_whole_problem_reorientation",
   "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
@@ -91,10 +91,11 @@
     "#60",
     "#63",
     "#65",
-    "#67"
+    "#67",
+    "#69"
   ],
-  "previous_review_id": "WPR-2026-10-20-04",
-  "mathematical_breakthrough_since_previous": "NONE toward original complex Lpp or BSD. C0042 source-matches published rank-one p-BSD to the additive twist; C0043 supplies an exact Kurihara certificate criterion and verified prerequisites. Actual focal delta and twist Sha11 upper bound remain uncomputed.",
+  "previous_review_id": "WPR-2026-10-20-05",
+  "mathematical_breakthrough_since_previous": "NONE toward original complex BSD. Session35 attempts actual Sage/eclib delta3389 with exact controls and a bounded GitHub runtime; no focal result is presumed.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -461,9 +462,12 @@
     "research/proof_labs/pari_twist_selmer_gate.gp",
     "https://math.mit.edu/~wz2113/math/online/Kconj.pdf",
     "https://ems.press/content/serial-article-files/29299?nt=1",
-    "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Modular_symbols.html"
+    "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Modular_symbols.html",
+    "research/proof_labs/SESSION35_SPARSE_KURIHARA_COMPUTATION.md",
+    "research/proof_labs/sage_kurihara_3389.py",
+    "research/proof_labs/verify_kurihara_3389.py"
   ],
-  "journal_path": "research/reviews/2026-10-20-whole-problem.md",
+  "journal_path": "research/reviews/2026-10-21-whole-problem.md",
   "not_established": [
     "No original complex L''(E,1)=0 theorem",
     "No complex analytic rank-four proof for curve 234446.a1",

@@ -114,3 +114,29 @@ jobs:
           python-version: '3.12'
       - name: Complete first-digit ideal oracle and published controls
         run: python -I -B research/anticyclotomic_11/direct_coordinate_height_mod11.py
+
+  kurihara-3389:
+    name: Bounded Sage-eclib twist Kurihara certificate
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && startsWith(github.head_ref, 'research/session35-'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout immutable action
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Resolve and record Sage10.6 image
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 300 docker pull sagemath/sagemath:10.6
+          docker image inspect --format '{{json .RepoDigests}}' sagemath/sagemath:10.6
+          docker image inspect --format '{{.Id}}' sagemath/sagemath:10.6 > /tmp/sage35-image.txt
+      - name: Compute exact symbols within declared resource gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          image_id=$(cat /tmp/sage35-image.txt)
+          timeout --signal=TERM --kill-after=15s 1200 docker run --rm --memory=6g --memory-swap=6g --cpus=2 --network=none --user="$(id -u):$(id -g)" -e HOME=/tmp -e SOURCE_HEAD="${{ github.event.pull_request.head.sha || github.sha }}" -v "$PWD:/work:ro" -w /work --entrypoint /home/sage/sage/sage "$image_id" -python research/proof_labs/sage_kurihara_3389.py 2>&1 | tee /tmp/kurihara35-transcript.txt
+      - name: Independently verify the complete rational transcript
+        run: python3 -I -B research/proof_labs/verify_kurihara_3389.py /tmp/kurihara35-transcript.txt
