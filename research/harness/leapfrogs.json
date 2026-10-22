@@ -710,7 +710,7 @@
       "would_unlock": "A sharply specified integral first-correction problem without unknown negative global directions.",
       "unverified_dependencies": "C0044 arithmetic/source specialization and expert review remain explicit. No actual global/local correction cochains, finite refining Galois presentation or secondary arithmetic coefficients have been evaluated.",
       "negative_control": "A fine negative class changes H2; an affine torsor without an origin cannot be canonically zeroed; global lifts may fail local Selmer conditions.",
-      "next_decisive_test": "Evaluate a genuine supported first correction on a Galois presentation refining the insufficient C0036 quotient, supply the local reference data and evaluate its invariant Greenberg defect before the secondary operation.",
+      "next_decisive_test": "Evaluate an actual supported global correction on a finite Galois refinement using the C0048 residual local reference. Integral local reference and second-stage arithmetic remain separate obligations.",
       "kill_criterion": "Stop if signed duality fails or if only cohomological existence is being mistaken for an evaluated c1 or genuine h2.",
       "source": "https://jmilne.org/math/Books/ADTnot.pdf",
       "test_path": "research/proof_labs/integral_first_lift_controls.py",
@@ -730,6 +730,45 @@
           "date": "2026-10-21",
           "outcome": "active",
           "evidence": "C0046/47 signed finite-support proof upgrades to all11-power coefficients and the Tate lattice. Controls pass including actual prime7 count; relative normalization is not canonical without a local origin, and the R scalar cannot repair a Selmer defect. No arithmetic c1 output."
+        },
+        {
+          "date": "2026-10-22",
+          "outcome": "active",
+          "evidence": "Session37 C0048 supplies the residual local origin missing in C0047; C0049 fixes the conditional global Selmer fibre uniquely. Integral reference and actual global correction remain missing."
+        }
+      ]
+    },
+    {
+      "id": "LF-020",
+      "experiment_id": "EX-023",
+      "title": "Explicit local norm points to residual first-lift reference classes",
+      "known_baseline": "C0047 supplies a one-parameter integral global first-lift torsor, but no evaluated global correction or actual local reference. C0033 already gives the actual degree11 field.",
+      "missing_arrow": "Local norm/reference construction is now evaluated at residual coefficients; the missing arithmetic is a supported global correction and its second obstruction, plus compatible higher-coefficient local data.",
+      "hypothetical_bridge": "Use the different to bound all omitted formal-log trace terms and certify a unit norm for an explicit uniformizer point, then scale its local Kummer class to any residual basepoint.",
+      "if_then_statement": "IF the actual formal point has unit normalized elliptic norm and the Kummer/Shapiro quotient is source-matched THEN its multiples define local residual first-lift references for every base local Kummer class.",
+      "would_unlock": "An actual arithmetic local origin for the residual affine normalization in C0047, with a minimal finite certificate rather than another global existence argument.",
+      "unverified_dependencies": "Actual local arithmetic and independent PARI comparison pass. Expert review of the class-field/formal-group/Kummer-Shapiro specialization remains outstanding. C0049 global normalization also retains C0045 height/finite-duality assumptions; no global cochains evaluated.",
+      "negative_control": "A missing n11 logarithm term may change the norm residue; an incorrect different may hide a tail; C11 at mod121 erases a nonzero11T term.",
+      "next_decisive_test": "Evaluate a positive supported global correction on a refining Galois presentation and compare its localization with the supplied [10]Q,[3]Q,[6]Q references; extend local data to C121 only when needed for higher coefficients.",
+      "kill_criterion": "Stop on nonunit norm, trace disagreement, failed tail bound or coefficient-layer mismatch. Local output cannot be labelled a supported global correction or h2.",
+      "source": "https://www.math.mcgill.ca/darmon/pub/Articles/Research/13.Derived-p-adic/paper.pdf",
+      "test_path": "research/proof_labs/local_norm_reference_11.py",
+      "gate": "G1",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "No evaluated supported global c1, local mod121 augmentation lift, T3 Selmer correction, h2, original complex analytic rank or BSD.",
+      "decision_log": [
+        {
+          "date": "2026-10-22",
+          "outcome": "active",
+          "evidence": "Issue74 and EX023 predeclare the actual local norm-point and rigorous-tail test before computing any value."
+        },
+        {
+          "date": "2026-10-22",
+          "outcome": "active",
+          "evidence": "C0048 unit norm115 mod121, exact infinite tail and independent PARI transcript pass. C0049 uniquely normalizes the conditional residual global Selmer fibre using actual local points, but no global cochain is evaluated."
         }
       ]
     }

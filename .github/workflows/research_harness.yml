@@ -99,6 +99,13 @@ jobs:
       - name: Compare local Kummer data and test supported obstruction certificates
         run: python -I -B research/proof_labs/fine_localization_height_detector.py /tmp/bsd-fine-localization33.txt
 
+      - name: Independent actual local norm-point reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/proof_labs/pari_local_norm_reference_11.gp > /tmp/bsd-local-norm37.txt 2>&1
+          python -I -B research/proof_labs/local_norm_reference_11.py /tmp/bsd-local-norm37.txt
+
   direct-height:
     name: Direct-coordinate global first-height oracle
     runs-on: ubuntu-24.04
