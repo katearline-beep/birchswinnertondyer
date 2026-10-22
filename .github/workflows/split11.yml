@@ -157,3 +157,6 @@ jobs:
 
       - name: Signed integral first-lift torsor and local-normalization boundaries
         run: python -I -B research/proof_labs/integral_first_lift_controls.py
+
+      - name: Explicit local norm reference and certified infinite formal-log tail
+        run: python -I -B research/proof_labs/local_norm_reference_11.py research/proof_labs/certificates/session37_local_norm_reference.txt
