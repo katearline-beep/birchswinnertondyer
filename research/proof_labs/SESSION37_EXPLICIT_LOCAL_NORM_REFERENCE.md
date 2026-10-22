@@ -23,6 +23,8 @@ The unique root of f modulo11 is4. With pi=xi-4, its polynomial is
 
 It is Eisenstein at11, so pi is a uniformizer with v11(pi)=1/11. The derivative terms have L-valuations (22,23,24,36,26,27,28,29,30,20,21); the unique minimum20 gives v_L(g'(pi))=20. PARI independently gives v11(disc(g))=20. These agree with the known local different. **The tail proof below uses a separate Newton-recurrence certificate and does not need to assume the different formula.** C0033's global dihedral/class-field identification, together with the Eisenstein degree, identifies this completion as the cyclic degree11 extension at v; its polynomial over Q is globally non-Galois. Do not substitute an arbitrary cyclotomic local extension.
 
+Fix a root xi and an identification with this actual completion once and for all. This root/embedding is part of the reference choice; no canonically preferred root is asserted. The group-ring coordinate remains the actual C0033 Artin character, independently of how the field generator is named. The conjugate place uses the conjugate root/embedding. No local or global Galois automorphism matrices have been evaluated here.
+
 For the minimal-model parameter t=-x/y put w=-1/y=t^3 U(t). The curve equation gives
 
 \[
