@@ -1147,16 +1147,19 @@
         "C0045 finite integral height/duality inputs and C0046/47 negative global line are needed only for the conditional UNIQUE normalized global Selmer class, not for local arithmetic."
       ],
       "commands": [
-        "python3 -I -B research/proof_labs/local_norm_reference_11.py research/proof_labs/certificates/session37_local_norm_reference.txt"
+        "python3 -I -B research/proof_labs/local_norm_reference_11.py research/proof_labs/certificates/session37_local_norm_reference.txt",
+        "python3 -I -B research/reviews/controls/first_lift_second_obstruction_2026_10_23.py"
       ],
       "artifacts": [
         "research/proof_labs/SESSION37_EXPLICIT_LOCAL_NORM_REFERENCE.md",
         "research/proof_labs/local_norm_reference_11.py",
         "research/proof_labs/pari_local_norm_reference_11.gp",
-        "research/proof_labs/certificates/session37_local_norm_reference.txt"
+        "research/proof_labs/certificates/session37_local_norm_reference.txt",
+        "research/reviews/controls/first_lift_second_obstruction_2026_10_23.py",
+        "research/reviews/2026-10-23-whole-problem.md"
       ],
-      "negative_control": "Keeping only the linear logarithm term can fail at this ramification; a finite trace without a tail proof is insufficient. Mod121 norm precision is not a mod121 T2 lift through C11.",
-      "stop_condition": "Require a unit actual norm coordinate and independent formal-log/trace agreement. Do not claim a global correction, higher-layer reference or h2 from local first-stage data.",
+      "negative_control": "Keeping only the linear logarithm term can fail at this ramification; a finite trace without a tail proof is insufficient. Mod121 norm precision is not a mod121 T2 lift through C11. Independent 2026-10-23 exact finite-algebra test checks (1+T)^11=1+11T !=1 modulo121 and gives two identical normalized first-lift complexes with different second obstructions; no arithmetic cochains computed.",
+      "stop_condition": "Require a unit actual norm coordinate and independent formal-log/trace agreement. Do not claim a global correction, higher-layer reference or h2 from local first-stage data. WPR-2026-10-23-01 adds a strict second-obstruction and C11/C121 action scope gate. A normalized residual reference cannot be promoted to mod121 augmentation or a nonzero h2.",
       "nonclaims": [
         "No evaluated supported global correction, second height, positive Selmer bound, original Sha finiteness or original complex BSD."
       ],
@@ -1168,6 +1171,14 @@
           "proof_boundary": "A local norm point supplies local first-stage data only; C11 cannot represent the mod121 T2 action and global cochains remain missing.",
           "validating_test": "research/proof_labs/local_norm_reference_11.py",
           "reference": "https://jmilne.org/math/CourseNotes/ANT.pdf"
+        },
+        {
+          "discipline": "homological algebra and formal countermodel testing",
+          "kind": "validation_method",
+          "mechanism": "Two free two-term F11[u]/u³ complexes with identical d0,d1 and affine first normalization but different d2 isolate the missing secondary connecting class. Integral binomial group-ring relation tests the coefficient-action type.",
+          "proof_boundary": "This falsifies an inference, not the actual curve's second Bockstein, the existence of a global Selmer correction or original complex L''; no new claim ID or peer review.",
+          "validating_test": "research/reviews/controls/first_lift_second_obstruction_2026_10_23.py",
+          "reference": "https://arxiv.org/abs/2603.23978"
         }
       ]
     }
