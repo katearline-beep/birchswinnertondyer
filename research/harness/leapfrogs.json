@@ -553,13 +553,13 @@
       "experiment_id": "EX-018",
       "title": "Reduction certificates and nonabelian embedding problems bypass huge Kummer closures",
       "known_baseline": "C0035 supplies exact11-saturation of the five known MW classes without height/Sha inputs. Conditional C0036 gives an enormous joint Kummer group and an obstruction to first lifts on the natural finite quotient. An explicit twisted kernel-E11 extension defines the necessary further embedding problem.",
-      "missing_arrow": "Session32 C0037 supplies source-derived unrestricted residual T3 existence under recorded inputs, allowing extra ramification. Fixed-support construction, Greenberg local homotopies and integral compatibility remain unknown.",
+      "missing_arrow": "C0046/47 now give conditional fixed-support first global existence and C0049 conditional normalized residual Selmer existence. The missing arrow is an evaluated nonabelian arithmetic realization with Greenberg local cochains, not another abstract existence assertion.",
       "hypothetical_bridge": "Use independent actual reduction rows to certify residual independence. Audit the smallest quotient and then express the first lift as a twisted finite embedding problem with kernel E11, rather than enumerating the whole Galois closure.",
-      "if_then_statement": "IF the residual lift embedding problem has a global solution with all Greenberg local constraints and compatible integral control THEN that solution supplies an actual first Bockstein lift; these existence and local assumptions are still unresolved.",
+      "if_then_statement": "IF a finite nonabelian realization carries actual rho, ell, c0 and c1 on G_(K,Sigma), passes the Frobenius commutator constraint and all Greenberg/reference comparisons THEN it supplies an evaluated normalized first lift; the necessary constraint alone supplies none of those sufficient premises.",
       "would_unlock": "An exact saturation certificate and a decisive rejection of an insufficient finite quotient, plus a typed alternative that could avoid enormous splitting-field enumeration.",
-      "unverified_dependencies": "The arithmetic quotient application uses recorded residual GL2 image input, subject to expert review. Global embedding-problem solvability, Greenberg local compatibility, integral torsion, actual second obstruction and complex BSD comparison remain missing.",
+      "unverified_dependencies": "C0050 uses the source-matched C0033 Artin character and standard good-reduction/Kummer facts, not full GL2. C0036 retains its GL2 assumption. C0045/46/49 existence and local-comparison assumptions remain unreviewed. The actual supported realization, higher compatibility, second obstruction and complex bridge remain missing.",
       "negative_control": "Dependent point replacement must lose reduction rank; order divisible by121 refused. A Heisenberg nonabelian extension permits a lift that is impossible on its abelian quotient; next-order lift can still fail.",
-      "next_decisive_test": "Use C0038's at-least-three-dimensional supported obstruction space to locate actual connecting classes and construct allowed corrections with Greenberg local data; absolute residual solvability is no longer the right stopping point.",
+      "next_decisive_test": "Construct an actual nonabelian arithmetic realization and test c1([Frob23^12,Frob127^10])=9*c0(Frob127^10)!=0 before checking all relations, support and Greenberg localization against [10]Q. Do not enumerate abelian refinements over K(E11) as potential solutions.",
       "kill_criterion": "Reject the finite-quotient no-go application if disjointness or residual image fails; never extend the quotient obstruction to the absolute Galois group without an inflation argument. Stop at an embedding problem unless a global/local solution is supplied.",
       "source": "https://wangjiuya.github.io/research/augmentation.pdf",
       "test_path": "research/proof_labs/kummer_reduction_11_certificate.py",
@@ -584,6 +584,16 @@
           "date": "2026-10-20",
           "outcome": "active",
           "evidence": "Session32 C0037 resolves unrestricted residual existence by standard global duality under recorded inputs; C0038 proves forgetting support erases a space of dimension at least3. Restricted Selmer realization remains missing."
+        },
+        {
+          "date": "2026-10-23",
+          "outcome": "active",
+          "evidence": "Precomputation Session38: safe lemma is the first-correction commutator identity on ker(rho); credible leapfrog uses actual Frobenius powers at23 and127 to reject abelian refinements over K(E11); wild original-complex cycle bridge remains unspecified. Verify character, matrix orders and reduction independently; stop if no actual supported embedding/localization data are produced."
+        },
+        {
+          "date": "2026-10-23",
+          "outcome": "active",
+          "evidence": "C0050 actual small-prime inputs force a nonzero commutator value for every possible first correction; two-model arithmetic and independent matrix-word checks pass. The PR76 full supported-cochain target remains unmet; stop at a necessary constraint and explicit missing arithmetic realization."
         }
       ]
     },
