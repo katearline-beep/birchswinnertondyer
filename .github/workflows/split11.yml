@@ -102,6 +102,8 @@ jobs:
         run: python -I -B research/harness/validate_full_review.py
       - name: Adversarial full-problem review negative controls
         run: python -I -B research/harness/test_full_review.py
+      - name: Oct23 residual norm versus second Bockstein nonimplication
+        run: python -I -B research/reviews/controls/first_lift_second_obstruction_2026_10_23.py
       - name: Higher Gross-Zagier first vs third derivative falsification
         run: python -I -B research/strategy/h3_first_height_no_go.py
       - name: Conditional local-global Z11 split transversality and negative controls
