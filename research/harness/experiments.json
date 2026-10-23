@@ -879,36 +879,44 @@
       "id": "EX-018",
       "claim_ids": [
         "C-0035",
-        "C-0036"
+        "C-0036",
+        "C-0050"
       ],
       "status": "computationally_reproduced",
       "human_reviewed": false,
-      "question": "Can actual finite reduction maps certify11-saturation of the five-point subgroup, and can a commuting-element obstruction reject the natural finite quotient before attempting huge Galois closures?",
-      "decisive_observation": "Five good split-prime rows have determinant5 mod11, all matched by independent PARI minimal-model arithmetic; split23 excludes E(K)[11], proving11-saturation. Under recorded GL2 input, the joint Kummer group is V5 semidirect GL2 and disjoint from D1. Product-quotient first lift would make c0 a coboundary. Explicit further kernel-V cover and Heisenberg controls show why this is not a global non-liftability result.",
+      "question": "Can actual finite reduction maps certify11-saturation of the five-point subgroup, and can a commuting-element obstruction reject the natural finite quotient before attempting huge Galois closures? Session38 predeclared test: for x=P2-2P1, can arithmetic Frobenius powers at split primes23 and127 force a nonzero first-correction commutator value independently of unknown c1 values?",
+      "decisive_observation": "Five good split-prime rows have determinant5 mod11, all matched by independent PARI minimal-model arithmetic; split23 excludes E(K)[11], proving11-saturation. Under recorded GL2 input, the joint Kummer group is V5 semidirect GL2 and disjoint from D1. Product-quotient first lift would make c0 a coboundary. Explicit further kernel-V cover and Heisenberg controls show why this is not a global non-liftability result. Session38: actual Frobenius powers h=Frob23^12 and g=Frob127^10 force c1([h,g])=9*c0(g)!=0, using ell(h)=2, c0(h)=0 and a nonzero Kummer reduction at127. Any realization abelian over K(E11) fails. No actual supported realization or Greenberg comparison supplied.",
       "dependencies": [
         "Good reduction homomorphism, valuation-one cyclic11-primary finite group, prime-to-residue-characteristic torsion injectivity and Kummer exact sequence; no height or analytic input for C0035.",
         "C0036 uses recorded residual-image source argument: local I1 Tate transvection, transverse split Frobenius23, determinant disjointness and finite elementary generation. Expert review outstanding.",
         "Central-scalar H1 vanishing, inflation-restriction and the special isotypic natural-module argument; Maschke is NOT used in characteristic11.",
-        "Global realization of the twisted embedding problem, Greenberg local constraints, integral torsion and actual second-height evaluation remain open."
+        "Global realization of the twisted embedding problem, Greenberg local constraints, integral torsion and actual second-height evaluation remain open.",
+        "Session38 precomputation: retain E=[1,-1,0,-79,289], K=Q(sqrt(-7)), p11, Sigma above2,11,117223 and infinity, inverse action rho*(1+T)^(-ell). Test Frobenius matrix orders, nonzero Kummer projection at127, and nonzero actual Artin character at23. Pass only if the commutator formula forces a nonzero value; otherwise inconclusive. This is a necessary constraint, not a constructed supported cochain."
       ],
       "commands": [
         "python3 -I -B research/proof_labs/kummer_reduction_11_certificate.py",
         "gp -q -f research/proof_labs/pari_kummer_reduction_11.gp",
-        "python3 -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py"
+        "python3 -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py",
+        "python3 -I -B research/proof_labs/frobenius_commutator_constraint.py",
+        "gp -q -f research/proof_labs/pari_frobenius_commutator_constraint.gp"
       ],
       "artifacts": [
         "research/proof_labs/SESSION31_KUMMER_SATURATION_AND_LIFT_OBSTRUCTION.md",
         "research/proof_labs/kummer_reduction_11_certificate.py",
         "research/proof_labs/pari_kummer_reduction_11.gp",
-        "research/proof_labs/finite_quotient_bockstein_obstruction.py"
+        "research/proof_labs/finite_quotient_bockstein_obstruction.py",
+        "research/proof_labs/SESSION38_FROBENIUS_COMMUTATOR_CONSTRAINT.md",
+        "research/proof_labs/frobenius_commutator_constraint.py",
+        "research/proof_labs/pari_frobenius_commutator_constraint.gp"
       ],
-      "negative_control": "Actual replacement P4=P1+P2 loses rank; actual q911 has order8*121 and is refused. Mutated PARI row rejected by same comparator. Coboundary classes DO lift on product; Heisenberg inflation kills a first obstruction yet can retain a second. Matrix realization independently checks cover multiplication.",
+      "negative_control": "Actual replacement P4=P1+P2 loses rank; actual q911 has order8*121 and is refused. Mutated PARI row rejected by same comparator. Coboundary classes DO lift on product; Heisenberg inflation kills a first obstruction yet can retain a second. Matrix realization independently checks cover multiplication. Session38: zero character/Kummer input gives zero, inverse convention or reversed commutator changes9 to2, and every commuting quotient fails the actual necessary relation. Corrupt/incomplete PARI output rejected.",
       "stop_condition": "Do not compute the natural product quotient expecting it to contain c1. Its obstruction may inflate to zero; do not conclude global non-liftability. Stop at the explicit embedding problem until a global/local solution is supplied.",
       "nonclaims": [
         "No full Selmer upper bound or height-based exact S2 membership for the finite integer combinations.",
         "No independently computed enormous splitting field; degree and disjointness use the stated residual image argument.",
         "No actual arithmetic cover realization, local Greenberg lift, integral torsion removal or second-height value.",
-        "No new original complex Lpp equality, original Sha finiteness, BSD leading term or expert review."
+        "No new original complex Lpp equality, original Sha finiteness, BSD leading term or expert review.",
+        "The commutator constraint does not identify a global torsion basis or compute c1(h),c1(g), Greenberg restrictions, [10]Q normalization, or a second obstruction."
       ],
       "cross_disciplines": [
         {

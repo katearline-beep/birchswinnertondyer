@@ -162,3 +162,6 @@ jobs:
 
       - name: Explicit local norm reference and certified infinite formal-log tail
         run: python -I -B research/proof_labs/local_norm_reference_11.py research/proof_labs/certificates/session37_local_norm_reference.txt
+
+      - name: Arithmetic Frobenius commutator constraint for first corrections
+        run: python -I -B research/proof_labs/frobenius_commutator_constraint.py

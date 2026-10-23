@@ -101,7 +101,7 @@ def validate(obj, root=ROOT):
                (root/value).is_file())),"Broken/unsafe review source: "+str(value))
     doc=obj.get("journal_path")
     need(type(doc) is str and doc.startswith("research/reviews/") and
-         re.fullmatch(r"research/reviews/\d{4}-\d{2}-\d{2}-whole-problem\.md",doc) and
+         re.fullmatch(r"research/reviews/\d{4}-\d{2}-\d{2}-whole-problem(?:-\d{2})?\.md",doc) and
          (root/doc).is_file(),"Immutable dated review journal is required")
     return 6
 

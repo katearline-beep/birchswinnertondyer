@@ -33,4 +33,10 @@ must_reject("empty evidence classification",lambda d:d.update(evidence_classes=[
 must_reject("missing immutable journal",lambda d:d.update(journal_path="research/reviews/missing.md"))
 must_reject("missing claim ledger coverage",lambda d:d["claim_ids_audited"].remove("C-0009"))
 must_reject("unsafe external file path",lambda d:d["sources"].append("../../etc/passwd"))
-print("PASS: 13 full-problem integrity negative controls")
+must_reject("nondated journal suffix",lambda d:d.update(journal_path="research/reviews/2026-10-23-whole-problem-latest.md"))
+# Both legacy dated names and numbered same-day checkpoints remain valid.
+legacy=deepcopy(current)
+legacy["journal_path"]="research/reviews/2026-10-23-whole-problem.md"
+assert check(legacy)==6
+assert check(current)==6
+print("PASS: 14 full-problem integrity negative controls; legacy and numbered journals")

@@ -106,6 +106,13 @@ jobs:
           gp -q -f research/proof_labs/pari_local_norm_reference_11.gp > /tmp/bsd-local-norm37.txt 2>&1
           python -I -B research/proof_labs/local_norm_reference_11.py /tmp/bsd-local-norm37.txt
 
+      - name: Independent Frobenius and Kummer inputs for the commutator constraint
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/proof_labs/pari_frobenius_commutator_constraint.gp > /tmp/bsd-commutator38.txt 2>&1
+          python -I -B research/proof_labs/frobenius_commutator_constraint.py /tmp/bsd-commutator38.txt
+
   direct-height:
     name: Direct-coordinate global first-height oracle
     runs-on: ubuntu-24.04
