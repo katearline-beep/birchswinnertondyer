@@ -558,7 +558,7 @@
       "if_then_statement": "IF a finite nonabelian realization carries actual rho, ell, c0 and c1 on G_(K,Sigma), passes the Frobenius commutator constraint and all Greenberg/reference comparisons THEN it supplies an evaluated normalized first lift; the necessary constraint alone supplies none of those sufficient premises.",
       "would_unlock": "An exact saturation certificate and a decisive rejection of an insufficient finite quotient, plus a typed alternative that could avoid enormous splitting-field enumeration.",
       "unverified_dependencies": "C0050 uses the source-matched C0033 Artin character and standard good-reduction/Kummer facts, not full GL2. C0036 retains its GL2 assumption. C0045/46/49 existence and local-comparison assumptions remain unreviewed. The actual supported realization, higher compatibility, second obstruction and complex bridge remain missing.",
-      "negative_control": "Dependent point replacement must lose reduction rank; order divisible by121 refused. A Heisenberg nonabelian extension permits a lift that is impossible on its abelian quotient; next-order lift can still fail.",
+      "negative_control": "Dependent point replacement must lose reduction rank; order divisible by121 refused. A Heisenberg nonabelian extension permits a lift that is impossible on its abelian quotient; next-order lift can still fail. Oct30 exhaustive exact toy group has first noncommuting commutator9*T but a defining double-commutator4*T2 prevents every second lift. The toy relation is NOT asserted for the actual Galois group.",
       "next_decisive_test": "Construct an actual nonabelian arithmetic realization and test c1([Frob23^12,Frob127^10])=9*c0(Frob127^10)!=0 before checking all relations, support and Greenberg localization against [10]Q. Do not enumerate abelian refinements over K(E11) as potential solutions.",
       "kill_criterion": "Reject the finite-quotient no-go application if disjointness or residual image fails; never extend the quotient obstruction to the absolute Galois group without an inflation argument. Stop at an embedding problem unless a global/local solution is supplied.",
       "source": "https://wangjiuya.github.io/research/augmentation.pdf",
@@ -594,6 +594,11 @@
           "date": "2026-10-23",
           "outcome": "active",
           "evidence": "C0050 actual small-prime inputs force a nonzero commutator value for every possible first correction; two-model arithmetic and independent matrix-word checks pass. The PR76 full supported-cochain target remains unmet; stop at a necessary constraint and explicit missing arithmetic realization."
+        },
+        {
+          "date": "2026-10-30",
+          "outcome": "active",
+          "evidence": "Independent-minded WPR toy nonimplication: 14641 exact generator-correction cases all have second-order relator4*T2 although first commutator is9*T. This is not actual arithmetic. Prioritize actual nonabelian Galois realization/local Greenberg comparison and stop unmotivated second-lift inferences."
         }
       ]
     },
