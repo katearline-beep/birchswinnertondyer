@@ -898,7 +898,8 @@
         "gp -q -f research/proof_labs/pari_kummer_reduction_11.gp",
         "python3 -I -B research/proof_labs/finite_quotient_bockstein_obstruction.py",
         "python3 -I -B research/proof_labs/frobenius_commutator_constraint.py",
-        "gp -q -f research/proof_labs/pari_frobenius_commutator_constraint.gp"
+        "gp -q -f research/proof_labs/pari_frobenius_commutator_constraint.gp",
+        "python3 -I -B research/reviews/controls/commutator_second_lift_nonimplication_2026_10_30.py"
       ],
       "artifacts": [
         "research/proof_labs/SESSION31_KUMMER_SATURATION_AND_LIFT_OBSTRUCTION.md",
@@ -907,10 +908,12 @@
         "research/proof_labs/finite_quotient_bockstein_obstruction.py",
         "research/proof_labs/SESSION38_FROBENIUS_COMMUTATOR_CONSTRAINT.md",
         "research/proof_labs/frobenius_commutator_constraint.py",
-        "research/proof_labs/pari_frobenius_commutator_constraint.gp"
+        "research/proof_labs/pari_frobenius_commutator_constraint.gp",
+        "research/reviews/controls/commutator_second_lift_nonimplication_2026_10_30.py",
+        "research/reviews/2026-10-30-whole-problem.md"
       ],
-      "negative_control": "Actual replacement P4=P1+P2 loses rank; actual q911 has order8*121 and is refused. Mutated PARI row rejected by same comparator. Coboundary classes DO lift on product; Heisenberg inflation kills a first obstruction yet can retain a second. Matrix realization independently checks cover multiplication. Session38: zero character/Kummer input gives zero, inverse convention or reversed commutator changes9 to2, and every commuting quotient fails the actual necessary relation. Corrupt/incomplete PARI output rejected.",
-      "stop_condition": "Do not compute the natural product quotient expecting it to contain c1. Its obstruction may inflate to zero; do not conclude global non-liftability. Stop at the explicit embedding problem until a global/local solution is supplied.",
+      "negative_control": "Actual replacement P4=P1+P2 loses rank; actual q911 has order8*121 and is refused. Mutated PARI row rejected by same comparator. Coboundary classes DO lift on product; Heisenberg inflation kills a first obstruction yet can retain a second. Matrix realization independently checks cover multiplication. Session38: zero character/Kummer input gives zero, inverse convention or reversed commutator changes9 to2, and every commuting quotient fails the actual necessary relation. Corrupt/incomplete PARI output rejected. Oct30: a nonarithmetic finitely presented G=<h,g|[h,[h,g]]=1> admits a C0050-shaped NONCOMMUTING first affine lift with c1([h,g])=9, but the relator evaluates to4*T2 at second order for all14641 generator-correction choices; zero character/Kummer inputs remove obstruction. This disproves first commutator => second lift, not actual arithmetic liftability.",
+      "stop_condition": "Do not compute the natural product quotient expecting it to contain c1. Its obstruction may inflate to zero; do not conclude global non-liftability. Stop at the explicit embedding problem until a global/local solution is supplied. Do not infer second Bockstein from nonzero first commutator; require actual supported global cochain and Greenberg local maps.",
       "nonclaims": [
         "No full Selmer upper bound or height-based exact S2 membership for the finite integer combinations.",
         "No independently computed enormous splitting field; degree and disjointness use the stated residual image argument.",
