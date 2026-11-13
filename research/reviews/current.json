@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "review_id": "WPR-2026-11-06-01",
-  "reviewed_on": "2026-11-06",
-  "next_due_on": "2026-11-13",
+  "review_id": "WPR-2026-11-13-01",
+  "reviewed_on": "2026-11-13",
+  "next_due_on": "2026-11-20",
   "reviewer_type": "ai_assisted_unreviewed",
-  "review_kind": "weekly_independent_minded_full_problem_50_claim_audit_and_H3_rank_two_parity_negative_control",
+  "review_kind": "weekly_full_problem_50_claim_BKS_source_hypothesis_and_integral_negative_control",
   "project": "Birch–Swinnerton-Dyer conjecture for elliptic curves over Q",
   "target_curve": "234446.a1",
   "goal_general": "For every elliptic curve over Q prove equality of Mordell–Weil rank and complex L-function order of vanishing, and the full normalized leading coefficient formula with Sha finiteness.",
@@ -105,10 +105,12 @@
     "#75",
     "#76",
     "#77",
-    "#78"
+    "#78",
+    "#79",
+    "#80"
   ],
-  "previous_review_id": "WPR-2026-10-30-01",
-  "mathematical_breakthrough_since_previous": "NONE. Since WPR-2026-10-30-01 no new PR merged into main; #76/#77/#78 remain open and stacked. No actual supported first cochain, second Bockstein, exact original complex L'' vanishing, nonzero fourth derivative, Sha finiteness or leading coefficient. The new H3 exact rank-two parity/product model rejects a false shortcut. October 2026 low-Selmer-corank BSD preprints are unrefereed and their corank<=1 hypothesis cannot hold for a rank-four curve.",
+  "previous_review_id": "WPR-2026-11-06-01",
+  "mathematical_breakthrough_since_previous": "NONE. No PR merged since #75 (Oct22); #76–#80 remain stacked and open. No exact original complex L''=0, fourth-derivative nonzero certificate, Sha finiteness, BSD leading coefficient, actual supported first global correction or second Bockstein. BKS 2024 Theorem1.3 scope corrected to require BOTH Sha(E/F)[p∞] and Sha(E/Q)[p∞] finiteness; its output is a Kato cohomology norm filtration, not original complex L''. The new integral C11 trace and independent-complex-coefficient adversarial controls are exact logical falsifiers, not arithmetic results.",
   "new_proven_bridge_evidence": [],
   "evidence_classes": [
     {
@@ -338,21 +340,29 @@
     {
       "category": "literature_hypothesis_no_go",
       "statement": "OpenAI Math October6/7 2026 unrefereed low-Selmer-corank BSD preprints claim results for corank <=1. Focal curve has rank4, and Kummer injection forces Selmer p-infinity corank >=4 at every p, so their stated hypothesis cannot apply regardless of validity."
+    },
+    {
+      "category": "hypothesis_and_method_audit",
+      "statement": "Nov13 source correction: BKS 2024 Theorem1.3 requires p-primary finiteness of BOTH Sha(E/F) and Sha(E/Q), integral SL2 image and all S-local torsion absence; its unconditional output is Kato cohomological norm filtration, not original complex L''."
+    },
+    {
+      "category": "finite_computation",
+      "statement": "Nov13 exact C11 trace has integral augmentation 11 while mod11 trace equals T^10; a separate formal model rejects inferring original complex quadratic vanishing from a cohomological filtration without comparison."
     }
   ],
-  "deepest_open_implication": "UNCHANGED: no noncircular characteristic-zero comparison theorem or exact arithmetic computation reaches original complex L''(E,1)=0. H3 parity-only arguments explicitly falsified by rank-two formal Taylor models. H1 actual supported nonabelian correction and H2 actual second Bockstein remain unevaluated; Sha and leading coefficient open.",
+  "deepest_open_implication": "Still no source-verified noncircular arrow from rank-four arithmetic, Kato cohomological augmentation or anticyclotomic p-adic heights to exact ORIGINAL COMPLEX L''(E,1)=0. BKS 2024 Thm1.3 assumes BOTH p-primary Sha finiteness conditions and does not have complex derivative output. Sha finiteness, fourth derivative and leading coefficient independently remain open.",
   "tracks": [
     {
       "track": "H1",
-      "decision": "active_prioritized_40_percent",
-      "last_evidence": "No new merged arithmetic result since PR75 (2026-10-22). C0044 negative residual line, C0046/47 conditional integral global first lifts, and C0048/49 actual local norm/conditional residual normalization remain the strongest inputs. Exact toy counterexample now rejects promotion to a second lift. Session38 gives arithmetic commutator constraint C0050; no supported realization obtained. Oct30 review: C0050 arithmetic nonzero first commutator remains unmerged on stacked PR77; no actual supported correction or nonabelian arithmetic quotient exists. An exact toy group can pass this commutator while failing every second lift.",
+      "decision": "active_prioritized",
+      "last_evidence": "No new merged arithmetic result since PR75 (2026-10-22). C0044 negative residual line, C0046/47 conditional integral global first lifts, and C0048/49 actual local norm/conditional residual normalization remain the strongest inputs. Exact toy counterexample now rejects promotion to a second lift. Session38 gives arithmetic commutator constraint C0050; no supported realization obtained. Oct30 review: C0050 arithmetic nonzero first commutator remains unmerged on stacked PR77; no actual supported correction or nonabelian arithmetic quotient exists. An exact toy group can pass this commutator while failing every second lift. Nov13 BKS full-text audit: Theorem1.3 cohomological norm containment requires both p-primary Sha finiteness conditions; no original complex arrow.",
       "missing_bridge": "A genuinely arithmetically realized nonabelian finite quotient with evaluated rho,ell,c0,c1 for x=P2-2P1; all Galois relations, original ramification support, ordinary Greenberg local restrictions and actual [10]Q Shapiro comparison. Beyond that, a noncircular original COMPLEX L'' comparison.",
       "falsifier": "Reject any candidate killing the C0050 Frobenius commutator, failing a defining Galois relation, or lacking a source-matched local map. Oct30 toy G=<h,g | [h,[h,g]]=1> demonstrates that passing first noncommutativity cannot force a second lift. Do not claim global impossibility from this toy.",
-      "next_test": "Produce a minimal actually realized nonabelian Galois quotient, explicit rho/ell/c0/c1, verify C0050, all relations, support and ordinary Greenberg/Shapiro local conditions; no huge splitting-field brute force first."
+      "next_test": "Actual arithmetic nonabelian quotient and normalized supported first correction, but only if quotient is explicitly realized with all local maps; stop BKS direct shortcut."
     },
     {
       "track": "H2",
-      "decision": "active_limited_15_percent",
+      "decision": "active_limited",
       "last_evidence": "C0029/31 first heights, C0045 conditional positive first Selmer survivors, and C0049 conditional normalized first fibres; the Oct23 toy shows second obstruction is independent of identical first data. Macias Castillo–Sano 2026 preprint compares Nekovar/Poitou-Tate complexes only under explicit hypotheses and with a sign. Oct30 exact nonarithmetic double-commutator toy exhausts 14641 correction choices and exhibits a first noncommuting lift with an unavoidable second obstruction 4*T^2. It is not a computation of actual h2.",
       "missing_bridge": "Evaluated normalized supported global first cochain and Greenberg local homotopies, independently checked source hypotheses for BD/Nekovar/Selmer-complex comparison, then actual second Bockstein/alternating height. No original complex comparison.",
       "falsifier": "If the source's local Selmer complex differs from the actual Greenberg conditions, reject the proposed height comparison. Nonzero first commutator and first-lift uniqueness do NOT imply a second lift, as the exact Oct30 toy shows.",
@@ -360,11 +370,11 @@
     },
     {
       "track": "H3",
-      "decision": "active_prioritized_40_percent",
+      "decision": "active_prioritized",
       "last_evidence": "Exact identity L'''(E/K_D,1)=3 L''(E,1)L'(E^D,1) and admissible quadratic fields; targeted 2024/2026 papers supply first derivatives, not a third derivative formula for weight-two E/K_D. Session31 Yun-Zhang II (Annals2019) supplies higher derivative-product/intersection identities over function fields only; r3,a2 has the desired derivative-product type, but no characteristic-zero object or vanishing is constructed. Oct30 direct source check of Kim arXiv:2203.12161 introduction: its 'higher Gross-Zagier' is a structural Kolyvagin-system/modular-symbol refinement and explicitly contrasts number fields with Yun–Zhang's function-field higher derivatives. Sano's p-adic derived regulator is not a complex third-derivative theorem. Nov6 formal rank-two parity/product negative control gives nonzero third derivative 6 despite even/odd functional-equation signs. New October 2026 low-Selmer-corank BSD preprints cannot apply to rank-four curve (Selmer corank >=4 by Kummer injection).",
       "missing_bridge": "A characteristic-zero weight-two geometric identity with actual original complex third derivative L'''(E/K,1) as its output, an independent vanishing reason and correct product-rule normalization isolating L''(E,1) using certified twist L'(1) nonzero.",
       "falsifier": "Reject any higher-Gross–Zagier claim whose actual output is modular symbols, Selmer structure, p-adic height, a higher-weight first derivative or a characteristic-p function-field L derivative, rather than the target number-field third COMPLEX derivative. Exact rank-two F=t²+a t⁴, G=t+b t³ has (FG)'''(0)=6: parity alone never supplies required vanishing.",
-      "next_test": "Source-typed characteristic-zero theorem search: exact L-function, derivative order three, geometric vanishing reason, and theorem number. Stop if only p-adic/structural/function-field output exists."
+      "next_test": "Locate source theorem with literal characteristic-zero third complex derivative output and independent vanishing; reject parity and p-adic replacements."
     },
     {
       "track": "H4",
@@ -376,7 +386,7 @@
     },
     {
       "track": "H5",
-      "decision": "diagnostic_5_percent",
+      "decision": "diagnostic",
       "last_evidence": "Original E's L'' remains numerically very close to zero and L'''' appears nonzero; separately, C-0009 supports the -7 twist L'(1) using 6,000 rigorously bounded rational terms with independent PARI coefficient verification. No original complex L'' zero proven.",
       "missing_bridge": "A proof of exact vanishing of L''; arbitrary additional floating precision cannot provide it.",
       "falsifier": "Rank-two control or changed arithmetic model breaks apparent stability; numerical near-zero is never exact zero.",
@@ -391,13 +401,13 @@
       "next_test": "Remain parked: require a well-defined characteristic-zero projector with a source-matched complex period/derivative comparison and rank-two negative control."
     }
   ],
-  "selected_next_experiment": "H3 source-typed characteristic-zero third complex derivative theorem search, requiring a real geometric vanishing mechanism and proof of normalization; parallel H1 first actually realized nonabelian quotient with explicit local conditions.",
-  "selected_experiment_kill_criterion": "Reject H3 candidate if derivative order/object/field differs or vanishing merely follows from parity; reject H1 quotient if not arithmetically realized, C0050 fails, group relators fail or local Greenberg/Shapiro maps absent.",
-  "conservative_next_lemma": "Certify Frobenius and relator obligations for the smallest actual nonabelian arithmetic quotient before supported cochain construction.",
-  "credible_leapfrog": "Evaluate actual normalized supported first correction for x=P2-2P1 and independently check local Greenberg and Shapiro cochains, then actual h2.",
-  "speculative_wild_option": "Find a characteristic-zero geometric cycle formula whose literal output is L'''(E/K,1), with an independent vanishing mechanism isolating original L''.",
-  "deprioritized_work": "Further local 11-adic digits, unmotivated huge torsor fields, parity-only H3 shortcuts, precision-only original complex L'' approximations, and p-adic-to-complex analogy without a map.",
-  "negative_control_reviewed": "2026-11-06 H3 exact formal parity/product negative control research/reviews/controls/h3_parity_product_negative_control_2026_11_06.py executed locally PASS (nine rank-two cases and rank-four comparison). Oct30 noncommuting second-lift test retained but not rerun in this environment.",
+  "selected_next_experiment": "Source-level H3 test: locate an unconditional characteristic-zero geometric identity with literal third complex derivative L'''(E/K,1) as output and independent geometric vanishing; verify all hypotheses and noncircularity, otherwise document precise no-go. H1 finite arithmetic quotient work only after explicit Galois realization.",
+  "selected_experiment_kill_criterion": "Reject parity-only reasoning, characteristic-p analogies, p-adic or cohomological derivative outputs, and any theorem requiring unproved Sha finiteness or the desired complex vanishing as an input. No original complex L'' promotion absent unconditional source-matched map.",
+  "conservative_next_lemma": "Theorem 1.3 BKS hypothesis gate: both Sha(E/F)[p∞] and Sha(E/Q)[p∞] finiteness are required, and the conclusion is a Kato cohomological norm augmentation containment; the source does not imply original complex L''=0.",
+  "credible_leapfrog": "Actually realize a small nonabelian arithmetic Galois quotient and supported normalized correction for x=P2−2P1, with all Frobenius, relator, ramification and ordinary Greenberg maps; only then evaluate the second Bockstein.",
+  "speculative_wild_option": "Find a characteristic-zero geometric cycle formula yielding L'''(E/K,1) and a source-proved vanishing reason; use L'(E^-7,1) nonzero to isolate original complex L'' without assuming BSD.",
+  "deprioritized_work": "Do not spend additional precision on original complex L'', extra local 11-adic digits, giant unmotivated torsor fields, abelian quotients forbidden by commutator, or BKS theorem applicability checks while both Sha-finiteness hypotheses remain unproved.",
+  "negative_control_reviewed": "2026-11-13 exact integral C11 trace: sum gamma^k has augmentation 11 though mod11 polynomial equals T^10; plus independent complex quadratic coefficient model disproves a cohomological-filtration-to-complex-vanishing logical shortcut. Python standard library run PASS; neither is actual elliptic arithmetic.",
   "sources": [
     "CLAIMS.md",
     "research/strategy/HIGH_UPSIDE_PORTFOLIO.md",
@@ -553,10 +563,17 @@
     "https://arxiv.org/abs/2203.12161",
     "https://arxiv.org/abs/2308.08875",
     "https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/on-the-nonvanishing-of-generalised-kato-classes-for-elliptic-curves-of-rank-2/72ED842AB428A7ED619B1B84287A6864",
-    "https://github.com/openai/math/tree/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026",
-    "https://github.com/katearline-beep/birchswinnertondyer/pull/78"
+    "https://github.com/katearline-beep/birchswinnertondyer/pull/78",
+    "research/reviews/2026-11-13-whole-problem.md",
+    "research/reviews/controls/bks_integral_complex_nonimplication_2026_11_13.py",
+    "research/proof_labs/SESSION40_BKS_2024_SOURCE_SCOPE_GATE.md",
+    "https://doi.org/10.2969/jmsj/90699069",
+    "https://nms.kcl.ac.uk/david.burns/web_page/katozeta.pdf",
+    "https://doi.org/10.1093/imrn/rnaf012",
+    "https://github.com/katearline-beep/birchswinnertondyer/pull/79",
+    "https://github.com/katearline-beep/birchswinnertondyer/pull/80"
   ],
-  "journal_path": "research/reviews/2026-11-06-whole-problem.md",
+  "journal_path": "research/reviews/2026-11-13-whole-problem.md",
   "not_established": [
     "No original complex L''(E,1)=0 theorem",
     "No complex analytic rank-four proof for curve 234446.a1",
@@ -569,22 +586,30 @@
     "No actual finite-quotient global first correction matching C0048 local reference, no tower-compatible integral normalization, and no computed secondary Selmer Bockstein.",
     "C0050 constrains first corrections but does not evaluate a full cochain or the actual second obstruction; abelian-refinement failure is not global nonexistence.",
     "Oct30 toy double-commutator nonimplication is NOT an arithmetic obstruction: no relation [h,[h,g]]=1 is known for actual powered Frobenii, and C0050 does not imply any second lift or h2 value.",
-    "Nov6 H3 rank-two formal parity/product countermodel shows no symmetry-only proof of third complex base-change derivative vanishing; not an arithmetic obstruction."
+    "Nov6 H3 rank-two formal parity/product countermodel shows no symmetry-only proof of third complex base-change derivative vanishing; not an arithmetic obstruction.",
+    "BKS Theorem1.3 requires unproved p-primary finiteness of BOTH Sha(E/F) and Sha(E/Q); even its conditional conclusion is not original complex L'' vanishing."
   ],
   "reviewed_issues": [
-    "#61 (open: finite quotient / Kummer independence)",
-    "#70 (closed: Kurihara)",
-    "#72 (closed: first lifts)",
-    "#74 (closed: local norm)",
-    "#41 (open: CH rank-two control)",
-    "#53 (open: non-universal second derived height)",
-    "#49 (open: two-variable Heegner leading jet)",
-    "#20 (open: H3 complex third derivative)",
-    "#18 (open: H1 derived Kato complex bridge)",
-    "#19 (open: H2 mixed Selmer bridge)",
-    "#22 (open: H5 diagnostics)",
-    "#23 (open: H6 projector)",
-    "#21 (open: H4 Mazur–Tate)"
+    "#61",
+    "#53",
+    "#49",
+    "#42",
+    "#41",
+    "#32",
+    "#25",
+    "#23",
+    "#22",
+    "#21",
+    "#20",
+    "#19",
+    "#18",
+    "#15",
+    "#11",
+    "#8",
+    "#6",
+    "#5",
+    "#4",
+    "#3"
   ],
   "git_baseline_head": "75519226336014bd6f7aa63dc51caa4db7e17051",
   "baseline_checked_at": "2026-11-06"
