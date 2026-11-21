@@ -866,6 +866,35 @@
           "evidence": "C0048 unit norm115 mod121, exact infinite tail and independent PARI transcript pass. C0049 uniquely normalizes the conditional residual global Selmer fibre using actual local points, but no global cochain is evaluated."
         }
       ]
+    },
+    {
+      "id": "LF-021",
+      "experiment_id": "EX-024",
+      "title": "From certified original two-primary Sha vanishing to a complete eleven-Selmer upper bound",
+      "known_baseline": "Session53 C0051 independently derives rational rank4 and original Sha(E/Q)[2^infinity]=0 from four mod11 independent rational reductions and complete two-descent with PARI and eclib. Previous C0044 gives only the quadratic twist's negative residual 11-Selmer line.",
+      "missing_arrow": "The original curve's full classical eleven-Selmer dimension upper bound is NOT known: four independent rational points give a lower bound, while the -7 twist's Sel11=1 controls only the negative eigenspace. There is also no theorem from this to original complex L''(E,1)=0.",
+      "hypothetical_bridge": "Construct a fully supported local-global eleven-descent certificate, or a perfect-duality/euler-system bound on every ordinary classical E[11] Selmer class over Q, checking all bad and eleven-adic local conditions and independent arithmetic source inputs.",
+      "if_then_statement": "IF an independently validated complete eleven-descent proves dim_F11 Sel_11(E/Q) <= 4 and the four rational MW directions remain independent modulo 11 THEN the classical Selmer sequence proves Sha(E/Q)[11]=0 and hence Sha(E/Q)[11^infinity]=0, alongside the separately certified two-primary vanishing.",
+      "would_unlock": "A second directly BSD-relevant original-curve arithmetic invariant, unconditionally excluding original 11-primary Sha torsion once accepted descent algorithms and all local hypotheses are audited. This still would not establish finite Sha at all primes or any exact complex analytic-rank equality.",
+      "unverified_dependencies": "Existence and applicability of a complete practical classical eleven-descent algorithm for this conductor and rank; correct global Galois-cohomology representation, all local eleven-Kummer conditions, arithmetic basis saturation, and a numerical upper bound. No such output has yet been obtained. Current Sage selmer_rank computes only two-Selmer.",
+      "negative_control": "Do not infer original Sel11 dimension4 from exact twist Sel11=1 over the -7 quadratic extension; quadratic splitting only gives dim Sel11(E/K)=dim Sel11(E/Q)+1. A finite Kummer translation subgroup or an auxiliary class group lower bound cannot supply an upper bound. The 571a1 two-Selmer control has extra Sha[2] despite rank0.",
+      "next_decisive_test": "Source-audit an actually available certified complete eleven-Selmer descent method for E=234446.a1, explicitly enumerate supported global classes and local conditions and demand an upper bound exactly4; if no implementation can supply it, record a named missing arithmetic proof obligation rather than equate two-Selmer and eleven-Selmer.",
+      "kill_criterion": "Stop if full original global+local eleven-Selmer rank cannot be computed or upper bounded independently with verifiable arithmetic data; no result from twist-only negative eigenspaces, 11-adic derived heights, group size estimates or tiny complex L'' numerics may be promoted as original eleven-Sha triviality.",
+      "source": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html",
+      "test_path": "research/proof_labs/session53_independent_rank4_reductions.py",
+      "gate": "G2",
+      "decision": "active",
+      "reviewed": false,
+      "proof_status": "speculative",
+      "novelty_status": "unverified",
+      "not_unlocked": "Original Sha(E/Q)[11] and every other odd-primary component, total finiteness of Sha, exact complex L''(E,1)=0, fourth derivative nonvanishing, general BSD rank equality and complete leading coefficient remain unproved.",
+      "decision_log": [
+        {
+          "date": "2026-11-21",
+          "outcome": "active",
+          "evidence": "C0051 actual rank4 and original Sha 2-primary zero certified by two maintained Sage 2-descent engines plus independent four-prime arithmetic, GitHub run44926513944. This new directly relevant arithmetic result does not provide a full original 11-Selmer bound; the next leapfrog remains explicitly speculative."
+        }
+      ]
     }
   ]
 }
