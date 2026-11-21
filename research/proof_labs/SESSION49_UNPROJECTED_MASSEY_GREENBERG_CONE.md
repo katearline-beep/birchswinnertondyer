@@ -88,6 +88,18 @@ Expand \(a_v=\sum T^j a_{v,j}\) and \(b_v=\sum T^j b_{v,j}\). The local ordinary
 \]
 These are exact cochain identities for the chosen section and coefficients. In particular, a vanishing global Massey/Bockstein class does NOT supply the local ordinary \(a_{v,j}\) and the homotopies \(b_{v,j}\). It is an additional construction—not a theorem-scope technicality—that must be furnished at **both** primes \(v\mid11\). For a positive globally conjugation-symmetric class with conjugate choices of local references, the two conditions may be related by complex conjugation; this relation must be established with the exact inverse-generator convention before dropping either place.
 
+### A small actual simplification: one INDEPENDENT ordinary-local test in a signed eigenspace
+
+At \(p=11\), the field K has **two conjugate places** \(v,\bar v\). Complex conjugation \(c\) exchanges them. Because E is good ordinary at 11, the connected ordinary line \(F_v^+V\) and its conjugate \(F_{\bar v}^+V\) are transported by the natural Galois map; the inverse anticyclotomic augmentation coordinate is likewise transported via
+  \(c(T)=(1+T)^{-1}-1=-T+T^2\pmod{T^3}\).
+This is NOT \(-T\) at second order; using that incorrect expression changes \(\binom{\chi+1}{2}\) to \(\binom{\chi}{2}\) and drops a nonzero \(\chi T^2\) term. The new exact test explicitly falsifies the wrong quadratic truncation.
+
+For a **global cohomology class in a fixed \(c\)-eigenspace**, the local ordinary-membership conditions at \(v\) and \(\bar v\) are equivalent: if \(\mathrm{loc}_{v}(x)\) lies in \(\mathrm{im}(H^1(K_v,F_v^+A_r)\to H^1(K_v,A_r))\), the conjugate localization belongs to the conjugate ordinary subgroup, and conversely. Similarly, matching a **specified** local reference at \(v\) forces the matching conjugate reference at \(\bar v\), **provided** the second reference was chosen as the actual signed/inverse-Iwasawa conjugate. This is cohomological covariance, not an explicit global cocycle or an assertion that the ordinary condition is automatically satisfied.
+
+For the negative residual point R, Session33/C0039 computes the actual short local logarithm coordinates \((9,2)=(9,-9)\bmod11\), consistent with sign \(-\); multiplying its Kummer class by the \(c\)-anti-invariant T makes \(T\kappa(R)\) positive. In Session37/C0049 the positive normalized local first-lift references are conjugate and fixing the reference at \(v\) fixes the affine 1-parameter origin (the local R coordinate 9 is a unit). The useful practical reduction is therefore: **one mathematically independent ordinary-local test and one local normalization for a positive class**, with the conjugate place retained in the code as a **mandatory sign/orientation integrity check**. A local defect at the first place still blocks the global positive Selmer lift and cannot be repaired by adjusting the \(T\kappa(R)\) scalar, since that ambiguity already lies in the ordinary local line.
+
+This does not apply to an arbitrary cochain without its signed Galois cohomology class and correctly conjugated local conditions; in particular, do not discard the second 11-adic prime from a raw finite-Galois presentation without first certifying its conjugation action.
+
 **Proposed output-type comparison square, currently MISSING:**
 \[
 \begin{array}{ccc}
