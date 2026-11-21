@@ -59,3 +59,10 @@ Keep H1 40%, H2 15%, H3 40%, H5 5%, H4/H6 parked as in WPR Nov20; allocate a **b
 ## Reproduction/provenance
 
 Local isolated CPython 3 exact-rational script run 2026-11-20: PASS (the output is recorded in session transcript, not a trusted independent audit). This is an exact formal-coefficient check, not independent peer review. New draft branch is stacked on PR #82; no merge authorized. The existing WPR Nov20 immutable snapshot and current.json are intentionally not modified within the same checkpoint.
+
+
+## Primary theorem spot-check completed after the initial audit
+
+Li–Liu, *Chow groups and L-derivatives of automorphic motives for unitary groups, II* (Forum of Mathematics, Pi), **Theorem 1.5(1)**: https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/chow-groups-and-lderivatives-of-automorphic-motives-for-unitary-groups-ii/09D1312B3B0BE1F60B5146CEBC6216DF. The printed identity is a normalized arithmetic theta-lift **height pairing** equal to a nonzero normalizing factor times **L'(1/2,pi)** and local doubling integrals; its hypotheses explicitly include **Hypothesis 4.11** (modularity of special-cycle generating functions), along with the parity, local/representation and other conditions in Assumption 1.3 and the stated paper. **Remark 1.6(2)** compares the ordinary Rallis identity whose output is **L(1/2,pi)**, not L'. The paper says the arithmetic inner-product formula is *conditional* on that modularity hypothesis in its stated generality. We have **not** checked a specialization to the focal weight-two pi_E, K=-7, and do not assert one exists. **Go/no-go result:** this concrete theorem's literal output is the **FIRST derivative of a specific automorphic L-function**, not the **THIRD derivative of original complex L(E/K,s)**; even complete applicability would not deliver H3's missing arrow.
+
+That is a sharper, theorem-numbered negative result than citing the source's abstract alone. Remaining test: look for an independently established third-derivative extension with exact L(E/K,s) and hypotheses, not a restatement of the above first-derivative identity.
