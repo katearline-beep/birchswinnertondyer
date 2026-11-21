@@ -993,25 +993,30 @@
       "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "Does global duality supply unrestricted residual T3 lifts while fixed ramification support retains a nontrivial obstruction space?",
-      "decisive_observation": "Under recorded residual-image/local inputs, central(-I,0), Chebotarev and Poitou-Tate imply absolute H2 localization injectivity. Local connecting classes vanish, so every supported residual class admits an unrestricted T3 lift. Five independent MW classes localize into at most two Kummer dimensions, giving supported H2 dimension at least3; its entire absolute inflation is zero.",
+      "decisive_observation": "Under recorded residual-image/local inputs, central(-I,0), Chebotarev and Poitou-Tate imply absolute H2 localization injectivity. Local connecting classes vanish, so every supported residual class admits an unrestricted T3 lift. Five independent MW classes localize into at most two Kummer dimensions, giving supported H2 dimension at least3; its entire absolute inflation is zero. Session47 uses Session46's ACTUAL full Gal(F5 D1/K(E11))=V^5×C11 base to identify five independent finite H² cup obstruction classes alpha_i=-ell∪c0_i. They are independent by nonsymmetric commutator evaluation. Under C0044/46/47 SOURCE-DEPENDENT signed fixed-support first-lift existence for four rational positive P_i, inflation to H²(G_{L,Σ_L},V) kills four independent classes; thus its kernel has dimension at least4. No conclusion that R's class survives: its nonzero global obstruction need not remain nonzero after restriction to G_L. Unrestricted C0037 source inputs would kill all five under absolute inflation, not fixed support.",
       "dependencies": [
         "C0007/20/33/35/36 residual GL2 image, actual anticyclotomic C11 disjointness, local no11-torsion at Sigma and five MW classes independent mod11; expert audit remains outstanding.",
         "Milne ADT I Cor2.3, Thm4.10(a), Lemma9.3; Cartier dual includes cyclotomic determinant twist; number field and finite11-primary coefficients.",
-        "Unrestricted continuous finite-module lift existence permits unspecified finite auxiliary ramification; it gives no effective correction cochains, fixed-support solution, local Greenberg homotopies or integral compatibility."
+        "Unrestricted continuous finite-module lift existence permits unspecified finite auxiliary ramification; it gives no effective correction cochains, fixed-support solution, local Greenberg homotopies or integral compatibility.",
+        "The Session47 H²(G0,V) five-class independence is elementary once the actual finite G0 is source-certified by Session46. The at-least-four supported INFLATION-kernel deduction additionally assumes C0044 Sakamoto/Kurihara and C0046/47 signed Poitou–Tate global first-lift source hypotheses; it neither computes a global H² class nor asserts a Selmer Greenberg lift."
       ],
       "commands": [
-        "python3 -I -B research/proof_labs/global_duality_support_controls.py"
+        "python3 -I -B research/proof_labs/global_duality_support_controls.py",
+        "python3 -I -B research/proof_labs/session47_finite_cup_inflation_controls.py"
       ],
       "artifacts": [
         "research/proof_labs/SESSION32_GLOBAL_DUALITY_AND_RAMIFICATION_SUPPORT.md",
-        "research/proof_labs/global_duality_support_controls.py"
+        "research/proof_labs/global_duality_support_controls.py",
+        "research/proof_labs/SESSION47_FINITE_CUP_INFLATION_KERNEL.md",
+        "research/proof_labs/session47_finite_cup_inflation_controls.py"
       ],
-      "negative_control": "All13200 GL2 matrices test Cartier dual against omitted determinant twist. Identity scalar leaves nonzero H1(C11,F11). Synthetic T*I3 and T2*I3 complexes retain constrained first/second obstructions while their unconstrained targets erase them; five-to-two kernel bound is not exact dimension.",
+      "negative_control": "All13200 GL2 matrices test Cartier dual against omitted determinant twist. Identity scalar leaves nonzero H1(C11,F11). Synthetic T*I3 and T2*I3 complexes retain constrained first/second obstructions while their unconstrained targets erase them; five-to-two kernel bound is not exact dimension. Session47 exact finite H² cup witnesses: on abelian V^5×C11 every coboundary is symmetric, but each alpha_i has an independent antisymmetry pairing with character and ith translation. A dependent fifth Kummer coordinate lowers rank to4; ell=0 kills all obstructions. A toy last-direction map shows one cannot infer exact supported inflation-kernel dimension4 from the lower bound.",
       "stop_condition": "Stop before calling unrestricted residual existence a supported Selmer lift. Reject the specialization if central scalar/disjointness or any local torsion input fails; no computation of arithmetic connecting classes or h2 is claimed.",
       "nonclaims": [
         "No evaluated arithmetic correction cochains or particular nonzero supported connecting class.",
         "No supported Greenberg lift, E121 cocycle, integral Tate-module lift, genuine second height or full Selmer upper bound.",
-        "No original complex Lpp equality, analytic rank-four proof, original Sha finiteness, BSD theorem, claimed novelty or expert review. Local execution unavailable; Python control execution belongs to exact-head GitHub CI."
+        "No original complex Lpp equality, analytic rank-four proof, original Sha finiteness, BSD theorem, claimed novelty or expert review. Local execution unavailable; Python control execution belongs to exact-head GitHub CI.",
+        "The five independent finite H² cross-cup classes and conditional at-least-four inflation kernel are NOT elliptic Sha, H2 of G_(K,Σ) or a computed Selmer Bockstein. No arithmetic correction field or original complex BSD theorem."
       ],
       "cross_disciplines": [
         {
