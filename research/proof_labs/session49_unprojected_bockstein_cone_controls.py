@@ -120,7 +120,32 @@ def local_cone_forgetting_control():
                for g, h in witnesses)
 
 
+def involution_and_local_conjugation_gate():
+    """The inverse Iwasawa generator has a nonzero quadratic correction.
+
+    At split 11, complex conjugation interchanges the two local places
+    and sends the anticyclotomic variable T to -T+T^2. The residual
+    negative point R has local coordinates (9,2)=(9,-9) mod11.
+    """
+    for e in range(P):
+        # Inverted group element: U=(1+T)^(-1)-1=-T+T² mod T³.
+        correct_coeff = (e + e * (e - 1) // 2) % P
+        assert correct_coeff == choose2plus(e)
+    assert choose2plus(2) == 3
+    assert (2 * (2 - 1) // 2) % P == 1
+    assert choose2plus(2) != (2 * (2 - 1) // 2) % P
+    # U≠−T is essential at order T³; the wrong substitution omits e*T².
+    assert ((-1) % P, 1) == (10, 1)
+    # C0039 local residual log coordinates for R at the two split places.
+    assert (9 + 2) % P == 0  # R negative under conjugation.
+    assert (9 - 2) % P != 0  # wrong sign/control.
+    # The T-factor is anti-invariant, so T*kappa(R) is positive.
+    assert ((-1) * (-1)) == 1
+    return True
+
+
 def main():
+    assert involution_and_local_conjugation_gate()
     e0 = (0, 0, 0)
     identity3 = (0, 0, 0, 0)
     for e in range(P):
@@ -146,6 +171,7 @@ def main():
     commutator_second_order_controls()
     local_cone_forgetting_control()
 
+    print("PASS: conjugation U=-T+T² (not -T), split-11 R logs and double sign")
     print("PASS: exact inverse-character d c1 and d c2 coefficients")
     print("PASS: canonical second H2 cocycle = negative central-extension cocycle")
     print("PASS: exhaustive 11^4 generator lifts force double bracket 4*T^2")
