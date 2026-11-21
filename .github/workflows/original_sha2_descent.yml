@@ -1,0 +1,40 @@
+name: Original curve 2-Selmer dual-backend proof gate
+
+on:
+  push:
+    branches:
+      - research/session53-original-sha2-descent-gate-2026-11-21
+  pull_request:
+    paths:
+      - research/proof_labs/sage_original_sha2_descent_gate.py
+      - .github/workflows/original_sha2_descent.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actual-two-selmer:
+    name: PARI and mwrank independent 2-Selmer calculations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable GitHub action
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Fetch pinned official Sage 10.6 container
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 300 docker pull sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb
+          docker image inspect --format '{{json .RepoDigests}}' sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb
+          docker image inspect --format '{{.Id}}' sagemath/sagemath:10.6@sha256:19995db6194f4a4bab18ce9a88556fd15b9ed5e916b4504fefe618a7796ddbdb > /tmp/sage-image.txt
+      - name: Compute actual PARI and eclib 2-Selmer dimensions and control curves
+        shell: bash
+        run: |
+          set -euo pipefail
+          image_id=$(cat /tmp/sage-image.txt)
+          timeout --signal=TERM --kill-after=15s 900 docker run --rm --memory=6g --memory-swap=6g --cpus=2 --network=none -e HOME=/tmp -v "$PWD:/work:ro" -w /work --entrypoint /home/sage/sage/sage "$image_id" -python research/proof_labs/sage_original_sha2_descent_gate.py 2>&1 | tee /tmp/original-sha2-result.txt
+          grep -q '^SELMER2 234446a1 PARI=' /tmp/original-sha2-result.txt
+          grep -q '^NONCLAIM:' /tmp/original-sha2-result.txt
