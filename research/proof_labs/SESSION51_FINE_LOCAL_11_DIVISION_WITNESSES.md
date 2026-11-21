@@ -68,6 +68,29 @@ This verification does NOT use the Jacobian 18-multiple, the ODE for formal tran
 
 **Adversarial negative control:** Translate each Qj by a nonzero formal point of parameter11 (the group law preserves the curve) and verify its [11] multiple is NOT Zj mod14641. Swapping the two targets also fails. If the formal 11-division factor, coefficient or target is corrupted, the independent ψ11 equality rejects it. The checker records the short curve, exact rational group combinations, #E(F11), both formal parameters, the two independent [11] checks and on-curve mutants.
 
+## Global corollary: an ACTUAL fine Kummer field of relative degree \(11^4\), split at every supported place
+
+The local witnesses also suggest a useful genuinely **global** arithmetic object. Let
+  \(L=K(E[11])\), \(F_Z=L([11]^{-1}Z_1,[11]^{-1}Z_2)\), and \(V=E[11]\).
+Then \(F_Z/L\) is a Galois Kummer extension of exponent11. In fact, **under the previously certified Session46 good-prime Kummer/Frobenius inputs**, its Galois group is the **FULL** \(V^2\), so
+\[
+\boxed{\operatorname{Gal}(F_Z/L)\simeq E[11]^2\simeq(\mathbf F_{11})^4,\qquad
+[F_Z:L]=11^4=14{,}641.}
+\]
+This corollary requires only two of the five Session46 pure-Frobenius rows, not the full residual \(\mathrm{GL}_2(\mathbf F_{11})\) image, the global C0040 height oracle or first-corrected classes.
+
+**Independent two-prime proof:** use the Session46 q743 and q2843 principal split prime orientations, both with anticyclotomic character0 and simple residual 1-eigen Frobenius. Their five-point Kummer reduction rows are \(r_{743}=(1,0,0,2,6)\) and \(r_{2843}=(1,4,9,9,1)\). Project to the coefficient vectors of \(Z_1=(-2,3,1,0,0)\) and \(Z_2=(-9,6,0,1,0)\), obtaining
+  \(s_{743}=(9,4)\) and \(s_{2843}=(8,2)\).
+The determinant is \(9\cdot2-4\cdot8=-14\equiv\mathbf 8\bmod11\ne0\). Their Frobenius powers in \(\ker\rho\) therefore give two Kummer translation vectors \(u_{743}\otimes s_{743}\), \(u_{2843}\otimes s_{2843}\) with nonzero \(u_q\in V\). Conjugation by the actual q23 Frobenius, whose mod11 action is irreducible, supplies \(A_{23}u_q\otimes s_q\), independent from the first for each q. The resulting four vectors span **all** \(V\otimes\mathbf F_{11}^2=V^2\), independently of the unknown local-to-global E[11] basis identifications. The new script checks the determinant, all120 nonzero q23 orbits and the full four-vector span (with rank-reducing mutation controls). The inputs for the Frobenius norm-to-Kummer translation bridge were independently checked in Session46, and remain explicit dependencies.
+
+**Local splitting at the finite support \(\Sigma\):** For both places \(v\mid11\), our actual Qj∈E(Q11)=E(K_v) yield all the division points of each Zj after adjoining \(E[11]\), which is already contained in L. Therefore **every prime of L over \(v\mid11\) splits completely in \(F_Z/L\)**. For places \(v\mid2\) and \(v\mid117223\), the previously checked C0039 local Kummer quotient \(E(K_v)/11E(K_v)=0\) gives local divisibility of Zj, so the same conclusion holds. Archimedean places of K are complex, giving no residual odd-11 decomposition obstruction. By good-reduction Kummer theory, \(F_Z/L\) is unramified outside the places above \(\Sigma\); consequently it is **everywhere unramified and completely split at all primes above \(\Sigma\)**. These statements are relative to L, **not K**: the torsion field L/K itself can ramify at 11. Do **not** erroneously claim the full compositum with anticyclotomic D1 is locally split, since D1 is ramified at 11.
+
+Thus we have a concrete **finite fine-Kummer quotient** of the actual Galois group over L, with full relative group and trivial supported decomposition groups. This fits the *object type* of compact-support cohomology more closely than a generic mod11 group countermodel. It does **not** construct the first corrected affine extension \(M_2/B_x\), compute the global second obstruction, or provide a Greenberg-Selmer class.
+
+**Adversarial boundary:** two unrelated residue-field signatures do not identify a common global torsion basis; irreducible q23 conjugation is essential. The relative full-image conclusion would fail if either projected row were zero/dependent or the actual Frobenius had reducible action. The local-splitting conclusion additionally depends on C0039's BAD-PRIME local divisibility, not solely on the two p=11 point computations. These hypotheses should be checked independently before promoting this corollary beyond an internally reproduced, source-dependent arithmetic deduction.
+
+---
+
 ## What this gives the compact-support arithmetic calculation
 
 Both Zj are positive Q-rational points, and 11 **splits** in K=Q(sqrt−7). At the two places v,\bar v|11, the rational subfield embeds as the SAME Q11, so the uniquely determined Qj∈E(Q11) are naturally **compatible under complex conjugation**. This explicitly anchors the local divisibility at BOTH ordinary primes and avoids having to treat the two p-adic scalar coordinates as independently chosen.
