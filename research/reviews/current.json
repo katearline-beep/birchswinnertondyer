@@ -580,7 +580,15 @@
     "https://math.mit.edu/events/gross-zagier/"
   ],
   "journal_path": "research/reviews/2026-11-20-whole-problem.md",
-  "not_established": "No general BSD proof, original exact complex L''=0, rigorous fourth-derivative nonzero, Sha finiteness, BSD leading coefficient, actual supported first correction, second Bockstein or independently reviewed theorem; CI not locally verified.",
+  "not_established": [
+    "No proof of the general Birch–Swinnerton-Dyer conjecture for every elliptic curve over Q, including analytic/algebraic rank equality.",
+    "No exact original complex vanishing L''(234446.a1,1)=0 has been proved; its arithmetic p-adic analogues do not suffice.",
+    "No rigorous nonzero fourth complex derivative L^(4)(234446.a1,1) has been proved, so the exact complex analytic rank four is unresolved.",
+    "No finiteness of original Tate–Shafarevich group Sha(E/Q) or the normalized full BSD leading coefficient has been proved.",
+    "No actual arithmetic supported first correction, complete nonabelian Galois cochain, ordinary Greenberg compatibility or evaluated second Bockstein is constructed.",
+    "No independent expert review or new noncircular bridge from existing arithmetic results to the original complex L-function is established.",
+    "No local full repository validation success was claimed; review workflow checks are separate from proof of any mathematical theorem."
+  ],
   "reviewed_issues": [
     "#61",
     "#53",
