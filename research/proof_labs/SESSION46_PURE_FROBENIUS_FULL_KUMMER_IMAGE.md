@@ -61,6 +61,12 @@ contains V⁵×{0} by the five witnesses, and also (0,2), which generates {0}×F
 \]
 The degree-11 anticyclotomic field D₁ is linearly disjoint from the entire five-point Kummer splitting field F₅ over L, and the joint five-point Kummer action over L D₁ is full V⁵. These are **source-dependent exact arithmetic deductions**, not constructed defining polynomials of enormous degree. They remove the full-GL₂ dependence from the **relative** field-image/disjointness portion of C0036. They do NOT eliminate C0044/C0047's separate residual-image/Selmer hypotheses or establish a global c1/c2.
 
+**Full finite quotient structure over K, without specifying H:** Let H=rho(G_K)⊂GL₂(F11). The actual joint Kummer/character homomorphism
+  s ↦ (C(s),rho(s),ell(s))
+embeds Gal(B₅/K) as a subgroup of (V⁵⋊H)×C11, with the standard diagonal H-action. Its projection to H is onto by definition, and we have just proved that its kernel is the ENTIRE V⁵×C11. Therefore the image is the **whole semidirect target**: each preimage of A∈H can be multiplied by an element of the full kernel to obtain (0,A,0). Thus
+  **Gal(B₅/K) ≅ (V⁵⋊H)×C11**
+for the actually realized residual image H, without identifying H with GL₂. This is a complete structural description of an ACTUAL (uncorrected) nonabelian arithmetic finite quotient. The analogue for the single x has Gal(B_x/K)≅(V⋊H)×C11. This does **not** supply the corrected affine cocycle c1: the first Bockstein lift has an additional central V-kernel and its local conditions are open.
+
 In particular, projecting from V⁵×C11 onto any nonempty subset of the five points yields the analogous full relative group for that subset, including x=P2−2P1. The degree for the one-point base B_x=L([11]⁻¹x)D₁ is **11³** over L even without rho(G_K)=GL₂. This independently reinforces Session44's base-field statement while retaining the source-dependent C0047 existence gate for the first 121-kernel extension.
 
 ## Adversarial no-go and distinction from earlier results
