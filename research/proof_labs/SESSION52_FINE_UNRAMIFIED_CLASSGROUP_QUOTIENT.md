@@ -1,4 +1,4 @@
-# Session52 — an everywhere-unramified fine Kummer quotient and an 11-class-group rank bound
+# Session52 — everywhere-unramified fine Kummer quotients and 11-class-group bounds over Q and K
 
 **2026-11-21, America/New_York. AI-assisted source-dependent arithmetic theorem/certificate, not independently expert reviewed.** Narrow continuation of Session51/PR #94. General BSD rank equality, original E234446.a1 complex \(L''(E,1)=0\), nonzero \(L^{(4)}(E,1)\), original Sha finiteness and BSD leading coefficient are all **unproved**. **New mathematical implication toward BSD: NONE.** Do not confuse a class-group result for a large auxiliary torsion field with the Tate–Shafarevich group of E/Q.
 
@@ -84,6 +84,38 @@ i.e. every supported prime of L splits completely in F_fine/L.
 At finite primes \(w\nmid\Sigma\), E has good reduction over the underlying K-place and the residue characteristic is NOT11. Standard étale Kummer theory for [11] on the Néron model implies that the division-point extension is **unramified** there. In particular this handles primes over7, where K/Q is ramified but E still has good reduction. Consequently F_fine/L is **everywhere unramified at all finite primes**. It is even split at every \(w\mid\Sigma\). This is an extension of the torsion field L, NOT an assertion that L/K or the anticyclotomic field D1 is unramified or locally split.
 
 These bad-prime local divisibility and good-prime Kummer statements are independently named source dependencies; the finite Python script cannot prove local Néron-model theorems.
+
+## Stronger rational-field descent: the class-group bound also holds for \(\mathbf Q(E[11])\)
+
+The previous proof was stated over \(L=K(E[11])\) because our three split prime witnesses were constructed over K. In fact it yields a stronger result over the potentially **smaller rational 11-torsion field**
+  \(L_0=\mathbf Q(E[11])\).
+Let \(F_0=L_0([11]^{-1}Y_1,[11]^{-1}Z_1,[11]^{-1}Z_2)\).
+
+**Full image:** The three Frobenius powers \(w_{743},w_{2843},w_{3019}\), their q23 conjugates and their six independent Kummer vectors all lie in **\(\ker(\rho|_{G_K})\)**, hence also in \(\ker(\rho|_{G_{\mathbf Q}})\). Since the action on the three point coefficients is trivial over Q (all points are Q-rational), these same six translations prove
+\[
+\boxed{\operatorname{Gal}(F_0/L_0)\simeq E[11]^3,\quad [F_0:L_0]=11^6.}
+\]
+This conclusion does not require knowing whether K is itself contained in \(L_0\), or the full residual \(\mathrm{GL}_2\) image.
+
+**Local division descends from K to Q at the bad places:** For each bad rational prime \(\ell\in\{2,117223\}\), choose a place \(v\mid\ell\) of the quadratic extension K/Q. The C0039 source provides \(E(K_v)/11E(K_v)=0\). For any rational point \(Z\in E(\mathbf Q_\ell)\), choose \(U\in E(K_v)\) with [11]U=Z. Taking the elliptic group trace/corestriction gives
+  \([11]\operatorname{Tr}_{K_v/\mathbf Q_\ell}(U)=[K_v:\mathbf Q_\ell]\,Z\).
+Since \(d=[K_v:\mathbf Q_\ell]\in\{1,2\}\) is **prime to 11**, find integers a,b with ad+11b=1, and obtain the explicit rational local 11th division point
+\[
+  \boxed{Q_\ell=a\,\operatorname{Tr}_{K_v/\mathbf Q_\ell}(U)+bZ,
+            \qquad[11]Q_\ell=Z.}
+\]
+At rational prime11 the division points are already explicitly in E(Q11), and at all other primes of good reduction the Kummer torsor is unramified. Thus **F_0/L_0 is everywhere unramified and split at all primes above 2,11,117223**, just like F_fine/L. The relative extension F_0/L_0 is abelian with group (Z/11)^6, so the Hilbert class field yields the independent strengthened bound
+\[
+\boxed{
+ \dim_{\mathbf F_{11}}\mathrm{Cl}(\mathbf Q(E[11]))/
+       11\,\mathrm{Cl}(\mathbf Q(E[11]))\ge6.
+}
+\]
+The corresponding class group after killing supported-prime classes also has 11-rank at least six. The module quotient carries the threefold standard residual \(E[11]\)-action of \(\mathrm{Gal}(L_0/\mathbf Q)\).
+
+**Adversarial check:** This Q-descent cannot be asserted for an arbitrary number field of degree divisible by11: the Bezout argument would fail. It works here specifically because K/Q is quadratic and 11 is odd. The K-source's good reduction and local quotient hypotheses remain indispensable; no independent calculation of either large number field's ideal class group has occurred.
+
+---
 
 ## New class-group consequence (not new general mathematics)
 
