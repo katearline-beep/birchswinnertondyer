@@ -68,6 +68,14 @@ This is an **equality for the minimal affine splitting field M_c**. For any larg
   13,200 × 19,487,171 = **257,230,657,200**.
 That final total-degree numerical specialization depends on the full-GL₂ source argument; the relative 11⁷ theorem does **not**.
 
+### Exact two-Frobenius subgroup test, independent of full GL₂
+
+There is a further useful *two-generator* consequence of the same proof. Since h=sigma^12 and w=g h², both Psi(h) and Psi(w) belong to the subgroup Q=<Psi(sigma),Psi(g)>. The six translation-generation argument proves Q∩ker(rho) contains ALL B=A₃⋊C11; because this is already the full kernel of rho in the minimal affine image, equality holds. On the other hand rho(Q)=<A> is cyclic of order12 by q23's verified residual Frobenius polynomial. The exact sequence therefore forces
+
+  **|<Psi(Frob23),Psi(Frob127^10)>| = 12×11⁷ = 233,846,052.**
+
+This is an **exact conditional image-order invariant of the two recorded Frobenius elements**, not a claimed Galois-field construction or an enumeration of 233 million group elements. It needs neither a full torsion basis nor surjectivity of the residual GL₂ image. Any proposed quotient claiming to carry the full corrected cochain must project onto this two-generator affine image. A quotient of smaller two-Frobenius image order cannot do so. The scalar and six-dimensional negative-control tests verify the essential group-order and rank ingredients; the huge order follows from the exact group sequence, not brute-force enumeration.
+
 ### Consistency check with Session31's independent first-lift calculation
 
 The same proof applies at coefficient truncation r=1,2,3 (and formally through r=10 if a cocycle to that length exists). For a hypothetical 1-cocycle into V[T]/T^r with the stated residual Kummer class, the relative affine image equals
