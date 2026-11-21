@@ -22,12 +22,10 @@ check(c,s)={if(!c,error(s));};
     while(bb!=matid(2),bb=bb*aa;order++;check(order<=132,"order bound"));
     ell=lift(scale*bnrisprincipal(ray,a+b*y,0)[1]);
     if(q==743,
-      check(n==770 && tr==-26 && order==10 && ell==0,"wrong q743");
-      print("FROBENIUS743 ",q," ",a," ",b," ",root," ",n," ",tr," ",order," ",ell," ",lift(Mod(order*ell,11)));
-    ,
-      check(n==143 && tr==-15 && order==10 && ell==4,"wrong q127");
-      print("FROBENIUS127 ",q," ",a," ",b," ",root," ",n," ",tr," ",order," ",ell," ",lift(Mod(order*ell,11)));
+      check(n==770 && tr==-26 && order==10 && ell==0,"wrong q743"),
+      check(n==143 && tr==-15 && order==10 && ell==4,"wrong q127")
     );
+    print("FROBENIUS",q," ",q," ",a," ",b," ",root," ",n," ",tr," ",order," ",ell," ",lift(Mod(order*ell,11)));
   );
   q=743; ee=ellinit([1,-1,0,-79,289],q);
   p1=[Mod(4,q),Mod(3,q)];p2=[Mod(5,q),Mod(-2,q)];
