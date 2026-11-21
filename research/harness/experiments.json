@@ -311,7 +311,7 @@
       "status": "planned",
       "human_reviewed": false,
       "question": "Can a higher Heegner-cycle formula force (L(E/K_D))'''(1)=0 for a twist with L'(E^D,1) nonzero, hence L''(E,1)=0?",
-      "decisive_observation": "The exact local splitting screen yields fundamental discriminants -7,-87,-95,-127; no higher Gross-Zagier theorem or twist L' nonvanishing outside -7 is yet known. Session41 RH/Dirichlet-GRH formal verification source audit: the actual Lean theorems concern Dirichlet L-functions; no GL2/Hasse–Weil complex derivative comparison. A strict whole-critical-line formal-function negative control rejects an attempted multiplicity shortcut.",
+      "decisive_observation": "The exact local splitting screen yields fundamental discriminants -7,-87,-95,-127; no higher Gross-Zagier theorem or twist L' nonvanishing outside -7 is yet known. Session41 RH/Dirichlet-GRH formal verification source audit: the actual Lean theorems concern Dirichlet L-functions; no GL2/Hasse–Weil complex derivative comparison. A strict whole-critical-line formal-function negative control rejects an attempted multiplicity shortcut. Full theorem spot-check: Li–Liu Theorem 1.5 gives conditional first derivative, while Feng–Yun–Zhang Theorem 1.1 gives arbitrary derivatives of Eisenstein coefficients over function fields; the authors say no r>1 number-field shtuka analogue is known.",
       "dependencies": [
         "Conductor splitting, odd root number of twist and certified nonzero twist first derivative.",
         "A nonzero twist derivative is essential for recovering L'' from the cubic base-change derivative."
