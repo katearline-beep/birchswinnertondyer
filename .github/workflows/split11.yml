@@ -112,6 +112,8 @@ jobs:
         run: python -I -B research/reviews/controls/supported_local_gluing_negative_control_2026_11_20.py
       - name: Nov6 H3 rank-two parity and product-rule negative control
         run: python -I -B research/reviews/controls/h3_parity_product_negative_control_2026_11_06.py
+      - name: Session44 121-kernel first/second affine Galois tower scope
+        run: python -I -B research/proof_labs/session44_relative_tower_gate.py
       - name: Session43 second arithmetic Frobenius commutator and local T3 jets
         run: python -I -B research/proof_labs/session43_second_commutator_local_gate.py
       - name: Session42 conditional class-three minimal relative Galois quotient gate
