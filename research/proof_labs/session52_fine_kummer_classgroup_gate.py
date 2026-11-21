@@ -204,7 +204,51 @@ def quadratic_local_trace_descent_control():
     return True
 
 
+def dainobu_theorem_b_source_hypothesis_gate():
+    """Published JNT 2024 Dainobu Thm4.5 source hypothesis arithmetic.
+
+    This exact finite test cannot prove the theorem or its class-field
+    transfer; (Inj) of the paper's SEPARATE Theorem A is NOT assumed.
+    """
+    a1,a2,a3,a4,a6=1,-1,0,-79,289
+    b2=a1*a1+4*a2
+    b4=2*a4+a1*a3
+    b6=a3*a3+4*a6
+    b8=a1*a1*a6+4*a2*a6-a1*a3*a4+a2*a3*a3-a4*a4
+    c4=b2*b2-24*b4
+    delta=(-b2*b2*b8-8*b4**3-27*b6*b6+9*b2*b4*b6)
+    assert c4==3801 and delta==468892==4*117223
+    assert delta%P!=0
+    assert c4%2!=0 and c4%117223!=0
+    # j=c4^3/delta, so v_2(j)=-2, v_117223(j)=-1.
+    assert delta%4==0 and delta%8!=0
+    assert delta%117223==0 and delta%(117223**2)!=0
+    assert (-2)%P!=0 and (-1)%P!=0  # Dainobu (Mult).
+    # (Add) is relevant only for p=3, hence vacuous at p=11.
+
+    # Session51 exact short formal t([18]Z), plus independent P2 t.
+    vals=(2541,14520,12584)
+    expected_min=(5082,14399,10527)
+    for t_s,expected in zip(vals,expected_min):
+        assert t_s%(P*P)==0 and t_s%(P**3)!=0
+        # Exact short->minimal parameter:
+        # t_m=2*(t_s+t_s^3 U)/(1+t_s+t_s^3 U),
+        # U=1+O(t_s^4), and v11(t_s)=2.
+        formal_U=1
+        t_m=(2*(t_s+t_s**3*formal_U)*
+             pow((1+t_s+t_s**3*formal_U)%MOD,-1,MOD))%MOD
+        assert t_m==expected
+        assert t_m%(P*P)==0 and t_m%(P**3)!=0
+        assert t_m==(2*t_s)%MOD
+    # Dainobu B certifies [18]Z everywhere UNRAMIFIED;
+    # transfer to Z itself since gcd(18,11)=1.
+    assert 8*18-13*P==1
+    assert 8*18-12*P!=1  # deliberate wrong Bezout control
+    return True
+
+
 def main():
+    assert dainobu_theorem_b_source_hypothesis_gate()
     assert quadratic_local_trace_descent_control()
     rows=full_kummer_controls()
     q,t18,tU=p2_local_division()
@@ -214,8 +258,9 @@ def main():
     print("PASS: 6x6 determinant=3, all120 q23 orbit tests, row/action/local mutants")
     print("PASS: independently constructed Q11 division point of P2 via rational [18]P2")
     print("PASS: independent exact division-polynomial [11]Q=P2 and on-curve mutation")
+    print("PASS: Dainobu JNT2024 Thm4.5 p11 hypotheses c4/delta, formal valuations and Bezout 8*18-13*11=1")
     print("PASS: local quadratic trace descent d=1,2; wrong degree 11 falsifier")
-    print("CONDITIONAL CLASS GROUP: 11-rank >=6 for Cl(Q(E11)) AND Cl(K(E11))")
+    print("CONDITIONAL CLASS GROUP: published Dainobu B unramifiedness plus full Kummer implies rank>=6 Cl(Q(E11)), Cl(K(E11))")
     print("NONCLAIM: code neither computes Cl(L), a global corrected c1, secondary h2 nor BSD")
 
 
