@@ -136,6 +136,24 @@ def arithmetic():
         assert all(mpower(F,k)!=((1,0),(0,1)) for k in range(1,order))
         # The eigenvalues are 1 and q mod 11; the eigenvalue 1 is simple.
         assert order == next(k for k in range(1,11) if pow(q,k,P)==1)
+        # Source-critical norm bridge: the unramified local Kummer
+        # coinvariant V/(Frob-I)V is carried isomorphically onto the
+        # fixed line by the mth Frobenius norm. Exhaust all 121 vectors.
+        zero=((0,0),(0,0))
+        N=zero
+        T=((1,0),(0,1))
+        for _ in range(order):
+            N=tuple(tuple((N[i][j]+T[i][j])%P for j in range(2))
+                    for i in range(2))
+            T=mm(T,F)
+        assert T==((1,0),(0,1))
+        FmI=((F[0][0]-1)%P,F[0][1],F[1][0],(F[1][1]-1)%P)
+        im={( (FmI[0]*u[0]+FmI[1]*u[1])%P,
+              (FmI[2]*u[0]+FmI[3]*u[1])%P )
+            for u in product(range(P),repeat=2)}
+        ker={u for u in product(range(P),repeat=2) if mv(N,u)==(0,0)}
+        assert im==ker and len(im)==P
+        assert len({mv(N,u) for u in product(range(P),repeat=2)})==P
         R=(-3355*pow(63,-1,q)%q,
            128780*pow(1323,-1,q)*root%q)
         points=[(x%q,y%q) for x,y in POINTS]+[R]
@@ -183,6 +201,25 @@ def arithmetic():
     # cannot be used in this proof without an exact integral Frobenius
     # action/order test. The nonanomalous-eigenvalue gate rejects it.
     assert 3851%P==1
+    # A genuine countermodel to the invalid q=1 eigenvalue shortcut:
+    # J has the actual possible polynomial (X-1)^2, order 11,
+    # nonzero unramified coinvariant, but its 11th Frobenius norm is ZERO.
+    J=((1,1),(0,1))
+    assert mpower(J,P)==((1,0),(0,1))
+    assert all(mpower(J,k)!=((1,0),(0,1)) for k in range(1,P))
+    N=((0,0),(0,0))
+    T=((1,0),(0,1))
+    for _ in range(P):
+        N=tuple(tuple((N[i][j]+T[i][j])%P for j in range(2))
+                for i in range(2))
+        T=mm(T,J)
+    assert N==((0,0),(0,0))
+    imj={((u[1])%P,0) for u in product(range(P),repeat=2)}
+    assert (0,1) not in imj
+    # q127's actual anticyclotomic character is nonzero:
+    r127=(((-11+6*16)%121) *
+          pow((-11-6*15)%121,-1,121))%121
+    assert pow(r127,10,121)!=1
     # Without a nonzero anticyclotomic h=Frob23^12 the joint image
     # could cover only the 10-dimensional Kummer part, not C11.
     assert (12*2)%P==2
@@ -208,6 +245,8 @@ def main():
         print('PASS independent PARI ray-class and minimal-model 5-prime arithmetic')
     else:
         assert len(sys.argv)==1
+    print('PASS exact Frobenius norm image/kernel identity at all five primes')
+    print('PASS q3851 repeated-eigen Jordan countermodel and q127 character mutation')
     print('PASS five actual chi=0 good split primes, n11=1, rho order coprime11')
     print('PASS independent rank5 and determinant5; all120 irreducible Frobenius orbits')
     print('PASS Kummer translation image V^5 over L D1 (source-dependent local Kummer theorem)')
