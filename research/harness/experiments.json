@@ -1260,6 +1260,45 @@
           "reference": "https://arxiv.org/abs/2603.23978"
         }
       ]
+    },
+    {
+      "id": "EX-024",
+      "claim_ids": [
+        "C-0004"
+      ],
+      "status": "planned",
+      "human_reviewed": false,
+      "question": "For the ORIGINAL E=234446.a1/Q, do independent actual PARI and eclib two-descents give dim_F2 Sel_2(E/Q)=4, thereby proving Sha(E/Q)[2^infinity]=0 by the standard Selmer exact sequence?",
+      "decisive_observation": "NOT YET COMPUTED. Sage10.6 pinned 2-descent experiment has been submitted. Four rational independent MW points/rank4 and no rational 2-torsion provide the lower bound. A result exactly4 gives a limited unconditional original-curve BSD-arithmetic Sha2 result conditional on trusted published 2-descent algorithms; larger dimension or timeout yields NO conclusion. Source C0044's nonzero twist Kurihara number proves only the twist's 11-Selmer bound, not the original's 11-Selmer upper bound.",
+      "dependencies": [
+        "Cremona/LMFDB: original E/Q rank4, torsion trivial; rational 2-division cubic irreducible, discriminant 1024*117223.",
+        "Sage 10.6 documented EllipticCurve_rational_field.selmer_rank(algorithm='pari' or 'mwrank') computes ACTUAL 2-Selmer rank, NOT rank or 11-Selmer.",
+        "Standard exact sequence 0→E(Q)/2E(Q)→Sel2→Sha[2]→0; 571a1 rank0 Sha[2] control distinguishes ranks."
+      ],
+      "commands": [
+        "sage -python research/proof_labs/sage_original_sha2_descent_gate.py",
+        "GitHub Actions .github/workflows/original_sha2_descent.yml (6GB network-disabled Sage10.6, two actual independent backends)"
+      ],
+      "artifacts": [
+        "research/proof_labs/SESSION53_ORIGINAL_SHA2_SELMER_PROOF_GATE.md",
+        "research/proof_labs/sage_original_sha2_descent_gate.py",
+        ".github/workflows/original_sha2_descent.yml"
+      ],
+      "negative_control": "571a1 rank0 has Sel2 dimension2 from Sha[2]=(Z/2)^2, while 389a1 rank2 has Sel2 dimension2; both independent backends must agree. Focal 2-division cubic has no rational root; rank<4 impossible; rank>4 must print NO CERTIFICATE. Never confuse original 2 Selmer with twist 11 Selmer, or numeric analytic Sha≈1 with proof.",
+      "stop_condition": "Only report original Sha[2^infinity]=0 after BOTH actual Sage backends output dimension4 with good source/CI logs and known-curve controls. Timeout, disagreement, >4 or missing log is nonproof. Do not promise an upper bound for original Sel11 or complex L''.",
+      "nonclaims": [
+        "Not a general BSD proof, not original analytic rank four, not original Sha finiteness at 11 or all primes, not a source for conjectured exact leading coefficient, not novelty until prior-art check."
+      ],
+      "cross_disciplines": [
+        {
+          "discipline": "proof-carrying scientific computation",
+          "kind": "validation_method",
+          "mechanism": "Use two independent mathematical libraries (PARI versus eclib) on an actual full 2-Selmer computation, plus a real Sha-bearing control curve; only exact Selmer upper dimension has the required codomain.",
+          "proof_boundary": "Program execution does not verify the underlying published 2-descent algorithms, trusted MW rank or any 11-primary/analytic BSD assertion.",
+          "validating_test": "research/proof_labs/sage_original_sha2_descent_gate.py",
+          "reference": "https://passagemath.org/docs/10.6/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html"
+        }
+      ]
     }
   ]
 }
