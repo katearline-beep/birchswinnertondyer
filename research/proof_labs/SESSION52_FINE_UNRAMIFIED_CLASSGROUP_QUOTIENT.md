@@ -117,6 +117,31 @@ The corresponding class group after killing supported-prime classes also has 11-
 
 ---
 
+## Independent PUBLISHED criterion: Dainobu Theorem B certifies everywhere unramifiedness WITHOUT the bad-prime local quotient
+
+A direct full-text check found a much more precise published source than a general analogy: **Naoto Dainobu**, *Ideal class groups of division fields of elliptic curves and everywhere unramified rational points*, *Journal of Number Theory* 264 (November 2024), 211–232, arXiv:2304.05035, **Theorem B / Theorem 4.5**, https://arxiv.org/abs/2304.05035. Dainobu defines \(E(\mathbf Q)_{\mathrm{ur},p^n}\) as rational points locally \(p^n\)-divisible over the **maximal unramified** \(\mathbf Q_\ell^{\mathrm{ur}}\) at **each** rational prime \(\ell\). His theorem states (under (Add), (Mult), and a minimal model at p) that a rational point \((X,Y)\) with \(v_p(X)<0\) and \(v_p(X/Y)\ge n+1\) belongs to this subgroup.
+
+**All focal hypotheses are verified for \(p=11,n=1\):**
+- The actual minimal model \(y^2+xy=x^3-x^2-79x+289\) has \(c_4=3801\) and \(\Delta=468892=2^2\cdot117223\); \(11\nmid\Delta\), so it has good/minimal reduction at11. At each bad prime where \(v_\ell(j)<0\), its valuations are \(v_2(j)=-2\) and \(v_{117223}(j)=-1\). Both are prime to11, verifying Dainobu's (Mult). The (Add) restriction is **only for p=3**, hence vacuous at11.
+- For \(Z=P_2,Z_1,Z_2\), set \(T=[18]Z\). This is an exact RATIONAL point in the formal subgroup \(E_1(\mathbf Q_{11})\). The short-model parameters \(t_s(T)\equiv2541,14520,12584\bmod14641\) have **exact 11-adic valuation2**. The minimal-model parameter \(t_m=-x_m/y_m\) relates to the short one by \(t_m=2(t_s+t_s^3U)/(1+t_s+t_s^3U)\) with \(U=1+O(t_s^4)\), so \(t_m\equiv2t_s\bmod11^4\) when \(11^2\mid t_s\). Hence
+  \[
+  t_m([18]P_2)\equiv5082,\quad
+  t_m([18]Z_1)\equiv14399,\quad
+  t_m([18]Z_2)\equiv10527\pmod{14641},
+  \]
+  all of valuation2. In particular \(v_{11}(X_m(T))=-4<0\) and \(v_{11}(X_m(T)/Y_m(T))=2=n+1\).
+- Dainobu Theorem 4.5 therefore gives **each** \(T=[18]Z\in E(\mathbf Q)_{\mathrm{ur},11}\). Since \(\gcd(18,11)=1\), the integer Bezout identity **\(8\cdot18-13\cdot11=1\)** shows every original \(Z\) is also everywhere unramified: if \([11]U=[18]Z\) over \(\mathbf Q_\ell^{\mathrm{ur}}\), then
+  \([11](8U-13Z)=Z\).
+  This works for all \(\ell\) simultaneously, as an **existence** argument; no local bad-prime root coordinates are required.
+
+**Resulting independent proof of the key class-field condition:** Each \([11]\)-division fibre of Y1,Z1,Z2 has a point over an unramified extension of every \(\mathbf Q_\ell\). After base change to the torsion field \(L_0=\mathbf Q(E[11])\), the full 11-division fibre is likewise defined over an **unramified** extension of every \(L_{0,w}\). Hence \(F_0/L_0\) is everywhere unramified. Combined with our explicit 3-Frobenius full image, this proves the **11-class rank at least six** for \(L_0\) without needing the earlier C0039 bad-prime conclusion at all. The analogous class-rank bound for K(E[11]) follows by local base change of the same unramified extension together with full relative translation image.
+
+**Important boundary:** Dainobu's separate **Theorem A / Corollary 4.2** uses an (Inj) hypothesis which may be delicate at \(p=11\) (the paper only states automatic coverage at p≥13). **Do not apply those rank inequalities blindly.** Our explicit THREE pure-Frobenius generators supply the full residual Kummer image directly; only the local unramifiedness Theorem **B** is imported. The stronger assertion that the primes above 2 and117223 **split completely**, rather than merely being unramified, still uses C0039 local 11-divisibility. Thus the **ordinary** Cl(L0) rank bound is independent of C0039 bad-place input under this published theorem, while the Sigma-split class-group bound retains it.
+
+This removes a substantial independent source dependency and gives a **published-theorem applicability audit**, not a new general theorem or a statement about original Sha. The executable control now checks \(c_4,\Delta\), the two negative valuations, the three transformed minimal formal parameters, and the Bezout normalization (with a wrong-denominator mutation).
+
+---
+
 ## New class-group consequence (not new general mathematics)
 
 The Weil pairing places \(\mu_{11}\subset L\), so L is totally complex. By the existence theorem for the maximal everywhere-unramified abelian extension (Hilbert class field) and global Artin reciprocity, the actual finite abelian exponent-11 extension F_fine/L is a quotient of \(\mathrm{Cl}(L)\). Therefore
