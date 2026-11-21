@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - research/proof_labs/sage_original_sha2_descent_gate.py
+      - research/proof_labs/session53_independent_rank4_reductions.py
       - .github/workflows/original_sha2_descent.yml
   workflow_dispatch:
 
@@ -23,6 +24,8 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
+      - name: Independently certify four rational MW directions from F3 and four Kummer reductions
+        run: python3 -I -B research/proof_labs/session53_independent_rank4_reductions.py
       - name: Fetch pinned official Sage 10.6 container
         shell: bash
         run: |
