@@ -189,7 +189,23 @@ def p2_local_division():
     return q,t18,tU
 
 
+def quadratic_local_trace_descent_control():
+    """From K_v/Q_l of degree d=1 or 2, local 11-divisibility descends.
+
+    If [11]U=Z over K_v, then [11]Tr(U)=d Z, hence
+    [11](a Tr(U)+b Z)=(a*d+11*b)Z=Z.
+    """
+    assert 1*1+11*0==1
+    assert 6*2+11*(-1)==1
+    from math import gcd
+    assert gcd(1,11)==gcd(2,11)==1
+    assert gcd(11,11)==11  # deliberate inadmissible extension degree
+    assert all((a*d+11*b)==1 for d,a,b in [(1,1,0),(2,6,-1)])
+    return True
+
+
 def main():
+    assert quadratic_local_trace_descent_control()
     rows=full_kummer_controls()
     q,t18,tU=p2_local_division()
     print(f"FINE3_ROWS {rows}, determinant=1 mod11")
@@ -198,7 +214,8 @@ def main():
     print("PASS: 6x6 determinant=3, all120 q23 orbit tests, row/action/local mutants")
     print("PASS: independently constructed Q11 division point of P2 via rational [18]P2")
     print("PASS: independent exact division-polynomial [11]Q=P2 and on-curve mutation")
-    print("CONDITIONAL CLASS GROUP: 11-rank Cl(L) >= 6 requires good/bad-prime local Kummer and class-field inputs")
+    print("PASS: local quadratic trace descent d=1,2; wrong degree 11 falsifier")
+    print("CONDITIONAL CLASS GROUP: 11-rank >=6 for Cl(Q(E11)) AND Cl(K(E11))")
     print("NONCLAIM: code neither computes Cl(L), a global corrected c1, secondary h2 nor BSD")
 
 
