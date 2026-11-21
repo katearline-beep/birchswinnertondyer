@@ -77,7 +77,69 @@ def group_size(h, w):
     return len(found), sum(x[0] == 0 for x in found)
 
 
+def arithmetic_inputs():
+    """Independent finite counts and minimal-model reduction witnesses."""
+    def legendre(z, q):
+        z %= q
+        return 0 if z == 0 else (1 if pow(z, (q-1)//2, q) == 1 else -1)
+
+    def count(q):
+        # Orthogonal finite-field character sum, not the old affine count.
+        return q+1+sum(legendre(x*x*x-1267*x+17230, q)
+                       for x in range(q))
+
+    assert count(23) == 30 and count(127) == 143
+    assert (36-4*23) % P == 10
+
+    def add(u, v, q):
+        # Original minimal E: y^2 + xy = x^3 - x^2 - 79x +289.
+        if u is None:
+            return v
+        if v is None:
+            return u
+        x, y = u
+        z, w = v
+        if x == z and (y+w+x) % q == 0:
+            return None
+        slope = ((3*x*x-2*x-79-y)*pow(2*y+x, -1, q)
+                 if u == v else (w-y)*pow(z-x, -1, q)) % q
+        intercept = (y-slope*x) % q
+        xx = (slope*slope+slope+1-x-z) % q
+        return xx, (-(slope+1)*xx-intercept) % q
+
+    def times(n, pt, q):
+        result = None
+        for _ in range(n):
+            result = add(result, pt, q)
+        return result
+
+    q = 127
+    inv4, inv8 = pow(4, -1, q), pow(8, -1, q)
+    def minimal(X, Y):
+        return (X+1)*inv4 % q, (Y-X-1)*inv8 % q
+    p1, p2 = minimal(15, 40), minimal(19, 4)
+    twice = add(p1, p1, q)
+    x = add(p2, (twice[0], (-twice[1]-twice[0]) % q), q)
+    projected = times(13, x, q)
+    assert projected is not None and projected == times(26, p1, q)
+    assert times(11, projected, q) is None
+
+    def artin(a, b):
+        # Calibrated source definition; re-evaluated without old code.
+        omega = 16
+        num = (a+b*omega) % 121
+        den = (a+b*(1-omega)) % 121
+        unit = pow(num*pow(den, -1, 121) % 121, 10, 121)
+        values = [j for j in range(11) if pow(12, j, 121) == unit]
+        assert len(values) == 1
+        return values[0]
+
+    assert artin(-5, 2) == 2 and artin(-11, 6) == 4
+    assert 12*2 % P == 2 and 10*4 % P == 7
+
+
 def run():
+    arithmetic_inputs()
     assert mul(I, I) == I
     # Arbitrary corrections tested to ensure independence of c1/c2 choices.
     samples = [(0, 0, 0, 0), (5, 1, 4, 9), (10, 10, 10, 10), (2, 3, 7, 8)]
@@ -226,6 +288,7 @@ def run():
     h, g, w, c1, c2, _ = witnesses(eh=-2, eg=-7)
     assert c1[1][1] == 2 and c2[1][2] == 4
 
+    print('PASS: new Legendre point counts, minimal-model Kummer reduction and ray Artin inputs')
     print('PASS: all 14,641 generator correction assignments preserve independent 3-vectors')
     print('PASS: exact 4x4 affine matrix check and exhaustive 11^4 group closure')
     print('PASS: minimal relative p-group has order 11^4=14,641 and class three')
