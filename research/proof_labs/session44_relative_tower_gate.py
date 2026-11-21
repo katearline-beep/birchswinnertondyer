@@ -51,7 +51,8 @@ def lower_central_dimensions(r):
     d1 = [diff(2, v, r) for v in basis]
     d2 = [diff(2, x, r) for x in d1]
     d3 = [diff(2, x, r) for x in d2]
-    ranks = [n, rank_mod_p(d1, n), rank_mod_p(d2, n),
+    # The affine group has one extra C11 character generator in degree 1.
+    ranks = [n+1, rank_mod_p(d1, n), rank_mod_p(d2, n),
              rank_mod_p(d3, n)]
     return [ranks[i]-ranks[i+1] for i in range(3) if ranks[i] > ranks[i+1]]
 
