@@ -339,7 +339,7 @@
       "statement": "Nov6 exact formal Taylor negative control: even F=t²+a t⁴ and odd G=t+b t³ give (FG)'''(0)=6 despite functional-equation parities; formal F=t⁴,G=t gives zero. This disproves parity-only H3 inference, not a statement about actual elliptic L-functions."
     },
     {
-      "category": "literature_hypothesis_no_go",
+      "category": "hypothesis_and_method_audit",
       "statement": "OpenAI Math October6/7 2026 unrefereed low-Selmer-corank BSD preprints claim results for corank <=1. Focal curve has rank4, and Kummer injection forces Selmer p-infinity corank >=4 at every p, so their stated hypothesis cannot apply regardless of validity."
     },
     {
