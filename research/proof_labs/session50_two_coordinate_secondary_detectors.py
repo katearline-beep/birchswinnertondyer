@@ -57,6 +57,19 @@ def run():
     assert dot(A,(3,1,0))==dot(A,(6,0,1))==0
     assert A[0]!=0 and detectors(A)==(0,0)
 
+    # T=gamma-1 versus u=log(gamma)=T-T²/2: their two
+    # second-obstruction 2-cochains differ by -1/2*d(c1) whenever
+    # d(c1)(g,h)=chi(g)*rho(g)*c0(h). This is cohomological, not a
+    # license to drop the T² term in an explicit cochain computation.
+    inv2=pow(2,-1,P)
+    for chi in range(P):
+        for c0 in range(P):
+            for c1 in range(P):
+                bT=(chi*c1 - chi*(chi+1)*inv2*c0)%P
+                bU=(chi*c1 - chi*chi*inv2*c0)%P
+                dc1=(chi*c0)%P
+                assert (bT-bU)%P == (-inv2*dc1)%P
+
     combinations=0
     for b in product(range(P),repeat=3):
         # Any change of first correction moves secondary pairings by
@@ -80,6 +93,7 @@ def run():
     # is detected; this is NOT a value for the real elliptic curve.
     assert detectors((1,0,0))==(3,6)
     print("PASS: two independent actual fine Kummer test combinations Z1/Z2")
+    print("PASS: T/u quadratic secondary cochains differ only by -1/2*d(c1)")
     print("PASS: exact first-obstruction height row (2,5,10) annihilates both")
     print("PASS: all 14,641 (secondary-vector, first-lift-normalization) controls")
     print("PASS: dual quotient test is complete ONLY on the known 3D fine-MW space")
