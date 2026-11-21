@@ -86,6 +86,8 @@ Thus r=1 gives the expected natural single-Kummer-plus-character relative order 
 
 ### New independent computational falsifiers
 
+The same standalone test **independently recomputes the arithmetic inputs**: finite-field Legendre point counts on the short curve give #E(F23)=30 and #E(F127)=143; a separate repeated-addition group law on the original minimal Weierstrass model gives [13](P2−2P1)=[26]P1≠O with order 11; and fresh finite-power/discrete-log calculations check the calibrated Artin character ell(q23)=2, ell(q127)=4 and hence ell(h)=2, ell(g)=7. These are exact finite checks using the previously sourced class-field normalization, not an independent proof of that normalization or a global Galois cocycle.
+
 The Session42 Python control also constructs a companion matrix A=[[0,−1],[1,−6]] mod11, checks it has order12 and discriminant10, constructs the six translation jets for **all 120 nonzero vectors u∈F11²**, and finds rank6 each time. It checks the representative 6×6 determinant **9 mod11** by a full 720-permutation formula and rank6 by *separate* elimination. Replacing A by the identity or killing ell(h) makes rank drop below6. This checks exact finite algebra and the logic of the source-input dependency; it cannot certify the arithmetic Frobenius theorem, global cochain or any Greenberg condition.
 
 ---
