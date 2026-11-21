@@ -98,6 +98,25 @@ The initial weaker 11⁴ subgroup bound is sharp ONLY for the one-dimensional sc
 
 The same scalar-projection filtration proof (before invoking the stronger two-dimensional irreducibility theorem) works for any hypothetical cocycle into V[T]/T^r with 2≤r≤10 using this mod-11 character: d=(1+T)^−2−1 has T-valuation one, so v,dv,...,d^(r−1)v are independent. The affine norm sum_(j=0)^10 a^j has T-valuation ten and vanishes mod T^r. Its minimal forced subgroup is (F11)^r⋊C11, order 11^(r+1) and nilpotency class r. This is a **conditional algebraic extrapolation** for possible higher jets; it is not a constructed tower or evidence that any such higher lift exists.
 
+## Small relative embedding step behind the enormous degree
+
+Despite the huge minimum *total* degree, the new layer above a hypothetically realized **first** correction is only rank two over F11. Let M₂, M₃ be the **minimal** affine fields for the compatible mod-T² and mod-T³ reductions of one hypothetical global c. The same full-image argument proves
+  [M₂:K(E[11])] = 11⁵,
+  [M₃:K(E[11])] = 11⁷,
+so **[M₃:M₂]=11²=121**, with kernel exactly T²V≅E[11] as a 2D additive group.
+
+The incremental relative-group extension
+  0 → T²V → (V[T]/T³)⋊C11 → (V[T]/T²)⋊C11 → 1
+is CENTRAL on the residual kernel N=ker rho (it need not be central over all G_K, where rho acts). With the inverse-character convention and 1-cocycle c=c₀+Tc₁+T²c₂, the source-fixed cochain equation is
+  c₂(st)=c₂(s)+rho(s)c₂(t)
+          −ell(s)rho(s)c₁(t)
+          +binom(ell(s)+1,2)rho(s)c₀(t).
+Thus, after an actual supported c₁ is constructed, the obstruction to a compatible c₂ lies in the appropriate H² with coefficient V and **must** be tested with the supported/ordinary local conditions and actual normalization. A formal group presentation or the order-121 kernel **does not establish obstruction vanishing**. The same passage gives a 121-step for every successive jet r while r≤10, conditional on having the preceding lift.
+
+**Practical implication:** do NOT attempt a degree-257-billion number-field polynomial. First construct the corrected Galois/Greenberg cochain over a certified smaller quotient, then test the explicit 121-kernel embedding step using cohomological maps. This refines the next experiment without claiming that the first or second correction exists.
+
+---
+
 ## What is actually new relative to October 30
 
 The Oct30 nonarithmetic toy with [h,[h,g]]=1 already showed a second lift cannot be inferred from a first lift and computed 4T² as an obstruction in that toy. We **do not** claim that double-commutator value is a new discovery. The added conclusion here is a **minimal finite group type and sharp relative degree threshold** attached to the **actual** h,g and nonzero Kummer u from C-0050, including independence from every unknown correction coefficient. It gives an explicit reject criterion for future arithmetic quotient proposals: every candidate with a smaller relative degree, or nilpotency class at most two, fails even before Greenberg/Selmer checks.
