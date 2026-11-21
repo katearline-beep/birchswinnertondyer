@@ -125,8 +125,8 @@
       "if_then_statement": "IF L'''(E/K_D,1)=0 is proved geometrically and L'(E^D,1)≠0 is certified, THEN L''(E,1)=0.",
       "would_unlock": "A single quadratic field could suffice, potentially bypassing a direct complex zero certificate.",
       "unverified_dependencies": "The geometric third-derivative formula is missing; the twist nonvanishing for D=-7 is a provisional computational certificate.",
-      "negative_control": "When the twist derivative vanishes, product-third-derivative zero does not imply L''=0; implemented polynomial negative control. First base-change derivative is already zero for both order-two and order-four original germs with an odd twist, hence classical first-derivative Heegner height vanishing is not a cubic-order certificate.",
-      "next_decisive_test": "Verify the precise derivative ORDER in proposed higher Gross–Zagier and generalized Heegner-cycle literature. The 2024 Lilienfeldt–Shnidman and 2026 Du–Peng work treats central FIRST derivatives in higher WEIGHTS, not a cubic derivative for our weight-two quadratic base change. Seek a genuine third-derivative formula or park implementation.",
+      "negative_control": "When the twist derivative vanishes, product-third-derivative zero does not imply L''=0; implemented polynomial negative control. First base-change derivative is already zero for both order-two and order-four original germs with an odd twist, hence classical first-derivative Heegner height vanishing is not a cubic-order certificate. Session41 improves the control from parity alone to entire order-one, all-central-line-zero models satisfying the same functional-equation signs; L'' can still be nonzero.",
+      "next_decisive_test": "Do not substitute K=-7 into Feng–Yun–Zhang Theorem 1.1: r-legged shtukas and arbitrary Siegel–Eisenstein derivatives are function-field objects, and the paper states no number-field analogue for r>1. Li–Liu Theorem 1.5 is conditional and first-derivative. Only reactivate a theta path with a source-defined *characteristic-zero* construction producing the THIRD derivative of the exact Hasse–Weil base-change L(E/K,s), nonzero comparison factor and independently proved arithmetic vanishing.",
       "kill_criterion": "Stop if varying D only restates the analytic factorization with no new theorem or cycle.",
       "source": "https://doi.org/10.5802/jtnb.1174",
       "test_path": "research/strategy/kill_tests.py",
@@ -146,6 +146,16 @@
           "date": "2026-10-17",
           "outcome": "active",
           "evidence": "Whole-problem review found two promising higher-weight works only address first central derivative; exact product negative control disproves first-height-zero to cubic-zero inference. Continue bounded source audit before computation."
+        },
+        {
+          "date": "2026-11-20",
+          "outcome": "active",
+          "evidence": "Session41 independent RH Lean-check status and source-scope audit: five theorems are RH and Dirichlet GRH, not elliptic GRH, and even hypothetical elliptic critical-line location is insufficient to force rank-four central multiplicity. No complex derivative theorem or BSD implication. Bounded H3 source audit only."
+        },
+        {
+          "date": "2026-11-20",
+          "outcome": "active",
+          "evidence": "Full HTML theorem check: Li–Liu Theorem 1.5 is a first-central-derivative arithmetic inner product formula under Hypothesis 4.11; Feng–Yun–Zhang Theorem 1.1 yields all-order Siegel–Eisenstein Fourier derivatives only over function fields, and explicitly says no r>1 number-field shtuka analogue is known. Direct theorem substitution into K=-7 is parked; H3 complex geometry remains unproved."
         }
       ]
     },
