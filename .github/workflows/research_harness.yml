@@ -106,6 +106,16 @@ jobs:
           gp -q -f research/proof_labs/pari_local_norm_reference_11.gp > /tmp/bsd-local-norm37.txt 2>&1
           python -I -B research/proof_labs/local_norm_reference_11.py /tmp/bsd-local-norm37.txt
 
+      - name: Independent five-point pure Frobenius PARI ray-class Kummer oracle
+        shell: bash
+        run: |
+          set -euo pipefail
+          gp -q -f research/proof_labs/pari_pure_frobenius_five_kummer.gp > /tmp/bsd-pure5.txt 2>&1
+          if grep -qF '***' /tmp/bsd-pure5.txt; then
+            cat /tmp/bsd-pure5.txt
+            exit 1
+          fi
+          python -I -B research/proof_labs/session46_pure_frobenius_five_kummer.py /tmp/bsd-pure5.txt
       - name: Independent q743 pure Frobenius ray-class and minimal-model oracle
         shell: bash
         run: |
