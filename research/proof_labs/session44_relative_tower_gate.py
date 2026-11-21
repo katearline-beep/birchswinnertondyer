@@ -104,7 +104,48 @@ def nonsplitting():
                                       (7, (0, 0, 0)), 3), 3) == (0, (0, 0, 0))
 
 
+def unramified_local_cohomology():
+    """H^1_unr = coker(Frob-1) at q23/q127 for r=1,2,3."""
+    A23 = ((0, 10), (1, 5))  # irreducible x^2+6x+1
+    A127 = ((0, 5), (1, 7))  # (x-1)(x-6)
+
+    def matvec(A, v):
+        return tuple(sum(A[i][j]*v[j] for j in range(2)) % P
+                     for i in range(2))
+
+    def frobenius(A, e, v, r):
+        w = action(e, v, r)
+        out = []
+        for j in range(r):
+            out.extend(matvec(A, w[2*j:2*j+2]))
+        return tuple(out)
+
+    def image_matrix(A, e, r):
+        n = 2*r
+        basis = [tuple(1 if j == i else 0 for j in range(n))
+                 for i in range(n)]
+        return [tuple((a-b) % P for a, b in zip(frobenius(A,e,v,r),v))
+                for v in basis]
+
+    for r in (1, 2, 3):
+        n = 2*r
+        image23 = image_matrix(A23, 2, r)
+        image127 = image_matrix(A127, 4, r)
+        assert rank_mod_p(image23, n) == n
+        assert rank_mod_p(image127, n) == n-1
+        # If the character vanishes at q127, the first/second jet
+        # unramified cohomology has extra dimensions, so the uniqueness
+        # is a genuine consequence of actual ell(Frob127)=4.
+        assert rank_mod_p(image_matrix(A127, 0, r), n) == r
+        u0 = (5, 1) + (0,)*(n-2)
+        assert rank_mod_p(image127+[u0], n) == n
+        # Surjective projection to the residual cokernel + equal dimension
+        # gives canonical H1_unr(A_r) -> H1_unr(V) isomorphism.
+    return True
+
+
 def main():
+    assert unramified_local_cohomology()
     dims = [lower_central_dimensions(r) for r in (1, 2, 3)]
     assert dims == [[3], [3, 2], [3, 2, 2]], dims
     orders = [P**sum(v) for v in dims]
@@ -127,6 +168,8 @@ def main():
             v = tuple(1 if i == j else 0 for i in range(2*r))
             assert diff(0, v, r) == tuple(0 for _ in v)
     nonsplitting()
+    print("PASS: q23/q127 unramified H1 dimensions 0/1 across three truncation depths")
+    print("PASS: q127 residual projection is an isomorphism, fails if character ell=0")
     print("PASS: exact lower-central graded F11 dimensions (3), (3,2), (3,2,2)")
     print("PASS: 11^3 -> 11^5 -> 11^7 and successive 121-kernel tower")
     print("PASS: separate GL2-dependent total-degree arithmetic")
