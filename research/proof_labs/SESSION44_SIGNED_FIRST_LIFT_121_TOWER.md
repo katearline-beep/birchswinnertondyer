@@ -64,6 +64,23 @@ The lower central terms are G_r^(1)=(a−1)V[T]/T^r, G_r^(2)=(a−1)²V[T]/T^r e
 
 This staged approach is precisely why enumerating a 2-billion-degree field is not a computational solution. The useful arithmetic object is an explicitly **presented solvable 121-kernel embedding problem** with actual global and local maps. The next experiment must exhibit a concrete *Galois* presentation of B and evaluate the correction cocycle/cochains, not merely simulate G₂ or G₃.
 
+## Exact good-prime local cohomology: uniqueness, not just existence
+
+Session43 constructed explicit *local* q127 Frobenius T³ jets (10,7,5) in a chosen residual eigenbasis. Their coefficients are gauge-dependent. Nevertheless an **intrinsic** statement is available: the **unramified local cohomology lift is unique at the level of cohomology**, simultaneously at truncation depths 1,2,3.
+
+For r=1,2,3 set A_r=V⊗F11[T]/T^r, where at an unramified good place with arithmetic Frobenius q the action is the explicit 2r×2r matrix
+  F_{q,r}=rho(Frob_q)⋅(1+T)^(-ell(Frob_q)).
+For the procyclic unramified quotient,
+  H¹_unr(K_q,A_r)=coker(F_{q,r}−I).
+
+- At q23, rho(Frob23) has polynomial X²+6X+1 and **no eigenvalue1**. Consequently F_{23,r}−I is invertible in every truncation r≤3: **dim H¹_unr(K_q23,A_r)=0**.
+- At q127, rho(Frob127) has eigenvalues 1 and6, and ell(Frob127)=4≠0. On the 1-eigenspace, F_{127,r} acts as a single Jordan block of size r with eigenvalue1; its cokernel is one-dimensional. The 6-eigenspace block has invertible F−I. Thus **dim H¹_unr(K_q127,A_r)=1 for r=1,2,3**. The reduction map to H¹_unr(K_q127,V), which is a quotient of the same cokernel, is surjective and both sides are one-dimensional, hence an **isomorphism**. Therefore the given nonzero Kummer residual class at q127 has **exactly one unramified local H¹ class lift** to A₂ or A₃. This does **not** mean it has one canonical cocycle representative; the values (10,7,5) from Session43 depend on the chosen representative.
+- Falsifier: if ell(Frob127)=0, the three 1-eigen components do not form a nontrivial Jordan chain, and **dim H¹_unr(K_q127,A_r)=r**, not1. The observed actual ell=4 is essential to local uniqueness.
+
+The amended Session44 exact verifier constructs every Frobenius matrix and independently checks their ranks 2r, 2r−1 and r for r=1,2,3, including the nonzero chosen generator u₀=(5,1) modulo (F−I). This new computation confirms that these two *good-prime* local classes contribute **no additional higher-jet local cohomology freedom**; the difficult remaining compatibility is **global** and involves the **ordinary11-adic Greenberg places**. These good-prime calculations, despite their exactness, do not prove an actual global c₁/c₂ or support a BSD implication.
+
+---
+
 ## Adversarial check and decision
 
 Pure Python verifier:
