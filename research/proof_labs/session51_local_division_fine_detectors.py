@@ -7,6 +7,7 @@ NOT an evaluated global secondary Bockstein, local cochain or BSD result.
 """
 from fractions import Fraction as F
 from functools import lru_cache
+from itertools import product
 
 P=11
 N=4
@@ -148,6 +149,69 @@ def division_poly_mul(xy,n):
     return phi*pow(dn,-2,MOD)%MOD,omega*pow(dn,-3,MOD)%MOD
 
 
+def rank_mod11(rows):
+    a=[list(row) for row in rows]
+    rr=0
+    for col in range(len(a[0])):
+        i=next((j for j in range(rr,len(a)) if a[j][col]%P),None)
+        if i is None:continue
+        a[rr],a[i]=a[i],a[rr]
+        scalar=pow(a[rr][col],-1,P)
+        a[rr]=[scalar*x%P for x in a[rr]]
+        for j in range(len(a)):
+            if j!=rr:
+                m=a[j][col]
+                a[j]=[(x-m*y)%P for x,y in zip(a[j],a[rr])]
+        rr+=1
+    return rr
+
+
+def global_fine_kummer_gate():
+    """Relative full E[11]^2 from TWO ACTUAL Session46 split Frobenius rows.
+
+    Conditional on source-calibrated q743/q2843 Artin and local Kummer
+    homomorphisms and actual irreducible q23 Galois action. The code
+    checks finite tensor linear algebra, NOT the source field theorem.
+    """
+    full743=(1,0,0,2,6)
+    full2843=(1,4,9,9,1)
+    z1=(-2,3,1,0,0)
+    z2=(-9,6,0,1,0)
+    def proj(row):
+        return tuple(sum(a*b for a,b in zip(row,c))%P for c in (z1,z2))
+    s1,s2=proj(full743),proj(full2843)
+    assert (s1,s2)==((9,4),(8,2))
+    assert (s1[0]*s2[1]-s1[1]*s2[0])%P==8
+    def a23(v):
+        return (-v[1]%P,(v[0]+5*v[1])%P)
+    def tensor(row,v):
+        return tuple(c*x%P for c in row for x in v)
+
+    # Every unknown nonzero global torsion vector at each finite prime
+    # works, because q23 rho has irreducible X^2+6X+1 over F11.
+    attempts=0
+    for u in product(range(P),repeat=2):
+        if u==(0,0):continue
+        au=a23(u)
+        assert (u[0]*au[1]-u[1]*au[0])%P!=0
+        for w in product(range(P),repeat=2):
+            if w==(0,0):continue
+            vectors=(tensor(s1,u),tensor(s1,au),
+                     tensor(s2,w),tensor(s2,a23(w)))
+            assert rank_mod11(vectors)==4
+            attempts+=1
+    assert attempts==120**2
+
+    # A duplicate row loses half the translation module. A reducible
+    # identity q23 action loses the conjugate directions altogether.
+    u=(1,0);w=(0,1)
+    assert rank_mod11((tensor(s1,u),tensor(s1,a23(u)),
+                       tensor(s1,w),tensor(s1,a23(w))))==2
+    assert rank_mod11((tensor(s1,u),tensor(s1,u),
+                       tensor(s2,w),tensor(s2,w)))==2
+    return attempts
+
+
 def build_classes():
     p1,p2,p3,p4=POINTS
     z1=ec_add(ec_add(ec_mul(-2,p1),ec_mul(3,p2)),p3)
@@ -203,10 +267,13 @@ def arithmetic():
 
 
 def main():
+    cases=global_fine_kummer_gate()
     entries=arithmetic()
     for label,z,q,t18,tU in entries:
         print(f"{label} Z mod 14641={z}; local Q mod 14641={q}; "
               f"t([18]Z)={t18}; t(U) mod 1331={tU}")
+    print(f"PASS: two actual pure Frobenius projected rows give relative V² at all {cases} nonzero torsion choices")
+    print("PASS: independent 2x2 determinant 8 mod11, duplicate-row and reducible-action controls")
     print("PASS: exact rational MW combinations, #E(F11)=18 and local 11-divisibility")
     print("PASS: formal 11-division construction and orthogonal division-polynomial [11] check")
     print("PASS: on-curve nondivision mutants and swapped-target controls")
