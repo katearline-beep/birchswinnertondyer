@@ -1264,16 +1264,18 @@
     {
       "id": "EX-024",
       "claim_ids": [
+        "C-0051",
         "C-0004"
       ],
-      "status": "planned",
+      "status": "conditionally_supported",
       "human_reviewed": false,
       "question": "For the ORIGINAL E=234446.a1/Q, do independent actual PARI and eclib two-descents give dim_F2 Sel_2(E/Q)=4, thereby proving Sha(E/Q)[2^infinity]=0 by the standard Selmer exact sequence?",
-      "decisive_observation": "NOT YET COMPUTED. Sage10.6 pinned 2-descent experiment has been submitted. Four rational independent MW points/rank4 and no rational 2-torsion provide the lower bound. A result exactly4 gives a limited unconditional original-curve BSD-arithmetic Sha2 result conditional on trusted published 2-descent algorithms; larger dimension or timeout yields NO conclusion. Source C0044's nonzero twist Kurihara number proves only the twist's 11-Selmer bound, not the original's 11-Selmer upper bound.",
+      "decisive_observation": "COMPLETED ACTUAL reproducible result: pinned Sage10.6 at source commit 7b4bbd98e2ac01626586b00973f2b3cfc0d4e994, GitHub Actions runs 44926218323/job136912780575 and 44926199989/job136912724697 BOTH succeeded. Independent PARI and eclib/mwrank ACTUAL 2-Selmer descent yield Sel2(E234446.a1/Q)=4. Real control 571a1 (rank0, Sha[2]=(Z/2)^2) has Sel2=2 in BOTH implementations, and 389a1 rank2 has Sel2=2. Original exact MW rank4 (Cremona/LMFDB), 2-division cubic irreducible, hence by Kummer exact sequence original Sha(E/Q)[2]=0 and full 2-primary Sha torsion vanishes. This is a direct ORIGINAL-curve arithmetic BSD component (possibly previously known), not a result on complex L'' or Sha odd parts.",
       "dependencies": [
         "Cremona/LMFDB: original E/Q rank4, torsion trivial; rational 2-division cubic irreducible, discriminant 1024*117223.",
         "Sage 10.6 documented EllipticCurve_rational_field.selmer_rank(algorithm='pari' or 'mwrank') computes ACTUAL 2-Selmer rank, NOT rank or 11-Selmer.",
-        "Standard exact sequence 0→E(Q)/2E(Q)→Sel2→Sha[2]→0; 571a1 rank0 Sha[2] control distinguishes ranks."
+        "Standard exact sequence 0→E(Q)/2E(Q)→Sel2→Sha[2]→0; 571a1 rank0 Sha[2] control distinguishes ranks.",
+        "Actual source run logs from GitHub Actions for immutable Sage10.6 container, independent PARI/eclib implementations, accepted algorithms; exact rank4 independent Cremona/LMFDB plus no rational 2-torsion; Kummer Selmer short exact sequence."
       ],
       "commands": [
         "sage -python research/proof_labs/sage_original_sha2_descent_gate.py",
@@ -1284,10 +1286,11 @@
         "research/proof_labs/sage_original_sha2_descent_gate.py",
         ".github/workflows/original_sha2_descent.yml"
       ],
-      "negative_control": "571a1 rank0 has Sel2 dimension2 from Sha[2]=(Z/2)^2, while 389a1 rank2 has Sel2 dimension2; both independent backends must agree. Focal 2-division cubic has no rational root; rank<4 impossible; rank>4 must print NO CERTIFICATE. Never confuse original 2 Selmer with twist 11 Selmer, or numeric analytic Sha≈1 with proof.",
+      "negative_control": "571a1 rank0 has Sel2 dimension2 from Sha[2]=(Z/2)^2, while 389a1 rank2 has Sel2 dimension2; both independent backends must agree. Focal 2-division cubic has no rational root; rank<4 impossible; rank>4 must print NO CERTIFICATE. Never confuse original 2 Selmer with twist 11 Selmer, or numeric analytic Sha≈1 with proof. ACTUAL two backends and controls passed at run44926218323 and run44926199989: 571a1 rank0/2Selmer2 prevents inadvertent substitution of MW rank, 389a1 rank2/2Selmer2, original Sel2=4 both.",
       "stop_condition": "Only report original Sha[2^infinity]=0 after BOTH actual Sage backends output dimension4 with good source/CI logs and known-curve controls. Timeout, disagreement, >4 or missing log is nonproof. Do not promise an upper bound for original Sel11 or complex L''.",
       "nonclaims": [
-        "Not a general BSD proof, not original analytic rank four, not original Sha finiteness at 11 or all primes, not a source for conjectured exact leading coefficient, not novelty until prior-art check."
+        "Not a general BSD proof, not original analytic rank four, not original Sha finiteness at 11 or all primes, not a source for conjectured exact leading coefficient, not novelty until prior-art check.",
+        "Source C0051 does NOT claim novelty or expert mathematical review; Sha at 11/odd primes, full finiteness and exact complex BSD remain unknown."
       ],
       "cross_disciplines": [
         {
