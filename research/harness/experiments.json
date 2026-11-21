@@ -1275,11 +1275,12 @@
         "Cremona/LMFDB: original E/Q rank4, torsion trivial; rational 2-division cubic irreducible, discriminant 1024*117223.",
         "Sage 10.6 documented EllipticCurve_rational_field.selmer_rank(algorithm='pari' or 'mwrank') computes ACTUAL 2-Selmer rank, NOT rank or 11-Selmer.",
         "Standard exact sequence 0→E(Q)/2E(Q)→Sel2→Sha[2]→0; 571a1 rank0 Sha[2] control distinguishes ranks.",
-        "Actual source run logs from GitHub Actions for immutable Sage10.6 container, independent PARI/eclib implementations, accepted algorithms; exact rank4 independent Cremona/LMFDB plus no rational 2-torsion; Kummer Selmer short exact sequence."
+        "Actual source run logs from GitHub Actions for immutable Sage10.6 container, independent PARI/eclib implementations, accepted algorithms; exact rank4 independent Cremona/LMFDB plus no rational 2-torsion; Kummer Selmer short exact sequence.",
+        "Real official Sage10.6 commands are executed only by the trusted bounded .github/workflows/original_sha2_descent.yml (direct shell source); the harness command field only accepts python3 -I -B or gp -q -f commands and does not execute CI metadata."
       ],
       "commands": [
-        "sage -python research/proof_labs/sage_original_sha2_descent_gate.py",
-        "GitHub Actions .github/workflows/original_sha2_descent.yml (6GB network-disabled Sage10.6, two actual independent backends)"
+        "python3 -I -B research/proof_labs/session53_independent_rank4_reductions.py",
+        "python3 -I -B research/harness/validate.py"
       ],
       "artifacts": [
         "research/proof_labs/SESSION53_ORIGINAL_SHA2_SELMER_PROOF_GATE.md",
