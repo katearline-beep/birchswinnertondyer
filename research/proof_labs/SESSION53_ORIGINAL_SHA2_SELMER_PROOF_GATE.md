@@ -50,6 +50,35 @@ This is a **special-case computational certificate for the original elliptic cur
 
 ---
 
+## Additional NONCIRCULAR rank-four certificate from actual finite reductions
+
+The preceding deduction used the published Cremona/LMFDB rank4 input, but we can remove it entirely using **independent source-certified finite arithmetic**, avoiding possible circularity if that rank4 was originally established by 2-descent.
+
+Let the rational points on the short model be
+  \(P_1=(15,40), P_2=(19,4), P_3=(23,16), P_4=(31,88)\).
+At each good prime q below, project each reduction \(\bar P_i\) into the order-11 part by multiplication by \(\#E(\mathbf F_q)/11\), and take the unique discrete log relative to \([\#E(\mathbf F_q)/11]\bar P_1\). These are exact group operations on *the actual curve*, independently previously verified in Session46 by PARI minimal-model computations and Python short-model computations.
+
+| q | #E(Fq) | logs of (P1,P2,P3,P4) |
+|---|---:|---|
+| 2843 | 2893 | (1,4,9,9) |
+| 3019 | 2959 | (1,8,0,4) |
+| 5147 | 5236 | (1,2,9,8) |
+| 5737 | 5632 | (1,5,5,0) |
+
+The resulting 4×4 matrix has **determinant5 modulo11**, by two independent integer algorithms (Leibniz expansion and modular Gaussian elimination). Thus the Kummer reductions of the four rational points are linearly independent in \(E(\mathbf Q)/11E(\mathbf Q)\). A separate exact count gives **\(\#E(\mathbf F_3)=7\)**. Since E has good reduction at3 and 7 is coprime to both 2 and11, E(Q)[2]=E(Q)[11]=0 by prime-to-3 torsion injection. The four classes therefore establish **\(\mathrm{rank}E(\mathbf Q)\ge4\)** without a database rank or infinite-height calculation.
+
+On the other hand the certified complete 2-Selmer dimension=4 bounds
+  \(\mathrm{rank}E(\mathbf Q)\le4\)
+by the classical exact sequence, since E(Q)[2]=0. Combining both gives the **self-contained arithmetic computational implication** (subject only to standard published finite-field arithmetic, validated 2-descent algorithms and Selmer theorems):
+\[
+\boxed{\mathrm{rank}E(\mathbf Q)=4\quad\text{and}\quad\Sha(E/\mathbf Q)[2^\infty]=0.}
+\]
+The 4×4 reduction matrix, actual finite field counts and on-curve group law are checked by research/proof_labs/session53_independent_rank4_reductions.py; it includes duplicated-row and mutated-entry falsifiers. The new workflow must run that proof independently of the original Sage PARI/eclib calculations. No rational rank database is **necessary** to derive this exact implication, although it provides a useful cross-check.
+
+**Important distinction:** this does not prove that the four points form an integral basis of E(Q); it proves only rank4. Determining the integral index requires saturation at all primes, which is not needed for the Sha[2] conclusion because \(E(\mathbf Q)/2E(\mathbf Q)\) has dimension rank4 regardless of the index of these four particular points. The two descent backends already certify the full 2-Selmer group.
+
+---
+
 ## Why the older 11-descent result does not transfer
 
 Session35/C0044's actual nonzero twist Kurihara number (10 mod11 at 3389) and Sakamoto's published residual-Selmer theorem imply, under source/normalization hypotheses, dim_F11 Sel_11(E^{-7}/Q)=1 and twist Sha[11]=0. This controls the *minus* eigenspace over K=Q(sqrt(-7)). The odd-prime quadratic decomposition is
