@@ -27,6 +27,25 @@ The independently corroborated **C0040 conditional** first-height/duality calcul
     = (2,5,10) ∈ F11³,
 **up to one common nonzero character/duality unit**. The common unit does NOT change its kernel. The values are not inferred from a decimal approximation of the complex L-function, nor from an assumption of Sha finiteness.
 
+## Second-order coordinate sanity: \(T\) versus signed \(u=\log(1+T)\)
+
+Session36's signed secondary operation is naturally expressed using \(u=\log(1+T)=T-T^2/2\), since complex conjugation sends \(u\) to \(-u\) exactly modulo \(u^3\). Session49's explicit inhomogeneous cochain formula uses \(T\), where conjugation sends \(T\) to \(-T+T^2\). These must not silently be treated as the same coordinate.
+
+For a genuine first lift satisfying \(d_\rho c_1=\chi(g)\rho(g)c_0(h)\), compare the degree-two RHS in the \(T\)- and \(u\)-presentations:
+\[
+B_T=\chi\rho c_1-\tfrac{\chi(\chi+1)}2\rho c_0,\quad
+B_u=\chi\rho c_1-\tfrac{\chi^2}{2}\rho c_0.
+\]
+Their difference is
+\[
+\boxed{B_T-B_u=-\tfrac12\chi\rho c_0=-\tfrac12\,d_\rho c_1.}
+\]
+Thus the two **representatives differ by an explicit 2-coboundary**, and define the SAME global \(H^2(G,V)\) class when the first-lift equation is actually satisfied. The signed quotient and the two Zj detectors are consequently independent of the \(T\)/\(u\) coordinate convention at this truncation. This is a cohomological identity, not justification to omit the necessary \(T^2\) term in a raw cochain algorithm.
+
+The Python test also checks the entire mod11 coefficient identity and the necessary first-lift relation; it does not test an actual arithmetic first lift.
+
+---
+
 ## New exact two-detector corollary
 
 Define two explicit actual fine classes
