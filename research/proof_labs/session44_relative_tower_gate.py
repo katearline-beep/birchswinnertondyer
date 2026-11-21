@@ -144,7 +144,75 @@ def unramified_local_cohomology():
     return True
 
 
+def ku_central_extension_power_negative_control():
+    """Two class-2 extensions with SAME commutators but different 11th powers.
+
+    Coordinates (e,x1,x2,y1,y2), with z1,z2 central. Carry mutation
+    models an independent H^2(C11,C11) Bockstein component.
+    """
+    identity = (0, 0, 0, 0, 0)
+    tau = (1, 0, 0, 0, 0)
+    x1 = (0, 1, 0, 0, 0)
+    x2 = (0, 0, 1, 0, 0)
+    z1 = (0, 0, 0, 1, 0)
+    z2 = (0, 0, 0, 0, 1)
+
+    def carry(e, f):
+        return (e+f)//P
+
+    def law(a, b, mutation):
+        e, x, y, w, z = a
+        f, u, v, h, k = b
+        return ((e+f) % P, (x+u) % P, (y+v) % P,
+                (w+h-e*u+mutation*carry(e, f)) % P,
+                (z+k-e*v) % P)
+
+    def inv(a, mutation):
+        e, x, y, w, z = a
+        f = -e % P
+        return (f, -x % P, -y % P,
+                (-w-e*x-mutation*carry(e, f)) % P,
+                (-z-e*y) % P)
+
+    def comm(a, b, mutation):
+        return law(law(law(a, b, mutation), inv(a, mutation), mutation),
+                   inv(b, mutation), mutation)
+
+    def power(g, n, mutation):
+        a = identity
+        for _ in range(n):
+            a = law(a, g, mutation)
+        return a
+
+    # Independent cocycle identity for the integer carry on C11.
+    for e, f, g in product(range(P), repeat=3):
+        assert carry(e, f)+carry((e+f) % P, g) == (
+            carry(f, g)+carry(e, (f+g) % P))
+
+    for mutation in (0, 1):
+        assert comm(tau, x1, mutation) == (0, 0, 0, 10, 0)
+        assert comm(tau, x2, mutation) == (0, 0, 0, 0, 10)
+        assert comm(x1, x2, mutation) == identity
+        assert power(x1, P, mutation) == identity
+        assert power(x2, P, mutation) == identity
+        assert law(tau, z1, mutation) == law(z1, tau, mutation)
+        assert law(tau, z2, mutation) == law(z2, tau, mutation)
+        assert power(tau, P, mutation) == (z1 if mutation else identity)
+        # Extra spot checks of associativity with nonzero V-translation.
+        choices = [identity, tau, x1, x2, z1, z2,
+                   (2, 3, 4, 5, 6), (10, 2, 8, 1, 9)]
+        for a in choices:
+            for b in choices:
+                for c in choices:
+                    assert law(law(a,b,mutation),c,mutation) == (
+                        law(a,law(b,c,mutation),mutation))
+    assert power(law(tau,x1,0), P, 0) == identity
+    assert power(law(tau,x1,1), P, 1) == z1
+    return True
+
+
 def main():
+    assert ku_central_extension_power_negative_control()
     assert unramified_local_cohomology()
     dims = [lower_central_dimensions(r) for r in (1, 2, 3)]
     assert dims == [[3], [3, 2], [3, 2, 2]], dims
@@ -168,6 +236,8 @@ def main():
             v = tuple(1 if i == j else 0 for i in range(2*r))
             assert diff(0, v, r) == tuple(0 for _ in v)
     nonsplitting()
+    print("PASS: same commutators do NOT guarantee same group: central carry changes exponent 11 to 121")
+    print("PASS: exact 11^3 carry cocycle identities, group laws and mutated 11th powers")
     print("PASS: q23/q127 unramified H1 dimensions 0/1 across three truncation depths")
     print("PASS: q127 residual projection is an isomorphism, fails if character ell=0")
     print("PASS: exact lower-central graded F11 dimensions (3), (3,2), (3,2,2)")
