@@ -4,7 +4,7 @@
 A *synthetic* one-dimensional projection of any hypothetical Galois cocycle;
 not an actual arithmetic lift or a BSD theorem. See the Session42 note.
 """
-from itertools import product
+from itertools import product, permutations
 
 P = 11
 I = (0, (0, 0, 0))
@@ -130,6 +130,92 @@ def run():
             assert all(x == 0 for x in v[:j])
             assert v[j] == pow(-2, j, P)
 
+    # NEW STRONGER CERTIFICATE: at q23 rho(sigma) has the irreducible
+    # polynomial X^2+6X+1, so any u and A*u span V=F11^2. Conjugation by
+    # sigma turns three pure-translation jets into SIX independent vectors.
+    # Therefore the full relative affine image must be (V[T]/T^3) : C11,
+    # of exact order 11^(2*3+1)=11^7, if a global T^3 cocycle exists.
+    def vmul(poly, vec):
+        out = []
+        for k in range(3):
+            out.append(tuple(sum(poly[i]*vec[k-i][j] for i in range(k+1)) % P
+                             for j in range(2)))
+        return tuple(out)
+
+    def a_on(a, vec):
+        return tuple(((a[0][0]*xy[0]+a[0][1]*xy[1]) % P,
+                      (a[1][0]*xy[0]+a[1][1]*xy[1]) % P) for xy in vec)
+
+    def as_six(vec):
+        return tuple(x for xy in vec for x in xy)
+
+    def determinant6(rows):
+        # Independent full Leibniz permutation expansion, 720 exact terms.
+        out = 0
+        for perm in permutations(range(6)):
+            invcount = sum(perm[i] > perm[j]
+                           for i in range(6) for j in range(i+1, 6))
+            term = 1
+            for i in range(6):
+                term *= rows[i][perm[i]]
+            out += (-1 if invcount % 2 else 1)*term
+        return out % P
+
+    def rank6(rows):
+        # Independent modular Gaussian elimination (not determinant6).
+        rows = [list(row) for row in rows]
+        rank = 0
+        for col in range(6):
+            pivot = next((i for i in range(rank, 6) if rows[i][col] % P), None)
+            if pivot is None:
+                continue
+            rows[rank], rows[pivot] = rows[pivot], rows[rank]
+            scale = pow(rows[rank][col], -1, P)
+            rows[rank] = [(x*scale) % P for x in rows[rank]]
+            for i in range(6):
+                if i != rank:
+                    m = rows[i][col]
+                    rows[i] = [(x-m*y) % P for x, y in zip(rows[i], rows[rank])]
+            rank += 1
+        return rank
+
+    # Companion matrix for q23: X^2+6X+1, whose discriminant 10 is
+    # nonsquare in F11. We do NOT identify its basis with a global E[11]
+    # torsion basis; its irreducibility property is all that the proof uses.
+    A = ((0, 10), (1, 5))
+    id2 = ((1, 0), (0, 1))
+    def mat2mul(a, b):
+        return tuple(tuple(sum(a[i][k]*b[k][j] for k in range(2)) % P
+                           for j in range(2)) for i in range(2))
+    apow = id2
+    for j in range(1, 13):
+        apow = mat2mul(apow, A)
+        assert (apow == id2) == (j == 12)
+    assert ((5*5-4) % P) == 10 and 10 not in {i*i % P for i in range(P)}
+
+    delta3 = (0, 9, 3)  # (1+T)^(-2)-1
+    a3 = (1, 9, 3)
+    def six_witness(u, v1=(0, 0), v2=(0, 0), rho=A, ch=delta3):
+        v = (u, v1, v2)
+        columns = []
+        for _ in range(3):
+            columns.append(as_six(v))
+            columns.append(as_six(a_on(rho, vmul(a3, v))))
+            v = vmul(ch, v)
+        return tuple(tuple(columns[j][i] for j in range(6)) for i in range(6))
+
+    # Independent of the chosen nonzero Kummer vector u and corrections.
+    for u in product(range(P), repeat=2):
+        if u == (0, 0):
+            continue
+        rows = six_witness(u, ((u[0]+2) % P, (u[1]+3) % P),
+                              ((4*u[0]+1) % P, (7*u[1]+2) % P))
+        assert rank6(rows) == 6
+    rows0 = six_witness((1, 0))
+    assert rank6(rows0) == 6 and determinant6(rows0) == 9
+    assert rank6(six_witness((1, 0), rho=id2)) < 6
+    assert rank6(six_witness((1, 0), ch=(0, 0, 0))) < 6
+
     # Critical adversarial controls: without Kummer input, or the 23-prime
     # character, there is no forced class-three 11^4 subgroup.
     h, g, w, c1, c2, _ = witnesses(g0=0)
@@ -143,6 +229,9 @@ def run():
     print('PASS: all 14,641 generator correction assignments preserve independent 3-vectors')
     print('PASS: exact 4x4 affine matrix check and exhaustive 11^4 group closure')
     print('PASS: minimal relative p-group has order 11^4=14,641 and class three')
+    print('PASS: all 120 nonzero Kummer vectors generate six independent conjugate jets')
+    print('PASS: 6x6 determinant, Gaussian rank, and reducible/missing-action controls')
+    print('CONDITIONAL: full relative affine image has exact order 11^7=19,487,171')
     print('PASS: zero-Kummer, zero-character and inverse-sign controls')
     print('CONDITIONAL: every actual global T^3 cochain would force this group; existence unproved')
     print("NONCLAIM: no Galois realization, h2, complex L'', Sha or BSD theorem")
